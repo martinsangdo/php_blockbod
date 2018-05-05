@@ -208,20 +208,10 @@ Class CollectHome extends REST_Controller
     }
     //
     public function show_crawl_time_get(){
-        $this->load->model(array('video_model'));
         $this->data['list'] = $this->site_model->get_pagination(array('status' => 1), 0, 0);
         //get video list
-        $videos = $this->video_model->custom_query('SELECT *, _id AS playlists FROM video_channel');
-        for ($i=0; $i<count($videos); $i++){
-            $video_sql = 'SELECT * FROM video_playlist WHERE channel_id='.$videos[$i]->_id;
-            $videos[$i]->playlists = $this->video_model->custom_query($video_sql);
-        }
-        $this->data['videos'] = $videos;
         //get total posts
         $this->data['total_post'] = $this->block_content_model->get_total(array('status'=>1));
-        //get total videos
-        $this->data['total_videos'] = $this->video_model->get_total(array('status'=>1));
-
         $this->load->view('front/webview/admin/show_crawl_time', $this->data);
     }
     //try to parse some website content
