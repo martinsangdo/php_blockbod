@@ -53,6 +53,9 @@ $route['default_controller'] = 'Welcome';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
 //
+$route['blockchain-news/(:any)'] = 'news/$1';
+
+//
 $route['cron/(:any)'] = 'cron/CollectHome/$1';
 //$route['cron/(:any)/(:any)'] = 'cron/CollectHome/$1/$2';
 

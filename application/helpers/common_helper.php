@@ -115,7 +115,7 @@ function full_url( $s, $use_forwarded_host = false )
 }
 //create link of detail page (should follow SEO)
 function detail_uri($slug){
-    return '/news/'.$slug;
+    return '/blockchain-news/'.$slug;
 }
 // Function to get the client IP address
 function get_client_ip() {

@@ -7,24 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Blockchain latest news</title>
         <meta name="robots" content="noindex,follow">
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
-
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
+        <link rel="dns-prefetch" href="https://s.w.org/"/>
         <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
 
-        <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-    </style>
     <link rel="stylesheet" id="pt-magazine-fonts-css" href="/public/blockbod/css/pt.css" type="text/css" media="all">
     <link rel="stylesheet" id="jquery-meanmenu-css" href="/public/blockbod/css/meanmenu.css" type="text/css" media="all">
     <link rel="stylesheet" id="font-awesome-css" href="/public/blockbod/css/font-awesome.min.css" type="text/css" media="all">
@@ -698,7 +684,7 @@
     <footer id="colophon" class="site-footer" role="contentinfo">
         <div class="container">
             <div class="site-info-holder">
-                <div class="copyright">Copyright © XuFa Ltd. All rights reserved.</div><!-- .copyright -->
+                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
             </div>
         </div><!-- .container -->
     </footer><!-- #colophon -->
