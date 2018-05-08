@@ -525,7 +525,7 @@
                                 </div><!-- .two-column-news-left -->
 
                                 <div class="two-column-news two-column-news-right">
-                                    <?php $data_block = $block_key_12; ?>
+                                    <?php $data_block = $block_key_9; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 8</h2>
                                         <a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/">View All</a>
