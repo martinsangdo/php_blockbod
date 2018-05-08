@@ -4,42 +4,31 @@
     <!-- Title -->
     <title>Main Dashboard</title>
 
-    <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="author" content="Martin SangDo"/>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="/public/unity_assets/vendor/bootstrap/bootstrap.min.css"/>
-    <!-- CSS Global Icons -->
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-line/css/simple-line-icons.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-etlinefont/style.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-line-pro/style.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-hs/style.css"/>
+    <?php require_once('common_head.php'); ?>
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // initialization of custom select
+            $('.js-select').selectpicker();
 
-    <link rel="stylesheet" href="/public/unity_assets/vendor/hs-admin-icons/hs-admin-icons.css"/>
+            // initialization of sidebar navigation component
+            $.HSCore.components.HSSideNav.init('.js-side-nav');
 
-    <link rel="stylesheet" href="/public/unity_assets/vendor/animate.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css"/>
+            // initialization of charts
+            $.HSCore.components.HSAreaChart.init('.js-area-chart');
 
-    <link rel="stylesheet" href="/public/unity_assets/vendor/flatpickr/dist/css/flatpickr.min.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/bootstrap-select/css/bootstrap-select.min.css"/>
+            // initialization of range datepicker
+            $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker2');
 
-    <link rel="stylesheet" href="/public/unity_assets/vendor/chartist-js/chartist.min.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css"/>
-    <link rel="stylesheet" href="/public/unity_assets/vendor/fancybox/jquery.fancybox.min.css"/>
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
 
-    <link rel="stylesheet" href="/public/unity_assets/vendor/hamburgers/hamburgers.min.css"/>
+            // initialization of custom scrollbar
+            $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
 
-    <!-- CSS Unify -->
-    <link rel="stylesheet" href="/public/unity_assets/css/unify-admin.css"/>
+        });
+    </script>
 
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="/public/admin/css/admin_custom.css"/>
 </head>
 
 <body>
@@ -85,7 +74,7 @@
                            data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                 <span class="g-pos-rel">
         <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-lightblue-v5 g-mr-5"></span>
-                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="/public/unity_assets/img-temp/130x130/img1.jpg" alt="Image description">
+                <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="/public/unity_assets/img-temp/130x130/img1.jpg" alt="Admin profile">
                 </span>
                             <span class="g-pos-rel g-top-2">
         <span class="g-hidden-sm-down">Admin</span>
@@ -784,104 +773,6 @@
     </div>
 </main>
 
-<!-- JS Global Compulsory -->
-<script src="/public/unity_assets/vendor/jquery/jquery.min.js"></script>
-<script src="/public/unity_assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-
-<script src="/public/unity_assets/vendor/popper.min.js"></script>
-<script src="/public/unity_assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-<script src="/public/unity_assets/vendor/cookiejs/jquery.cookie.js"></script>
-
-
-<!-- jQuery UI Core -->
-<script src="/public/unity_assets/vendor/jquery-ui/ui/widget.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/version.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/keycode.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/position.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/unique-id.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/safe-active-element.js"></script>
-
-<!-- jQuery UI Helpers -->
-<script src="/public/unity_assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
-<script src="/public/unity_assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
-
-<!-- jQuery UI Widgets -->
-<script src="/public/unity_assets/vendor/jquery-ui/ui/widgets/datepicker.js"></script>
-
-<!-- JS Plugins Init. -->
-<script src="/public/unity_assets/vendor/appear.js"></script>
-<script src="/public/unity_assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="/public/unity_assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
-<script src="/public/unity_assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="/public/unity_assets/vendor/chartist-js/chartist.min.js"></script>
-<script src="/public/unity_assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js"></script>
-<script src="/public/unity_assets/vendor/fancybox/jquery.fancybox.min.js"></script>
-
-<!-- JS Unify -->
-<script src="/public/unity_assets/js/hs.core.js"></script>
-<script src="/public/unity_assets/js/components/hs.side-nav.js"></script>
-<script src="/public/unity_assets/js/helpers/hs.hamburgers.js"></script>
-<script src="/public/unity_assets/js/components/hs.range-datepicker.js"></script>
-<script src="/public/unity_assets/js/components/hs.datepicker.js"></script>
-<script src="/public/unity_assets/js/components/hs.dropdown.js"></script>
-<script src="/public/unity_assets/js/components/hs.scrollbar.js"></script>
-<script src="/public/unity_assets/js/components/hs.area-chart.js"></script>
-<script src="/public/unity_assets/js/components/hs.donut-chart.js"></script>
-<script src="/public/unity_assets/js/components/hs.bar-chart.js"></script>
-<script src="/public/unity_assets/js/helpers/hs.focus-state.js"></script>
-<script src="/public/unity_assets/js/components/hs.popup.js"></script>
-
-<!-- JS Custom -->
-<script src="/public/unity_assets/js/custom.js"></script>
-
-<!-- JS Plugins Init. -->
-<script>
-    $(document).on('ready', function () {
-        // initialization of custom select
-        $('.js-select').selectpicker();
-
-        // initialization of sidebar navigation component
-        $.HSCore.components.HSSideNav.init('.js-side-nav');
-
-        // initialization of hamburger
-        $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-        // initialization of charts
-        $.HSCore.components.HSAreaChart.init('.js-area-chart');
-        $.HSCore.components.HSDonutChart.init('.js-donut-chart');
-        $.HSCore.components.HSBarChart.init('.js-bar-chart');
-
-        // initialization of range datepicker
-        $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
-
-        // initialization of datepicker
-        $.HSCore.components.HSDatepicker.init('#datepicker', {
-            dayNamesMin: [
-                'SU',
-                'MO',
-                'TU',
-                'WE',
-                'TH',
-                'FR',
-                'SA'
-            ]
-        });
-
-        // initialization of HSDropdown component
-        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
-
-        // initialization of custom scrollbar
-        $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
-
-        // initialization of popups
-        $.HSCore.components.HSPopup.init('.js-fancybox', {
-            btnTpl: {
-                smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
-            }
-        });
-    });
-</script>
 </body>
 
 </html>

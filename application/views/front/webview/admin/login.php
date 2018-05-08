@@ -4,31 +4,8 @@
 <head>
     <!-- Title -->
     <title>Admin Login</title>
-
-    <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="author" content="Martin SangDo"/>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="/public/unity_assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/unity_assets/vendor/icon-hs/style.css">
-    <!-- CSS Unify -->
-    <link rel="stylesheet" href="/public/unity_assets/css/unify-core.css">
-    <link rel="stylesheet" href="/public/unity_assets/css/unify-components.css">
-    <link rel="stylesheet" href="/public/unity_assets/css/unify-globals.css">
-
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="/public/admin/css/admin_custom.css">
-    <?php require_once ('common_js.php'); ?>
+    <?php require_once('common_head.php'); ?>
     <script src="/public/admin/js/login_1.js"></script>
-
 </head>
 
 <body>
