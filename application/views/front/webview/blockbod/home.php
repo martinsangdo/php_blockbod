@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="description" content="Blockchain latest news and ICO detail tutorials"/>
+        <meta name="description" content="Blockchain latest news and ICO detail papers. We provide free tutorial for your ICO sessions"/>
         <meta name="robots" content="noindex,follow"/>
         <meta http-equiv="Cache-control" content="public"/>
 

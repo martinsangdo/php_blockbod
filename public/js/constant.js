@@ -1,6 +1,4 @@
 
-var SERVER_URI = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '';
-
 //API URI
 var STR_MESS = {
 

@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Login Page</title>
+    <title>Admin Login</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="/public/unity_assets/css/unify-globals.css">
 
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="/public/unity_assets/css/custom.css">
+    <link rel="stylesheet" href="/public/admin/css/admin_custom.css">
     <?php require_once ('common_js.php'); ?>
-    <script src="/public/js/admin/login_1.js"></script>
+    <script src="/public/admin/js/login_1.js"></script>
 
 </head>
 
@@ -44,29 +44,32 @@
                     <!-- Form -->
                     <form class="g-py-15">
                         <div class="mb-4">
-                            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Account:</label>
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" />
+                            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Account (*):</label>
+                            <input id="txt_account" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" />
                         </div>
 
                         <div class="g-mb-35">
                             <div class="row justify-content-between">
                                 <div class="col align-self-center">
-                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Password:</label>
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Password (*):</label>
                                 </div>
                             </div>
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3" type="password"/>
+                            <input id="txt_password" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3" type="password"/>
                             <div class="mb-4">
-                                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Captcha:</label> <span id="captcha_container"><?php echo $captcha; ?></span> &nbsp;&nbsp;<a href="javascript:void(0);" onclick="refresh_captcha();">Refresh</a><br/><br/>
-                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" />
+                                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Captcha (*):</label>
+                                    <span id="captcha_container"><?php echo $captcha; ?></span> &nbsp;&nbsp;
+                                <a href="javascript:void(0);" onclick="loginPage.refresh_captcha();">Refresh</a><br/><br/>
+                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" id="txt_captcha"/>
                             </div>
                             <div class="row justify-content-between">
                                 <div class="col-4 align-self-center text-right">
-                                    <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button" onclick="check_login();">Login</button>
+                                    <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button" onclick="loginPage.process_login();">Login</button>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <!-- End Form -->
+                    <div id="label_message" class="form_mess"></div>
                 </div>
             </div>
         </div>
@@ -79,7 +82,7 @@
             <div class="row">
                 <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
                     <div class="d-lg-flex">
-                        <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; XuFa Ltd.</small>
+                        <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; Blockbod</small>
                     </div>
                 </div>
 

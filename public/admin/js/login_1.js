@@ -10,7 +10,7 @@ LoginPage.prototype.refresh_captcha = function(){
     var uri = ADMIN_API_URI.READ_NEW_CAPTCHA;
     common.ajaxPost(uri, {}, function(resp){
        if (common.isset(resp)){
-           $('#img_captcha').html(resp);
+           $('#captcha_container').html(resp);
        }
     });
 };

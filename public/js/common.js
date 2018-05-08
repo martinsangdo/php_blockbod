@@ -1,5 +1,7 @@
 
 var submitting = false;
+var SERVER_URI = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '';
+
 //========== CLASS
 function Common() { }
 
