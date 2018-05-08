@@ -52,6 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Welcome';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
+$route['index.html'] = 'Welcome';
+
 //
 $route['blockchain-news/(:any)'] = 'news/$1';
 

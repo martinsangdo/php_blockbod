@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US" style="transform: none;">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="format-detection" content="telephone=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Blockchain latest news</title>
-        <meta name="robots" content="noindex,follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content="Blockchain latest news and ICO detail tutorials"/>
+        <meta name="robots" content="noindex,follow"/>
+        <meta http-equiv="Cache-control" content="public"/>
+
+        <title>Blockchain latest news and ICO detail tutorials</title>
+
         <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
         <link rel="dns-prefetch" href="https://s.w.org/"/>
         <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
+        <link rel="canonical" href="<?php echo base_url(); ?>"/>
 
-    <link rel="stylesheet" id="pt-magazine-fonts-css" href="/public/blockbod/css/pt.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-meanmenu-css" href="/public/blockbod/css/meanmenu.css" type="text/css" media="all">
-    <link rel="stylesheet" id="font-awesome-css" href="/public/blockbod/css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-slick-css" href="/public/blockbod/css/slick.css" type="text/css" media="all">
-    <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/style.css" type="text/css" media="all"/>
-        <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/custom.css" type="text/css" media="all">
-        <script type="text/javascript" src="/public/blockbod/js/jquery.js"></script>
-    <script type="text/javascript" src="/public/blockbod/js/jquery-migrate.min.js"></script>
-    <meta name="generator" content="WordPress 4.9.5">
-    <style id="theia-sticky-sidebar-stylesheet-TSS">
-        .theiaStickySidebar:after {content: ""; display: table; clear: both;}
-    </style>
-    </head>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/pt.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/meanmenu.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/font-awesome.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/slick.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/style.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/custom.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/mobile_custom.css" type="text/css" media="all"/>
 
+        <style id="theia-sticky-sidebar-stylesheet-TSS">
+            .theiaStickySidebar:after {content: ""; display: table; clear: both;}
+        </style>
+
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/navigation.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/skip-link-focus-fix.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/slick.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery.meanmenu.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/theia-sticky-sidebar.min.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/custom.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/wp-embed.min.js"></script>
+
+</head>
 <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-1984 global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
 <div id="page" class="site" style="transform: none;">
@@ -32,16 +48,14 @@
         <div class="bottom-header">
             <div class="container">
                 <div class="site-branding">
-
-                    <h1 class="site-title"><a href="https://promenadethemes.com/demo/pt-magazine/" rel="home">Blockchain news</a></h1>
-
-
+                    <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">Blockchain news</a></h1>
                     <p class="site-description">Latest articles</p>
-
                 </div>
 
                 <div class="header-advertisement">
-                    <a href="https://promenadethemes.com/downloads/pt-magazine/"><img width="728" height="90" src="/public/blockbod/img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1.jpg 728w, https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1-300x37.jpg 300w" sizes="(max-width: 728px) 100vw, 728px"></a>
+                    <a href="#">
+                        <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
+                    </a>
                 </div><!-- .header-advertisement -->
             </div>
         </div>
@@ -72,7 +86,7 @@
 
                 <div class="search-holder">
                     <div class="search-box">
-                        <form role="search" method="get" class="search-form" action="https://promenadethemes.com/demo/pt-magazine/">
+                        <form role="search" method="get" class="search-form" action="#">
                             <span class="screen-reader-text">Search for:</span>
                             <input type="search" class="search-field" placeholder="Search …" value="" name="s">
                             <button type="submit" class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -132,7 +146,9 @@
                     <div class="featured-large-item left-aligned">
                         <div class="news-item">
                             <div class="news-thumb left-image">
-                                <a href="<?php echo detail_uri($data_block[1]->slug); ?>"><img src="<?php echo $data_block[1]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image"/></a>
+                                <a href="<?php echo detail_uri($data_block[1]->slug); ?>">
+                                    <img src="<?php echo $data_block[1]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" atl="blockbod" title="blockbod"/>
+                                </a>
                             </div><!-- .news-thumb -->
                             <div class="news-text-wrap">
                                 <h2><a href="<?php echo detail_uri($data_block[1]->slug); ?>" title="<?php echo $data_block[1]->title; ?>"><?php echo $data_block[1]->title; ?></a></h2>
@@ -148,7 +164,9 @@
                                 <div class="label-sponsor">Diamond Sponsor</div>
                             </div><!-- .news-text-wrap -->
                             <div class="news-thumb right-image">
-                                <a href="<?php echo detail_uri($data_block[2]->slug); ?>"><img src="<?php echo $data_block[2]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image"/></a>
+                                <a href="<?php echo detail_uri($data_block[2]->slug); ?>">
+                                    <img src="<?php echo $data_block[2]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" atl="blockbod" title="blockbod"/>
+                                </a>
                             </div><!-- .news-thumb -->
                         </div><!-- .news-item -->
                     </div>
@@ -210,7 +228,7 @@
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 1</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/lifestyle/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_2; ?>
                                     <div class="inner-wrapper">
@@ -259,7 +277,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 2</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/sports/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_3; ?>
                                     <div class="inner-wrapper">
@@ -303,8 +321,8 @@
                             </section>
 
                             <section id="media_image-4" class="widget widget_media_image">
-                                <a href="https://themeforest.net/item/blog-way-plus-minimal-wordpress-blog-theme/19848313?ref=promenadethemes">
-                                    <img width="728" height="90" src="/public/blockbod/img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;"/>
+                                <a href="#">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;" atl="blockbod" title="blockbod"/>
                                 </a>
                             </section>
                             <?php $data_block = $block_key_4; ?>
@@ -313,7 +331,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 3</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/business/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -357,7 +375,7 @@
                                     <?php $data_block = $block_key_5; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 4</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -404,7 +422,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 5</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/health/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_6; ?>
                                     <div class="inner-wrapper">
@@ -434,7 +452,7 @@
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 6</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/lifestyle/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_7; ?>
                                     <div class="inner-wrapper">
@@ -484,7 +502,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 7</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/business/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -528,7 +546,7 @@
                                     <?php $data_block = $block_key_9; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 8</h2>
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/">View All</a>
+                                        <a href="#">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -578,7 +596,7 @@
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
 
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Top papers</h2>
@@ -590,7 +608,7 @@
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
                                                 </div>
                                             </a>
                                         </div><!-- .news-thumb -->
@@ -605,7 +623,7 @@
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
                                                 </div>
                                             </a>
                                         </div><!-- .news-thumb -->
@@ -620,7 +638,7 @@
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
                                                 </div>
                                             </a>
                                         </div><!-- .news-thumb -->
@@ -630,10 +648,7 @@
                                             <a class="buy_link pointer">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
-
-
                                 </div>
-
                         </aside>
 
                         <aside id="media_gallery-2" class="widget widget_media_gallery">
@@ -641,35 +656,70 @@
                                 <h2 class="widget-title">Best sellers</h2>
                                 <a href="#">View All</a>
                             </div>
-                            <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b7.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b8.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b3.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b4.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b5.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b6.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure>
-                                    <figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b1.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b2.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="#"><img src="/public/blockbod/img/sample_book/b9.jpg" class="attachment-thumbnail size-thumbnail"/></a>
-                                    </div></figure>
+                            <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail">
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b7.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b8.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b3.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b5.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b6.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b1.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b2.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b9.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="gallery-item gallery-icon landscape">
+                                    <a href="#">
+                                        <div class="book-thumb-center-cropped center-cropped-fill"
+                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b4.jpg');">
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </aside>
 
@@ -699,8 +749,16 @@
 
                         </aside>
                         <aside id="media_image-3" class="widget widget_media_image">
-                                <a href="https://promenadethemes.com/downloads/wordpress-business-themes/">
-                                    <img width="336" height="280" src="/public/blockbod/img/336x280-pt-mag-adv.jpg" class="image wp-image-2195  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/336x280-pt-mag-adv.jpg 336w, https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/336x280-pt-mag-adv-300x250.jpg 300w" sizes="(max-width: 336px) 100vw, 336px"></a></aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><div class="section-title"><h2 class="widget-title">Tags</h2></div><div class="tagcloud"><a href="https://promenadethemes.com/demo/pt-magazine/tag/business/" class="tag-cloud-link tag-link-39 tag-link-position-1" style="font-size: 15.933333333333pt;" aria-label="business (10 items)">business</a>
+                                <a href="#">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/336x280-pt-mag-adv.jpg" class="image wp-image-2195 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
+                                </a>
+                        </aside>
+                        <aside id="tag_cloud-3" class="widget widget_tag_cloud">
+                            <div class="section-title">
+                                <h2 class="widget-title">Tags</h2>
+                            </div>
+                            <div class="tagcloud">
+                                <a href="#" class="tag-cloud-link tag-link-39 tag-link-position-1" style="font-size: 15.933333333333pt;" aria-label="business (10 items)">business</a>
                                 <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">ico</a>
                                 <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">blockchain</a>
                                 <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">cryptocurrency</a>
@@ -749,12 +807,8 @@
     </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<a href="https://promenadethemes.com/demo/pt-magazine/#page" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a><script type="text/javascript" src="/public/blockbod/js/navigation.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/skip-link-focus-fix.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/slick.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/jquery.meanmenu.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/theia-sticky-sidebar.min.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/custom.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/wp-embed.min.js"></script>
+<a href="#" class="scrollup" id="btn-scrollup" style="display: inline;">
+    <i class="fa fa-angle-up"></i>
+</a>
 
 </body></html>

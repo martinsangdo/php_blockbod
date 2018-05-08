@@ -1,0 +1,13 @@
+/**
+   * author: Martin SangDo
+ */
+@media (max-width: 400px) {
+    .home0-center-cropped {
+        width: 360px;
+        height: 240px;
+    }
+    .home5-center-cropped {
+        width: 360px;
+        height: 240px;
+    }
+}
