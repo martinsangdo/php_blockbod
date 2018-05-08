@@ -1,6 +1,7 @@
 /**
    * author: Martin SangDo
  */
+.pointer {cursor:pointer;}
 .main-news-section article .post-content h2 {text-overflow: initial; white-space: initial;}
 .ellipsis4lines p {
     overflow: hidden;
@@ -81,3 +82,4 @@ p {font-size:14px;}
 .gallery-columns-3 .gallery-item {margin-bottom:10px;}
 
 .book_price_1 {font-size:12pt;color:#f00;font-weight:bold;}
+.buy_link {color:#333;}

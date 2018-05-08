@@ -525,7 +525,7 @@
                                 </div><!-- .two-column-news-left -->
 
                                 <div class="two-column-news two-column-news-right">
-                                    <?php $data_block = $block_key_9; ?>
+                                    <?php $data_block = $block_key_12; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Cat 8</h2>
                                         <a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/">View All</a>
@@ -597,7 +597,7 @@
                                         <div class="news-text-wrap">
                                             <h2><a class="ellipsis3lines_title" href="#" title="How to write good ICO White paper?">How to write good ICO White paper?</a></h2>
                                             <div class="book_price_1">30 USD</div>
-                                            <div class="posted-date">Format: PDF</div>
+                                            <a class="buy_link pointer">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
 
@@ -612,7 +612,7 @@
                                         <div class="news-text-wrap">
                                             <h2><a class="ellipsis3lines_title" href="#" title="How to make your own cryptocurrency?">How to make your own cryptocurrency?</a></h2>
                                             <div class="book_price_1">50 USD</div>
-                                            <div class="posted-date">Format: PDF</div>
+                                            <a class="buy_link pointer">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
 
@@ -627,7 +627,7 @@
                                         <div class="news-text-wrap">
                                             <h2><a class="ellipsis3lines_title" href="#" title="All about ICO preparing">All about ICO preparing</a></h2>
                                             <div class="book_price_1">1,000 USD</div>
-                                            <div class="posted-date">Format: PDF</div>
+                                            <a class="buy_link pointer">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
 
