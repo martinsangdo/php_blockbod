@@ -65,6 +65,10 @@ p {font-size:14px;}
     width: 250px;
     height: 153px;
 }
+.book-thumb-center-cropped {
+    width: 100px;
+    height: 100px;
+}
 .posted-date {font-size:12px;}
 .sidebar .social-widgets ul li a {text-align: left; padding-right:0;}
 .sidebar .social-widgets ul li a .screen-reader-text {margin-left:10px;}
@@ -75,3 +79,5 @@ p {font-size:14px;}
 
 .sidebar .label-sponsor {color:#ccc;font-size:8pt;}
 .gallery-columns-3 .gallery-item {margin-bottom:10px;}
+
+.book_price_1 {font-size:12pt;color:#f00;font-weight:bold;}

@@ -577,6 +577,65 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
+
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Top papers</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+
+                                    <div class="news-item layout-two">
+                                        <div class="news-thumb">
+                                            <a href="#">
+                                                <div class="book-thumb-center-cropped center-cropped-fill"
+                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                </div>
+                                            </a>
+                                        </div><!-- .news-thumb -->
+                                        <div class="news-text-wrap">
+                                            <h2><a class="ellipsis3lines_title" href="#" title="How to write good ICO White paper?">How to write good ICO White paper?</a></h2>
+                                            <div class="book_price_1">30 USD</div>
+                                            <div class="posted-date">Format: PDF</div>
+                                        </div><!-- .news-text-wrap -->
+                                    </div>
+
+                                    <div class="news-item layout-two">
+                                        <div class="news-thumb">
+                                            <a href="#">
+                                                <div class="book-thumb-center-cropped center-cropped-fill"
+                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                </div>
+                                            </a>
+                                        </div><!-- .news-thumb -->
+                                        <div class="news-text-wrap">
+                                            <h2><a class="ellipsis3lines_title" href="#" title="How to make your own cryptocurrency?">How to make your own cryptocurrency?</a></h2>
+                                            <div class="book_price_1">50 USD</div>
+                                            <div class="posted-date">Format: PDF</div>
+                                        </div><!-- .news-text-wrap -->
+                                    </div>
+
+                                    <div class="news-item layout-two">
+                                        <div class="news-thumb">
+                                            <a href="#">
+                                                <div class="book-thumb-center-cropped center-cropped-fill"
+                                                     style="background-image: url('/public/blockbod/img/sample_book/pdf.jpg');">
+                                                </div>
+                                            </a>
+                                        </div><!-- .news-thumb -->
+                                        <div class="news-text-wrap">
+                                            <h2><a class="ellipsis3lines_title" href="#" title="All about ICO preparing">All about ICO preparing</a></h2>
+                                            <div class="book_price_1">1,000 USD</div>
+                                            <div class="posted-date">Format: PDF</div>
+                                        </div><!-- .news-text-wrap -->
+                                    </div>
+
+
+                                </div>
+
+                        </aside>
+
                         <aside id="media_gallery-2" class="widget widget_media_gallery">
                             <div class="section-title">
                                 <h2 class="widget-title">Best sellers</h2>
