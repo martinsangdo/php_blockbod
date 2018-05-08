@@ -6,10 +6,10 @@
     <title>Admin Login</title>
 
     <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="author" content="Martin SangDo"/>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/public/favicon.ico">
     <!-- Google Fonts -->

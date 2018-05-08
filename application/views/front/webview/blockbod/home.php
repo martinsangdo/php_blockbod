@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="description" content="Blockchain latest news and ICO detail papers. We provide free tutorial for your ICO sessions"/>
         <meta name="robots" content="noindex,follow"/>
+        <meta name="author" content="Martin SangDo"/>
         <meta http-equiv="Cache-control" content="public"/>
 
         <title>Blockchain latest news and ICO detail tutorials</title>

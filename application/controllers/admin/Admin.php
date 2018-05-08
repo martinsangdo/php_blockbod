@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
+//author: Martin SangDo
 require (APPPATH.'/libraries/REST_Controller.php');
 
 Class Admin extends REST_Controller
@@ -14,6 +14,11 @@ Class Admin extends REST_Controller
         $this->data['captcha'] = $this->generateCaptchaImageTag();
         $this->load->view('front/webview/admin/login', $this->data);
     }
+    //homepage after login
+    public function home_get(){
+        $this->load->view('front/webview/admin/home', $this->data);
+    }
+    //========== API functions
     //get new tag <image/> of captcha
     function read_new_captcha_post(){
         $captcha = $this->generateCaptchaImageTag();
