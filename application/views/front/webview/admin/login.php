@@ -11,7 +11,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="author" content="Martin SangDo"/>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/public/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- CSS Global Compulsory -->
