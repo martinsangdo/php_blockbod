@@ -12,4 +12,15 @@ Class Notfound extends REST_Controller
     public function index(){
         $this->load->view(VIEW_FOLDER.'/notfound', $this->data);
     }
+
+    public function iframe_img_get(){
+//        $src = $this->sendGet('https://exa.vn/images/backup/backup2.jpg');
+        $src = $this->sendGet('https://engma.com.vn/assets/css/images/Home_v2/new_slider_3.png');
+//        $src = $this->sendGetWithoutHeader('https://stackoverflow.com/questions/28710179/file-get-contents-not-working-with-cloudflare');
+
+//        $src = $this->sendGet('https://www.blockchaintechnology-news.com/wp-content/uploads/2018/05/iStock-701222828-768x512.jpg');
+var_dump($src);
+//        echo('<img src="'.$src['data'].'"/>');
+//        echo '<img src="https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg"/>';
+    }
 }

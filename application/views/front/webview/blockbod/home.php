@@ -41,7 +41,10 @@
         <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/custom.js"></script>
         <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/wp-embed.min.js"></script>
 
-</head>
+        <script type="text/javascript" src="/public/js/common.js"></script>
+        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/home.js"></script>
+
+    </head>
 <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-1984 global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
 <div id="page" class="site" style="transform: none;">
@@ -340,9 +343,7 @@
                                         <div class="news-item">
                                             <div class="news-thumb">
                                                 <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
-                                                    <div class="home3-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
-                                                    </div>
+                                                    <img class="home3-center-cropped center-cropped-fill" src="https://exa.vn/images/backup/backup2.jpg" />
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap">
@@ -358,9 +359,7 @@
                                         <div class="news-item layout-two">
                                             <div class="news-thumb">
                                                 <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                                    <div class="home4-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                                    </div>
+                                                    <img class="home4-center-cropped center-cropped-fill" src="<?php echo $data_block[$i]->thumb_url;?>"/>
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap">
@@ -384,9 +383,9 @@
                                         <div class="news-item">
                                             <div class="news-thumb">
                                                 <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
-                                                    <div class="home3-center-cropped center-cropped-fill"
+                                                    <img id="test_img" class="home3-center-cropped center-cropped-fill" src="<?php echo $data_block[0]->thumb_url;?>"
                                                          style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
-                                                    </div>
+                                                    </img>
                                                 </a>
                                             </div><!-- .news-thumb -->
 
@@ -403,9 +402,9 @@
                                         <div class="news-item layout-two">
                                             <div class="news-thumb">
                                                 <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                                    <div class="home4-center-cropped center-cropped-fill"
+                                                    <img class="home4-center-cropped center-cropped-fill"
                                                          style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                                    </div>
+                                                    </img>
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap">

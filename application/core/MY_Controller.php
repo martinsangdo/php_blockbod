@@ -291,6 +291,7 @@ Class MY_Controller extends CI_Controller
         //comment out belows options if request by GET method
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
@@ -330,6 +331,9 @@ Class MY_Controller extends CI_Controller
         }
     }
 
+//<iframe class="home4-center-cropped center-cropped-fill"
+//src="/notfound/iframe_img">
+//</iframe>
     /**
      * send a GET request
      */
@@ -340,6 +344,7 @@ Class MY_Controller extends CI_Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 // Will return the response, if false it print the response
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_HEADER, 1);        //able to get header
 // Set the url
         curl_setopt($ch, CURLOPT_URL,$url);
@@ -356,7 +361,7 @@ Class MY_Controller extends CI_Controller
 
 // Will dump a beauty json :3
         return array(
-            'data'=> json_decode($body, true),
+//            'data'=> $body,  //json_decode($body, true)
             'header' => $header_arr
         );
     }
