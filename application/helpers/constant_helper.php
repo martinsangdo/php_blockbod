@@ -1,12 +1,14 @@
 <?php
 //========== Define common variables of whole system
-define('ADMIN_CONTROLLER_NAME', '_admin');		//controller name in URL of Admin
+define('ADMIN_CONTROLLER_NAME', 'admin_1');		//controller name in URL of Admin
 define('USER_MANAGER_CONTROLLER_NAME', 'user_manager');		//controller name in URL of Admin
 define('API_CONTROLLER_NAME', 'api');		    //controller name in URL of API which need login to process
 define('PUBLIC_CONTROLLER_NAME', 'public');	//controller name in URL of API which don't need login to process
 
 //========== Session keys
 define('SESS_KEY_USER_ID', 'sess_user_id');     //used in Admin or front-end user
+define('SESS_KEY_USER_NAME', 'sess_user_name');     //used in Admin or front-end user
+
 define('SESS_KEY_CAPTCHA', 'sess_captcha');     //save captcha string
 
 //========== captcha

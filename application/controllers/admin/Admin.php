@@ -24,4 +24,8 @@ Class Admin extends REST_Controller
         $captcha = $this->generateCaptchaImageTag();
         $this->response(RestSuccess($captcha), SUCCESS_CODE);
     }
+    //check admin login
+    function check_login_post(){
+
+    }
 }

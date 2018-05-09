@@ -16,7 +16,6 @@ Class MY_Controller extends CI_Controller
         $controller = $this->uri->segment(1);
         //check permission to access files/API (logined or not)
         switch ($controller){
-            case USER_MANAGER_CONTROLLER_NAME:
             case ADMIN_CONTROLLER_NAME:
             {
                 //someone using Admin pages
@@ -39,7 +38,7 @@ Class MY_Controller extends CI_Controller
 
             case API_CONTROLLER_NAME:
             {
-                //someone accesses API
+                //someone requests API
                 if (empty($this->get_login_user_id())){
                     //not logined yet
                     return FALSE;
@@ -52,10 +51,8 @@ Class MY_Controller extends CI_Controller
                 //
             }
         }
-
         //models
         $this->load->helper('url');
-        $this->load->helper('file');
     }
     //force user back to admin login page
     protected function redirect_admin_login(){
