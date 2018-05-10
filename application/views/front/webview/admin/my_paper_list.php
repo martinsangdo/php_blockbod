@@ -17,6 +17,7 @@
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
                 <h2>My paper list</h2>
+
                 <div class="table-responsive g-mb-40">
                     <?php
                         if ($list){

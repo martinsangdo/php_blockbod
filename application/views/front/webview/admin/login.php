@@ -36,8 +36,11 @@
                             <div class="mb-4">
                                 <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Captcha (*):</label>
                                     <span id="captcha_container"><?php echo $captcha; ?></span> &nbsp;&nbsp;
-                                <a href="javascript:void(0);" onclick="loginPage.refresh_captcha();">Refresh</a><br/><br/>
-                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" id="txt_captcha"/>
+                                <a class="u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="javascript:void(0);" onclick="loginPage.refresh_captcha();">
+                                    <i class="hs-admin-reload g-font-size-18"></i>
+                                    <span class="g-hidden-sm-down g-ml-10">Refresh</span>
+                                </a>
+                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 g-mt-10" type="text" id="txt_captcha"/>
                             </div>
                             <div class="row justify-content-between">
                                 <div class="col-4 align-self-center text-right">
