@@ -26,6 +26,28 @@ Class Admin extends REST_Controller
     }
     //check admin login
     function check_login_post(){
+        $username = $this->post('username');
+        $password = $this->post('password');
+        $captcha = $this->post('captcha');
 
+        if(!$this->isValidCaptcha($captcha)){
+            $this->response(RestBadRequest(WRONG_CAPTCHA_MSG), BAD_REQUEST_CODE);
+        }
+//        echo md5($password);
+        //check user exists
+        $where = array(
+            'username'  => $username,
+            'password'  => md5($password)       //encrypt twice
+        );
+        $user_info = $this->admin_model->read_row($where);
+        if (empty($user_info->_id)){
+            $this->response(RestBadRequest(NOT_FOUND_MSG), BAD_REQUEST_CODE);
+        }
+        //login success, save info to session
+        $this->set_login_user_id($user_info->_id);
+        $this->set_login_user_role($user_info->role);
+        $this->set_login_user_name($user_info->name);
+        //
+        $this->response(RestSuccess(array()), SUCCESS_CODE);
     }
 }

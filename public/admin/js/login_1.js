@@ -38,11 +38,12 @@ LoginPage.prototype.process_login = function(){
     common.ajaxPost(ADMIN_API_URI.LOGIN, params, function(resp){
         //correct authentication
         submitting = false;
-        common.redirect('/_admin/index');
+        common.redirect(ADMIN_CONTROLLER+'home');
     }, function(err){
         err = $.parseJSON(err);
         if (err.message == 'WRONG_CAPTCHA'){
             $('#label_message').text(STR_MESS.WRONG_CAPTCHA);
+            $.trim($('#txt_captcha').val(''));
             loginPage.refresh_captcha();
         } else if (err.message == 'NOT_FOUND'){
             $('#label_message').text(STR_MESS.INVALID_LOGIN_ADMIN);

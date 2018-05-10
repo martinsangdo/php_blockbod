@@ -7,7 +7,8 @@ define('PUBLIC_CONTROLLER_NAME', 'public');	//controller name in URL of API whic
 
 //========== Session keys
 define('SESS_KEY_USER_ID', 'sess_user_id');     //used in Admin or front-end user
-define('SESS_KEY_USER_NAME', 'sess_user_name');     //used in Admin or front-end user
+define('SESS_KEY_USER_NAME', 'sess_user_name');
+define('SESS_KEY_USER_ROLE', 'sess_user_role');     //only Admin has role
 
 define('SESS_KEY_CAPTCHA', 'sess_captcha');     //save captcha string
 
@@ -15,7 +16,7 @@ define('SESS_KEY_CAPTCHA', 'sess_captcha');     //save captcha string
 define('CAPTCHA_FOLDER', 'captcha/');
 define('CAPTCHA_W', 100);
 define('CAPTCHA_H', 40);
-define('CAPTCHA_EXP_DURATION', 120);    //2 minutes
+define('CAPTCHA_EXP_DURATION', 300);    //5 minutes
 define('CAPTCHA_FONT_SIZE', 100);
 
 define('UNKNOWN_ERROR', 'unknown_error');

@@ -23,8 +23,8 @@ Class Notfound extends REST_Controller
 //        $src = $this->sendGet('https://engma.com.vn/assets/css/images/Home_v2/new_slider_3.png');
 //        $src = $this->sendGetWithoutHeader('https://stackoverflow.com/questions/28710179/file-get-contents-not-working-with-cloudflare');
 
-        $src = $this->sendGet('https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg');
-        $this->data['src'] = $src['data'];
+//        $src = $this->sendGet('https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg');
+//        $this->data['src'] = $src['data'];
 //        sleep(10);
 //        $this->data['src'] = '<img src="https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg"/>';
 

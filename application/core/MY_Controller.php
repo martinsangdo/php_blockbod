@@ -21,16 +21,17 @@ Class MY_Controller extends CI_Controller
                 //someone using Admin pages
                 $this->load->model('admin_model');
                 $admin_id = $this->get_login_user_id();
-                if (empty($admin_id) && $this->uri->segment(2) != 'login' && $this->uri->segment(2) != 'read_new_captcha'){
-                    redirect(base_url('_admin/login'));
+
+                if (empty($admin_id)){
+                    if ($this->uri->segment(2) != 'login' &&
+                        $this->uri->segment(2) != 'read_new_captcha' &&
+                        $this->uri->segment(2) != 'check_login'){
+                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
+                    }
                 } else {
-                    $data_admin = $this->admin_model->read_row(array('_id' => $admin_id));
-                    if (!$data_admin){
-                        //failed to search Admin account, kick out
-//                        $this->redirect_admin_login();
-                    } else {
-                        //found 1 account
-                        //continue to process
+                    $role = $this->get_login_user_role();       //only Admin has role
+                    if (empty($role)){
+                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
                     }
                 }
                 break;
@@ -38,17 +39,16 @@ Class MY_Controller extends CI_Controller
 
             case API_CONTROLLER_NAME:
             {
-                //someone requests API
-                if (empty($this->get_login_user_id())){
-                    //not logined yet
+                $login_id = $this->get_login_user_id();
+                //someone requests API to get data (required login)
+                if (empty($login_id)){
                     return FALSE;
                 }
-
                 break;
             }
             default:
             {
-                //
+
             }
         }
         //models
@@ -70,7 +70,21 @@ Class MY_Controller extends CI_Controller
     protected function set_login_user_id($user_id){
         $this->session->set_userdata(SESS_KEY_USER_ID, $user_id);
     }
-
+    //
+    protected function get_login_user_role(){
+        return $this->session->userdata(SESS_KEY_USER_ROLE);
+    }
+    protected function set_login_user_role($role){
+        $this->session->set_userdata(SESS_KEY_USER_ROLE, $role);
+    }
+    //
+    protected function get_login_user_name(){
+        return $this->session->userdata(SESS_KEY_USER_NAME);
+    }
+    protected function set_login_user_name($name){
+        $this->session->set_userdata(SESS_KEY_USER_NAME, $name);
+    }
+    //
     protected function get_captcha(){
         return $this->session->userdata(SESS_KEY_CAPTCHA);
     }
@@ -121,20 +135,20 @@ Class MY_Controller extends CI_Controller
 
         $cap = create_captcha($vals);
         //save into database
-//        $data = array(
-//            'captcha_time'	=> $cap['time'],
-//            'ip_address'	=> $this->input->ip_address(),
-//            'word'	=> $cap['word']
-//        );
-//
-//        $query = $this->db->insert_string('captcha', $data);
-//        $this->db->query($query);
+        $data = array(
+            'captcha_time'	=> $cap['time'],
+            'ip_address'	=> $this->input->ip_address(),
+            'word'	=> $cap['word']
+        );
+
+        $query = $this->db->insert_string('captcha', $data);
+        $this->db->query($query);
 
         //generate captcha session
-        $session_userdata = [
+        $session_userdata = array(
             'CAPTCHA_EXPIRE_TIME' => $cap['time'],
             'CAPTCHA_CODE' => $cap['word']
-        ];
+        );
         $this->session->set_userdata($session_userdata);
 
         return $cap['image'];
