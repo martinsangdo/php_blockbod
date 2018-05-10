@@ -17,7 +17,10 @@
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
                 <h2>My paper list</h2>
-
+                <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="javascript:void(0);" onclick="/admin-book/create_my_paper">
+                    <i class="hs-admin-plus g-font-size-18"></i>
+                    <span class="g-hidden-sm-down g-ml-10">Create new</span>
+                </a>
                 <div class="table-responsive g-mb-40">
                     <?php
                         if ($list){

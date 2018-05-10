@@ -49,7 +49,7 @@
                     </table>
                 </div>
 
-                Total posts: <?php echo $total_post; ?><br/><br/>
+                Total: <?php echo $total; ?><br/><br/>
 
             </div>
             <?php require_once('common_footer.php'); ?>
