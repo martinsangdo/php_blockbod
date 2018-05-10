@@ -77,3 +77,17 @@
 
 <script src="/public/admin/js/admin_common.js"></script>
 
+<!-- JS Plugins Init. -->
+<script>
+    $(document).on('ready', function () {
+        // initialization of sidebar navigation component
+        $.HSCore.components.HSSideNav.init('.js-side-nav');
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
+        // initialization of custom scrollbar
+        $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+    });
+</script>

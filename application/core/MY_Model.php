@@ -24,6 +24,26 @@ class MY_Model extends CI_Model {
 		}
 	}
 
+    function get_pagination($where, $offset, $limit, $last_id = ''){
+        $this->db->from($this->table_name);
+        $this->db->where($where);
+        if(!empty($last_id)) {
+            $this->db->where('site._id <', $last_id);
+        }
+        if ($limit > 0){
+            $this->db->limit($limit, $offset);
+        }
+
+        $query = $this->db->get();
+
+        if($query->result()){
+            return $query->result();
+
+        }else{
+            return false;
+        }
+    }
+
 	/**
 	 * update record
 	 */
@@ -106,7 +126,7 @@ class MY_Model extends CI_Model {
     /**
      * get all with condition
      */
-    function get_all($where = [], $select = '*') {
+    function get_all($where = array(), $select = '*') {
         $this->db->select($select);
         $this->db->from($this->table_name);
         $this->db->where($where);
@@ -123,7 +143,7 @@ class MY_Model extends CI_Model {
     /**
      * get all with condition
      */
-    function get_first_row($where = [], $select = '*') {
+    function get_first_row($where = array(), $select = '*') {
         $this->db->select($select);
         $this->db->from($this->table_name);
         $this->db->where($where);
