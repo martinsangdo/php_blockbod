@@ -14,7 +14,7 @@ Class AdminArticle extends REST_Controller
         $this->data['list'] = $this->site_model->get_pagination(array('_id > 0'), 0, 0);
         //get total posts
         $this->data['total'] = $this->block_content_model->get_total(array('_id > 0'));
-        $this->load->view('front/webview/admin/site_list', $this->data);
+        $this->load->view('front/webview/admin/article/site_list', $this->data);
     }
     //========== API functions
 
