@@ -1,5 +1,5 @@
 /**
- * Process common functions of Admin
+ * Process common functions of Admin, used in every Admin pages
  * author: Martin SangDo
  */
 //========== CLASS
@@ -16,3 +16,10 @@ AdminCommon.prototype.logout = function(){
         alert('Something wrong when logout, try it later');
     });
 }
+//==========
+$(document).on('ready', function () {
+    //todo: get new requests
+
+    //todo: get new messages
+
+});

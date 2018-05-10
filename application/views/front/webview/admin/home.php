@@ -5,6 +5,9 @@
     <title>Main Dashboard</title>
 
     <?php require_once('common_head.php'); ?>
+
+    <script src="/public/admin/js/admin_home.js"></script>
+
     <!-- JS Plugins Init. -->
     <script>
         $(document).on('ready', function () {
@@ -25,6 +28,7 @@
 
             // initialization of custom scrollbar
             $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+            //get home data
 
         });
     </script>

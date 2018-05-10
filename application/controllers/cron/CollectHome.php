@@ -206,13 +206,6 @@ Class CollectHome extends REST_Controller
             return null;
         }
     }
-    //
-    public function show_crawl_time_get(){
-        $this->data['list'] = $this->site_model->get_pagination(array('_id > 0'), 0, 0);
-        //get total posts
-        $this->data['total_post'] = $this->block_content_model->get_total(array('_id > 0'));
-        $this->load->view('front/webview/admin/site_list', $this->data);
-    }
     //try to parse some website content
     //https://davidwalsh.name/php-notifications
     public function test_parse_get(){
