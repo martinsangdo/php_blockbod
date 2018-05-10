@@ -1,5 +1,6 @@
 /**
  * Process login page
+ * author: Martin SangDo
  */
 //========== CLASS
 function LoginPage() { }

@@ -50,4 +50,14 @@ Class Admin extends REST_Controller
         //
         $this->response(RestSuccess(array()), SUCCESS_CODE);
     }
+    //logout Admin
+    function logout_post(){
+        //clear session
+        $this->set_login_user_id('');
+        $this->set_login_user_role('');
+        $this->set_login_user_name('');
+        $this->set_captcha('');
+        //
+        $this->response(RestSuccess(array()), SUCCESS_CODE);
+    }
 }

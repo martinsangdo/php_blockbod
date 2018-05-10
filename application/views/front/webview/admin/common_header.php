@@ -59,7 +59,7 @@
                                 </a>
                             </li>
                             <li class="mb-0">
-                                <a class="media g-color-lightred-v2--hover g-py-5 g-px-20" href="#!">
+                                <a class="media g-color-lightred-v2--hover g-py-5 g-px-20" href="#!" onclick="adminCommon.logout();">
                     <span class="d-flex align-self-center g-mr-12">
           <i class="hs-admin-shift-right"></i>
         </span>
