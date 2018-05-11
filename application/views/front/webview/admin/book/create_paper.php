@@ -4,7 +4,25 @@
     <title>Create new paper</title>
 
     <?php require_once(FCPATH.'application/views/front/webview/admin/common_head.php'); ?>
-
+    <link rel="stylesheet" href="/public/trumbowyg/ui/trumbowyg.min.css"/>
+    <script src="/public/trumbowyg/trumbowyg.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            //https://alex-d.github.io/
+            $('#txt_description').trumbowyg({
+                btns: [
+                    ['viewHTML'],
+                    ['undo', 'redo'], // Only supported in Blink browsers
+                    ['formatting'],
+                    ['strong', 'em'],
+                    ['link'],
+                    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                    ['unorderedList', 'orderedList'],
+                    ['horizontalRule']
+                ]
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -19,22 +37,115 @@
                 <h2>Create new paper</h2>
                 <div class="table-responsive g-mb-40">
                     <!-- form -->
-                    <div class="form-group g-mb-5">
-                        <label class="g-mb-5">Title (*)</label>
-                        <div class="g-pos-rel">
-                            <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" />
-                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">Length: <span id="">0</span> / 200</small>
+                    <form>
+                        <div class="d-flex align-items-center form-group g-mb-5 has-success">
+                            <label class="g-mb-5 g-width-150">Title (*)</label>
+                            <div class="g-pos-rel">
+                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                  <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+                                </span>
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-600" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 200</small>
                         </div>
-                    </div>
-                    <div class="form-group g-mb-5">
-                        <label class="g-mb-5">Slug (*)</label>
-                        <div class="g-pos-rel">
-                            <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" />
-                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">Length: <span id="">0</span> / 250</small>
+                        <div class="d-flex align-items-center form-group g-mb-5 u-has-error-v3">
+                            <label class="g-mb-5 g-width-150">Slug (*)</label>
+                            <div class="g-pos-rel">
+                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--error">
+                                  <i class="hs-admin-close g-absolute-centered g-font-size-default g-color-primary"></i>
+                                </span>
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-600 g-brd-pink-v2--error" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 250</small>
                         </div>
-                    </div>
-
-
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Excerpt (*)</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-600" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 1000</small>
+                        </div>
+                        <div class="form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Description (*)</label>
+                            <div class="g-pos-rel">
+                                <div id="txt_description"></div>
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 250</small>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Cover image</label>
+                            <div class="u-file-attach-v1 g-brd-gray-light-v2">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-md u-btn-primary rounded-0" type="submit">Browse</button>
+                                    <input type="file" id=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Author name (*)</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-300" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 64</small>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Publisher</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-300" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 64</small>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Specific code (*)</label>
+                            <div class="g-pos-rel d-flex align-items-center justify-content-between">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-mr-10" type="text" />
+                                <input type="button" class="btn-primary pointer" value="Generate"/>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">ISBN</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-200" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Pages</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">File size (KB)</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Publish date</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">(DD/MM/YYYY)</small>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Price (USD)</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Discount price (USD)</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">&nbsp;</label>
+                            <div class="g-pos-rel">
+                                <button class="btn btn-md u-btn-blue rounded-0" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                     <!-- end form -->
                 </div>
             </div>
