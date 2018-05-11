@@ -4,8 +4,13 @@
     <title>Create new paper</title>
 
     <?php require_once(FCPATH.'application/views/front/webview/admin/common_head.php'); ?>
+
+    <link rel="stylesheet" href="/public/datepicker/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="/public/trumbowyg/ui/trumbowyg.min.css"/>
+
+    <script src="/public/datepicker/bootstrap-datepicker.min.js"></script>
     <script src="/public/trumbowyg/trumbowyg.min.js"></script>
+
     <script>
         $(document).on('ready', function () {
             //https://alex-d.github.io/
@@ -21,6 +26,8 @@
                     ['horizontalRule']
                 ]
             });
+            //
+            $( "#txt_publish_date" ).datepicker();
         });
     </script>
 </head>
@@ -134,9 +141,9 @@
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Publish date</label>
                             <div class="g-pos-rel">
-                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                                <input id="txt_publish_date" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
                             </div>
-                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">(DD/MM/YYYY)</small>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">(MM/DD/YYYY)</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Price (USD)</label>
@@ -151,12 +158,20 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Public</label>
+                            <div class="g-pos-rel">
+                                <input type="checkbox" id=""/>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">&nbsp;</label>
                             <div class="g-pos-rel">
+                                <button class="btn btn-md u-btn-purple rounded-0" type="button">Preview</button>
                                 <button class="btn btn-md u-btn-blue rounded-0" type="button">Submit</button>
                             </div>
                         </div>
                     </form>
+                    <div id="mess_submit" class=""></div>
                     <!-- end form -->
                 </div>
             </div>
