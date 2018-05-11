@@ -26,8 +26,10 @@
                     ['horizontalRule']
                 ]
             });
-            //
+            //init date picker
             $( "#txt_publish_date" ).datepicker();
+            //generate random string
+            adminBook.generate_specific_code();
         });
     </script>
 </head>
@@ -116,8 +118,8 @@
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Specific code (*)</label>
                             <div class="g-pos-rel d-flex align-items-center justify-content-between">
-                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-mr-10" type="text" />
-                                <input type="button" class="btn-primary pointer" value="Generate"/>
+                                <input id="txt_specific_code" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-mr-10" type="text" />
+                                <input type="button" class="btn-primary pointer" value="Generate" onclick="adminBook.generate_specific_code();"/>
                             </div>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
