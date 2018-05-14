@@ -2,8 +2,7 @@
     <div class="bottom-header">
         <div class="container">
             <div class="site-branding">
-                <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">Blockchain news</a></h1>
-                <p class="site-description">Latest articles</p>
+                <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">BLOCKCHAIN BOARD & NEWS</a></h1>
             </div>
 
             <div class="header-advertisement">

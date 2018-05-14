@@ -14,185 +14,13 @@
     <!-- #masthead -->
     <div id="content" class="site-content" style="transform: none;">
         <?php $data_block = $block_key_1; ?>
-        <section class="main-news-section">
-            <div class="container">
-                <!-- fist image -->
-                <div class="main-news-left ">
-                    <div class="main-slider slick-initialized slick-slider">
-                        <div aria-live="polite" class="slick-list draggable">
-                            <div class="slick-track" role="listbox" style="opacity: 1;">
-                                <div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 687px;">
-                                    <article class="bigger-post">
-                                        <div class="article-content-wrap">
-                                            <figure class="post-image overlay">
-                                                <a href="<?php echo detail_uri($data_block[0]->slug); ?>" tabindex="0">
-                                                    <div class="home0-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
-                                                    </div>
-                                                </a>
-                                            </figure><!-- .post-image -->
-
-                                            <div class="post-content">
-                                                <span class="posted-date"><?php echo format_post_time($data_block[0]->time); ?></span>
-                                                <h2><a href="<?php echo detail_uri($data_block[0]->slug); ?>" tabindex="0" title="<?php echo $data_block[0]->title; ?>"><?php echo $data_block[0]->title; ?></a></h2>
-                                            </div><!-- .post-content -->
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- first image -->
-                <div class="main-news-right sidebar">
-
-                    <div class="social-widgets">
-                        <div class="menu-social-menu-container">
-                            <ul id="menu-social-menu-1" class="menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2280"><a href="#"><span class="screen-reader-text">Guideline To Run A Successful ICO</span></a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2281"><a href="#"><span class="screen-reader-text">Law and legislation for ICOs</span></a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2282"><a href="#"><span class="screen-reader-text">Legal Review of ICO White Papers</span></a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2283"><a href="#"><span class="screen-reader-text">Guideline to Develop White Paper for ICO</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="featured-large-item left-aligned">
-                        <div class="news-item">
-                            <div class="news-thumb left-image">
-                                <a href="<?php echo detail_uri($data_block[1]->slug); ?>">
-                                    <img src="<?php echo $data_block[1]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" atl="blockbod" title="blockbod"/>
-                                </a>
-                            </div><!-- .news-thumb -->
-                            <div class="news-text-wrap">
-                                <h2><a href="<?php echo detail_uri($data_block[1]->slug); ?>" title="<?php echo $data_block[1]->title; ?>"><?php echo $data_block[1]->title; ?></a></h2>
-                                <div class="label-sponsor">Platinum Sponsor</div>
-                            </div><!-- .news-text-wrap -->
-                        </div><!-- .news-item -->
-                    </div>
-
-                    <div class="featured-large-item right-aligned">
-                        <div class="news-item">
-                            <div class="news-text-wrap">
-                                <h2><a href="<?php echo detail_uri($data_block[2]->slug); ?>" title="<?php echo $data_block[2]->title; ?>"><?php echo $data_block[2]->title; ?></a></h2>
-                                <div class="label-sponsor">Diamond Sponsor</div>
-                            </div><!-- .news-text-wrap -->
-                            <div class="news-thumb right-image">
-                                <a href="<?php echo detail_uri($data_block[2]->slug); ?>">
-                                    <img src="<?php echo $data_block[2]->thumb_url;?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" atl="blockbod" title="blockbod"/>
-                                </a>
-                            </div><!-- .news-thumb -->
-                        </div><!-- .news-item -->
-                    </div>
-
-                    <?php
-                    if (false){
-                    ?>
-                    <article class="smaller-post full-width-post">
-                        <div class="article-content-wrap">
-                            <figure class="post-image overlay">
-                                <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                    <div class="home1-center-cropped center-cropped-fill"
-                                         style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                    </div>
-                                </a>
-                            </figure><!-- .post-image -->
-                            <div class="post-content">
-                                <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
-                                <h2><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
-                            </div><!-- .post-content -->
-                        </div>
-                    </article>
-                    <?php }//end for ?>
-                </div><!-- .main-news-right -->
-                <div class="main-news-full-row main-news-col-3">
-                    <div class="news-row-wrapper">
-                        <?php
-                        for ($i=3; $i<6; $i++){
-                        ?>
-                        <article class="news-post">
-                            <div class="article-content-wrap">
-                                <figure class="post-image overlay">
-                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                        <div class="home2-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                        </div>
-                                    </a>
-                                </figure><!-- .post-image -->
-
-                                <div class="post-content">
-                                    <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
-                                    <h2><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
-                                </div><!-- .post-content -->
-                            </div>
-                        </article><!-- .news-post -->
-                        <?php }//end for ?>
-                    </div>
-                </div><!-- .main-news-right -->
-            </div>
-        </section>
-
-
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
                 <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                     <!-- #main -->
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><main id="main" class="site-main" role="main">
 
-                            <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
-                                <div class="featured-news-wrap">
-                                    <div class="section-title">
-                                        <h2 class="widget-title">Cat 1</h2>
-                                        <a href="#">View All</a>
-                                    </div>
-                                    <?php $data_block = $block_key_2; ?>
-                                    <div class="inner-wrapper">
-                                        <div class="featured-large-item">
-                                            <div class="news-item">
-                                                <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
-                                                        <div class="home3-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
-                                                        </div>
-                                                    </a>
-                                                </div><!-- .news-thumb -->
-                                                <div class="news-text-wrap">
-                                                    <h2><a href="<?php echo detail_uri($data_block[0]->slug); ?>"><?php echo $data_block[0]->title; ?></a></h2>
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[0]->time); ?></span>
-                                                    <div class="ellipsis4lines"><?php echo $data_block[0]->excerpt; ?></div>
-                                                </div><!-- .news-text-wrap -->
-                                            </div><!-- .news-item -->
-                                        </div>
-
-                                        <div class="featured-small-items">
-                                            <?php
-                                            for ($i=1; $i<6; $i++){
-                                            ?>
-                                            <div class="news-item layout-two">
-                                                <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                                        <div class="home4-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                                        </div>
-                                                    </a>
-                                                </div><!-- .news-thumb -->
-                                                <div class="news-text-wrap">
-                                                    <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
-                                                </div><!-- .news-text-wrap -->
-                                            </div><!-- .news-item -->
-                                            <?php }//end for ?>
-                                        </div><!-- .featured-small-items -->
-                                    </div><!-- .inner-wrapper -->
-                                </div><!-- .mix-column-news -->
-                            </section>
-
                             <section id="pt-magazine-mix-column-news-3" class="widget mix-news-section">
                                 <div class="entertainment-news-section">
-
-                                    <div class="section-title">
-                                        <h2 class="widget-title">Cat 2</h2>
-                                        <a href="#">View All</a>
-                                    </div>
                                     <?php $data_block = $block_key_3; ?>
                                     <div class="inner-wrapper">
 
@@ -230,6 +58,53 @@
                                             </div><!-- .news-text-wrap -->
                                         </div><!-- .news-item -->
                                         <?php }//end for ?>
+                                    </div><!-- .inner-wrapper -->
+                                </div><!-- .mix-column-news -->
+                            </section>
+
+                            <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
+                                <div class="featured-news-wrap">
+                                    <div class="section-title">
+                                        <h2 class="widget-title">Cat 1</h2>
+                                        <a href="#">View All</a>
+                                    </div>
+                                    <div class="inner-wrapper">
+                                        <div class="featured-large-item">
+                                            <div class="news-item">
+                                                <div class="news-thumb">
+                                                    <a href="<?php echo detail_uri($data_block[1]->slug); ?>">
+                                                        <div class="home3-center-cropped center-cropped-fill"
+                                                             style="background-image: url('<?php echo $data_block[1]->thumb_url;?>');">
+                                                        </div>
+                                                    </a>
+                                                </div><!-- .news-thumb -->
+                                                <div class="news-text-wrap">
+                                                    <h2><a href="<?php echo detail_uri($data_block[1]->slug); ?>"><?php echo $data_block[1]->title; ?></a></h2>
+                                                    <span class="posted-date"><?php echo format_post_time($data_block[1]->time); ?></span>
+                                                    <div class="ellipsis8lines"><?php echo $data_block[1]->excerpt; ?></div>
+                                                </div><!-- .news-text-wrap -->
+                                            </div><!-- .news-item -->
+                                        </div>
+
+                                        <div class="featured-small-items">
+                                            <?php
+                                            for ($i=2; $i<7; $i++){
+                                                ?>
+                                                <div class="news-item layout-two g-mb-10">
+                                                    <div class="news-thumb">
+                                                        <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
+                                                            <div class="home4-center-cropped center-cropped-fill"
+                                                                 style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
+                                                            </div>
+                                                        </a>
+                                                    </div><!-- .news-thumb -->
+                                                    <div class="news-text-wrap">
+                                                        <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
+                                                        <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
+                                                    </div><!-- .news-text-wrap -->
+                                                </div><!-- .news-item -->
+                                            <?php }//end for ?>
+                                        </div><!-- .featured-small-items -->
                                     </div><!-- .inner-wrapper -->
                                 </div><!-- .mix-column-news -->
                             </section>
@@ -378,7 +253,7 @@
                                                 <div class="news-text-wrap">
                                                     <h2><a href="<?php echo detail_uri($data_block[0]->slug); ?>"><?php echo $data_block[0]->title; ?></a></h2>
                                                     <span class="posted-date"><?php echo format_post_time($data_block[0]->time); ?></span>
-                                                    <div class="ellipsis4lines"><?php echo $data_block[0]->excerpt; ?></div>
+                                                    <div class="ellipsis8lines"><?php echo $data_block[0]->excerpt; ?></div>
                                                 </div><!-- .news-text-wrap -->
                                             </div><!-- .news-item -->
                                         </div>
@@ -505,7 +380,84 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
-
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Pre ICO Offering</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php
+                                    for ($i=0; $i<count($pre_icos); $i++){
+                                        ?>
+                                        <div class="news-item layout-two g-mb-0">
+                                            <div class="news-thumb g-width-65">
+                                                <a href="#">
+                                                    <div class="ico-center-cropped center-cropped-fill"
+                                                         style="background-image: url('<?php echo $pre_icos[$i]->thumb_url; ?>');">
+                                                    </div>
+                                                </a>
+                                            </div><!-- .news-thumb -->
+                                            <div class="news-text-wrap g-pl-70">
+                                                <h2 class="g-mb-0 g-font-15"><?php echo $pre_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($pre_icos[$i]->minor_title); ?></span></h2>
+                                                <span class="g-font-13 pointer"><?php echo $pre_icos[$i]->excerpt; ?></span>
+                                            </div><!-- .news-text-wrap -->
+                                        </div>
+                                    <?php } //end for ?>
+                                </div>
+                        </aside>
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">ICO Offering</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php
+                                    for ($i=0; $i<count($ongoing_icos); $i++){
+                                        ?>
+                                        <div class="news-item layout-two g-mb-0">
+                                            <div class="news-thumb g-width-65">
+                                                <a href="#">
+                                                    <div class="ico-center-cropped center-cropped-fill"
+                                                         style="background-image: url('<?php echo $ongoing_icos[$i]->thumb_url; ?>');">
+                                                    </div>
+                                                </a>
+                                            </div><!-- .news-thumb -->
+                                            <div class="news-text-wrap g-pl-70">
+                                                <h2 class="g-mb-0 g-font-15"><?php echo $ongoing_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($ongoing_icos[$i]->minor_title); ?></span></h2>
+                                                <span class="g-font-13 pointer"><?php echo $ongoing_icos[$i]->excerpt; ?></span>
+                                            </div><!-- .news-text-wrap -->
+                                        </div>
+                                    <?php } //end for ?>
+                                </div>
+                        </aside>
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Upcoming ICO Offering</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php
+                                    for ($i=0; $i<count($upcoming_icos); $i++){
+                                        ?>
+                                        <div class="news-item layout-two g-mb-0">
+                                            <div class="news-thumb g-width-65">
+                                                <a href="#">
+                                                    <div class="ico-center-cropped center-cropped-fill"
+                                                         style="background-image: url('<?php echo $upcoming_icos[$i]->thumb_url; ?>');">
+                                                    </div>
+                                                </a>
+                                            </div><!-- .news-thumb -->
+                                            <div class="news-text-wrap g-pl-70">
+                                                <h2 class="g-mb-0 g-font-15"><?php echo $upcoming_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($upcoming_icos[$i]->minor_title); ?></span></h2>
+                                                <span class="g-font-13 pointer"><?php echo $upcoming_icos[$i]->excerpt; ?></span>
+                                            </div><!-- .news-text-wrap -->
+                                        </div>
+                                    <?php } //end for ?>
+                                </div>
+                        </aside>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
@@ -663,6 +615,20 @@
                                     <img src="<?php echo PUBLIC_FOLDER; ?>img/336x280-pt-mag-adv.jpg" class="image wp-image-2195 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
                                 </a>
                         </aside>
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">ICO Analysis</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                        </aside>
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Commentary</h2>
+                                    <a href="#">View All</a>
+                                </div>
+                        </aside>
                         <aside id="tag_cloud-3" class="widget widget_tag_cloud">
                             <div class="section-title">
                                 <h2 class="widget-title">Tags</h2>
@@ -710,7 +676,17 @@
 
     <footer id="colophon" class="site-footer" role="contentinfo">
         <div class="container">
-            <div class="site-info-holder">
+            <div class="site-info-holder main-navigation">
+                <ul class="menu">
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">About</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Terms & Conditions</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Private policy</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Advertising</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Newsletter</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Send comment & analysis</a></li>
+                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Contact</a></li>
+                </ul>
+
                 <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
             </div>
         </div><!-- .container -->
