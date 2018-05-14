@@ -17,11 +17,6 @@
 <div id="page" class="site" style="transform: none;">
     <?php require_once 'common_menu.php'; ?>
 
-    <div id="breadcrumb">
-        <div class="container">
-            <div role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope="" itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3"><meta name="itemListOrder" content="Ascending"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="https://promenadethemes.com/demo/pt-magazine" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item"><a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/"><span itemprop="name">Fashion</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">Young girl shopping with happy mood</span><meta itemprop="position" content="3"></li></ul></div>	</div><!-- .container -->
-    </div><!-- #breadcrumb -->
-
     <div id="content" class="site-content" style="transform: none;">
 
 
