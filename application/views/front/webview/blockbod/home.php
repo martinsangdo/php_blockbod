@@ -1,106 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US" style="transform: none;">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="format-detection" content="telephone=no"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="description" content="Blockchain latest news and ICO detail papers. We provide free tutorial for your ICO sessions"/>
-        <meta name="robots" content="noindex,follow"/>
-        <meta name="author" content="Martin SangDo"/>
-        <meta http-equiv="Cache-control" content="public"/>
-
         <title>Blockchain latest news and ICO detail tutorials</title>
 
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
-        <link rel="dns-prefetch" href="https://s.w.org/"/>
-        <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
-        <link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-        <link rel="icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" type="image/x-icon"/>
-        <link rel="canonical" href="<?php echo base_url(); ?>"/>
-
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/pt.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/meanmenu.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/font-awesome.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/slick.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/style.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/custom.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/mobile_custom.css" type="text/css" media="all"/>
-
-        <style id="theia-sticky-sidebar-stylesheet-TSS">
-            .theiaStickySidebar:after {content: ""; display: table; clear: both;}
-        </style>
-
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery-migrate.min.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/navigation.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/skip-link-focus-fix.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/slick.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery.meanmenu.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/theia-sticky-sidebar.min.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/custom.js"></script>
-        <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/wp-embed.min.js"></script>
-
-        <script type="text/javascript" src="/public/js/common.js"></script>
+        <?php require_once 'common_head.php'; ?>
         <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/home.js"></script>
 
     </head>
 <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-1984 global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
 <div id="page" class="site" style="transform: none;">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="bottom-header">
-            <div class="container">
-                <div class="site-branding">
-                    <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">Blockchain news</a></h1>
-                    <p class="site-description">Latest articles</p>
-                </div>
-
-                <div class="header-advertisement">
-                    <a href="#">
-                        <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
-                    </a>
-                </div><!-- .header-advertisement -->
-            </div>
-        </div>
-
-
-        <div class="main-navigation-holder home-icon-enabled">
-            <div class="container">
-                <div id="main-nav" class="semi-width-nav clear-fix">
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
-
-                        <div class="home-icon active-true">
-                            <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a>
-                        </div>
-
-                        <div class="wrap-menu-content">
-                            <div class="menu-main-menu-container">
-                                <ul id="primary-menu" class="menu">
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO Schedule</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO offering</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO manual</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Download</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Book store</a></li>
-                                </ul></div>
-                        </div><!-- .menu-content -->
-                    </nav><!-- #site-navigation -->
-                </div> <!-- #main-nav -->
-
-                <div class="search-holder">
-                    <div class="search-box">
-                        <form role="search" method="get" class="search-form" action="#">
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Search …" value="" name="s">
-                            <button type="submit" class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div><!-- .search-holder -->
-
-            </div><!-- .container -->
-        </div>
-    </header>
+    <?php require_once 'common_menu.php'; ?>
     <!-- #masthead -->
     <div id="content" class="site-content" style="transform: none;">
         <?php $data_block = $block_key_1; ?>

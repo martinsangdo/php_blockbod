@@ -1,92 +1,21 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0081)https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/ -->
-<html lang="en-US" style="transform: none;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://promenadethemes.com/demo/pt-magazine/xmlrpc.php">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en-US" style="transform: none;">
+<head>
     <title><?php echo $article_detail->title; ?></title>
-    <meta name="robots" content="noindex,follow"/>
+
     <meta property="og:title" content="<?php echo $article_detail->title; ?>" />
     <meta property="og:description" content="<?php echo htmlspecialchars(preg_replace( "/\r|\n/", "", strip_tags($article_detail->excerpt))); ?>" />
     <meta property="og:url" content="<?php echo full_url($_SERVER); ?>" />
     <meta property="og:image" content="<?php echo $article_detail->thumb_url; ?>"  />
     <meta property="og:image:url" content="<?php echo $article_detail->thumb_url; ?>" />
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
-    <link rel="dns-prefetch" href="https://s.w.org/"/>
-    <link rel="stylesheet" id="pt-magazine-fonts-css" href="/public/blockbod/css/pt.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-meanmenu-css" href="/public/blockbod/css/meanmenu.css" type="text/css" media="all">
-    <link rel="stylesheet" id="font-awesome-css" href="/public/blockbod/css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-slick-css" href="/public/blockbod/css/slick.css" type="text/css" media="all">
-    <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/custom.css" type="text/css" media="all">
-
-    <script type="text/javascript" src="/public/blockbod/js/jquery.js"></script>
-    <script type="text/javascript" src="/public/blockbod/js/jquery-migrate.min.js"></script>
-    <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+    <?php require_once 'common_head.php'; ?>
+</head>
 
 <body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
 <div id="page" class="site" style="transform: none;">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="bottom-header">
-            <div class="container">
-                <div class="site-branding">
-
-                    <h1 class="site-title"><a href="https://promenadethemes.com/demo/pt-magazine/" rel="home">Blockchain news</a></h1>
-
-
-                    <p class="site-description">Latest articles</p>
-
-                </div>
-
-                <div class="header-advertisement">
-                    <a href="https://promenadethemes.com/downloads/pt-magazine/"><img width="728" height="90" src="/public/blockbod/img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1.jpg 728w, https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1-300x37.jpg 300w" sizes="(max-width: 728px) 100vw, 728px"></a>
-                </div><!-- .header-advertisement -->
-            </div>
-        </div>
-
-
-        <div class="main-navigation-holder home-icon-enabled">
-            <div class="container">
-                <div id="main-nav" class="semi-width-nav clear-fix">
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
-
-                        <div class="home-icon active-true">
-                            <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a>
-                        </div>
-
-                        <div class="wrap-menu-content">
-                            <div class="menu-main-menu-container">
-                                <ul id="primary-menu" class="menu">
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO Schedule</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO offering</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO manual</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Download</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Book store</a></li>
-                                </ul></div>
-                        </div><!-- .menu-content -->
-                    </nav><!-- #site-navigation -->
-                </div> <!-- #main-nav -->
-
-                <div class="search-holder">
-                    <div class="search-box">
-                        <form role="search" method="get" class="search-form" action="https://promenadethemes.com/demo/pt-magazine/">
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Search …" value="" name="s">
-                            <button type="submit" class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div><!-- .search-holder -->
-
-            </div><!-- .container -->
-        </div>
-    </header>
+    <?php require_once 'common_menu.php'; ?>
 
     <div id="breadcrumb">
         <div class="container">
