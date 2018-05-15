@@ -74,7 +74,7 @@
                                                 <div class="news-thumb">
                                                     <a href="<?php echo detail_uri($data_block[5]->slug); ?>">
                                                         <div class="home3-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[1]->thumb_url;?>');">
+                                                             style="background-image: url('<?php echo $data_block[5]->thumb_url;?>');">
                                                         </div>
                                                     </a>
                                                 </div><!-- .news-thumb -->
