@@ -72,23 +72,23 @@
                                         <div class="featured-large-item">
                                             <div class="news-item">
                                                 <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[1]->slug); ?>">
+                                                    <a href="<?php echo detail_uri($data_block[5]->slug); ?>">
                                                         <div class="home3-center-cropped center-cropped-fill"
                                                              style="background-image: url('<?php echo $data_block[1]->thumb_url;?>');">
                                                         </div>
                                                     </a>
                                                 </div><!-- .news-thumb -->
                                                 <div class="news-text-wrap">
-                                                    <h2><a href="<?php echo detail_uri($data_block[1]->slug); ?>"><?php echo $data_block[1]->title; ?></a></h2>
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[1]->time); ?></span>
-                                                    <div class="ellipsis8lines"><?php echo $data_block[1]->excerpt; ?></div>
+                                                    <h2><a href="<?php echo detail_uri($data_block[5]->slug); ?>"><?php echo $data_block[5]->title; ?></a></h2>
+                                                    <span class="posted-date"><?php echo format_post_time($data_block[5]->time); ?></span>
+                                                    <div class="ellipsis8lines"><?php echo $data_block[5]->excerpt; ?></div>
                                                 </div><!-- .news-text-wrap -->
                                             </div><!-- .news-item -->
                                         </div>
 
                                         <div class="featured-small-items">
                                             <?php
-                                            for ($i=2; $i<7; $i++){
+                                            for ($i=6; $i<11; $i++){
                                                 ?>
                                                 <div class="news-item layout-two g-mb-10">
                                                     <div class="news-thumb">
@@ -128,7 +128,7 @@
                                         <div class="news-item">
                                             <div class="news-thumb">
                                                 <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
-                                                    <img class="home3-center-cropped center-cropped-fill" src="https://exa.vn/images/backup/backup2.jpg" />
+                                                    <img class="home3-center-cropped center-cropped-fill" src="<?php echo $data_block[0]->thumb_url;?>" />
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap">
@@ -628,19 +628,6 @@
                                     <h2 class="widget-title">Commentary</h2>
                                     <a href="#">View All</a>
                                 </div>
-                        </aside>
-                        <aside id="tag_cloud-3" class="widget widget_tag_cloud">
-                            <div class="section-title">
-                                <h2 class="widget-title">Tags</h2>
-                            </div>
-                            <div class="tagcloud">
-                                <a href="#" class="tag-cloud-link tag-link-39 tag-link-position-1" style="font-size: 15.933333333333pt;" aria-label="business (10 items)">business</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">ico</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">blockchain</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">cryptocurrency</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">bitcoin</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">ico offering</a>
-                                <a href="#" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 10pt;" aria-label="care (5 items)">ico news</a>
                         </aside>
 
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
