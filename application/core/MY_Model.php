@@ -27,12 +27,29 @@ class MY_Model extends CI_Model {
     function get_pagination($where, $offset, $limit, $last_id = ''){
         $this->db->from($this->table_name);
         $this->db->where($where);
-        if(!empty($last_id)) {
-            $this->db->where('site._id <', $last_id);
-        }
         if ($limit > 0){
             $this->db->limit($limit, $offset);
         }
+
+        $query = $this->db->get();
+
+        if($query->result()){
+            return $query->result();
+
+        }else{
+            return false;
+        }
+    }
+    //get list with more conditions
+    function get_pagination_advance($select, $where, $offset, $limit, $order_field, $sort, $tbl_join, $cond_join, $side_join){
+	    $this->db->select($select);
+        $this->db->from($this->table_name);
+        $this->db->where($where);
+        if ($limit > 0){
+            $this->db->limit($limit, $offset);
+        }
+        $this->db->order_by($order_field, $sort);
+        $this->db->join($tbl_join, $cond_join, $side_join);
 
         $query = $this->db->get();
 

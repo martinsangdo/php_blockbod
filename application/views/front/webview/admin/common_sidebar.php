@@ -53,9 +53,9 @@
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-plus"></i>
+                                    <i class="hs-admin-layout-list-thumb"></i>
                                 </span>
-                        <span class="media-body align-self-center">Create new</span>
+                        <span class="media-body align-self-center">ICO Analysis</span>
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
@@ -63,7 +63,7 @@
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>
-                        <span class="media-body align-self-center">My List</span>
+                        <span class="media-body align-self-center">Commentary List</span>
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-article/collection_list">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-view-list-alt"></i>
                                 </span>
