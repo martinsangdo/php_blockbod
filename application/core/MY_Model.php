@@ -48,8 +48,12 @@ class MY_Model extends CI_Model {
         if ($limit > 0){
             $this->db->limit($limit, $offset);
         }
-        $this->db->order_by($order_field, $sort);
-        $this->db->join($tbl_join, $cond_join, $side_join);
+        if (!empty($order_field) && !empty($sort)){
+            $this->db->order_by($order_field, $sort);
+        }
+        if (!empty($tbl_join)){
+            $this->db->join($tbl_join, $cond_join, $side_join);
+        }
 
         $query = $this->db->get();
 

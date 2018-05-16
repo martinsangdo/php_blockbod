@@ -33,7 +33,9 @@
                         </thead>
 
                         <tbody>
-                        <?php for ($i=0;$i<count($list);$i++){ ?>
+                        <?php
+                        if ($list){
+                        for ($i=0;$i<count($list);$i++){ ?>
                             <tr>
                                 <td><?php echo $list[$i]->_id; ?></td>
                                 <td><img src="<?php echo $list[$i]->thumb_url; ?>" class="thumb_list"/></td>
@@ -47,7 +49,7 @@
                                     </a>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php } } ?>
                         </tbody>
                     </table>
                 </div>
