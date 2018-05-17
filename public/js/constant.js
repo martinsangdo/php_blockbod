@@ -15,5 +15,11 @@ var API_URI = {
 
 var CONST = {
   DEFAULT_PAGE_LEN: 10,
+    HIDDEN_CLASSNAME: 'hidden',
+    //input form
+    FORM_GROUP_CLASS: '.form-group',
+    FROM_INPUT_ERROR_CLASSNAME: 'u-has-error-v3',    //form-group which has error
+    INPUT_ERROR_CLASSNAME: 'g-brd-pink-v2--error',
+    //
 
 };
