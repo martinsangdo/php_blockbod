@@ -15,6 +15,8 @@ Class Ico extends REST_Controller
         $ico_id = $this->uri->segment(3);
         $detail = $this->event_model->get_ico_detail($ico_id);
         $this->data['detail'] = $detail;
+        //get related ICOs
+
         //
         $this->load->view(VIEW_FOLDER.'/ico_detail', $this->data);
     }
