@@ -380,7 +380,7 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Pre ICO Offering</h2>
@@ -388,25 +388,27 @@
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
+                                    if ($pre_icos){
                                     for ($i=0; $i<count($pre_icos); $i++){
                                         ?>
                                         <div class="news-item layout-two g-mb-0">
                                             <div class="news-thumb g-width-65">
-                                                <a href="#">
+                                                <a href="/ico-detail/<?php echo $pre_icos[$i]->title.'/'.$pre_icos[$i]->_id; ?>">
                                                     <div class="ico-center-cropped center-cropped-fill"
                                                          style="background-image: url('<?php echo $pre_icos[$i]->thumb_url; ?>');">
                                                     </div>
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap g-pl-70">
-                                                <h2 class="g-mb-0 g-font-15"><?php echo $pre_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($pre_icos[$i]->minor_title); ?></span></h2>
+                                                <h2 class="g-mb-0 g-font-15">
+                                                    <a href="/ico-detail/<?php echo $pre_icos[$i]->title.'/'.$pre_icos[$i]->_id; ?>"><?php echo $pre_icos[$i]->title; ?></a> <span class="minor_title"><?php echo strtoupper($pre_icos[$i]->minor_title); ?></span></h2>
                                                 <span class="g-font-13 pointer"><?php echo $pre_icos[$i]->excerpt; ?></span>
                                             </div><!-- .news-text-wrap -->
                                         </div>
-                                    <?php } //end for ?>
+                                    <?php } } //end for ?>
                                 </div>
                         </aside>
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">ICO Offering</h2>
@@ -414,25 +416,27 @@
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
+                                    if (isset($ongoing_icos) && $ongoing_icos){
                                     for ($i=0; $i<count($ongoing_icos); $i++){
                                         ?>
                                         <div class="news-item layout-two g-mb-0">
                                             <div class="news-thumb g-width-65">
-                                                <a href="#">
+                                                <a href="/ico-detail/<?php echo $ongoing_icos[$i]->title.'/'.$ongoing_icos[$i]->_id; ?>">
                                                     <div class="ico-center-cropped center-cropped-fill"
                                                          style="background-image: url('<?php echo $ongoing_icos[$i]->thumb_url; ?>');">
                                                     </div>
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap g-pl-70">
-                                                <h2 class="g-mb-0 g-font-15"><?php echo $ongoing_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($ongoing_icos[$i]->minor_title); ?></span></h2>
+                                                <h2 class="g-mb-0 g-font-15">
+                                                    <a href="/ico-detail/<?php echo $ongoing_icos[$i]->title.'/'.$ongoing_icos[$i]->_id; ?>"><?php echo $ongoing_icos[$i]->title; ?></a> <span class="minor_title"><?php echo strtoupper($ongoing_icos[$i]->minor_title); ?></span></h2>
                                                 <span class="g-font-13 pointer"><?php echo $ongoing_icos[$i]->excerpt; ?></span>
                                             </div><!-- .news-text-wrap -->
                                         </div>
-                                    <?php } //end for ?>
+                                    <?php } } //end for ?>
                                 </div>
                         </aside>
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Upcoming ICO Offering</h2>
@@ -440,22 +444,24 @@
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
+                                    if (isset($upcoming_icos)&&$upcoming_icos){
                                     for ($i=0; $i<count($upcoming_icos); $i++){
                                         ?>
                                         <div class="news-item layout-two g-mb-0">
                                             <div class="news-thumb g-width-65">
-                                                <a href="#">
+                                                <a href="/ico-detail/<?php echo $upcoming_icos[$i]->title.'/'.$upcoming_icos[$i]->_id; ?>">
                                                     <div class="ico-center-cropped center-cropped-fill"
                                                          style="background-image: url('<?php echo $upcoming_icos[$i]->thumb_url; ?>');">
                                                     </div>
                                                 </a>
                                             </div><!-- .news-thumb -->
                                             <div class="news-text-wrap g-pl-70">
-                                                <h2 class="g-mb-0 g-font-15"><?php echo $upcoming_icos[$i]->title; ?> <span class="minor_title"><?php echo strtoupper($upcoming_icos[$i]->minor_title); ?></span></h2>
+                                                <h2 class="g-mb-0 g-font-15">
+                                                    <a href="/ico-detail/<?php echo $upcoming_icos[$i]->title.'/'.$upcoming_icos[$i]->_id; ?>"><?php echo $upcoming_icos[$i]->title; ?></a> <span class="minor_title"><?php echo strtoupper($upcoming_icos[$i]->minor_title); ?></span></h2>
                                                 <span class="g-font-13 pointer"><?php echo $upcoming_icos[$i]->excerpt; ?></span>
                                             </div><!-- .news-text-wrap -->
                                         </div>
-                                    <?php } //end for ?>
+                                    <?php } } //end for ?>
                                 </div>
                         </aside>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">

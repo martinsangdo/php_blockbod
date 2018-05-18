@@ -31,9 +31,9 @@ class Welcome extends MY_Controller
         $this->data[BLOCK_KEY_11] = $this->block_content_model->get_latest_posts(array('site_id' => 15), 0, DEFAULT_PAGE_LEN);
         //get ICO (Events)
         $this->load->model('event_model');
-        $this->data['pre_icos'] = $this->event_model->get_pagination(array('type'=>'pre_ico'), 0, 3);
-        $this->data['ongoing_icos'] = $this->event_model->get_pagination(array('type'=>'ongoing_ico'), 0, 3);
-        $this->data['upcoming_icos'] = $this->event_model->get_pagination(array('type'=>'upcoming_ico'), 0, 3);
+        $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
+//        $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(array('type'=>'ongoing_ico'), 0, 3);
+//        $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(array('type'=>'upcoming_ico'), 0, 3);
         //
         $this->load->view(VIEW_FOLDER.'/home', $this->data);
     }

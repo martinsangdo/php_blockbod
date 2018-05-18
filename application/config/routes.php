@@ -56,7 +56,8 @@ $route['index.html'] = 'Welcome';
 
 //
 $route['blockchain-news/(:any)'] = 'news/$1';
-//
+$route['ico-detail/(:any)/(:any)'] = 'ico/detail/$1';
+
 //$route['test/(:any)'] = 'cron/CollectHome/$1';
 //ADMIN routes
 $route['admin_1/(:any)'] = 'admin/admin/$1';
