@@ -32,8 +32,8 @@ class Welcome extends MY_Controller
         //get ICO (Events)
         $this->load->model('event_model');
         $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
-//        $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(array('type'=>'ongoing_ico'), 0, 3);
-//        $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(array('type'=>'upcoming_ico'), 0, 3);
+        $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(2, 0, 3);
+        $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(3, 0, 3);
         //
         $this->load->view(VIEW_FOLDER.'/home', $this->data);
     }

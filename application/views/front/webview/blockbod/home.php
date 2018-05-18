@@ -65,7 +65,7 @@
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 1</h2>
+                                        <h2 class="widget-title">Latest news</h2>
                                         <a href="#">View All</a>
                                     </div>
                                     <div class="inner-wrapper">
@@ -119,7 +119,7 @@
                                 <div class="two-column-news two-column-news-left">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 3</h2>
+                                        <h2 class="widget-title">Breaking news</h2>
                                         <a href="#">View All</a>
                                     </div>
 
@@ -159,7 +159,7 @@
                                 <div class="two-column-news two-column-news-right">
                                     <?php $data_block = $block_key_5; ?>
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 4</h2>
+                                        <h2 class="widget-title">Featured articles</h2>
                                         <a href="#">View All</a>
                                     </div>
 
@@ -206,7 +206,7 @@
                                 <div class="three-news-section">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 5</h2>
+                                        <h2 class="widget-title">Popular news</h2>
                                         <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_6; ?>
@@ -236,7 +236,7 @@
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 6</h2>
+                                        <h2 class="widget-title">Weekly news</h2>
                                         <a href="#">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_7; ?>
@@ -286,7 +286,7 @@
                                 <div class="two-column-news two-column-news-left">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 7</h2>
+                                        <h2 class="widget-title">Popular stories</h2>
                                         <a href="#">View All</a>
                                     </div>
 
@@ -330,7 +330,7 @@
                                 <div class="two-column-news two-column-news-right">
                                     <?php $data_block = $block_key_9; ?>
                                     <div class="section-title">
-                                        <h2 class="widget-title">Cat 8</h2>
+                                        <h2 class="widget-title">Review</h2>
                                         <a href="#">View All</a>
                                     </div>
 
@@ -472,7 +472,7 @@
                                 </div>
                                 <div class="recent-posts-side">
 
-                                    <div class="news-item layout-two">
+                                    <div class="news-item layout-two margin-b-30">
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
@@ -487,7 +487,7 @@
                                         </div><!-- .news-text-wrap -->
                                     </div>
 
-                                    <div class="news-item layout-two">
+                                    <div class="news-item layout-two margin-b-30">
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
@@ -502,7 +502,7 @@
                                         </div><!-- .news-text-wrap -->
                                     </div>
 
-                                    <div class="news-item layout-two">
+                                    <div class="news-item layout-two margin-b-30">
                                         <div class="news-thumb">
                                             <a href="#">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
@@ -593,7 +593,7 @@
 
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
-                                <div class="section-title"><h2 class="widget-title">Cat 9</h2></div>
+                                <div class="section-title"><h2 class="widget-title">Recent</h2></div>
                                 <?php $data_block = $block_key_10; ?>
                                 <div class="recent-posts-side">
                                     <?php
@@ -639,7 +639,7 @@
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
 
-                                <div class="section-title"><h2 class="widget-title">Cat 10</h2></div>
+                                <div class="section-title"><h2 class="widget-title">Random</h2></div>
                                 <div class="recent-posts-side">
                                     <?php $data_block = $block_key_11; ?>
                                     <?php
