@@ -38,6 +38,24 @@ Class News extends REST_Controller
         //
         $this->load->view(VIEW_FOLDER.'/news', $this->data);
     }
+    //show all posts by group
+    public function group_list_get(){
+        //find posts belong to 1 group
+        $site_id = $this->uri->segment(3);      //same site
+        $this->load->model(array('site_model'));
+
+        $offset = is_numeric($this->uri->segment(5)) && intval($this->uri->segment(5)) > 0?$this->uri->segment(5):0;
+        $this->data['data_block'] = $this->block_content_model->get_latest_posts(array('site_id' => $site_id), $offset, DEFAULT_PAGE_LEN);
+        //get total posts
+        $total_post = $this->block_content_model->get_total(array('status', '1'));
+        //create paging
+        $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(2);
+        $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 5);
+        //
+        //
+        $this->load->view(VIEW_FOLDER.'/news_list', $this->data);
+    }
+    //========== POST FUNCTIONS
     //get newest videos, should hash the list?
     public function get_random_videos_post(){
         $this->load->model('video_model');
@@ -74,7 +92,7 @@ Class News extends REST_Controller
         $article_detail = $this->block_content_model->read_row(array('_id'=>$post_id));
         $this->response(RestSuccess($article_detail->content), SUCCESS_CODE);
     }
-    //========== EXTRA FUNCTIONS
+    //========== PRIVATE FUNCTIONS
     //get related posts of this one based on same categories
     private function get_related_posts($post_id){
         //get all categories of this post

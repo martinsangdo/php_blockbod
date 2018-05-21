@@ -56,13 +56,8 @@
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="site-info-holder">
-                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
-            </div>
-        </div><!-- .container -->
-    </footer><!-- #colophon -->
+    <?php require_once 'common_footer.php'; ?>
+
 </div><!-- #page -->
 
 

@@ -131,7 +131,7 @@ p {font-size:14px;}
 .g-font-15 {font-size:15px !important;}
 
 .news-item.layout-two span.minor_title {display:inline;font-size:13px;color:#777;margin-left:10px;}
-
+.news-text-wrap h2, .news-text-wrap h2 a {line-height:1.1;}
 /* ICO page */
 .ico_review_container .div-block-65 {
     margin-bottom: 15px;

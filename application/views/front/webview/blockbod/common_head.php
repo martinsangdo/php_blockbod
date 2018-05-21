@@ -20,7 +20,9 @@
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/meanmenu.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/font-awesome.min.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/slick.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/style.css" type="text/css" media="all"/>
+
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/custom.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/mobile_custom.css" type="text/css" media="all"/>
 

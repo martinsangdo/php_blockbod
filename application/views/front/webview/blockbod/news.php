@@ -125,16 +125,12 @@
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="site-info-holder">
-                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
-            </div>
-        </div><!-- .container -->
-    </footer><!-- #colophon -->
+    <?php require_once 'common_footer.php'; ?>
 </div><!-- #page -->
 
-<a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#page" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a><script type="text/javascript" src="./detail_files/navigation.js"></script>
+<a href="#!" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a>
+
+<script type="text/javascript" src="./detail_files/navigation.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/skip-link-focus-fix.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/jquery.meanmenu.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/theia-sticky-sidebar.min.js"></script>

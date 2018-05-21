@@ -67,7 +67,7 @@
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
                                         <h2 class="widget-title">Latest news</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/1/latest-news">View All</a>
                                     </div>
                                     <div class="inner-wrapper">
                                         <div class="featured-large-item">
@@ -121,7 +121,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Breaking news</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/4/breaking-news">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -161,7 +161,7 @@
                                     <?php $data_block = $block_key_5; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Featured articles</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/5/featured-article">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -208,7 +208,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Popular news</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/7/popular">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_6; ?>
                                     <div class="inner-wrapper">
@@ -238,7 +238,7 @@
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
                                         <h2 class="widget-title">Weekly news</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/10/weekly">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_7; ?>
                                     <div class="inner-wrapper">
@@ -288,7 +288,7 @@
 
                                     <div class="section-title">
                                         <h2 class="widget-title">Popular stories</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/12/popular">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -332,7 +332,7 @@
                                     <?php $data_block = $block_key_9; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Review</h2>
-                                        <a href="#">View All</a>
+                                        <a href="/news/group_list/2/review">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -469,7 +469,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Top papers</h2>
-                                    <a href="#">View All</a>
+                                    <a href="">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
@@ -642,23 +642,7 @@
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="site-info-holder main-navigation">
-                <ul class="menu">
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">About</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Terms & Conditions</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Private policy</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Advertising</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Newsletter</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Send comment & analysis</a></li>
-                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Contact</a></li>
-                </ul>
-
-                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
-            </div>
-        </div><!-- .container -->
-    </footer><!-- #colophon -->
+    <?php require_once 'common_footer.php'; ?>
 </div><!-- #page -->
 
 <a href="#" class="scrollup" id="btn-scrollup" style="display: inline;">
