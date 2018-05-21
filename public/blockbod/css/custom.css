@@ -99,6 +99,11 @@ p {font-size:14px;}
     width: 60px;
     height: 60px;
 }
+.book-detail-center-cropped {
+    width: 218px;
+    height: 218px;
+    margin: 0 auto;
+}
 .posted-date {font-size:12px;}
 .sidebar .social-widgets ul li a {text-align: left; padding-right:0;}
 .sidebar .social-widgets ul li a .screen-reader-text {margin-left:10px;}

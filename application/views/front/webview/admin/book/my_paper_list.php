@@ -44,7 +44,7 @@
                         for ($i=0;$i<count($list);$i++){ ?>
                             <tr>
                                 <td><?php echo $list[$i]->_id; ?></td>
-                                <td><img src="<?php echo $list[$i]->cover_url; ?>" class=""/>></td>
+                                <td><img src="<?php echo $list[$i]->thumb_url; ?>" class=""/></td>
                                 <td><?php echo $list[$i]->title; ?></td>
                                 <td><?php echo $list[$i]->excerpt; ?></td>
                                 <td><?php echo $list[$i]->price; ?></td>

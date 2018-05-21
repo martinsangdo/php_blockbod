@@ -17,7 +17,8 @@
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
                 <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                     <!-- #main -->
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><main id="main" class="site-main" role="main">
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                        <main id="main" class="site-main" role="main">
 
                             <section id="pt-magazine-mix-column-news-3" class="widget mix-news-section">
                                 <div class="entertainment-news-section">

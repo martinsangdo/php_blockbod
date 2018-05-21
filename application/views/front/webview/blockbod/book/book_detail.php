@@ -20,22 +20,38 @@
                     <!-- #main -->
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
                         <main id="main" class="site-main" role="main">
-                            <article id="post-2057" class="post-2057 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-fashion tag-girl tag-lifestyle">
-                                <div class="article-wrap-inner">
-                                    <div class="content-wrap">
-                                        <div class="content-wrap-inner">
-                                            <div id="content_detail" class="entry-content">
+                            <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
+                                <div class="featured-news-wrap">
+                                    <div class="inner-wrapper">
+                                        <div class="featured-large-item">
+                                            <div class="news-item">
+                                                <div class="news-thumb">
+                                                    <div class="book-detail-center-cropped center-cropped-fill"
+                                                         style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
+                                                    </div>
+                                                </div><!-- .news-thumb -->
+                                                <div class="news-text-wrap">
+                                                    <?php
+                                                    if ($detail->is_external > 0){
+                                                    ?>
 
-                                            </div><!-- .entry-content -->
+                                                    <?php } else { ?>
 
+                                                    <?php } ?>
+                                                </div><!-- .news-text-wrap -->
+                                            </div><!-- .news-item -->
                                         </div>
-                                    </div>
-                                </div>
 
-                            </article><!-- #post-## -->
+                                        <div class="featured-small-items">
+                                            <h2><?php echo $detail->title; ?></h2>
+                                            <div class="ellipsis8lines"><?php echo $detail->excerpt; ?></div>
+                                        </div><!-- .featured-small-items -->
+                                    </div><!-- .inner-wrapper -->
+                                </div><!-- .mix-column-news -->
+                            </section>
 
                             <div class="news-col-3 related-posts">
-                                <h3 class="related-posts-title">Related ICO</h3>
+                                <h3 class="related-posts-title">Related papers</h3>
 
                                 <div class="inner-wrapper">
 
