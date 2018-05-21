@@ -56,3 +56,5 @@ define('RELATED_POST_NUM', 9);      //number of related posts
 define('CAT_POST_NUM', 30);      //number of posts to show in 1 category
 define('VIDEO_PAGE_NUM', 20);      //number of videos to show in 1 page
 define('DETAIL_EXCERPT_LIMIT', 300);      //number of videos to show in 1 page
+//book/paper
+define('BOOK_COVER_PATH', '/public/upload/book_cover/');        //where to save book/paper covers

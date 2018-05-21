@@ -20,12 +20,12 @@
                 <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-book/create_paper">
                     <i class="hs-admin-plus g-font-size-18"></i>
                     <span class="g-hidden-sm-down g-ml-10">Create new paper</span>
-                </a>
+                </a><br/><br/>
                 <div class="table-responsive g-mb-40">
                     <?php
                         if ($list){
                     ?>
-                    <table class="table u-table--v3 g-color-black">
+                    <table class="table u-table--v3 g-color-black tbl_general_list">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -44,7 +44,11 @@
                         for ($i=0;$i<count($list);$i++){ ?>
                             <tr>
                                 <td><?php echo $list[$i]->_id; ?></td>
-                                <td><img src="<?php echo $list[$i]->thumb_url; ?>" class=""/></td>
+                                <td><img class="thumb_list" src="<?php
+                                    if (!empty($list[$i]->thumb_url)){
+                                        echo BOOK_COVER_PATH.$list[$i]->_id.'/'.$list[$i]->thumb_url;
+                                    }
+                                    ?>" class=""/></td>
                                 <td><?php echo $list[$i]->title; ?></td>
                                 <td><?php echo $list[$i]->excerpt; ?></td>
                                 <td><?php echo $list[$i]->price; ?></td>
