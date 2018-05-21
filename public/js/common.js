@@ -97,3 +97,9 @@ Common.prototype.save_email_subscribe = function(email) {
 Common.prototype.rand_str = function(){
     return Math.random().toString(36).substring(2).toUpperCase();
 };
+//set specific event to each input
+Common.prototype.set_length_handler = function($input, $length_display, max_length){
+    $input.keyup(function(e){
+        $length_display.text($.trim($input.val()).length);
+    });
+};

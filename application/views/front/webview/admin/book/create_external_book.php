@@ -5,8 +5,10 @@
 
     <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_head.php'); ?>
 
+    <link rel="stylesheet" href="/public/datepicker/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="/public/trumbowyg/ui/trumbowyg.min.css"/>
 
+    <script src="/public/datepicker/bootstrap-datepicker.min.js"></script>
     <script src="/public/trumbowyg/trumbowyg.min.js"></script>
     <script src="/public/admin/js/admin_book.js"></script>
 
@@ -25,11 +27,10 @@
                     ['horizontalRule']
                 ]
             });
-            var $form_input = $('#frm_input');
-            //reset all input events
-            $('input[type="text"]', $form_input).unbind();
-            //set event to each input
-            common.set_length_handler($('#txt_title', $form_input), $('#lbl_title_len', $form_input));
+            //init date picker
+            $( "#txt_publish_date" ).datepicker();
+            //generate random string
+            adminBook.generate_specific_code();
         });
     </script>
 </head>
@@ -46,13 +47,13 @@
                 <h2>Create new paper</h2>
                 <div class="table-responsive g-mb-40">
                     <!-- form -->
-                    <form id="frm_input">
+                    <form>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Title (*)</label>
                             <div class="g-pos-rel">
                                 <input id="txt_title" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-600" type="text" />
                             </div>
-                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="lbl_title_len">0</span> / 200</small>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 200</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Slug (*)</label>
@@ -103,6 +104,19 @@
                             <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 64</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Publisher</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-300" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="">0</span> / 64</small>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">ISBN</label>
+                            <div class="g-pos-rel">
+                                <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-200" type="text" />
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Pages</label>
                             <div class="g-pos-rel">
                                 <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
@@ -113,6 +127,13 @@
                             <div class="g-pos-rel">
                                 <input id="" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
                             </div>
+                        </div>
+                        <div class="d-flex align-items-center form-group g-mb-5">
+                            <label class="g-mb-5 g-width-150">Publish date</label>
+                            <div class="g-pos-rel">
+                                <input id="txt_publish_date" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
+                            </div>
+                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">(MM/DD/YYYY)</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Price (USD)</label>
@@ -135,8 +156,8 @@
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">&nbsp;</label>
                             <div class="g-pos-rel">
-                                <button class="btn btn-md u-btn-purple rounded-0" type="button" onclick="adminBook.preview_my_paper();">Preview</button>
-                                <button class="btn btn-md u-btn-blue rounded-0" type="button" onclick="adminBook.create_my_paper();">Submit</button>
+                                <button class="btn btn-md u-btn-purple rounded-0" type="button">Preview</button>
+                                <button class="btn btn-md u-btn-blue rounded-0" type="button">Submit</button>
                             </div>
                         </div>
                     </form>

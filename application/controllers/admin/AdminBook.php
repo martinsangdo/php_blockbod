@@ -23,5 +23,8 @@ Class AdminBook extends REST_Controller
         $this->load->view('front/webview/admin/book/create_paper', $this->data);
     }
     //========== API functions
-
+    //generate random strings for book
+    public function generate_specific_code_post(){
+        $this->load->view('front/webview/admin/book/create_paper', $this->data);
+    }
 }
