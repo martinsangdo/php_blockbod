@@ -30,11 +30,18 @@ class Welcome extends MY_Controller
         $this->data[BLOCK_KEY_10] = $this->block_content_model->get_latest_posts(array('site_id' => 14), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_11] = $this->block_content_model->get_latest_posts(array('site_id' => 15), 0, DEFAULT_PAGE_LEN);
         //get ICO (Events)
-        $this->load->model('event_model');
+        $this->load->model(array('event_model', 'book_model'));
         $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
         $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(2, 0, 3);
         $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(3, 0, 3);
-        //
+        //get my papers
+        $this->data['top_papers'] = $this->book_model->get_my_top_papers(3);
+        //get books
+
+        //get ICO analysis
+
+        //get Commentary
+
         $this->load->view(VIEW_FOLDER.'/home', $this->data);
     }
 

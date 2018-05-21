@@ -471,51 +471,25 @@
                                     <a href="#">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
-
+                                    <?php
+                                    if ($top_papers){
+                                        for($i=0; $i<count($top_papers); $i++){
+                                    ?>
                                     <div class="news-item layout-two margin-b-30">
                                         <div class="news-thumb">
-                                            <a href="#">
+                                            <a href="/book/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
                                                      style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
                                                 </div>
                                             </a>
                                         </div><!-- .news-thumb -->
                                         <div class="news-text-wrap">
-                                            <h2><a class="ellipsis3lines_title" href="#" title="How to write good ICO White paper?">How to write good ICO White paper?</a></h2>
-                                            <div class="book_price_1">30 USD</div>
+                                            <h2><a class="ellipsis3lines_title" href="/book/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>"><?php echo $top_papers[$i]->title; ?></a></h2>
+                                            <div class="book_price_1"><?php echo $top_papers[$i]->discount_price; ?> USD</div>
                                             <a class="buy_link pointer">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
-
-                                    <div class="news-item layout-two margin-b-30">
-                                        <div class="news-thumb">
-                                            <a href="#">
-                                                <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
-                                                </div>
-                                            </a>
-                                        </div><!-- .news-thumb -->
-                                        <div class="news-text-wrap">
-                                            <h2><a class="ellipsis3lines_title" href="#" title="How to make your own cryptocurrency?">How to make your own cryptocurrency?</a></h2>
-                                            <div class="book_price_1">50 USD</div>
-                                            <a class="buy_link pointer">BUY NOW</a>
-                                        </div><!-- .news-text-wrap -->
-                                    </div>
-
-                                    <div class="news-item layout-two margin-b-30">
-                                        <div class="news-thumb">
-                                            <a href="#">
-                                                <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
-                                                </div>
-                                            </a>
-                                        </div><!-- .news-thumb -->
-                                        <div class="news-text-wrap">
-                                            <h2><a class="ellipsis3lines_title" href="#" title="All about ICO preparing">All about ICO preparing</a></h2>
-                                            <div class="book_price_1">1,000 USD</div>
-                                            <a class="buy_link pointer">BUY NOW</a>
-                                        </div><!-- .news-text-wrap -->
-                                    </div>
+                                    <?php } } ?>
                                 </div>
                         </aside>
 
