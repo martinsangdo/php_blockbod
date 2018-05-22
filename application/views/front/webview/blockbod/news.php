@@ -44,7 +44,7 @@
                                             <div id="content_detail" class="entry-content">
                                                 <?php echo $article_detail->content; ?>
                                             </div><!-- .entry-content -->
-
+                                            <i>Source: <?php echo $site_detail->name; ?></i>
                                         </div>
                                     </div>
                                 </div>
@@ -59,8 +59,7 @@
 
                                 <div class="inner-wrapper">
 
-
-                                    <div class="news-item three-column-item">
+                                    <div class="news-item three-column-item hidden">
                                         <div class="news-thumb">
                                             <a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/"><img width="400" height="245" src="./detail_files/clothing-store-984396_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
                                         </div><!-- .news-thumb -->
@@ -71,31 +70,6 @@
                                         </div><!-- .news-text-wrap -->
                                     </div><!-- .news-item -->
 
-
-
-                                    <div class="news-item three-column-item">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/fashionable-and-durable-sunglasses-for-men/"><img width="400" height="245" src="./detail_files/sensolatino-2348551_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
-
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/fashionable-and-durable-sunglasses-for-men/">Fashionable and durable sunglasses for men</a></h2>
-                                            <span class="posted-date">October 16, 2016</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
-
-
-
-                                    <div class="news-item three-column-item">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/style-of-wine-glasses-served-in-restaurant/"><img width="400" height="245" src="./detail_files/restaurant-449952_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
-
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/style-of-wine-glasses-served-in-restaurant/">Style of wine glasses served in restaurant</a></h2>
-                                            <span class="posted-date">September 17, 2016</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
 
                                 </div>
 

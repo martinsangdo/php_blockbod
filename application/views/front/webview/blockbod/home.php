@@ -385,7 +385,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Pre ICO Offering</h2>
-                                    <a href="#">View All</a>
+                                    <a href="#!">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
@@ -413,7 +413,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">ICO Offering</h2>
-                                    <a href="#">View All</a>
+                                    <a href="#!">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
@@ -441,7 +441,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Upcoming ICO Offering</h2>
-                                    <a href="#">View All</a>
+                                    <a href="#!">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
@@ -469,7 +469,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Top papers</h2>
-                                    <a href="">View All</a>
+                                    <a href="#!">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php
@@ -497,7 +497,7 @@
                         <aside id="media_gallery-2" class="widget widget_media_gallery">
                             <div class="section-title">
                                 <h2 class="widget-title">Best sellers</h2>
-                                <a href="#">View All</a>
+                                <a href="#!">View All</a>
                             </div>
                             <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail">
                                 <div class="gallery-item gallery-icon landscape">
@@ -596,29 +596,42 @@
                                     <img src="<?php echo PUBLIC_FOLDER; ?>img/336x280-pt-mag-adv.jpg" class="image wp-image-2195 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
                                 </a>
                         </aside>
+                        <?php $data_block = $block_key_11; ?>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">ICO Analysis</h2>
-                                    <a href="#">View All</a>
+                                    <a href="/news/group_list/15/ico-analysis">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php
+                                    for ($i=0; $i<3; $i++){
+                                        ?>
+                                        <div class="news-item layout-two">
+                                            <div class="news-thumb">
+                                                <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
+                                                    <div class="home4-center-cropped center-cropped-fill"
+                                                         style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
+                                                    </div>
+                                                </a>
+                                            </div><!-- .news-thumb -->
+                                            <div class="news-text-wrap">
+                                                <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
+                                                <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
+                                            </div><!-- .news-text-wrap -->
+                                        </div><!-- .news-item -->
+                                    <?php }//end for ?>
                                 </div>
                         </aside>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Commentary</h2>
-                                    <a href="#">View All</a>
+                                    <a href="/news/group_list/15/commentary">View All</a>
                                 </div>
-                        </aside>
-
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
-                            <div class="recent-news-section">
-
-                                <div class="section-title"><h2 class="widget-title">Suggestion</h2></div>
                                 <div class="recent-posts-side">
-                                    <?php $data_block = $block_key_11; ?>
                                     <?php
-                                    for ($i=0; $i<5; $i++){
+                                    for ($i=3; $i<6; $i++){
                                         ?>
                                         <div class="news-item layout-two">
                                             <div class="news-thumb">
