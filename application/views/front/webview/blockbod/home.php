@@ -66,8 +66,8 @@
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
-                                        <h2 class="widget-title">Latest news</h2>
-                                        <a href="/news/group_list/1/latest-news">View All</a>
+                                        <h2 class="widget-title">Top coin news</h2>
+                                        <a href="/news/group_list/1/top-coin-news">View All</a>
                                     </div>
                                     <div class="inner-wrapper">
                                         <div class="featured-large-item">
@@ -120,8 +120,8 @@
                                 <div class="two-column-news two-column-news-left">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Breaking news</h2>
-                                        <a href="/news/group_list/4/breaking-news">View All</a>
+                                        <h2 class="widget-title">Worldwide</h2>
+                                        <a href="/news/group_list/4/worldwide">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -160,8 +160,8 @@
                                 <div class="two-column-news two-column-news-right">
                                     <?php $data_block = $block_key_5; ?>
                                     <div class="section-title">
-                                        <h2 class="widget-title">Featured articles</h2>
-                                        <a href="/news/group_list/5/featured-article">View All</a>
+                                        <h2 class="widget-title">Market</h2>
+                                        <a href="/news/group_list/5/market">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -207,8 +207,8 @@
                                 <div class="three-news-section">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Popular news</h2>
-                                        <a href="/news/group_list/7/popular">View All</a>
+                                        <h2 class="widget-title">Tech</h2>
+                                        <a href="/news/group_list/7/tech">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_6; ?>
                                     <div class="inner-wrapper">
@@ -237,8 +237,8 @@
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
                                 <div class="featured-news-wrap">
                                     <div class="section-title">
-                                        <h2 class="widget-title">Weekly news</h2>
-                                        <a href="/news/group_list/10/weekly">View All</a>
+                                        <h2 class="widget-title">Industry</h2>
+                                        <a href="/news/group_list/10/industry">View All</a>
                                     </div>
                                     <?php $data_block = $block_key_7; ?>
                                     <div class="inner-wrapper">
@@ -287,8 +287,8 @@
                                 <div class="two-column-news two-column-news-left">
 
                                     <div class="section-title">
-                                        <h2 class="widget-title">Popular stories</h2>
-                                        <a href="/news/group_list/12/popular">View All</a>
+                                        <h2 class="widget-title">People</h2>
+                                        <a href="/news/group_list/12/people">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -331,8 +331,8 @@
                                 <div class="two-column-news two-column-news-right">
                                     <?php $data_block = $block_key_9; ?>
                                     <div class="section-title">
-                                        <h2 class="widget-title">Review</h2>
-                                        <a href="/news/group_list/2/review">View All</a>
+                                        <h2 class="widget-title">Regulation</h2>
+                                        <a href="/news/group_list/2/regulation">View All</a>
                                     </div>
 
                                     <div class="inner-wrapper">
@@ -614,7 +614,7 @@
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
 
-                                <div class="section-title"><h2 class="widget-title">Random</h2></div>
+                                <div class="section-title"><h2 class="widget-title">Suggestion</h2></div>
                                 <div class="recent-posts-side">
                                     <?php $data_block = $block_key_11; ?>
                                     <?php
@@ -635,7 +635,14 @@
                                         </div><!-- .news-item -->
                                     <?php }//end for ?>
                                 </div>
+                        </aside>
 
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
+                            <div class="recent-news-section">
+                                <div class="recent-posts-side">
+                                    <a class="twitter-timeline"  href="https://twitter.com/search?q=blockchain" data-widget-id="998766983968473088"></a>
+                                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                </div>
                         </aside>
 
                     </div></div><!-- #secondary -->
