@@ -500,69 +500,17 @@
                                 <a href="#!">View All</a>
                             </div>
                             <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail">
+                                <?php
+                                for ($i=1; $i<=9; $i++){
+                                ?>
                                 <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
+                                    <a href="/book/detail/sample-book/3">
                                         <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b7.jpg');">
+                                             style="background-image: url('<?php echo COVER_BOOK_FOLDER; ?>b<?php echo $i; ?>.jpg');">
                                         </div>
                                     </a>
                                 </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b8.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b3.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b5.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b6.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b1.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b2.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b9.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="#">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/b4.jpg');">
-                                        </div>
-                                    </a>
-                                </div>
+                                <?php } ?>
                             </div>
                         </aside>
 

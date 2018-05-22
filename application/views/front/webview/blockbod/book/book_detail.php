@@ -27,16 +27,27 @@
                                             <div class="news-item">
                                                 <div class="news-thumb">
                                                     <div class="book-detail-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
+                                                         style="background-image: url('<?php
+                                                         if ($detail->is_external > 0){
+                                                             echo COVER_BOOK_FOLDER.'b1.jpg';
+                                                         } else {
+                                                             echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';
+                                                         } ?>
+                                                         ');">
                                                     </div>
                                                 </div><!-- .news-thumb -->
-                                                <div class="news-text-wrap">
+                                                <div class="news-text-wrap text-center">
                                                     <?php
                                                     if ($detail->is_external > 0){
                                                     ?>
-
+                                                        <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button" onclick="window.open('<?php echo $detail->original_link; ?>', '_blank');">Buy now</button>
                                                     <?php } else { ?>
-
+                                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                                            <input type="hidden" name="hosted_button_id" value="HCBP924KCQK64">
+                                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                                        </form>
                                                     <?php } ?>
                                                 </div><!-- .news-text-wrap -->
                                             </div><!-- .news-item -->
@@ -45,6 +56,12 @@
                                         <div class="featured-small-items">
                                             <h2><?php echo $detail->title; ?></h2>
                                             <div class="ellipsis8lines"><?php echo $detail->excerpt; ?></div>
+                                            <p><?php echo $detail->description; ?></p>
+                                            <p><strong>Author:</strong> <?php echo $detail->author_name; ?></p>
+                                            <p><strong>Price:</strong> <?php echo $detail->discount_price; ?> USD</p>
+                                            <p><strong>Page:</strong> <?php echo $detail->page_num; ?></p>
+                                            <p><strong>File size:</strong> <?php echo $detail->file_size_kb; ?> KB</p>
+                                            <p><strong>File type:</strong> <?php echo $detail->file_type; ?></p>
                                         </div><!-- .featured-small-items -->
                                     </div><!-- .inner-wrapper -->
                                 </div><!-- .mix-column-news -->
