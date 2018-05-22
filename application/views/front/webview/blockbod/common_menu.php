@@ -1,7 +1,10 @@
 <header id="masthead" class="site-header" role="banner">
+
     <div class="bottom-header">
         <div class="container">
+
             <div class="site-branding">
+                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.jpeg" class="logo"/>
                 <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">BLOCKCHAIN BOARD & NEWS</a></h1>
             </div>
 
@@ -23,17 +26,26 @@
                         <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a>
                     </div>
 
-                    <div class="wrap-menu-content">
+                    <div id="main_menu" class="wrap-menu-content">
                         <div class="menu-main-menu-container">
                             <ul id="primary-menu" class="menu">
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO</a></li>
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">How to Manage ICO</a></li>
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Law & Regulation</a></li>
-                                <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">BB Index</a></li>
-                            </ul></div>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">How to Manage ICO</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Law & Regulation</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">BB Index</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
+                            </ul>
+                        </div>
                     </div><!-- .menu-content -->
+                    <div id="ico_search" class="home-icon active-true float_r" onclick="toggle_search_box();">
+                        <a href="#!"><i class="fa fa-search"></i></a>
+                    </div>
+                    <div id="search_box" class="hidden search_box float_r">
+                        <input id="txt_search_keyword" type="text"/>
+                        <a href="#!" onclick="toggle_search_box();"><i class="fa fa-close"></i></a>
+                    </div>
                 </nav><!-- #site-navigation -->
             </div> <!-- #main-nav -->
 

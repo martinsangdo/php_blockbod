@@ -7,6 +7,7 @@
 #primary {width:60%;}
 #sidebar-primary {width:40%;}
 .site-title {font-size:24px;}
+.logo {width:50px;height:50px;}
 
 .ellipsis8lines p {
     overflow: hidden;
@@ -242,3 +243,7 @@ p {font-size:14px;}
     font-family: 'Jturjig1 i6t8kchkm45 dje3gnd a',sans-serif;
     line-height: 24px;
 }
+.float_r {float: right !important;}
+.search_box {display:inline-block;}
+.search_box input {padding:15px 25px;width:300px;}
+.search_box a {position:relative;left:-22px;}

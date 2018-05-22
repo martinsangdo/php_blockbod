@@ -41,3 +41,30 @@
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/wp-embed.min.js"></script>
 
 <script type="text/javascript" src="/public/js/common.js"></script>
+<script>
+    //show/hide search box
+    function toggle_search_box(){
+        if ($('#ico_search').is(':visible')){
+            //button is showing, hide it & display textbox
+            $('#ico_search').addClass('hidden');
+            $('#main_menu').addClass('hidden');
+            $('#search_box').removeClass('hidden');
+        } else {
+            //button is not showing, show it & hide textbox
+            $('#search_box').addClass('hidden');
+            $('#ico_search').removeClass('hidden');
+            $('#main_menu').removeClass('hidden');
+        }
+    }
+    $(document).on('ready', function () {
+        //assign event in search box
+        $('#txt_search_keyword', $('#search_box')).unbind();
+        $('#txt_search_keyword', $('#search_box')).keypress(function(e){
+           if (e.which == 13){
+               //press Enter
+               //todo: implement search
+
+           }
+        });
+    });
+</script>

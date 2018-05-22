@@ -110,14 +110,6 @@
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-plus"></i>
-                                </span>
-                        <span class="media-body align-self-center">Create new</span>
-                    </a>
-                </li>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>
                         <span class="media-body align-self-center">List</span>
@@ -144,14 +136,6 @@
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-plus"></i>
-                                </span>
-                        <span class="media-body align-self-center">Create new</span>
-                    </a>
-                </li>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>
                         <span class="media-body align-self-center">List</span>
@@ -175,14 +159,6 @@
             </a>
             <!-- Forms: Submenu-1 -->
             <ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-plus"></i>
-                                </span>
-                        <span class="media-body align-self-center">Create new</span>
-                    </a>
-                </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
@@ -224,7 +200,7 @@
 
         <!-- Comments -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="<?php echo base_url().'admin_1/home'; ?>">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-comment-alt"></i>
                         </span>
@@ -233,16 +209,16 @@
         </li>
         <!-- Subscribe -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="<?php echo base_url().'admin_1/home'; ?>">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-home"></i>
                         </span>
-                <span class="media-body align-self-center">Subscribe</span>
+                <span class="media-body align-self-center">Subscriptions</span>
             </a>
         </li>
         <!-- Message -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="<?php echo base_url().'admin_1/home'; ?>">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-email"></i>
                         </span>
