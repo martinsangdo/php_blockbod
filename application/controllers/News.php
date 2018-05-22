@@ -49,7 +49,7 @@ Class News extends REST_Controller
         //get total posts
         $total_post = $this->block_content_model->get_total(array('status', '1'));
         //create paging
-        $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(2);
+        $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(4);
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 5);
         //
         //

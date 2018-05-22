@@ -56,15 +56,15 @@ $route['index.html'] = 'Welcome';
 
 //
 $route['blockchain-news/(:any)'] = 'news/$1';
-$route['ico-detail/(:any)/(:any)'] = 'ico/detail/$1';
+$route['ico-detail/(:any)/(:any)'] = 'ico/Detail/$1';
 
 //$route['test/(:any)'] = 'cron/CollectHome/$1';
 //ADMIN routes
-$route['admin_1/(:any)'] = 'admin/admin/$1';
-$route['admin_1/(:any)/(:any)'] = 'admin/admin/$1/$2';
+$route['admin_1/(:any)'] = 'admin/Admin/$1';
+$route['admin_1/(:any)/(:any)'] = 'admin/Admin/$1/$2';
 
-$route['admin-article/(:any)'] = 'admin/adminarticle/$1';
-$route['admin-article/(:any)/(:any)'] = 'admin/adminarticle/$1/$2';
+$route['admin-article/(:any)'] = 'admin/AdminArticle/$1';
+$route['admin-article/(:any)/(:any)'] = 'admin/AdminArticle/$1/$2';
 
-$route['admin-book/(:any)'] = 'admin/adminbook/$1';
+$route['admin-book/(:any)'] = 'admin/AdminBook/$1';
 

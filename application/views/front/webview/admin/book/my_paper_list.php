@@ -46,7 +46,7 @@
                                 <td><?php echo $list[$i]->_id; ?></td>
                                 <td><img class="thumb_list" src="<?php
                                     if (!empty($list[$i]->thumb_url)){
-                                        echo BOOK_COVER_PATH.$list[$i]->_id.'/'.$list[$i]->thumb_url;
+                                        echo BOOK_COVER_PATH.$list[$i]->thumb_url;
                                     }
                                     ?>" class=""/></td>
                                 <td><?php echo $list[$i]->title; ?></td>
