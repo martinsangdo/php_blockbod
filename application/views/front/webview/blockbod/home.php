@@ -13,7 +13,6 @@
     <?php require_once 'common_menu.php'; ?>
     <!-- #masthead -->
     <div id="content" class="site-content" style="transform: none;">
-        <?php $data_block = $block_key_1; ?>
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
                 <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                     <!-- #main -->
@@ -41,7 +40,7 @@
                                         </div><!-- .news-item -->
 
                                         <?php
-                                        for ($i=1; $i<5; $i++){
+                                        for ($i=1; $i<3; $i++){
                                         ?>
                                         <div class="news-item half-width">
                                             <div class="news-thumb">
@@ -63,33 +62,65 @@
                                 </div><!-- .mix-column-news -->
                             </section>
 
-                            <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
-                                <div class="featured-news-wrap">
+                            <section id="pt-magazine-three-column-news-2" class="widget three-col-section news-col-3">
+                                <?php $data_block = $top_coin_news; ?>
+                                <div class="three-news-section">
+
                                     <div class="section-title">
                                         <h2 class="widget-title">Top coin news</h2>
+                                        <a href="/news/group_list/7/tech">View All</a>
+                                    </div>
+                                    <div class="inner-wrapper">
+                                        <?php
+                                        for ($i=0; $i<12; $i++){
+                                            ?>
+                                            <div class="news-item three-column-item">
+                                                <div class="news-thumb">
+                                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
+                                                        <div class="home6-center-cropped center-cropped-fill"
+                                                             style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
+                                                        </div>
+                                                    </a>
+                                                </div><!-- .news-thumb -->
+                                                <div class="news-text-wrap">
+                                                    <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
+                                                    <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
+                                                </div><!-- .news-text-wrap -->
+                                            </div><!-- .news-item -->
+                                        <?php }//end for ?>
+                                    </div><!-- .inner-wrapper -->
+
+                                </div><!-- .mix-column-news -->
+                            </section>
+
+                            <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
+                                <?php $data_block = $block_key_3; ?>
+                                <div class="featured-news-wrap">
+                                    <div class="section-title">
+                                        <h2 class="widget-title">Investment</h2>
                                         <a href="/news/group_list/1/top-coin-news">View All</a>
                                     </div>
                                     <div class="inner-wrapper">
                                         <div class="featured-large-item">
                                             <div class="news-item">
                                                 <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[5]->slug); ?>">
+                                                    <a href="<?php echo detail_uri($data_block[3]->slug); ?>">
                                                         <div class="home3-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[5]->thumb_url;?>');">
+                                                             style="background-image: url('<?php echo $data_block[3]->thumb_url;?>');">
                                                         </div>
                                                     </a>
                                                 </div><!-- .news-thumb -->
                                                 <div class="news-text-wrap">
-                                                    <h2><a href="<?php echo detail_uri($data_block[5]->slug); ?>"><?php echo $data_block[5]->title; ?></a></h2>
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[5]->time); ?></span>
-                                                    <div class="ellipsis8lines"><?php echo $data_block[5]->excerpt; ?></div>
+                                                    <h2><a href="<?php echo detail_uri($data_block[3]->slug); ?>"><?php echo $data_block[3]->title; ?></a></h2>
+                                                    <span class="posted-date"><?php echo format_post_time($data_block[3]->time); ?></span>
+                                                    <div class="ellipsis8lines"><?php echo $data_block[3]->excerpt; ?></div>
                                                 </div><!-- .news-text-wrap -->
                                             </div><!-- .news-item -->
                                         </div>
 
                                         <div class="featured-small-items">
                                             <?php
-                                            for ($i=6; $i<11; $i++){
+                                            for ($i=4; $i<9; $i++){
                                                 ?>
                                                 <div class="news-item layout-two g-mb-10">
                                                     <div class="news-thumb">
@@ -115,6 +146,7 @@
                                     <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;" atl="blockbod" title="blockbod"/>
                                 </a>
                             </section>
+
                             <?php $data_block = $block_key_4; ?>
                             <section id="pt-magazine-two-column-news-2" class="widget two-col-section news-col-2">
                                 <div class="two-column-news two-column-news-left">
@@ -232,6 +264,12 @@
                                     </div><!-- .inner-wrapper -->
 
                                 </div><!-- .mix-column-news -->
+                            </section>
+
+                            <section id="media_image-4" class="widget widget_media_image">
+                                <a href="#">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;" atl="blockbod" title="blockbod"/>
+                                </a>
                             </section>
 
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
