@@ -3,8 +3,8 @@
 <head>
     <title>ICO: Analayis</title>
 
-
     <?php require_once 'common_head.php'; ?>
+
 </head>
 
 <body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
@@ -16,7 +16,7 @@
 
 
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
-                <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;width:80%;">
                     <!-- #main -->
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
                         <main id="main" class="site-main" role="main">
@@ -25,7 +25,7 @@
                                     <div class="content-wrap">
                                         <div class="content-wrap-inner">
                                             <div id="content_detail" class="entry-content">
-                                                <iframe src="http://docs.google.com/gview?url=<?php echo base_url(); ?>public/upload/contribute/file_sample_500kB.docx&embedded=true" width="100%" height="700px" frameBorder="0"></div>
+                                                <iframe id="doc_content" src="http://blockbod.me:8073/public/js/pdf.js/web/blockbod_viewer.html?file=/public/upload/contribute/file_sample_500kB.pdf" width="100%" height="1000px" frameBorder="0" scrolling="no"></iframe>
                                             </div><!-- .entry-content -->
                                         </div>
                                     </div>
@@ -56,8 +56,6 @@
     <?php require_once 'common_footer.php'; ?>
 
 </div><!-- #page -->
-
-
 </body></html>
 
 

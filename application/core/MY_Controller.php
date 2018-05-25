@@ -357,23 +357,25 @@ Class MY_Controller extends CI_Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 // Will return the response, if false it print the response
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_HEADER, 1);        //able to get header
+        curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+
 // Set the url
         curl_setopt($ch, CURLOPT_URL,$url);
-        $headers = array(
-            'Referer: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REQUEST_URI: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REDIRECT_QUERY_STRING: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REDIRECT_URL: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-        );
-        $headers = array(
-            'Referer'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REQUEST_URI'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REDIRECT_QUERY_STRING'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-            'REDIRECT_URL'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
-        );
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//        $headers = array(
+//            'Referer: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REQUEST_URI: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REDIRECT_QUERY_STRING: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REDIRECT_URL: https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//        );
+//        $headers = array(
+//            'Referer'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REQUEST_URI'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REDIRECT_QUERY_STRING'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//            'REDIRECT_URL'=>' https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg', //Your referrer address
+//        );
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 // Execute
         $result=curl_exec($ch);
         //

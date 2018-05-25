@@ -56,7 +56,9 @@
             $('#main_menu').removeClass('hidden');
         }
     }
-    $(document).on('ready', function () {
+
+
+$(document).on('ready', function () {
         //assign event in search box
         $('#txt_search_keyword', $('#search_box')).unbind();
         $('#txt_search_keyword', $('#search_box')).keypress(function(e){
