@@ -57,7 +57,6 @@
         }
     }
 
-
 $(document).on('ready', function () {
         //assign event in search box
         $('#txt_search_keyword', $('#search_box')).unbind();
@@ -68,5 +67,5 @@ $(document).on('ready', function () {
 
            }
         });
-    });
+});
 </script>

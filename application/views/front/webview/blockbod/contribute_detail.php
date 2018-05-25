@@ -4,7 +4,11 @@
     <title>ICO: Analayis</title>
 
     <?php require_once 'common_head.php'; ?>
-
+    <script>
+        function iframe_resize(new_h){
+            document.getElementById('doc_content').height = new_h + "px";
+        }
+    </script>
 </head>
 
 <body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
@@ -25,7 +29,7 @@
                                     <div class="content-wrap">
                                         <div class="content-wrap-inner">
                                             <div id="content_detail" class="entry-content">
-                                                <iframe id="doc_content" src="http://blockbod.me:8073/public/js/pdf.js/web/blockbod_viewer.html?file=/public/upload/contribute/file_sample_500kB.pdf" width="100%" height="1000px" frameBorder="0" scrolling="no"></iframe>
+                                                <iframe id="doc_content" src="/public/js/pdf.js/web/blockbod_viewer.html?file=/public/upload/contribute/file_sample_500kB.pdf" width="100%" height="500px" frameBorder="0" scrolling="no"></iframe>
                                             </div><!-- .entry-content -->
                                         </div>
                                     </div>
