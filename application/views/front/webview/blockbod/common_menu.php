@@ -2,10 +2,13 @@
 
     <div class="bottom-header">
         <div class="container">
+            <div class="main_logo">
+                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.jpeg" class="logo"/>
+            </div>
 
             <div class="site-branding">
-                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.jpeg" class="logo"/>
-                <h1 class="site-title"><a href="<?php echo base_url(); ?>" rel="home">BLOCKCHAIN BOARD & NEWS</a></h1>
+                <h1 class="site-title">BLOCKBOD</h1>
+                <h2><a href="<?php echo base_url(); ?>" rel="home">BLOCKCHAIN BOARD & NEWS</a></h2>
             </div>
 
             <div class="header-advertisement">
@@ -33,7 +36,7 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">How to Manage ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Law & Regulation</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global IPO Colloquy</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">BB Index</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>

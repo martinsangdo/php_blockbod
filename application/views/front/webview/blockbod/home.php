@@ -554,7 +554,7 @@
 
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
-                                <div class="section-title"><h2 class="widget-title">Recent</h2></div>
+                                <div class="section-title"><h2 class="widget-title">Country</h2></div>
                                 <?php $data_block = $block_key_10; ?>
                                 <div class="recent-posts-side">
                                     <?php
