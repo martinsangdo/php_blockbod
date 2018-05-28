@@ -554,7 +554,7 @@
 
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
-                                <div class="section-title"><h2 class="widget-title">Country</h2></div>
+                                <div class="section-title"><h2 class="widget-title">Marketplace</h2></div>
                                 <?php $data_block = $block_key_10; ?>
                                 <div class="recent-posts-side">
                                     <?php
@@ -586,7 +586,7 @@
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
-                                    <h2 class="widget-title">ICO Commentary</h2>
+                                    <h2 class="widget-title">White Paper Introduction</h2>
                                     <a href="/news/group_list/15/ico-analysis">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
@@ -612,7 +612,7 @@
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
                             <div class="recent-news-section">
                                 <div class="section-title">
-                                    <h2 class="widget-title">Post ICO Analysis</h2>
+                                    <h2 class="widget-title">Prospect (Green) Paper</h2>
                                     <a href="/news/group_list/15/commentary">View All</a>
                                 </div>
                                 <div class="recent-posts-side">

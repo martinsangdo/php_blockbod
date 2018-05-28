@@ -52,8 +52,11 @@ Class News extends REST_Controller
         $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(4);
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 5);
         //
-        //
         $this->load->view(VIEW_FOLDER.'/news_list', $this->data);
+    }
+    //display real-time price
+    public function coin_price_get(){
+        $this->load->view(VIEW_FOLDER.'/coin_price', $this->data);
     }
     //========== POST FUNCTIONS
     //get newest videos, should hash the list?

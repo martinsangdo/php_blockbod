@@ -36,8 +36,8 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">How to Manage ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global IPO Colloquy</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">BB Index</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global Regulatory Colloquy</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price">BB Index</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>
                         </div>
