@@ -19,8 +19,7 @@
 
             // initialization of range datepicker
             $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker2');
-
-            //get home data
+            //todo: get some data by ajax
 
         });
     </script>
@@ -43,16 +42,17 @@
                             <div class="card-block g-font-weight-300 g-pa-20">
                                 <div class="media">
                                     <div class="d-flex g-mr-15">
-                                        <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-lightblue-v4 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
-                                            <i class="hs-admin-pencil g-absolute-centered"></i>
+                                        <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-teal-v2 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
+                                            <i class="hs-admin-shopping-cart g-absolute-centered"></i>
                                         </div>
                                     </div>
 
                                     <div class="media-body align-self-center">
                                         <div class="d-flex align-items-center g-mb-5">
-                                            <span class="g-font-size-24 g-line-height-1 g-color-black">1,563</span>
+                                            <span class="g-font-size-24 g-line-height-1 g-color-black">xxx</span>
                                         </div>
-                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Articles</h6>
+
+                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Total Sales</h6>
                                     </div>
                                 </div>
                             </div>
@@ -66,17 +66,16 @@
                             <div class="card-block g-font-weight-300 g-pa-20">
                                 <div class="media">
                                     <div class="d-flex g-mr-15">
-                                        <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-teal-v2 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
-                                            <i class="hs-admin-shopping-cart g-absolute-centered"></i>
+                                        <div class="u-header-dropdown-icon-v1 g-pos-rel g-width-60 g-height-60 g-bg-lightblue-v4 g-font-size-18 g-font-size-24--md g-color-white rounded-circle">
+                                            <i class="hs-admin-pencil g-absolute-centered"></i>
                                         </div>
                                     </div>
 
                                     <div class="media-body align-self-center">
                                         <div class="d-flex align-items-center g-mb-5">
-                                            <span class="g-font-size-24 g-line-height-1 g-color-black">324</span>
+                                            <span class="g-font-size-24 g-line-height-1 g-color-black"><?php echo number_format($article_total); ?></span>
                                         </div>
-
-                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Total Sales</h6>
+                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Articles</h6>
                                     </div>
                                 </div>
                             </div>
@@ -162,31 +161,31 @@
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">1</td>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">How to prepare ICO?</td>
                                             <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">Aug 12, 2016</td>
-                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$45</td>
+                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$200</td>
                                         </tr>
                                         <tr>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">2</td>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">How to prepare ICO?</td>
                                             <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">Aug 12, 2016</td>
-                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$45</td>
+                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$200</td>
                                         </tr>
                                         <tr>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">3</td>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">How to prepare ICO?</td>
                                             <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">Aug 12, 2016</td>
-                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$45</td>
+                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$200</td>
                                         </tr>
                                         <tr>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">4</td>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">How to prepare ICO?</td>
                                             <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">Aug 12, 2016</td>
-                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$45</td>
+                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$200</td>
                                         </tr>
                                         <tr>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">5</td>
                                             <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">How to prepare ICO?</td>
                                             <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">Aug 12, 2016</td>
-                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$45</td>
+                                            <td class="text-right g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$200</td>
                                         </tr>
                                     </tbody>
                                 </table>

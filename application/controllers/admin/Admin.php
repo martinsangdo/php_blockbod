@@ -16,6 +16,16 @@ Class Admin extends REST_Controller
     }
     //homepage after login
     public function home_get(){
+        $this->load->model('block_content_model');
+        //get no. of articles which scraped from another websites
+        $this->data['article_total'] = $this->block_content_model->get_total(array('_id > 0', 'status'=>1));
+        //todo: get no. of total sales
+
+        //get no. of selling papers
+
+        //get no. of linking books
+
+        //
         $this->load->view('front/webview/admin/home', $this->data);
     }
     //========== API functions
