@@ -96,7 +96,7 @@
 
                                     <div class="media-body align-self-center">
                                         <div class="d-flex align-items-center g-mb-5">
-                                            <span class="g-font-size-24 g-line-height-1 g-color-black">12</span>
+                                            <span class="g-font-size-24 g-line-height-1 g-color-black"><?php echo number_format($selling_papers); ?></span>
                                         </div>
 
                                         <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Selling papers</h6>
@@ -120,7 +120,7 @@
 
                                     <div class="media-body align-self-center">
                                         <div class="d-flex align-items-center g-mb-5">
-                                            <span class="g-font-size-24 g-line-height-1 g-color-black">148</span>
+                                            <span class="g-font-size-24 g-line-height-1 g-color-black"><?php echo number_format($publishing_books); ?></span>
                                         </div>
 
                                         <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Books</h6>

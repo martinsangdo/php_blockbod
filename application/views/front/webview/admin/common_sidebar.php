@@ -18,7 +18,7 @@
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-file"></i>
                         </span>
-                <span class="media-body align-self-center">Papers</span>
+                <span class="media-body align-self-center">My Papers</span>
                 <span class="d-flex align-self-center u-side-nav--control-icon">
                             <i class="hs-admin-angle-right"></i>
                         </span>

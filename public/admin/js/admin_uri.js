@@ -11,5 +11,6 @@ var ADMIN_BOOK_CONTROLLER_NAME = '/admin-book/';
      LOGOUT: ADMIN_CONTROLLER+ 'logout',
      //book
      GENERATE_SPECIFIC_CODE: ADMIN_BOOK_CONTROLLER_NAME+'generate_specific_code',
+     TOGGLE_PUBLISH_BOOK: ADMIN_BOOK_CONTROLLER_NAME+'toggle_publish'
 
  };

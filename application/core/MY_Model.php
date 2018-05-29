@@ -7,6 +7,8 @@ class MY_Model extends CI_Model {
     function __construct()
     {
         parent::__construct();
+//        $this->output->enable_profiler(TRUE);
+
         $this->load->database();
     }
 
@@ -75,7 +77,6 @@ class MY_Model extends CI_Model {
 		
 	 	$this->db->where($where);
 	 	$this->db->update($this->table_name, $data);
-
 	 	return TRUE;
 	}
 

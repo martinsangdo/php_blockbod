@@ -16,7 +16,7 @@ Class MY_Controller extends CI_Controller
         $controller = $this->uri->segment(1);
         //check permission to access files/API (logined or not)
         switch ($controller){
-//            case ADMIN_BOOK_CONTROLLER_NAME:
+            case ADMIN_BOOK_CONTROLLER_NAME:
             case ADMIN_ARTICLE_CONTROLLER_NAME:
             case ADMIN_CONTROLLER_NAME:
             {

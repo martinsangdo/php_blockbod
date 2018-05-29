@@ -81,7 +81,12 @@ $db['default'] = array(
 	'password' => 'root',                   //changeable in new project
 	'database' => 'blockbod_db',        //changeable in new project
 
-	'dbdriver' => 'mysqli',
+//    'hostname' => '166.62.27.173',              //changeable in new project
+//    'username' => 'blockbod_user',                   //changeable in new project
+//    'password' => 'zpI_aIQ-CI+}',                   //changeable in new project
+//    'database' => 'blockbod_db',
+
+    'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

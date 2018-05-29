@@ -2,7 +2,7 @@
 .form_mess {font-weight:bold; color:#f00;}
 .pointer {cursor: pointer;}
 .hidden {display:none;}
-
+.icon_active {font-weight:bold;color:green;}
 .tbl_general_list a {color:#0b93d5;}
 .tbl_general_list td, .tbl_general_list th {padding:5px;}
 .tbl_general_list img.thumb_list {max-width:80px;height:auto;}

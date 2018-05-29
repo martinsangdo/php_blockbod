@@ -18,8 +18,11 @@ AdminCommon.prototype.logout = function(){
 }
 //==========
 $(document).on('ready', function () {
-    //todo: get new requests
+    //todo: get new Ad requests
 
     //todo: get new messages
+
+    //todo: get new analysis & commentation
+
 
 });

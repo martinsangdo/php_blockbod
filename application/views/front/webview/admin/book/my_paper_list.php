@@ -4,6 +4,7 @@
     <title>My paper list</title>
 
     <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_head.php'); ?>
+    <script src="/public/admin/js/admin_book.js"></script>
 
 </head>
 
@@ -55,6 +56,9 @@
                                 <td><?php echo $list[$i]->discount_price; ?></td>
                                 <td><?php echo $list[$i]->sales_num; ?></td>
                                 <td>
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminBook.toggle_publish_book(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
+                                        <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
+                                    </a>
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Edit">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
