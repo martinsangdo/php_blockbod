@@ -97,9 +97,41 @@ Common.prototype.save_email_subscribe = function(email) {
 Common.prototype.rand_str = function(){
     return Math.random().toString(36).substring(2).toUpperCase();
 };
-//set specific event to each input
-Common.prototype.set_length_handler = function($input, $length_display, max_length){
+//set specific event to each input when keyup
+Common.prototype.set_length_handler = function($input, $length_display, ext_action){
     $input.keyup(function(e){
         $length_display.text($.trim($input.val()).length);
+        if (ext_action != null && ext_action !== undefined){
+            ext_action();
+        }
     });
+};
+//init HTML editor
+//https://alex-d.github.io/
+Common.prototype.init_editor = function($component){
+    $component.trumbowyg({
+        btns: [
+            ['viewHTML'],
+            ['undo', 'redo'], // Only supported in Blink browsers
+            ['formatting'],
+            ['strong', 'em'],
+            ['link'],
+            ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+            ['unorderedList', 'orderedList'],
+            ['horizontalRule']
+        ]
+    });
+};
+//convert a full text to slug
+Common.prototype.to_slug = function(text){
+    return text.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'-');
+};
+//convert file size from bytes to KB or MB
+Common.prototype.convert_file_size = function($size_bytes) {
+    if ($size_bytes < 1024 * 1024) {		//<1MB
+        $size_bytes = Math.round($size_bytes / 1024, 2) + ' KB';
+    } else {
+        $size_bytes = Math.round($size_bytes / (1024 * 1024), 2) + ' MB';
+    }
+    return $size_bytes;
 };

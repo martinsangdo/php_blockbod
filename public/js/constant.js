@@ -1,6 +1,6 @@
 
 //API URI
-var STR_MESS = {
+var STR_MESS_FRONT = {
 
 };
 //link of APIs
@@ -14,12 +14,13 @@ var API_URI = {
 };
 
 var CONST = {
-  DEFAULT_PAGE_LEN: 10,
+    DEFAULT_PAGE_LEN: 10,       //no. of items in pagination
     HIDDEN_CLASSNAME: 'hidden',
     //input form
     FORM_GROUP_CLASS: '.form-group',
     FROM_INPUT_ERROR_CLASSNAME: 'u-has-error-v3',    //form-group which has error
     INPUT_ERROR_CLASSNAME: 'g-brd-pink-v2--error',
     //
+    PROCESS_DONE_NAV_TIMEOUT: 3000,        //the duration (seconds) after a form was finished, moving to new page in (x) seconds
 
 };

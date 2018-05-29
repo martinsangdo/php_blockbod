@@ -50,7 +50,7 @@
                                         echo BOOK_COVER_PATH.$list[$i]->thumb_url;
                                     }
                                     ?>" class=""/></td>
-                                <td><?php echo $list[$i]->title; ?></td>
+                                <td><a href="/book/detail/<?php echo $list[$i]->slug; ?>/<?php echo $list[$i]->_id; ?>" target="_blank"><?php echo $list[$i]->title; ?></a></td>
                                 <td><?php echo $list[$i]->excerpt; ?></td>
                                 <td><?php echo $list[$i]->price; ?></td>
                                 <td><?php echo $list[$i]->discount_price; ?></td>

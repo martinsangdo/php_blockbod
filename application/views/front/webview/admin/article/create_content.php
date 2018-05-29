@@ -14,19 +14,7 @@
 
     <script>
         $(document).on('ready', function () {
-            //https://alex-d.github.io/
-            $('#txt_content').trumbowyg({
-                btns: [
-                    ['viewHTML'],
-                    ['undo', 'redo'], // Only supported in Blink browsers
-                    ['formatting'],
-                    ['strong', 'em'],
-                    ['link'],
-                    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-                    ['unorderedList', 'orderedList'],
-                    ['horizontalRule']
-                ]
-            });
+            common.init_editor($('#txt_content'));
         });
     </script>
 </head>

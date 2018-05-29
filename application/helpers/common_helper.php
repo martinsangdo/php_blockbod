@@ -145,5 +145,10 @@ function shorten_str($str, $limit){
 }
 //generate random string
 function generateRandomString($length = 10) {
-    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    $rand_str = substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    return strtoupper($rand_str);
+}
+//generate filename prefix (prevent hacking system)
+function generate_filename_prefix(){
+    return '_'.time().rand(100,999);
 }
