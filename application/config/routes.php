@@ -67,4 +67,5 @@ $route['admin-article/(:any)'] = 'admin/AdminArticle/$1';
 $route['admin-article/(:any)/(:any)'] = 'admin/AdminArticle/$1/$2';
 
 $route['admin-book/(:any)'] = 'admin/AdminBook/$1';
+$route['admin-book/(:any)/(:any)'] = 'admin/AdminBook/$1/$2';
 

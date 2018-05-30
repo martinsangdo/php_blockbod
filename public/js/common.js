@@ -119,7 +119,8 @@ Common.prototype.init_editor = function($component){
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
             ['unorderedList', 'orderedList'],
             ['horizontalRule']
-        ]
+        ],
+        autogrow: true
     });
 };
 //convert a full text to slug

@@ -58,6 +58,7 @@ define('DETAIL_EXCERPT_LIMIT', 300);      //number of videos to show in 1 page
 //book/paper
 define('BOOK_COVER_PATH', '/public/upload/book_cover/');        //where to save book/paper covers
 define('BOOK_COVER_FOLDER', './public/upload/book_cover');      //used in upload function
+define('BOOK_ATTACH_PATH', '/public/upload/book_attach/');        //where to save book/paper pdf
 define('BOOK_ATTACH_FOLDER', './public/upload/book_attach');      //used in upload function
 //file type
 define('PDF_FILE_EXT', 'pdf');

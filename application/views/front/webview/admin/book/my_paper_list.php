@@ -32,6 +32,7 @@
                             <th>Cover</th>
                             <th>Title</th>
                             <th>Excerpt</th>
+                            <th>File</th>
                             <th>Price</th>
                             <th>Discount price</th>
                             <th>Total sales</th>
@@ -51,6 +52,13 @@
                                     ?>" class=""/></td>
                                 <td><a href="/book/detail/<?php echo $list[$i]->slug; ?>/<?php echo $list[$i]->_id; ?>" target="_blank"><?php echo $list[$i]->title; ?></a></td>
                                 <td><?php echo $list[$i]->excerpt; ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($list[$i]->attach_filename)){
+                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open file</a>';
+                                    }
+                                    ?>
+                                </td>
                                 <td><?php echo $list[$i]->price; ?></td>
                                 <td><?php echo $list[$i]->discount_price; ?></td>
                                 <td><?php echo $list[$i]->sales_num; ?></td>
