@@ -19,6 +19,8 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 public/upload/*
 public/log/*
 captcha/*
+public/js/pdf.js
+public/js/pdf.js/*
 
  Files
 #-------------------------

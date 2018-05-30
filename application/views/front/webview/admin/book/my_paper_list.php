@@ -44,7 +44,7 @@
                         <tbody>
                         <?php
                         for ($i=0;$i<count($list);$i++){ ?>
-                            <tr>
+                            <tr data-id="<?php echo $list[$i]->_id; ?>" data-index="<?php echo $list[$i]->sort_idx; ?>">
                                 <td><img class="thumb_list" src="<?php
                                     if (!empty($list[$i]->thumb_url)){
                                         echo BOOK_COVER_PATH.$list[$i]->thumb_url;
@@ -71,13 +71,13 @@
                                         <i class="hs-admin-pencil"></i>
                                     </a>
                                     <?php if ($i>0){ ?>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move up">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move up" onclick="adminBook.move_paper_step(this, -1);">
                                         <i class="hs-admin-angle-up"></i>
                                     </a>
                                     <?php }
                                     if ($i<count($list)-1){
                                     ?>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move down">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move down" onclick="adminBook.move_paper_step(this, 1);">
                                         <i class="hs-admin-angle-down"></i>
                                     </a>
                                     <? } ?>

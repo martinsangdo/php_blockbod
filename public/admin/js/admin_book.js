@@ -177,3 +177,28 @@ AdminBook.prototype.edit_my_paper = function() {
         }
     }).submit();
 };
+//move index of paper up/down by 1 unit
+AdminBook.prototype.move_paper_step = function(ico, step_unit) {
+    if (submitting){
+        return;
+    }
+    $row = $(ico).closest('tr');
+    var params = {
+        id: $row.attr('data-id'),
+        previous_index: parseInt($row.attr('data-index')),
+        new_index: parseInt($row.attr('data-index')) + step_unit
+    };
+    submitting = true;
+    common.ajaxPost(ADMIN_API_URI.UPDATE_PAPER_INDEX, params, function(resp){
+        if (step_unit > 0){
+            //move row up to top
+
+        } else {
+            //move row down to bottom
+
+        }
+        submitting = false;
+    }, function(err){
+        submitting = false;
+    });
+};
