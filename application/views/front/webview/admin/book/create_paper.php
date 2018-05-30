@@ -111,9 +111,9 @@
                             </div>
                             <small id="mess_submit" class="g-font-weight-300 g-font-size-12 g-color-lightred-v2 g-pt-5 g-ml-10"></small>
                         </div>
+                        <input type="hidden" id="txt_index" value="1"/>
                     </form>
                     <!-- end form -->
-                    <input type="hidden" id="paper_id"/>
                 </div>
             </div>
             <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_footer.php'); ?>

@@ -12,7 +12,7 @@ Class AdminBook extends REST_Controller
     }
     //show list of my papers/books
     public function show_my_papers_get(){
-        $this->data['list'] = $this->book_model->get_pagination_advance('*', array('_id > 0', 'is_external'=> 0), 0, DEFAULT_PAGE_LEN, 'sort_idx', 'desc');
+        $this->data['list'] = $this->book_model->get_pagination_advance('*', array('_id > 0', 'is_external'=> 0), 0, DEFAULT_PAGE_LEN, 'sort_idx', 'asc');
         //get total number
         $this->data['total'] = $this->book_model->get_total(array('_id > 0', 'is_external'=> 0));
         $this->load->view('front/webview/admin/book/my_paper_list', $this->data);
@@ -80,8 +80,6 @@ Class AdminBook extends REST_Controller
                 $uploaded_attach_success = true;
             }
         }
-        $total_papers = $this->book_model->get_total(array('_id > 0', 'is_external'=> 0));
-
         //create new record in DB
         $new_record = array(
             'title' => trim($this->input->post('txt_title')),
@@ -91,7 +89,7 @@ Class AdminBook extends REST_Controller
             'admin_id' => $this->get_login_user_id(),
             'publish_date'=>date('Y-m-d'),
             'excerpt'=> trim($this->input->post('txt_excerpt')),
-            'sort_idx'=>$total_papers+1
+            'sort_idx'=>1   //will be on top
         );
 
         //check optional data
@@ -125,6 +123,9 @@ Class AdminBook extends REST_Controller
         //
         $result = $this->book_model->create($new_record);
         if ($result){
+            //increase indexes of others
+            $result = $this->book_model->custom_query('UPDATE book SET sort_idx=sort_idx+1 WHERE _id <>'.$this->db->insert_id());
+            //
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);

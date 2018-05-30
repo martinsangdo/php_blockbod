@@ -40,9 +40,11 @@ $(document).on('ready', function () {
     //     alert('There is a background image');
     // }
 
+        $('img').on("error", function(jqXHR, error, errorThrown) {
+                // image was broken, replace with your new image
+            this.src = '/public/unity_assets/img/missing_img_1.jpg';
+        });
 });
-//
-
 //
 function window_onload(){
 }

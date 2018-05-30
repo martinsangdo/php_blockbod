@@ -103,7 +103,12 @@ class MY_Model extends CI_Model {
             return FALSE;
         }
 		$rows = $this->db->query($sql);
-		return $rows->result();
+        if ($rows){
+            var_dump($rows);        //why we need it here???
+            return $rows->result();
+        } else {
+            return FALSE;
+        }
 	}
 
 	/**

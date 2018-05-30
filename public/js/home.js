@@ -38,6 +38,6 @@ $(window).on('load', function () {
     setTimeout(function() { // important in this case
         $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
     }, 1);
-    //
-    get_top_read_categories();
+    //replace error images
+
 });
