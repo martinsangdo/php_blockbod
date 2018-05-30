@@ -59,9 +59,20 @@
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminBook.toggle_publish_book(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
                                         <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Edit">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Edit" onclick="common.redirect('/admin-book/edit_paper/<?php echo $list[$i]->_id; ?>');">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
+                                    <?php if ($i>0){ ?>
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move up">
+                                        <i class="hs-admin-angle-up"></i>
+                                    </a>
+                                    <?php }
+                                    if ($i<count($list)-1){
+                                    ?>
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Move down">
+                                        <i class="hs-admin-angle-down"></i>
+                                    </a>
+                                    <? } ?>
                                 </td>
                             </tr>
                         <?php } //end for ?>
