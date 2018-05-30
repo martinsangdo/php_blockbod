@@ -518,7 +518,13 @@
                                         <div class="news-thumb">
                                             <a href="/book/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>">
                                                 <div class="book-thumb-center-cropped center-cropped-fill"
-                                                     style="background-image: url('<?php echo PUBLIC_FOLDER; ?>img/sample_book/pdf.jpg');">
+                                                     style="background-image: url('<?php
+                                                     if (isset($top_papers[$i]->thumb_url)){
+                                                         echo BOOK_COVER_PATH.$top_papers[$i]->thumb_url;
+                                                     } else {
+                                                         echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';
+                                                     }
+                                                     ?>');">
                                                 </div>
                                             </a>
                                         </div><!-- .news-thumb -->

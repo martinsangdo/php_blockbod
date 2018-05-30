@@ -8,6 +8,8 @@ var STR_MESS = {
     PROCESSING: 'Processing, please wait ...',      //used when submitting form
     EXCEED_LIMIT_ATTACH_FILE_SIZE: 'Attach file exceeds limitation',
     PROCESS_DONE_NAV: 'Done, the page is moving to another in few seconds',
+    INVALID_DISCOUNT_PRICE: 'Discount price is invalid',
+    INVALID_PRICE: 'Numeric price is invalid'
 
 };
 //maximum file size

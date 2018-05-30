@@ -115,7 +115,7 @@
                             <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="lbl_author_name_len">0</span> / 64</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
-                            <label class="g-mb-5 g-width-150">Pages total</label>
+                            <label class="g-mb-5 g-width-150">Print length</label>
                             <div class="g-pos-rel">
                                 <input id="txt_page_total" name="txt_page_total" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-100" type="text" />
                             </div>

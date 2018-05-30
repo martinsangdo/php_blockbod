@@ -73,12 +73,24 @@ AdminBook.prototype.create_my_paper = function() {
     var is_valid_excerpt = this.validate_input_paper($('#txt_excerpt', $form_input));
     var is_valid_author_name = this.validate_input_paper($('#txt_author_name', $form_input));
 
+    var price = $.trim($('#txt_price', $form_input).val());
+    var discount_price = $.trim($('#txt_discount_price', $form_input).val());
+
     if (!(is_valid_title && is_valid_slug && is_valid_excerpt && is_valid_author_name)){
         //not valid input, showing error
         $('#mess_submit').text(STR_MESS.MISSING_INPUT);
         return;
     } else if ($('#file_attach_size', $form_input).val() > FILE_LIMIT.PAPER_ATTACH){
         $('#mess_submit').text(STR_MESS.EXCEED_LIMIT_ATTACH_FILE_SIZE);
+        return;
+    } else if (common.isset(price) && !$.isNumeric(parseFloat(price))){
+        $('#mess_submit').text(STR_MESS.INVALID_PRICE);
+        return;
+    }  else if (common.isset(discount_price) && !$.isNumeric(parseFloat(discount_price))){
+        $('#mess_submit').text(STR_MESS.INVALID_PRICE);
+        return;
+    } else if ($.isNumeric(parseFloat(price)) && $.isNumeric(parseFloat(discount_price)) && parseFloat(price)<parseFloat(discount_price)){
+        $('#mess_submit').text(STR_MESS.INVALID_DISCOUNT_PRICE);
         return;
     }
     //submit to save in DB
@@ -93,7 +105,6 @@ AdminBook.prototype.create_my_paper = function() {
             window.location = '/admin-book/show_my_papers';       //move to list page
             submitting = false;
         }, error: function(err){
-            common.dlog(err.responseJSON.message);
             $('#mess_submit').text(STR_MESS.GENERAL_BAD_REQUEST);
             submitting = false;
         }

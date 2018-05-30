@@ -12,7 +12,7 @@ Class AdminBook extends REST_Controller
     }
     //show list of my papers/books
     public function show_my_papers_get(){
-        $this->data['list'] = $this->book_model->get_pagination(array('_id > 0', 'is_external'=> 0), 0, 0);
+        $this->data['list'] = $this->book_model->get_pagination_advance('*', array('_id > 0', 'is_external'=> 0), 0, DEFAULT_PAGE_LEN, 'sort_idx', 'desc');
         //get total number
         $this->data['total'] = $this->book_model->get_total(array('_id > 0', 'is_external'=> 0));
         $this->load->view('front/webview/admin/book/my_paper_list', $this->data);
@@ -71,6 +71,8 @@ Class AdminBook extends REST_Controller
                 $uploaded_attach_success = true;
             }
         }
+        $total_papers = $this->book_model->get_total(array('_id > 0', 'is_external'=> 0));
+
         //create new record in DB
         $new_record = array(
             'title' => trim($this->input->post('txt_title')),
@@ -79,8 +81,10 @@ Class AdminBook extends REST_Controller
             'author_name' => trim($this->input->post('txt_author_name')),
             'admin_id' => $this->get_login_user_id(),
             'publish_date'=>date('Y-m-d'),
-            'excerpt'=> trim($this->input->post('txt_excerpt'))
+            'excerpt'=> trim($this->input->post('txt_excerpt')),
+            'sort_idx'=>$total_papers+1
         );
+
         //check optional data
         if (!empty($_FILES['file_cover']) && $uploaded_cover_success){
             $new_record['thumb_url'] = $new_cover_filename;

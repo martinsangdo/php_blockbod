@@ -43,7 +43,8 @@ class MY_Model extends CI_Model {
         }
     }
     //get list with more conditions
-    function get_pagination_advance($select, $where, $offset, $limit, $order_field, $sort, $tbl_join, $cond_join, $side_join){
+    function get_pagination_advance($select, $where, $offset, $limit, $order_field, $sort,
+                                    $tbl_join=null, $cond_join=null, $side_join=null){
 	    $this->db->select($select);
         $this->db->from($this->table_name);
         $this->db->where($where);

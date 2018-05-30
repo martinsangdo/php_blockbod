@@ -29,13 +29,13 @@
                     <table class="table u-table--v3 g-color-black tbl_general_list">
                         <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Cover</th>
                             <th>Title</th>
                             <th>Excerpt</th>
                             <th>Price</th>
                             <th>Discount price</th>
                             <th>Total sales</th>
+                            <th>Public date</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -44,7 +44,6 @@
                         <?php
                         for ($i=0;$i<count($list);$i++){ ?>
                             <tr>
-                                <td><?php echo $list[$i]->_id; ?></td>
                                 <td><img class="thumb_list" src="<?php
                                     if (!empty($list[$i]->thumb_url)){
                                         echo BOOK_COVER_PATH.$list[$i]->thumb_url;
@@ -55,6 +54,7 @@
                                 <td><?php echo $list[$i]->price; ?></td>
                                 <td><?php echo $list[$i]->discount_price; ?></td>
                                 <td><?php echo $list[$i]->sales_num; ?></td>
+                                <td><?php echo $list[$i]->publish_date; ?></td>
                                 <td>
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminBook.toggle_publish_book(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
                                         <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>

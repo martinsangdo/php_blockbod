@@ -16,7 +16,7 @@ Class Book_model extends MY_Model
             $this->db->limit($limit, 0);    //get first paging
         }
 
-        $this->db->order_by('sort_idx', 'asc');
+        $this->db->order_by('sort_idx', 'desc');
 
         $query = $this->db->get();
 
