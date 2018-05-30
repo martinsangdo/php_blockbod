@@ -34,8 +34,8 @@
                             <th>Excerpt</th>
                             <th>File</th>
                             <th>Price</th>
-                            <th>Discount price</th>
-                            <th>Total sales</th>
+                            <th>Discount</th>
+                            <th>Sales</th>
                             <th>Public date</th>
                             <th>Action</th>
                         </tr>
@@ -55,19 +55,19 @@
                                 <td>
                                     <?php
                                     if (isset($list[$i]->attach_filename)){
-                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open file</a>';
+                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open file ('.$list[$i]->file_size_kb.' KB)</a>';
                                     }
                                     ?>
                                 </td>
                                 <td><?php echo $list[$i]->price; ?></td>
                                 <td><?php echo $list[$i]->discount_price; ?></td>
                                 <td><?php echo $list[$i]->sales_num; ?></td>
-                                <td><?php echo $list[$i]->publish_date; ?></td>
-                                <td>
+                                <td class="min-w-90"><?php echo $list[$i]->publish_date; ?></td>
+                                <td class="min-w-100">
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminBook.toggle_publish_book(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
                                         <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Edit" onclick="common.redirect('/admin-book/edit_paper/<?php echo $list[$i]->_id; ?>');">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Update" onclick="common.redirect('/admin-book/update_paper/<?php echo $list[$i]->_id; ?>');">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
                                     <?php if ($i>0){ ?>

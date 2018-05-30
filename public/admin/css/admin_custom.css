@@ -2,9 +2,13 @@
 .form_mess {font-weight:bold; color:#f00;}
 .pointer {cursor: pointer;}
 .hidden {display:none;}
+.min-w-100 {min-width:100px;}
+.min-w-90 {min-width:90px;}
+
 .icon_active {font-weight:bold;color:green;}
 .tbl_general_list a {color:#0b93d5;}
 .tbl_general_list a i {margin-left:5px;}
+[class*="u-table--v3"] th {font-weight:bold;}
 .tbl_general_list td, .tbl_general_list th {padding:5px;}
 .tbl_general_list img.thumb_list, .edit_form img.thumb_list {max-width:80px;height:auto;}
 

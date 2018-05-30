@@ -22,13 +22,13 @@ Class AdminBook extends REST_Controller
         $this->load->view('front/webview/admin/book/create_paper', $this->data);
     }
     //edit paper
-    public function edit_paper_get(){
+    public function update_paper_get(){
         //get paper detail
         $id = $this->uri->segment(3);
         $detail = $this->book_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
         //
-        $this->load->view('front/webview/admin/book/edit_paper', $this->data);
+        $this->load->view('front/webview/admin/book/update_paper', $this->data);
     }
     //========== API functions
     //generate random strings for book
@@ -125,6 +125,106 @@ Class AdminBook extends REST_Controller
         //
         $result = $this->book_model->create($new_record);
         if ($result){
+            $this->response(RestSuccess(array()), SUCCESS_CODE);
+        } else {
+            $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+        }
+    }
+    //when Admin updates existed paper
+    public function update_paper_post(){
+        $this->load->helper(array('form', 'url'));
+
+        $slug = trim($this->post('txt_slug'));
+        //check if user uploads a cover
+        if (!empty($_FILES['file_cover'])){
+            //user uploaded a cover
+            $new_cover_filename = $slug.generate_filename_prefix().'.png';
+            $config['upload_path'] = BOOK_COVER_FOLDER;
+            $config['allowed_types'] = 'jpg|png';
+            $config['file_name'] = $new_cover_filename;
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+            if ( ! $this->upload->do_upload('file_cover')){
+                $uploaded_cover_success = false;
+            } else {
+                $uploaded_cover_success = true;
+            }
+        }
+        //check if user uploads attach file
+        if (!empty($_FILES['file_attach'])){
+            //user uploaded a cover
+            $new_attach_filename = $slug.generate_filename_prefix().'.pdf';
+            $config['upload_path'] = BOOK_ATTACH_FOLDER;
+            $config['allowed_types'] = 'pdf';
+            $config['file_name'] = $new_attach_filename;
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+            if ( ! $this->upload->do_upload('file_attach')){
+                $uploaded_attach_success = false;
+            } else {
+                $uploaded_attach_success = true;
+            }
+        }
+
+        //update record in DB
+        $update_record = array(
+            'title' => trim($this->input->post('txt_title')),
+            'slug' => trim($this->input->post('txt_slug')),
+            'author_name' => trim($this->input->post('txt_author_name')),
+            'admin_id' => $this->get_login_user_id(),
+            'excerpt'=> trim($this->input->post('txt_excerpt')),
+            'sort_idx'=>trim($this->input->post('txt_index'))
+        );
+
+        //check optional data
+        if (!empty($_FILES['file_cover']) && $uploaded_cover_success){
+            $update_record['thumb_url'] = $new_cover_filename;
+        }
+        if (!empty($_FILES['file_attach']) && $uploaded_attach_success){
+            $update_record['file_size_kb'] = intval(trim($this->input->post('file_attach_size')) / 1024);
+            $update_record['file_type'] = PDF_FILE_EXT;
+            $update_record['attach_filename'] = $new_attach_filename;
+        }
+        $description = $this->input->post('txt_content');
+        if (!empty($description)){
+            $update_record['description'] = trim($description);
+        }
+        $status = $this->input->post('chk_public');
+        $update_record['status'] = (!empty($status) && intval($status)>0)?1:0;
+
+        $price = $this->input->post('txt_price');
+        if (!empty($price)){
+            $update_record['price'] = $price;
+        }
+        $discount_price = $this->input->post('txt_discount_price');
+        if (!empty($discount_price)){
+            $update_record['discount_price'] = $discount_price;
+        }
+        $page_total = $this->input->post('txt_page_total');
+        if (!empty($page_total)){
+            $update_record['page_num'] = $page_total;
+        }
+        $orig_id = $this->input->post('original_id');       //doc id
+        //update indexes of others, if any
+        $swap_id = 0;
+        if (trim($this->input->post('txt_index')) != trim($this->input->post('previous_index'))){
+            //index is changed
+            $orig_index = intval(trim($this->input->post('previous_index')));
+            $new_index = intval(trim($this->input->post('txt_index')));
+            //find if there is any paper has same new index
+            $existed_idx = $this->book_model->read_row(array('sort_idx' => $new_index, '_id <> '.$orig_id));
+            if ($existed_idx){
+                //swap this index
+                $swap_id = $existed_idx->_id;
+            }
+        }
+        //
+        $result = $this->book_model->update_by_condition(array('_id'=>$orig_id), $update_record);
+        if ($result){
+            if ($swap_id > 0){
+                //swap index of 2 papers
+                $result = $this->book_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$orig_index));
+            }
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);

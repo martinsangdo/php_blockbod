@@ -58,7 +58,7 @@
                             </div>
                             <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">PNG / JPG, maximum size 5MB</small>
                             <small id="lbl_file_cover_detail" class="g-font-weight-300 g-font-size-12 g-color-lightblue-v3 g-pt-5 g-ml-10"></small>
-                            <input id="file_cover_size" type="hidden"/>
+                            <input id="file_cover_size" type="hidden" value="0"/>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">File</label>
@@ -70,7 +70,7 @@
                             </div>
                             <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">PDF, maximum size 20MB</small>
                             <small id="lbl_file_attach_detail" class="g-font-weight-300 g-font-size-12 g-color-lightblue-v3 g-pt-5 g-ml-10"></small>
-                            <input id="file_attach_size" name="file_attach_size" type="hidden"/>
+                            <input id="file_attach_size" name="file_attach_size" type="hidden" value="0"/>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Author name (*)</label>
