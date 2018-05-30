@@ -69,7 +69,7 @@
                             <label class="g-mb-5 g-width-150">File</label>
                             <?php
                             if (isset($detail->attach_filename)){
-                                echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$detail->attach_filename.'">Open file ('.$detail->file_size_kb.' KB)</a>';
+                                echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$detail->attach_filename.'">Open ('.$detail->file_size_kb.' KB)</a>';
                             }
                             ?>
                             <div class="u-file-attach-v1 g-brd-gray-light-v2">

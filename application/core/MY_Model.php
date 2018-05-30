@@ -103,11 +103,11 @@ class MY_Model extends CI_Model {
             return FALSE;
         }
 		$rows = $this->db->query($sql);
-        if ($rows){
-            var_dump($rows);        //why we need it here???
-            return $rows->result();
+
+        if ($rows && gettype($rows)=='boolean'){
+            return TRUE;
         } else {
-            return FALSE;
+            return $rows->result();
         }
 	}
 

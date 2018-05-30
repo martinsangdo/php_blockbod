@@ -55,7 +55,7 @@
                                 <td>
                                     <?php
                                     if (isset($list[$i]->attach_filename)){
-                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open file ('.$list[$i]->file_size_kb.' KB)</a>';
+                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open ('.$list[$i]->file_size_kb.' KB)</a>';
                                     }
                                     ?>
                                 </td>
