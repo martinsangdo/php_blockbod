@@ -232,39 +232,24 @@ Class AdminBook extends REST_Controller
         }
     }
     //increase/decrease index/rank
-    public function step_sort_index_post(){
-        $record_id = $this->post('id');
-        $orig_index = intval(trim($this->input->post('previous_index')));
+    public function swap_sort_index_post(){
+        $record_id = intval(trim($this->post('id')));
         $new_index = intval(trim($this->post('new_index')));
-        $swap_id = 0;
-        //find if there is any paper has same new index
-        $existed_idx = $this->book_model->read_row(array('sort_idx' => $new_index, '_id <> '.$record_id));
-        if ($existed_idx){
-            //swap this index
-            $swap_id = $existed_idx->_id;
-        }
-        if ($swap_id > 0){
-            //swap index of 2 papers
-            $result = $this->book_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$orig_index));
-            if ($result){
-                //update current record to new index
-                $result = $this->book_model->update_by_condition(array('_id'=>$record_id), array('sort_idx'=>$new_index));
-                if ($result){
-                    $this->response(RestSuccess(array()), SUCCESS_CODE);
-                } else {
-                    $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
-                }
-            } else {
-                $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
-            }
-        } else {
-            //don't need to swap any record
-            $result = $this->book_model->update_by_condition(array('_id'=>$record_id), array('sort_idx'=>$new_index));
+        $swap_id = intval(trim($this->post('swap_id')));
+        $swap_index = intval(trim($this->post('swap_index')));
+
+        //swap index of 2 papers, update me firstly
+        $result = $this->book_model->update_by_condition(array('_id'=>$record_id), array('sort_idx'=>$new_index));
+        if ($result){
+            //update other record to my index
+            $result = $this->book_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$swap_index));
             if ($result){
                 $this->response(RestSuccess(array()), SUCCESS_CODE);
             } else {
                 $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
             }
+        } else {
+            $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
 
     }

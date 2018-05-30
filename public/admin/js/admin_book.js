@@ -182,20 +182,57 @@ AdminBook.prototype.move_paper_step = function(ico, step_unit) {
     if (submitting){
         return;
     }
-    $row = $(ico).closest('tr');
+    var $tbl_container = $('#tbl_container');
+    $current_row = $(ico).closest('tr');
+    var old_index = parseInt($current_row.attr('data-index'));  //index of current row
+    //get index & id of closest row
+    if (step_unit > 0){
+        //move row down to bottom
+        var $swap_row = $current_row.next();
+    } else {
+        //move row up to top
+        var $swap_row = $current_row.prev();
+    }
+    //swap index
     var params = {
-        id: $row.attr('data-id'),
-        previous_index: parseInt($row.attr('data-index')),
-        new_index: parseInt($row.attr('data-index')) + step_unit
+        id: parseInt($current_row.attr('data-id')),
+        new_index: parseInt($swap_row.attr('data-index')),
+        swap_id: parseInt($swap_row.attr('data-id')),
+        swap_index: old_index   //other row will replaced by this index
     };
     submitting = true;
-    common.ajaxPost(ADMIN_API_URI.UPDATE_PAPER_INDEX, params, function(resp){
+    common.ajaxPost(ADMIN_API_URI.SWAP_PAPER_INDEX, params, function(resp){
+        //update index of 2 rows
+        $current_row.attr('data-index', $swap_row.attr('data-index'));
+        $swap_row.attr('data-index', old_index);
         if (step_unit > 0){
-            //move row up to top
-
-        } else {
             //move row down to bottom
-
+            $current_row.insertAfter($swap_row);
+            if ($current_row.next().length == 0){
+                //there is no more row below, hide btn Down
+                $('.ico_down', $current_row).addClass('hidden');
+            }
+            $('.ico_up', $current_row).removeClass('hidden');
+            //
+            if ($swap_row.prev().length == 0){
+                //there is no more row above, hide btn Up
+                $('.ico_up', $swap_row).addClass('hidden');
+            }
+            $('.ico_down', $swap_row).removeClass('hidden');
+        } else {
+            //move row up to top
+            $current_row.insertBefore($swap_row);
+            if ($current_row.prev().length == 0){
+                //there is no more row above, hide btn Up
+                $('.ico_up', $current_row).addClass('hidden');
+            }
+            $('.ico_down', $current_row).removeClass('hidden');
+            //
+            if ($swap_row.next().length == 0){
+                //there is no more row below, hide btn Down
+                $('.ico_down', $swap_row).addClass('hidden');
+            }
+            $('.ico_up', $swap_row).removeClass('hidden');
         }
         submitting = false;
     }, function(err){
