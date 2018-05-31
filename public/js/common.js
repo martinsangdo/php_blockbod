@@ -93,6 +93,10 @@ Common.prototype.save_email_subscribe = function(email) {
         alert('Thank you! Your email is saved!');
     });
 };
+//show alert
+Common.prototype.show_alert = function(mess){
+    alert(mess);
+};
 //generate random string
 Common.prototype.rand_str = function(){
     return Math.random().toString(36).substring(2).toUpperCase();

@@ -17,7 +17,7 @@
 
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
-                <h2>My paper list</h2>
+                <h2>My papers</h2>
                 <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-paper/create">
                     <i class="hs-admin-plus g-font-size-18"></i>
                     <span class="g-hidden-sm-down g-ml-10">Create new paper</span>

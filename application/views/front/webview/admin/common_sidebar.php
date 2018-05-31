@@ -49,7 +49,7 @@
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu_my_content">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                            <i class="hs-admin-file"></i>
+                            <i class="hs-admin-agenda"></i>
                         </span>
                 <span class="media-body align-self-center">My Contents</span>
                 <span class="d-flex align-self-center u-side-nav--control-icon">
@@ -94,25 +94,9 @@
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-layout-list-thumb"></i>
-                                </span>
-                        <span class="media-body align-self-center">ICO Commentary</span>
-                    </a>
-                </li>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-article/ico_analysis_list">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-list"></i>
-                                </span>
-                        <span class="media-body align-self-center">Post ICO Analysis</span>
-                    </a>
-                </li>
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-agenda"></i>
                                 </span>
-                        <span class="media-body align-self-center">Contributors List</span>
+                        <span class="media-body align-self-center">Contribution news</span>
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
@@ -120,7 +104,7 @@
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-view-list-alt"></i>
                                 </span>
-                        <span class="media-body align-self-center">Collection List</span>
+                        <span class="media-body align-self-center">Ext. news List</span>
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
@@ -128,7 +112,7 @@
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-server"></i>
                                 </span>
-                        <span class="media-body align-self-center">Collection sites</span>
+                        <span class="media-body align-self-center">Ext. sites</span>
                     </a>
                 </li>
             </ul>
@@ -139,7 +123,7 @@
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                            <i class="hs-admin-file"></i>
+                            <i class="hs-admin-book"></i>
                         </span>
                 <span class="media-body align-self-center">Books</span>
                 <span class="d-flex align-self-center u-side-nav--control-icon">
@@ -175,7 +159,7 @@
             <!-- Forms: Submenu-1 -->
             <ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-category/internal_list">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>

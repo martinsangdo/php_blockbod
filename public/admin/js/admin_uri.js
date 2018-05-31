@@ -4,6 +4,7 @@
 var ADMIN_CONTROLLER = '/admin_1/';
 var ADMIN_BOOK_CONTROLLER_NAME = '/admin-book/';
 var ADMIN_PAPER_CONTROLLER_NAME = '/admin-paper/';
+var ADMIN_CATEGORY_CONTROLLER_NAME = '/admin-category/';
 
  var ADMIN_API_URI = {
      //login
@@ -16,5 +17,8 @@ var ADMIN_PAPER_CONTROLLER_NAME = '/admin-paper/';
      CREATE_PAPER: ADMIN_PAPER_CONTROLLER_NAME+'create_paper',
      UPDATE_PAPER: ADMIN_PAPER_CONTROLLER_NAME+'update_paper',
      SWAP_PAPER_INDEX: ADMIN_PAPER_CONTROLLER_NAME+'swap_sort_index',
+     //category
+     UPDATE_CATEGORY: ADMIN_CATEGORY_CONTROLLER_NAME+'update_category',
+
 
  };

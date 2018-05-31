@@ -46,3 +46,27 @@ AdminArticle.prototype.validate_input = function($input){
     //
     return !common.isEmpty(value);
 };
+//update category name
+AdminArticle.prototype.update_category_name = function(btn){
+    if (submitting){
+        return;
+    }
+    $row = $(btn).closest('tr');
+    var name = $.trim($('.txt_name', $row).val());
+    if (common.isEmpty(name)){
+        return;
+    }
+    var slug = common.to_slug(name);
+    var params = {
+        id: $row.attr('data-id'),
+        name: name,
+        slug: slug
+    };
+    submitting = true;
+    common.ajaxPost(ADMIN_API_URI.UPDATE_CATEGORY, params, function(resp){
+        common.show_alert(STR_MESS_FRONT.UPDATE_SUCCESS);
+        submitting = false;
+    }, function(err){
+        submitting = false;
+    });
+};

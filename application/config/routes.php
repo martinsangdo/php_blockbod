@@ -71,3 +71,8 @@ $route['admin-book/(:any)/(:any)'] = 'admin/AdminBook/$1/$2';
 
 $route['admin-paper/(:any)'] = 'admin/AdminPaper/$1';
 $route['admin-paper/(:any)/(:any)'] = 'admin/AdminPaper/$1/$2';
+
+$route['admin-my-content/(:any)'] = 'admin/AdminMyContent/$1';
+$route['admin-my-content/(:any)/(:any)'] = 'admin/AdminMyContent/$1/$2';
+
+$route['admin-category/(:any)'] = 'admin/AdminCategory/$1';

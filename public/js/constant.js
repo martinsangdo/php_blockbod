@@ -1,7 +1,7 @@
 
 //API URI
 var STR_MESS_FRONT = {
-
+    UPDATE_SUCCESS: 'Updated successfully'
 };
 //link of APIs
 var API_URI = {
