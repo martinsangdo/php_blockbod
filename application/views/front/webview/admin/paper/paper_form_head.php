@@ -2,7 +2,7 @@
 
 <script src="/public/js/jquery.form.js"></script>
 <script src="/public/trumbowyg/trumbowyg.min.js"></script>
-<script src="/public/admin/js/admin_book.js"></script>
+<script src="/public/admin/js/admin_paper.js"></script>
 
 <script>
     $(document).on('ready', function () {

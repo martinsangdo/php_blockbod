@@ -123,7 +123,7 @@
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">&nbsp;</label>
                             <div class="g-pos-rel">
-                                <button class="btn btn-md u-btn-blue rounded-0" type="button" onclick="adminBook.edit_my_paper();">Save</button>
+                                <button class="btn btn-md u-btn-blue rounded-0" type="button" onclick="adminPaper.edit_my_paper();">Save</button>
                             </div>
                             <small id="mess_submit" class="g-font-weight-300 g-font-size-12 g-color-lightred-v2 g-pt-5 g-ml-10"></small>
                         </div>

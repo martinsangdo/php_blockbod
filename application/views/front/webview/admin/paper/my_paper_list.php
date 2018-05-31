@@ -4,7 +4,7 @@
     <title>My paper list</title>
 
     <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_head.php'); ?>
-    <script src="/public/admin/js/admin_book.js"></script>
+    <script src="/public/admin/js/admin_paper.js"></script>
 
 </head>
 
@@ -18,7 +18,7 @@
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
                 <h2>My paper list</h2>
-                <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-book/create_paper">
+                <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-paper/create_paper">
                     <i class="hs-admin-plus g-font-size-18"></i>
                     <span class="g-hidden-sm-down g-ml-10">Create new paper</span>
                 </a><br/><br/>
@@ -64,16 +64,16 @@
                                 <td><?php echo $list[$i]->sales_num; ?></td>
                                 <td class="min-w-90"><?php echo $list[$i]->publish_date; ?></td>
                                 <td class="min-w-100">
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminBook.toggle_publish_book(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminPaper.toggle_publish(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
                                         <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Update" onclick="common.redirect('/admin-book/update_paper/<?php echo $list[$i]->_id; ?>');">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Update" onclick="common.redirect('/admin-paper/update_paper/<?php echo $list[$i]->_id; ?>');">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_up <?php if (!(count($list) > 1 && $i>0)) echo 'hidden' ?>" href="#!" title="Move up" onclick="adminBook.move_paper_step(this, -1);">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_up <?php if (!(count($list) > 1 && $i>0)) echo 'hidden' ?>" href="#!" title="Move up" onclick="adminPaper.move_paper_step(this, -1);">
                                         <i class="hs-admin-angle-up"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_down <?php if (!(count($list) > 1 && $i<count($list)-1)) echo 'hidden' ?>" href="#!" title="Move down" onclick="adminBook.move_paper_step(this, 1);">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_down <?php if (!(count($list) > 1 && $i<count($list)-1)) echo 'hidden' ?>" href="#!" title="Move down" onclick="adminPaper.move_paper_step(this, 1);">
                                         <i class="hs-admin-angle-down"></i>
                                     </a>
                                 </td>

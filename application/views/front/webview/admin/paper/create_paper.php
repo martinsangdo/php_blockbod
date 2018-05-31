@@ -106,8 +106,8 @@
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">&nbsp;</label>
                             <div class="g-pos-rel">
-                                <button class="btn btn-md u-btn-purple rounded-0 hidden" type="button" onclick="adminBook.preview_my_paper();">Preview</button>
-                                <button class="btn btn-md u-btn-blue rounded-0" type="button" onclick="adminBook.create_my_paper();">Create</button>
+                                <button class="btn btn-md u-btn-purple rounded-0 hidden" type="button" onclick="adminPaper.preview_my_paper();">Preview</button>
+                                <button class="btn btn-md u-btn-blue rounded-0" type="button" onclick="adminPaper.create_my_paper();">Create</button>
                             </div>
                             <small id="mess_submit" class="g-font-weight-300 g-font-size-12 g-color-lightred-v2 g-pt-5 g-ml-10"></small>
                         </div>

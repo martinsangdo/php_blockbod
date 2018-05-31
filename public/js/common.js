@@ -136,3 +136,23 @@ Common.prototype.convert_file_size = function($size_bytes) {
     }
     return $size_bytes;
 };
+//show/hide textbox error (used in form)
+Common.prototype.toggle_error_textbox = function($input, is_error) {
+    var $title_container = $input.closest(CONST.FORM_GROUP_CLASS);
+    if (is_error){
+        //show error
+        $title_container.addClass(CONST.FROM_INPUT_ERROR_CLASSNAME);
+        $input.addClass(CONST.INPUT_ERROR_CLASSNAME);
+    } else {
+        //remove error
+        $title_container.removeClass(CONST.FROM_INPUT_ERROR_CLASSNAME);
+        $input.removeClass(CONST.INPUT_ERROR_CLASSNAME);
+    }
+};
+//validate required inputs while create/edit paper
+Common.prototype.validate_empty_input_paper = function($input){
+    var value = $.trim($input.val()) || $.trim($input.text());
+    //show error in each input, if any
+    this.toggle_error_textbox($input, common.isEmpty(value));
+    return !common.isEmpty(value);
+};

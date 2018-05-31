@@ -16,7 +16,8 @@ Class MY_Controller extends CI_Controller
         $controller = $this->uri->segment(1);
         //check permission to access files/API (logined or not)
         switch ($controller){
-//            case ADMIN_BOOK_CONTROLLER_NAME:
+            case ADMIN_PAPER_CONTROLLER_NAME:
+            case ADMIN_BOOK_CONTROLLER_NAME:
             case ADMIN_ARTICLE_CONTROLLER_NAME:
             case ADMIN_CONTROLLER_NAME:
             {
@@ -28,12 +29,12 @@ Class MY_Controller extends CI_Controller
                     if ($this->uri->segment(2) != 'login' &&
                         $this->uri->segment(2) != 'read_new_captcha' &&
                         $this->uri->segment(2) != 'check_login'){
-                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
+//                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
                     }
                 } else {
                     $role = $this->get_login_user_role();       //only Admin has role
                     if (empty($role)){
-                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
+//                        redirect(base_url(ADMIN_CONTROLLER_NAME.'/login')); //not allow
                     }
                 }
                 break;
