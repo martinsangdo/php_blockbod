@@ -32,6 +32,9 @@ Class AdminMyContent extends REST_Controller
         $detail = $this->my_content_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
         //
+        $this->load->model(array('category_model'));
+        $this->data['cat_list'] = $this->category_model->get_internal_pagination(array('_id > 0', 'cat_group_id'=>INTERNAL_CAT_GROUP_ID), 0, 0);
+        //
         $this->load->view('front/webview/admin/my_content/update', $this->data);
     }
     //========== API functions
@@ -161,6 +164,7 @@ Class AdminMyContent extends REST_Controller
             'author_name' => trim($this->input->post('txt_author_name')),
             'admin_id' => $this->get_login_user_id(),
             'excerpt'=> trim($this->input->post('txt_excerpt')),
+            'cat_id'=>$this->input->post('sel_cat_id'),
             'sort_idx'=>trim($this->input->post('txt_index'))
         );
 
