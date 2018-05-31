@@ -47,15 +47,15 @@ class Welcome extends MY_Controller
         $this->data['top_coin_news'] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
 
 
-        $this->load->view(VIEW_FOLDER.'/home', $this->data);
+        $this->load->view(VIEW_FOLDER.'home', $this->data);
     }
 
     public function privacy(){
-        $this->load->view(VIEW_FOLDER.'/privacy', $this->data);
+        $this->load->view(VIEW_FOLDER.'privacy', $this->data);
     }
 
     public function terms(){
-        $this->load->view(VIEW_FOLDER.'/terms', $this->data);
+        $this->load->view(VIEW_FOLDER.'terms', $this->data);
     }
 
 }

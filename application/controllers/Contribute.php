@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -10,7 +11,7 @@ Class Contribute extends REST_Controller
     }
     //show detail of commentary or analysis
     public function analysis_detail_get(){
-        $this->load->view(VIEW_FOLDER.'/contribute_detail', $this->data);
+        $this->load->view(VIEW_FOLDER.'contribute_detail', $this->data);
     }
     //customize style of Google viewer
     public function customize_doc_viewer_get(){

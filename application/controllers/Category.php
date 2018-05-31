@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -37,7 +38,7 @@ Class Category extends REST_Controller
         $base_url = '/category/'.$cat_slug.'/'.$cat_ids.'/';
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post[0]->total_post, CAT_POST_NUM, 4);
         //
-        $this->load->view(VIEW_FOLDER.'/category', $this->data);
+        $this->load->view(VIEW_FOLDER.'category', $this->data);
     }
     //show list of posts inside group (get related if too short)
     public function group_get(){
@@ -61,7 +62,7 @@ Class Category extends REST_Controller
         $base_url = '/category/group/'.$group_id.'/';
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post[0]->total_post, CAT_POST_NUM, 4);
         //
-        $this->load->view(VIEW_FOLDER.'/category', $this->data);
+        $this->load->view(VIEW_FOLDER.'category', $this->data);
     }
     //get most read categories
     public function get_top_most_post(){
@@ -94,6 +95,6 @@ Class Category extends REST_Controller
             }
         }
         $this->data['keyword'] = $keyword;
-        $this->load->view(VIEW_FOLDER.'/search', $this->data);
+        $this->load->view(VIEW_FOLDER.'search', $this->data);
     }
 }

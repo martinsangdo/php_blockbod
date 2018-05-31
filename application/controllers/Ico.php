@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -18,7 +19,7 @@ Class Ico extends REST_Controller
         //get related ICOs
 
         //
-        $this->load->view(VIEW_FOLDER.'/ico_detail', $this->data);
+        $this->load->view(VIEW_FOLDER.'ico_detail', $this->data);
     }
 }
 

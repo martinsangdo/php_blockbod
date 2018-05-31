@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -22,6 +23,6 @@ Class Video extends REST_Controller
         $base_url = '/video/';
         $this->data['pagination'] = $this->create_pagination($base_url, $total, VIDEO_PAGE_NUM, 2);
         //
-        $this->load->view(VIEW_FOLDER.'/video', $this->data);
+        $this->load->view(VIEW_FOLDER.'video', $this->data);
     }
 }

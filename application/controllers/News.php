@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -36,7 +37,7 @@ Class News extends REST_Controller
         $this->data['related_posts'] = $related_posts;
         $this->data['extra_ids'] = implode('-',$extra_ids);
         //
-        $this->load->view(VIEW_FOLDER.'/news', $this->data);
+        $this->load->view(VIEW_FOLDER.'news', $this->data);
     }
     //show all posts by group
     public function group_list_get(){
@@ -52,11 +53,11 @@ Class News extends REST_Controller
         $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(4);
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 5);
         //
-        $this->load->view(VIEW_FOLDER.'/news_list', $this->data);
+        $this->load->view(VIEW_FOLDER.'news_list', $this->data);
     }
     //display real-time price
     public function coin_price_get(){
-        $this->load->view(VIEW_FOLDER.'/coin_price', $this->data);
+        $this->load->view(VIEW_FOLDER.'coin_price', $this->data);
     }
     //========== POST FUNCTIONS
     //get newest videos, should hash the list?

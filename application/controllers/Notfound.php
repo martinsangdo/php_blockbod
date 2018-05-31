@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+//author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
@@ -10,7 +11,7 @@ Class Notfound extends REST_Controller
     }
     //show list of posts inside category
     public function index(){
-        $this->load->view(VIEW_FOLDER.'/notfound', $this->data);
+        $this->load->view(VIEW_FOLDER.'notfound', $this->data);
     }
 
     public function iframe_img_get(){
@@ -30,7 +31,7 @@ Class Notfound extends REST_Controller
 
 //        echo('<img src="'.$src['data'].'"/>');
 //        echo '<img src="https://btcmanager.com/wp-content/uploads/2018/04/Singaporean-Resident-to-be-Caned-12-strokes-and-Jailed-in-Connection-with-Bitcoin-Related-Robbery-768x458.jpg"/>';
-        $this->load->view(VIEW_FOLDER.'/notfound', $this->data);
+        $this->load->view(VIEW_FOLDER.'notfound', $this->data);
     }
 }
 

@@ -3,20 +3,19 @@
 
 require (APPPATH.'/libraries/REST_Controller.php');
 
-Class Book extends REST_Controller
+Class Paper extends REST_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('book_model'));
+        $this->load->model(array('paper_model'));
     }
-    //get & show book detail
+    //get & show detail
     public function detail_get(){
-        $book_id = $this->uri->segment(4);
-        $detail = $this->book_model->read_row(array('_id'=>$book_id));
+        $id = $this->uri->segment(4);
+        $detail = $this->paper_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
-        //get related books
-
+        $this->data['detail']->is_external = 0;     //this is internal paper
         //
         $this->load->view(VIEW_FOLDER.'book/book_detail', $this->data);
     }
