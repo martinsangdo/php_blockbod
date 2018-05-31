@@ -47,7 +47,7 @@
                             <tr data-id="<?php echo $list[$i]->_id; ?>" data-index="<?php echo $list[$i]->sort_idx; ?>">
                                 <td><img class="thumb_list" src="<?php
                                     if (!empty($list[$i]->thumb_url)){
-                                        echo BOOK_COVER_PATH.$list[$i]->thumb_url;
+                                        echo PAPER_COVER_PATH.$list[$i]->thumb_url;
                                     }
                                     ?>" class=""/></td>
                                 <td><a href="/book/detail/<?php echo $list[$i]->slug; ?>/<?php echo $list[$i]->_id; ?>" target="_blank"><?php echo $list[$i]->title; ?></a></td>
@@ -55,7 +55,7 @@
                                 <td>
                                     <?php
                                     if (isset($list[$i]->attach_filename)){
-                                        echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$list[$i]->attach_filename.'">Open ('.$list[$i]->file_size_kb.' KB)</a>';
+                                        echo '<a class="g-mr-20" target="_blank" href="'.PAPER_ATTACH_PATH.$list[$i]->attach_filename.'">Open ('.$list[$i]->file_size_kb.' KB)</a>';
                                     }
                                     ?>
                                 </td>

@@ -52,7 +52,7 @@
                             <label class="g-mb-5 g-width-150">Cover image</label>
                             <?php
                             if (isset($detail->thumb_url)){
-                                echo '<img class="thumb_list g-mr-20" src="'.BOOK_COVER_PATH.$detail->thumb_url.'"/>';
+                                echo '<img class="thumb_list g-mr-20" src="'.PAPER_COVER_PATH.$detail->thumb_url.'"/>';
                             }
                             ?>
                             <div class="u-file-attach-v1 g-brd-gray-light-v2">
@@ -69,7 +69,7 @@
                             <label class="g-mb-5 g-width-150">File</label>
                             <?php
                             if (isset($detail->attach_filename)){
-                                echo '<a class="g-mr-20" target="_blank" href="'.BOOK_ATTACH_PATH.$detail->attach_filename.'">Open ('.$detail->file_size_kb.' KB)</a>';
+                                echo '<a class="g-mr-20" target="_blank" href="'.PAPER_ATTACH_PATH.$detail->attach_filename.'">Open ('.$detail->file_size_kb.' KB)</a>';
                             }
                             ?>
                             <div class="u-file-attach-v1 g-brd-gray-light-v2">

@@ -53,7 +53,7 @@ Class AdminPaper extends REST_Controller
         if (!empty($_FILES['file_cover'])){
             //user uploaded a cover
             $new_cover_filename = $slug.generate_filename_prefix().'.png';
-            $config['upload_path'] = BOOK_COVER_FOLDER;
+            $config['upload_path'] = PAPER_COVER_FOLDER;
             $config['allowed_types'] = 'jpg|png';
             $config['file_name'] = $new_cover_filename;
             $this->load->library('upload');
@@ -68,7 +68,7 @@ Class AdminPaper extends REST_Controller
         if (!empty($_FILES['file_attach'])){
             //user uploaded a cover
             $new_attach_filename = $slug.generate_filename_prefix().'.pdf';
-            $config['upload_path'] = BOOK_ATTACH_FOLDER;
+            $config['upload_path'] = PAPER_ATTACH_FOLDER;
             $config['allowed_types'] = 'pdf';
             $config['file_name'] = $new_attach_filename;
             $this->load->library('upload');
@@ -140,7 +140,7 @@ Class AdminPaper extends REST_Controller
         if (!empty($_FILES['file_cover'])){
             //user uploaded a cover
             $new_cover_filename = $slug.generate_filename_prefix().'.png';
-            $config['upload_path'] = BOOK_COVER_FOLDER;
+            $config['upload_path'] = PAPER_COVER_FOLDER;
             $config['allowed_types'] = 'jpg|png';
             $config['file_name'] = $new_cover_filename;
             $this->load->library('upload');
@@ -155,7 +155,7 @@ Class AdminPaper extends REST_Controller
         if (!empty($_FILES['file_attach'])){
             //user uploaded a cover
             $new_attach_filename = $slug.generate_filename_prefix().'.pdf';
-            $config['upload_path'] = BOOK_ATTACH_FOLDER;
+            $config['upload_path'] = PAPER_ATTACH_FOLDER;
             $config['allowed_types'] = 'pdf';
             $config['file_name'] = $new_attach_filename;
             $this->load->library('upload');
