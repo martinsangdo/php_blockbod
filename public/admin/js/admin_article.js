@@ -70,3 +70,43 @@ AdminArticle.prototype.update_category_name = function(btn){
         submitting = false;
     });
 };
+//create a new category
+AdminArticle.prototype.create_internal_cat = function(btn){
+    if (submitting){
+        return;
+    }
+    $row = $(btn).closest('tr');
+    var name = $.trim($('.txt_name', $row).val());
+    if (common.isEmpty(name)){
+        return;
+    }
+    var slug = common.to_slug(name);
+    var params = {
+        id: $row.attr('data-id'),
+        name: name,
+        slug: slug
+    };
+    //
+    submitting = true;
+    common.ajaxPost(ADMIN_API_URI.CREATE_CATEGORY, params, function(resp){
+        common.dlog(resp);
+        //append category to the list
+        var $container = $('#tbl_container');
+        var $new_row = $row.clone(false);
+        $new_row.attr('data-id', resp.id);
+        $('td:nth-child(1)', $new_row).text(resp.id);
+        $('.txt_name', $new_row).val(name);
+        $('button', $new_row).text('Update').attr('onclick', 'adminArticle.update_category_name(this);').
+                removeClass('u-btn-blue').addClass('u-btn-primary');
+        $new_row.insertBefore($row);
+        //
+        $('.txt_name', $row).val('');     //clear name
+        submitting = false;
+    }, function(err){
+        err = $.parseJSON(err);
+        if (err.message == RESP_MESS.DUPLICATE_RECORD){
+            common.show_alert(STR_MESS.DUPLICATE_RECORD);
+        }
+        submitting = false;
+    });
+}

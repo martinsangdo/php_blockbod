@@ -16,6 +16,25 @@ Class AdminCategory extends REST_Controller
         $this->load->view('front/webview/admin/article/internal_cat_list', $this->data);
     }
     //========== POST functions
+    //create internal category
+    public function create_category_post(){
+        $name = $this->post('name');
+        $slug = $this->post('slug');
+        //check if category is existed
+        $existed_total = $this->category_model->get_total(array('name'=>$name));
+        if ($existed_total > 0){
+            //there is a category has same name
+            $this->response(RestBadRequest(DUPLICATE_RECORD), BAD_REQUEST_CODE);
+        } else {
+            $new_record = array('name'=>$name, 'slug'=>$slug, 'cat_group_id'=>INTERNAL_CAT_GROUP_ID);
+            $new_id = $this->category_model->create($new_record);
+            if ($new_id) {
+                $this->response(RestSuccess(array('id'=>$new_id)), SUCCESS_CODE);
+            } else {
+                $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+            }
+        }
+    }
     public function update_category_post(){
         $id = $this->post('id');
         $name = $this->post('name');

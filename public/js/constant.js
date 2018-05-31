@@ -1,7 +1,9 @@
 
 //API URI
 var STR_MESS_FRONT = {
-    UPDATE_SUCCESS: 'Updated successfully'
+    CREATE_SUCCESS: 'Created successfully',
+    UPDATE_SUCCESS: 'Updated successfully',
+
 };
 //link of APIs
 var API_URI = {
@@ -23,4 +25,8 @@ var CONST = {
     //
     PROCESS_DONE_NAV_TIMEOUT: 3000,        //the duration (seconds) after a form was finished, moving to new page in (x) seconds
 
+};
+
+var RESP_MESS = {
+    DUPLICATE_RECORD: 'DUPLICATE_RECORD'
 };

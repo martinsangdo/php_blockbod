@@ -83,6 +83,7 @@
                             <label class="g-mb-5 g-width-150">Categories</label>
                             <div class="g-pos-rel">
                                 <select name="sel_cat_id">
+                                    <option value="0">---</option>
                                     <?php
                                     if ($cat_list){
                                         for ($i=0; $i<count($cat_list); $i++){

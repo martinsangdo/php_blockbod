@@ -20,7 +20,7 @@ class MY_Model extends CI_Model {
             return FALSE;
         }
 		if($this->db->insert($this->table_name, $doc)) {
-		   return TRUE;
+		   return $this->db->insert_id();
 		} else {
 			return FALSE;
 		}

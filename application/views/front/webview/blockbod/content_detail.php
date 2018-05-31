@@ -35,7 +35,7 @@
                                                 <div class="entry-meta">
                                                     <span class="posted-on">
                                                         <a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/" rel="bookmark">
-                                                            <time class="entry-date published" datetime="2017-01-11T08:59:41+00:00">January 11, 2017</time>
+                                                            <time class="entry-date published"><?php echo $article_detail->publish_date; ?></time>
                                                         </a>
                                                     </span>
                                                 </div><!-- .entry-meta -->
@@ -44,6 +44,13 @@
                                             <div id="content_detail" class="entry-content">
                                                 <?php echo $article_detail->content; ?>
                                             </div><!-- .entry-content -->
+                                            <i>
+                                                <?php
+                                                if (isset($article_detail->attach_filename)){
+                                                    echo '<a href="'.CONTENT_ATTACH_PATH.$article_detail->attach_filename.'" target="_blank">Download document</a>';
+                                                }
+                                                ?>
+                                            </i>
                                         </div>
                                     </div>
                                 </div>

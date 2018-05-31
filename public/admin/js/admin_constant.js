@@ -13,7 +13,7 @@ var STR_MESS = {
     INVALID_PAGE_TOTAL: 'Page length is invalid',
     INVALID_INDEX: 'Index is invalid',
     UPDATE_COMPLETED: 'Updated successfully',
-
+    DUPLICATE_RECORD: 'Duplicated data'
 
 
 };
@@ -22,3 +22,5 @@ var FILE_LIMIT = {
     PAPER_ATTACH: 20*1024*1024,     //20 MB
 
 };
+
+//

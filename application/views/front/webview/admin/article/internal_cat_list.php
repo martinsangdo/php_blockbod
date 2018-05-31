@@ -19,9 +19,6 @@
             <div class="g-pa-20">
                 <h2>Internal categories</h2>
                 <div class="table-responsive g-mb-40">
-                    <?php
-                    if ($list){
-                        ?>
                         <table class="table u-table--v3 g-color-black tbl_general_list" id="tbl_container">
                             <thead>
                             <tr>
@@ -34,6 +31,7 @@
 
                             <tbody>
                             <?php
+                            if ($list){
                             for ($i=0;$i<count($list);$i++){ ?>
                                 <tr data-id="<?php echo $list[$i]->_id; ?>">
                                     <td><?php echo $list[$i]->_id; ?></td>
@@ -43,10 +41,17 @@
                                         <button class="btn btn-md u-btn-primary rounded" type="button" onclick="adminArticle.update_category_name(this);">Update</button>
                                     </td>
                                 </tr>
-                            <?php } //end for ?>
+                            <?php } } //end for ?>
+                            <tr>
+                                <td></td>
+                                <td><input type="text" class="txt_name g-width-300"/></td>
+                                <td>0</td>
+                                <td>
+                                    <button class="btn btn-md u-btn-blue rounded" type="button" onclick="adminArticle.create_internal_cat(this);">Create new</button>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
-                    <?php } //end if ?>
                 </div>
 
             </div>
