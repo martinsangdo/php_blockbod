@@ -14,15 +14,16 @@
 
 
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
-                <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                <div class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                     <!-- #main -->
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
-                        <main id="main" class="site-main" role="main">
-                            <article id="post-2057" class="post-2057 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-fashion tag-girl tag-lifestyle">
+                        <main class="site-main" role="main">
+                            <article class="post-2057 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-fashion tag-girl tag-lifestyle">
                                 <div class="article-wrap-inner">
                                     <div class="content-wrap">
                                         <div class="content-wrap-inner">
                                             <div class="entry-content">
+                                                <h1>About us</h1>
                                                 <div>
                                                     <p>Blockbod is the growing digital media, events and information services company for the crypto asset and blockchain technology community. Its mandate is to inform, educate and connect the global community as the authoritative daily news provider dedicated to chronicling the space.</p>
                                                     <p>Blockbod publishes The State of Blockchain, the ultimate, must-read analysis on the growth of blockchain technology.</p>
