@@ -50,12 +50,20 @@ class Welcome extends MY_Controller
         $this->load->view(VIEW_FOLDER.'home', $this->data);
     }
 
-    public function privacy(){
-        $this->load->view(VIEW_FOLDER.'privacy', $this->data);
+    public function about(){
+        $this->load->view(VIEW_FOLDER.'about', $this->data);
     }
 
     public function terms(){
         $this->load->view(VIEW_FOLDER.'terms', $this->data);
+    }
+
+    public function privacy(){
+        $this->load->view(VIEW_FOLDER.'privacy', $this->data);
+    }
+
+    public function advertising(){
+        $this->load->view(VIEW_FOLDER.'advertising', $this->data);
     }
 
 }
