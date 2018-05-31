@@ -32,5 +32,10 @@
             $('#lbl_file_attach_detail', $form_input).text(filename + ', size: '+common.convert_file_size($('#file_attach', $form_input)[0].files[0].size));
             $('#file_attach_size', $form_input).val($('#file_attach', $form_input)[0].files[0].size);
         });
+        //calculate length of data in text boxes (when update detail)
+        $('#lbl_title_len', $form_input).text($.trim($('#txt_title', $form_input).val()).length);
+        $('#lbl_slug_len', $form_input).text($.trim($('#txt_slug', $form_input).val()).length);
+        $('#lbl_excerpt_len', $form_input).text($.trim($('#txt_excerpt', $form_input).val()).length);
+        $('#lbl_author_name_len', $form_input).text($.trim($('#txt_author_name', $form_input).val()).length);
     });
 </script>
