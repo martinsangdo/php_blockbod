@@ -11,18 +11,18 @@ Class AdminPaper extends REST_Controller
 
     }
     //show list of my papers/books
-    public function show_my_papers_get(){
+    public function show_list_get(){
         $this->data['list'] = $this->paper_model->get_pagination_advance('*', array('_id > 0'), 0, DEFAULT_PAGE_LEN, 'sort_idx', 'asc');
         //get total number
         $this->data['total'] = $this->paper_model->get_total(array('_id > 0'));
         $this->load->view('front/webview/admin/paper/my_paper_list', $this->data);
     }
     //create new paper for selling
-    public function create_paper_get(){
+    public function create_get(){
         $this->load->view('front/webview/admin/paper/create_paper', $this->data);
     }
     //edit paper
-    public function update_paper_get(){
+    public function update_get(){
         //get paper detail
         $id = $this->uri->segment(3);
         $detail = $this->paper_model->read_row(array('_id'=>$id));

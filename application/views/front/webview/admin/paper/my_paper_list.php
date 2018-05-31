@@ -18,7 +18,7 @@
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
                 <h2>My paper list</h2>
-                <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-paper/create_paper">
+                <a class="align-self-center u-link-v5 g-color-lightblue-v3 g-color-primary--hover" href="/admin-paper/create">
                     <i class="hs-admin-plus g-font-size-18"></i>
                     <span class="g-hidden-sm-down g-ml-10">Create new paper</span>
                 </a><br/><br/>
@@ -67,7 +67,7 @@
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminPaper.toggle_publish(this, <?php echo $list[$i]->_id; ?>);" title="Publish/Unpublish">
                                         <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
                                     </a>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Update" onclick="common.redirect('/admin-paper/update_paper/<?php echo $list[$i]->_id; ?>');">
+                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Update" onclick="common.redirect('/admin-paper/update/<?php echo $list[$i]->_id; ?>');">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
                                     <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_up <?php if (!(count($list) > 1 && $i>0)) echo 'hidden' ?>" href="#!" title="Move up" onclick="adminPaper.move_paper_step(this, -1);">

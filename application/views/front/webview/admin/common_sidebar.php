@@ -26,7 +26,7 @@
             <!-- Forms: Submenu-1 -->
             <ul id="subMenu2" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-paper/create_paper">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-paper/create">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-plus"></i>
                                 </span>
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-paper/show_my_papers">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-paper/show_list">
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>
@@ -45,6 +45,39 @@
             <!-- End Forms: Submenu-1 -->
         </li>
         <!-- End Papers -->
+        <!-- My contents -->
+        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu_my_content">
+                        <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                            <i class="hs-admin-file"></i>
+                        </span>
+                <span class="media-body align-self-center">My Contents</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon">
+                            <i class="hs-admin-angle-right"></i>
+                        </span>
+            </a>
+            <!-- Forms: Submenu-1 -->
+            <ul id="subMenu_my_content" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-my-content/create">
+                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                                    <i class="hs-admin-plus"></i>
+                                </span>
+                        <span class="media-body align-self-center">Create new</span>
+                    </a>
+                </li>
+                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-my-content/show_list">
+                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                                    <i class="hs-admin-list"></i>
+                                </span>
+                        <span class="media-body align-self-center">List</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- End Forms: Submenu-1 -->
+        </li>
+        <!-- End My contents -->
         <!-- Articles -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu1">

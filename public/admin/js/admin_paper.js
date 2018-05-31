@@ -117,7 +117,7 @@ AdminPaper.prototype.create_my_paper = function() {
         success:function(res,status,xhr){
             $('#mess_submit').text(STR_MESS.PROCESS_DONE_NAV);
             $('#txt_title', $form_input).val('');       //clear it
-            window.location = '/admin-paper/show_my_papers';       //move to list page
+            window.location = '/admin-paper/show_list';       //move to list page
             submitting = false;
         }, error: function(err){
             $('#mess_submit').text(STR_MESS.GENERAL_BAD_REQUEST);
