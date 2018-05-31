@@ -117,7 +117,7 @@ AdminPaper.prototype.create_my_paper = function() {
         success:function(res,status,xhr){
             $('#mess_submit').text(STR_MESS.PROCESS_DONE_NAV);
             $('#txt_title', $form_input).val('');       //clear it
-            window.location = '/admin-paper/show_list';       //move to list page
+            window.location = ADMIN_PAPER_CONTROLLER_NAME+'show_list';       //move to list page
             submitting = false;
         }, error: function(err){
             $('#mess_submit').text(STR_MESS.GENERAL_BAD_REQUEST);
@@ -125,8 +125,8 @@ AdminPaper.prototype.create_my_paper = function() {
         }
     }).submit();
 };
-//edit my paper
-AdminPaper.prototype.edit_my_paper = function() {
+//update record
+AdminPaper.prototype.update = function() {
     if (submitting){
         return;
     }

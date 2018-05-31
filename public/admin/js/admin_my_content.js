@@ -6,30 +6,6 @@
 function AdminMyContent() { }
 
 var adminMyContent = new AdminMyContent();		//global object
-//publish/unpublish
-AdminMyContent.prototype.toggle_publish = function(ico, id){
-    if (submitting){
-        return;
-    }
-    var $ico = $(ico);
-    var params = {
-        id: id
-    };
-    if ($('.ico_publish', $ico).hasClass('icon_active')){
-        //being publishing
-        params['status'] = 0;       //unpublish it
-    } else {
-        //being unpublishing
-        params['status'] = 1;       //publish it
-    }
-    submitting = true;
-    common.ajaxPost(ADMIN_API_URI.TOGGLE_PUBLISH_PAPER, params, function(resp){
-       submitting = false;
-        $('.ico_publish', $ico).toggleClass('icon_active');
-    }, function(err){
-        submitting = false;
-    });
-};
 //validate all input values
 AdminMyContent.prototype.validate_input_form = function() {
     var $form_input = $('#frm_input');
@@ -38,14 +14,8 @@ AdminMyContent.prototype.validate_input_form = function() {
     var is_valid_excerpt = common.validate_empty_input_paper($('#txt_excerpt', $form_input));
     var is_valid_author_name = common.validate_empty_input_paper($('#txt_author_name', $form_input));
 
-    var price = $.trim($('#txt_price', $form_input).val());
-    var discount_price = $.trim($('#txt_discount_price', $form_input).val());
-    var page_total = $.trim($('#txt_page_total', $form_input).val());
     var sort_idx = $.trim($('#txt_index', $form_input).val());
     //reset UI
-    common.toggle_error_textbox($('#txt_price', $form_input), false);
-    common.toggle_error_textbox($('#txt_discount_price', $form_input), false);
-    common.toggle_error_textbox($('#txt_page_total', $form_input), false);
     common.toggle_error_textbox($('#txt_index', $form_input), false);
 
     if (!(is_valid_title && is_valid_slug && is_valid_excerpt && is_valid_author_name)){
@@ -55,22 +25,6 @@ AdminMyContent.prototype.validate_input_form = function() {
     } else if ($('#file_attach_size', $form_input).val() > FILE_LIMIT.PAPER_ATTACH){
         $('#mess_submit').text(STR_MESS.EXCEED_LIMIT_ATTACH_FILE_SIZE);
         return false;
-    } else if (common.isset(price) && (!$.isNumeric(parseFloat(price)) || parseFloat(price) <= 0.0)){
-        common.toggle_error_textbox($('#txt_price', $form_input), true);
-        $('#mess_submit').text(STR_MESS.INVALID_PRICE);
-        return false;
-    } else if (common.isset(page_total) && (!$.isNumeric(parseInt(page_total)) || parseInt(page_total) < 0)){
-        common.toggle_error_textbox($('#txt_page_total', $form_input), true);
-        $('#mess_submit').text(STR_MESS.INVALID_PAGE_TOTAL);
-        return false;
-    }  else if (common.isset(discount_price) && (!$.isNumeric(parseFloat(discount_price)) || parseFloat(discount_price) <= 0.0)){
-        common.toggle_error_textbox($('#txt_discount_price', $form_input), true);
-        $('#mess_submit').text(STR_MESS.INVALID_DISCOUNT_PRICE);
-        return false;
-    } else if ($.isNumeric(parseFloat(price)) && $.isNumeric(parseFloat(discount_price)) && parseFloat(price)<parseFloat(discount_price)){
-        common.toggle_error_textbox($('#txt_discount_price', $form_input), true);
-        $('#mess_submit').text(STR_MESS.INVALID_DISCOUNT_PRICE);
-        return false;
     } else if (!$.isNumeric(parseInt(sort_idx)) || parseInt(sort_idx) <= 0){
         common.toggle_error_textbox($('#txt_index', $form_input), true);
         $('#mess_submit').text(STR_MESS.INVALID_INDEX);
@@ -79,8 +33,8 @@ AdminMyContent.prototype.validate_input_form = function() {
 
     return true;
 };
-//create new paper
-AdminMyContent.prototype.create_my_paper = function() {
+//create new record
+AdminMyContent.prototype.create = function() {
     if (submitting){
         return;
     }
@@ -96,12 +50,12 @@ AdminMyContent.prototype.create_my_paper = function() {
     submitting = true;
     $form_input.ajaxForm({
         data:{},
-        url: ADMIN_API_URI.CREATE_PAPER,
+        url: ADMIN_API_URI.CREATE_MY_CONTENT,
         type:'post',
         success:function(res,status,xhr){
             $('#mess_submit').text(STR_MESS.PROCESS_DONE_NAV);
             $('#txt_title', $form_input).val('');       //clear it
-            window.location = '/admin-paper/show_list';       //move to list page
+            window.location = ADMIN_MY_CONTENT_CONTROLLER_NAME+'show_list';       //move to list page
             submitting = false;
         }, error: function(err){
             $('#mess_submit').text(STR_MESS.GENERAL_BAD_REQUEST);
@@ -110,7 +64,7 @@ AdminMyContent.prototype.create_my_paper = function() {
     }).submit();
 };
 //edit my paper
-AdminMyContent.prototype.edit_my_paper = function() {
+AdminMyContent.prototype.update = function() {
     if (submitting){
         return;
     }
@@ -125,7 +79,7 @@ AdminMyContent.prototype.edit_my_paper = function() {
     submitting = true;
     $form_input.ajaxForm({
         data:{},
-        url: ADMIN_API_URI.UPDATE_PAPER,
+        url: ADMIN_API_URI.UPDATE_MY_CONTENT,
         type:'post',
         success:function(res,status,xhr){
             //update index
@@ -140,66 +94,4 @@ AdminMyContent.prototype.edit_my_paper = function() {
             submitting = false;
         }
     }).submit();
-};
-//move index of paper up/down by 1 unit
-AdminMyContent.prototype.move_paper_step = function(ico, step_unit) {
-    if (submitting){
-        return;
-    }
-    var $tbl_container = $('#tbl_container');
-    $current_row = $(ico).closest('tr');
-    var old_index = parseInt($current_row.attr('data-index'));  //index of current row
-    //get index & id of closest row
-    if (step_unit > 0){
-        //move row down to bottom
-        var $swap_row = $current_row.next();
-    } else {
-        //move row up to top
-        var $swap_row = $current_row.prev();
-    }
-    //swap index
-    var params = {
-        id: parseInt($current_row.attr('data-id')),
-        new_index: parseInt($swap_row.attr('data-index')),
-        swap_id: parseInt($swap_row.attr('data-id')),
-        swap_index: old_index   //other row will replaced by this index
-    };
-    submitting = true;
-    common.ajaxPost(ADMIN_API_URI.SWAP_PAPER_INDEX, params, function(resp){
-        //update index of 2 rows
-        $current_row.attr('data-index', $swap_row.attr('data-index'));
-        $swap_row.attr('data-index', old_index);
-        if (step_unit > 0){
-            //move row down to bottom
-            $current_row.insertAfter($swap_row);
-            if ($current_row.next().length == 0){
-                //there is no more row below, hide btn Down
-                $('.ico_down', $current_row).addClass('hidden');
-            }
-            $('.ico_up', $current_row).removeClass('hidden');
-            //
-            if ($swap_row.prev().length == 0){
-                //there is no more row above, hide btn Up
-                $('.ico_up', $swap_row).addClass('hidden');
-            }
-            $('.ico_down', $swap_row).removeClass('hidden');
-        } else {
-            //move row up to top
-            $current_row.insertBefore($swap_row);
-            if ($current_row.prev().length == 0){
-                //there is no more row above, hide btn Up
-                $('.ico_up', $current_row).addClass('hidden');
-            }
-            $('.ico_down', $current_row).removeClass('hidden');
-            //
-            if ($swap_row.next().length == 0){
-                //there is no more row below, hide btn Down
-                $('.ico_down', $swap_row).addClass('hidden');
-            }
-            $('.ico_up', $swap_row).removeClass('hidden');
-        }
-        submitting = false;
-    }, function(err){
-        submitting = false;
-    });
 };

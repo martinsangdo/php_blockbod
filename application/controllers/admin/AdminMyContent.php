@@ -11,42 +11,41 @@ Class AdminMyContent extends REST_Controller
         $this->load->model(array('my_content_model'));
 
     }
-    //show list of my papers/books
+    //show list
     public function show_list_get(){
-        $this->data['list'] = $this->my_content_model->get_pagination_advance('*', array('_id > 0'), 0, DEFAULT_PAGE_LEN, 'sort_idx', 'asc');
+        $this->data['list'] = $this->my_content_model->get_pagination_advance('my_content.*, category.name AS cat_name', array('_id > 0'), 0,
+            DEFAULT_PAGE_LEN, 'sort_idx', 'asc', 'category', 'my_content.cat_id=category._id', 'left');
         //get total number
         $this->data['total'] = $this->my_content_model->get_total(array('_id > 0'));
         $this->load->view('front/webview/admin/my_content/list', $this->data);
     }
-    //create new paper for selling
+    //create new page
     public function create_get(){
-        $this->load->view('front/webview/admin/paper/create_paper', $this->data);
+        $this->load->model(array('category_model'));
+        $this->data['cat_list'] = $this->category_model->get_internal_pagination(array('_id > 0', 'cat_group_id'=>INTERNAL_CAT_GROUP_ID), 0, 0);
+        $this->load->view('front/webview/admin/my_content/create', $this->data);
     }
-    //edit paper
+    //edit
     public function update_get(){
-        //get paper detail
+        //get detail
         $id = $this->uri->segment(3);
-        $detail = $this->paper_model->read_row(array('_id'=>$id));
+        $detail = $this->my_content_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
         //
-        $this->load->view('front/webview/admin/paper/update_paper', $this->data);
+        $this->load->view('front/webview/admin/my_content/update', $this->data);
     }
     //========== API functions
-    //generate random strings for book
-    public function generate_specific_code_post(){
-        $this->load->view('front/webview/admin/paper/create_paper', $this->data);
-    }
-    //publish/unpublish book/paper
+    //publish/unpublish
     public function toggle_publish_post(){
         $id = $this->post('id');
         $status = intval($this->post('status'));
 
-        $this->paper_model->update_by_condition(array('_id'=>$id), array('status'=>$status));
+        $this->my_content_model->update_by_condition(array('_id'=>$id), array('status'=>$status));
 
         $this->response(RestSuccess(array()), SUCCESS_CODE);
     }
-    //when Admin creates new paper
-    public function create_paper_post(){
+    //when Admin creates new one
+    public function create_post(){
         $this->load->helper(array('form', 'url'));
 
         $slug = trim($this->post('txt_slug'));
@@ -54,7 +53,7 @@ Class AdminMyContent extends REST_Controller
         if (!empty($_FILES['file_cover'])){
             //user uploaded a cover
             $new_cover_filename = $slug.generate_filename_prefix().'.png';
-            $config['upload_path'] = PAPER_COVER_FOLDER;
+            $config['upload_path'] = CONTENT_COVER_FOLDER;
             $config['allowed_types'] = 'jpg|png';
             $config['file_name'] = $new_cover_filename;
             $this->load->library('upload');
@@ -69,7 +68,7 @@ Class AdminMyContent extends REST_Controller
         if (!empty($_FILES['file_attach'])){
             //user uploaded a cover
             $new_attach_filename = $slug.generate_filename_prefix().'.pdf';
-            $config['upload_path'] = PAPER_ATTACH_FOLDER;
+            $config['upload_path'] = CONTENT_ATTACH_FOLDER;
             $config['allowed_types'] = 'pdf';
             $config['file_name'] = $new_attach_filename;
             $this->load->library('upload');
@@ -85,11 +84,11 @@ Class AdminMyContent extends REST_Controller
         $new_record = array(
             'title' => trim($this->input->post('txt_title')),
             'slug' => trim($this->input->post('txt_slug')),
-            'specific_code' => generateRandomString(),      //for billing
             'author_name' => trim($this->input->post('txt_author_name')),
             'admin_id' => $this->get_login_user_id(),
             'publish_date'=>date('Y-m-d'),
             'excerpt'=> trim($this->input->post('txt_excerpt')),
+            'cat_id'=>$this->input->post('sel_cat_id'),
             'sort_idx'=>1   //will be on top
         );
 
@@ -104,36 +103,23 @@ Class AdminMyContent extends REST_Controller
         }
         $description = $this->input->post('txt_content');
         if (!empty($description)){
-            $new_record['description'] = trim($description);
+            $new_record['content'] = trim($description);
         }
         $status = $this->input->post('chk_public');
         $new_record['status'] = (!empty($status) && intval($status)>0)?1:0;
-
-        $price = $this->input->post('txt_price');
-        if (!empty($price)){
-            $new_record['price'] = $price;
-        }
-        $discount_price = $this->input->post('txt_discount_price');
-        if (!empty($discount_price)){
-            $new_record['discount_price'] = $discount_price;
-        }
-        $page_total = $this->input->post('txt_page_total');
-        if (!empty($page_total)){
-            $new_record['page_num'] = $page_total;
-        }
         //
-        $result = $this->paper_model->create($new_record);
+        $result = $this->my_content_model->create($new_record);
+        $new_id = $this->db->insert_id();
         if ($result){
             //increase indexes of others
-            $result = $this->paper_model->custom_query('UPDATE paper SET sort_idx=sort_idx+1 WHERE _id <>'.$this->db->insert_id());
-            //
+            $result = $this->my_content_model->custom_query('UPDATE my_content SET sort_idx=sort_idx+1 WHERE _id <>'.$new_id);
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
     }
-    //when Admin updates existed paper
-    public function update_paper_post(){
+    //when Admin updates existed record
+    public function update_post(){
         $this->load->helper(array('form', 'url'));
 
         $slug = trim($this->post('txt_slug'));
@@ -141,7 +127,7 @@ Class AdminMyContent extends REST_Controller
         if (!empty($_FILES['file_cover'])){
             //user uploaded a cover
             $new_cover_filename = $slug.generate_filename_prefix().'.png';
-            $config['upload_path'] = PAPER_COVER_FOLDER;
+            $config['upload_path'] = CONTENT_COVER_FOLDER;
             $config['allowed_types'] = 'jpg|png';
             $config['file_name'] = $new_cover_filename;
             $this->load->library('upload');
@@ -156,7 +142,7 @@ Class AdminMyContent extends REST_Controller
         if (!empty($_FILES['file_attach'])){
             //user uploaded a cover
             $new_attach_filename = $slug.generate_filename_prefix().'.pdf';
-            $config['upload_path'] = PAPER_ATTACH_FOLDER;
+            $config['upload_path'] = CONTENT_ATTACH_FOLDER;
             $config['allowed_types'] = 'pdf';
             $config['file_name'] = $new_attach_filename;
             $this->load->library('upload');
@@ -189,23 +175,10 @@ Class AdminMyContent extends REST_Controller
         }
         $description = $this->input->post('txt_content');
         if (!empty($description)){
-            $update_record['description'] = trim($description);
+            $update_record['content'] = trim($description);
         }
         $status = $this->input->post('chk_public');
         $update_record['status'] = (!empty($status) && intval($status)>0)?1:0;
-
-        $price = $this->input->post('txt_price');
-        if (!empty($price)){
-            $update_record['price'] = $price;
-        }
-        $discount_price = $this->input->post('txt_discount_price');
-        if (!empty($discount_price)){
-            $update_record['discount_price'] = $discount_price;
-        }
-        $page_total = $this->input->post('txt_page_total');
-        if (!empty($page_total)){
-            $update_record['page_num'] = $page_total;
-        }
         $orig_id = $this->input->post('original_id');       //doc id
         //update indexes of others, if any
         $swap_id = 0;
@@ -213,19 +186,19 @@ Class AdminMyContent extends REST_Controller
             //index is changed
             $orig_index = intval(trim($this->input->post('previous_index')));
             $new_index = intval(trim($this->input->post('txt_index')));
-            //find if there is any paper has same new index
-            $existed_idx = $this->paper_model->read_row(array('sort_idx' => $new_index, '_id <> '.$orig_id));
+            //find if there is any record has same new index
+            $existed_idx = $this->my_content_model->read_row(array('sort_idx' => $new_index, '_id <> '.$orig_id));
             if ($existed_idx){
                 //swap this index
                 $swap_id = $existed_idx->_id;
             }
         }
         //
-        $result = $this->paper_model->update_by_condition(array('_id'=>$orig_id), $update_record);
+        $result = $this->my_content_model->update_by_condition(array('_id'=>$orig_id), $update_record);
         if ($result){
             if ($swap_id > 0){
-                //swap index of 2 papers
-                $result = $this->paper_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$orig_index));
+                //swap index of 2 records
+                $result = $this->my_content_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$orig_index));
             }
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
@@ -239,11 +212,11 @@ Class AdminMyContent extends REST_Controller
         $swap_id = intval(trim($this->post('swap_id')));
         $swap_index = intval(trim($this->post('swap_index')));
 
-        //swap index of 2 papers, update me firstly
-        $result = $this->paper_model->update_by_condition(array('_id'=>$record_id), array('sort_idx'=>$new_index));
+        //swap index of 2 records, update me firstly
+        $result = $this->my_content_model->update_by_condition(array('_id'=>$record_id), array('sort_idx'=>$new_index));
         if ($result){
             //update other record to my index
-            $result = $this->paper_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$swap_index));
+            $result = $this->my_content_model->update_by_condition(array('_id'=>$swap_id), array('sort_idx'=>$swap_index));
             if ($result){
                 $this->response(RestSuccess(array()), SUCCESS_CODE);
             } else {

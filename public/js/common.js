@@ -119,7 +119,7 @@ Common.prototype.init_editor = function($component){
             ['undo', 'redo'], // Only supported in Blink browsers
             ['formatting'],
             ['strong', 'em'],
-            ['link'],
+            ['link', 'insertImage'],
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
             ['unorderedList', 'orderedList'],
             ['horizontalRule']

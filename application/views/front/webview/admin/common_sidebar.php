@@ -250,7 +250,15 @@
                 <span class="media-body align-self-center">Messages</span>
             </a>
         </li>
-        <!-- Home -->
+        <!-- Resource -->
+        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
+                        <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                            <i class="hs-admin-email"></i>
+                        </span>
+                <span class="media-body align-self-center">Resources</span>
+            </a>
+        </li>
     </ul>
 </div>
 <!-- End Sidebar Nav -->

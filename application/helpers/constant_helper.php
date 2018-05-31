@@ -63,5 +63,10 @@ define('PAPER_COVER_PATH', '/public/upload/paper_cover/');        //where to sav
 define('PAPER_COVER_FOLDER', './public/upload/paper_cover');      //used in upload function
 define('PAPER_ATTACH_PATH', '/public/upload/paper_attach/');        //where to save paper pdf
 define('PAPER_ATTACH_FOLDER', './public/upload/paper_attach');      //used in upload function
+//my content
+define('CONTENT_COVER_PATH', '/public/upload/content_cover/');
+define('CONTENT_COVER_FOLDER', './public/upload/content_cover');
+define('CONTENT_ATTACH_PATH', '/public/upload/content_attach/');
+define('CONTENT_ATTACH_FOLDER', './public/upload/content_attach');
 //file type
 define('PDF_FILE_EXT', 'pdf');
