@@ -12,13 +12,13 @@ AdminMyContent.prototype.validate_input_form = function() {
     var is_valid_title = common.validate_empty_input_paper($('#txt_title', $form_input));
     var is_valid_slug = common.validate_empty_input_paper($('#txt_slug', $form_input));
     var is_valid_excerpt = common.validate_empty_input_paper($('#txt_excerpt', $form_input));
-    var is_valid_author_name = common.validate_empty_input_paper($('#txt_author_name', $form_input));
+    // var is_valid_author_name = common.validate_empty_input_paper($('#txt_author_name', $form_input));
 
     var sort_idx = $.trim($('#txt_index', $form_input).val());
     //reset UI
     common.toggle_error_textbox($('#txt_index', $form_input), false);
 
-    if (!(is_valid_title && is_valid_slug && is_valid_excerpt && is_valid_author_name)){
+    if (!(is_valid_title && is_valid_slug && is_valid_excerpt)){
         //not valid input, showing error
         $('#mess_submit').text(STR_MESS.MISSING_INPUT);
         return false;
