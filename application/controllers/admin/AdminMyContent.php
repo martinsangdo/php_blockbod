@@ -104,9 +104,9 @@ Class AdminMyContent extends REST_Controller
             $new_record['file_type'] = PDF_FILE_EXT;
             $new_record['attach_filename'] = $new_attach_filename;
         }
-        $description = $this->input->post('txt_content');
+        $description = trim($this->input->post('txt_content'));
         if (!empty($description)){
-            $new_record['content'] = trim($description);
+            $new_record['content'] = $description;
         }
         $status = $this->input->post('chk_public');
         $new_record['status'] = (!empty($status) && intval($status)>0)?1:0;
@@ -177,9 +177,9 @@ Class AdminMyContent extends REST_Controller
             $update_record['file_type'] = PDF_FILE_EXT;
             $update_record['attach_filename'] = $new_attach_filename;
         }
-        $description = $this->input->post('txt_content');
+        $description = trim($this->input->post('txt_content'));
         if (!empty($description)){
-            $update_record['content'] = trim($description);
+            $update_record['content'] = $description;
         }
         $status = $this->input->post('chk_public');
         $update_record['status'] = (!empty($status) && intval($status)>0)?1:0;

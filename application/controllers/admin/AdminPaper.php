@@ -101,22 +101,22 @@ Class AdminPaper extends REST_Controller
             $new_record['file_type'] = PDF_FILE_EXT;
             $new_record['attach_filename'] = $new_attach_filename;
         }
-        $description = $this->input->post('txt_content');
+        $description = trim($this->input->post('txt_content'));
         if (!empty($description)){
-            $new_record['description'] = trim($description);
+            $new_record['description'] = $description;
         }
         $status = $this->input->post('chk_public');
         $new_record['status'] = (!empty($status) && intval($status)>0)?1:0;
 
-        $price = $this->input->post('txt_price');
+        $price = trim($this->input->post('txt_price'));
         if (!empty($price)){
             $new_record['price'] = $price;
         }
-        $discount_price = $this->input->post('txt_discount_price');
+        $discount_price = trim($this->input->post('txt_discount_price'));
         if (!empty($discount_price)){
             $new_record['discount_price'] = $discount_price;
         }
-        $page_total = $this->input->post('txt_page_total');
+        $page_total = trim($this->input->post('txt_page_total'));
         if (!empty($page_total)){
             $new_record['page_num'] = $page_total;
         }
@@ -186,22 +186,22 @@ Class AdminPaper extends REST_Controller
             $update_record['file_type'] = PDF_FILE_EXT;
             $update_record['attach_filename'] = $new_attach_filename;
         }
-        $description = $this->input->post('txt_content');
+        $description = trim($this->input->post('txt_content'));
         if (!empty($description)){
-            $update_record['description'] = trim($description);
+            $update_record['description'] = $description;
         }
         $status = $this->input->post('chk_public');
         $update_record['status'] = (!empty($status) && intval($status)>0)?1:0;
 
-        $price = $this->input->post('txt_price');
+        $price = trim($this->input->post('txt_price'));
         if (!empty($price)){
             $update_record['price'] = $price;
         }
-        $discount_price = $this->input->post('txt_discount_price');
+        $discount_price = trim($this->input->post('txt_discount_price'));
         if (!empty($discount_price)){
             $update_record['discount_price'] = $discount_price;
         }
-        $page_total = $this->input->post('txt_page_total');
+        $page_total = trim($this->input->post('txt_page_total'));
         if (!empty($page_total)){
             $update_record['page_num'] = $page_total;
         }

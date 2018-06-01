@@ -78,6 +78,39 @@
             <!-- End Forms: Submenu-1 -->
         </li>
         <!-- End My contents -->
+        <!-- Books -->
+        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
+                        <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                            <i class="hs-admin-book"></i>
+                        </span>
+                <span class="media-body align-self-center">Books</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon">
+                            <i class="hs-admin-angle-right"></i>
+                        </span>
+            </a>
+            <!-- Forms: Submenu-1 -->
+            <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-book/create">
+                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                                    <i class="hs-admin-list"></i>
+                                </span>
+                        <span class="media-body align-self-center">Create new</span>
+                    </a>
+                </li>
+                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-book/show_list">
+                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                                    <i class="hs-admin-list"></i>
+                                </span>
+                        <span class="media-body align-self-center">List</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- End Forms: Submenu-1 -->
+        </li>
+        <!-- End Books -->
         <!-- Articles -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu1">
@@ -119,32 +152,6 @@
             <!-- End Forms: Submenu-1 -->
         </li>
         <!-- End Articles -->
-        <!-- Books -->
-        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
-                        <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                            <i class="hs-admin-book"></i>
-                        </span>
-                <span class="media-body align-self-center">Books</span>
-                <span class="d-flex align-self-center u-side-nav--control-icon">
-                            <i class="hs-admin-angle-right"></i>
-                        </span>
-            </a>
-            <!-- Forms: Submenu-1 -->
-            <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
-                <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
-                    <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
-                                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
-                                    <i class="hs-admin-list"></i>
-                                </span>
-                        <span class="media-body align-self-center">List</span>
-                    </a>
-                </li>
-            </ul>
-            <!-- End Forms: Submenu-1 -->
-        </li>
-        <!-- End Books -->
-
         <!-- Category -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu3">
@@ -254,9 +261,18 @@
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
-                            <i class="hs-admin-email"></i>
+                            <i class="hs-admin-image"></i>
                         </span>
                 <span class="media-body align-self-center">Resources</span>
+            </a>
+        </li>
+        <!-- Newsletter -->
+        <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
+                        <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+                            <i class="hs-admin-envelope"></i>
+                        </span>
+                <span class="media-body align-self-center">Newsletter</span>
             </a>
         </li>
     </ul>
