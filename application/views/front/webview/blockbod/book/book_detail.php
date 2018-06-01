@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" style="transform: none;">
 <head>
-    <title>Book: <?php echo $detail->title; ?></title>
+    <title><?php echo $detail->title; ?></title>
 
 
     <?php require_once ABS_VIEW_FOLDER.'common_head.php'; ?>
@@ -28,11 +28,13 @@
                                                 <div class="news-thumb">
                                                     <div class="book-detail-center-cropped center-cropped-fill"
                                                          style="background-image: url('<?php
-                                                         if ($detail->is_external > 0){
-                                                             echo COVER_BOOK_FOLDER.'b1.jpg';
+                                                         if ($detail->is_external > 0 && !empty($detail->thumb_url)){
+                                                             echo $detail->thumb_url;
+                                                         } else if ($detail->is_external == 0 && !empty($detail->thumb_url)){
+                                                             echo PAPER_COVER_PATH.$detail->thumb_url;
                                                          } else {
-                                                             echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';
-                                                         } ?>
+                                                             echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';  //default image
+                                                         }?>
                                                          ');">
                                                     </div>
                                                 </div><!-- .news-thumb -->
@@ -40,7 +42,7 @@
                                                     <?php
                                                     if ($detail->is_external > 0){
                                                     ?>
-                                                        <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button" onclick="window.open('<?php echo $detail->original_link; ?>', '_blank');">Buy now</button>
+                                                        <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button" onclick="window.open('<?php echo $detail->original_url; ?>', '_blank');">Buy now</button>
                                                     <?php } else { ?>
                                                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
@@ -56,7 +58,7 @@
                                         <div class="featured-small-items">
                                             <h2><?php echo $detail->title; ?></h2>
                                             <div class="ellipsis8lines"><?php echo $detail->excerpt; ?></div>
-                                            <p><?php echo $detail->description; ?></p>
+                                            <p><?php if (!empty($detail->description)) echo $detail->description; ?></p>
                                             <p><strong>Author:</strong> <?php echo $detail->author_name; ?></p>
                                             <p><strong>Price:</strong> <?php echo $detail->discount_price; ?> USD</p>
                                             <p><strong>Page:</strong> <?php echo $detail->page_num; ?></p>

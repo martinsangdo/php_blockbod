@@ -27,7 +27,8 @@
                             <tr>
                                 <th>Cover</th>
                                 <th>Title</th>
-                                <th>Excerpt</th>
+                                <th>Price</th>
+                                <th>Discount</th>
                                 <th>Original link</th>
                                 <th>Public date</th>
                                 <th>Action</th>
@@ -42,7 +43,8 @@
                                             echo $list[$i]->thumb_url;
                                         ?>" class=""/></td>
                                     <td><a href="/book/detail/<?php echo $list[$i]->slug; ?>/<?php echo $list[$i]->_id; ?>" target="_blank"><?php echo $list[$i]->title; ?></a></td>
-                                    <td><?php echo $list[$i]->excerpt; ?></td>
+                                    <td><?php echo $list[$i]->price; ?></td>
+                                    <td><?php echo $list[$i]->discount_price; ?></td>
                                     <td><a target="_blank" href="<?php echo $list[$i]->original_url; ?>">Open</a></td>
                                     <td class="min-w-90"><?php echo $list[$i]->publish_date; ?></td>
                                     <td class="min-w-100">

@@ -15,6 +15,7 @@ Class Book extends REST_Controller
         $book_id = $this->uri->segment(4);
         $detail = $this->book_model->read_row(array('_id'=>$book_id));
         $this->data['detail'] = $detail;
+        $this->data['detail']->is_external = 1;     //this is external book
         //get related books
 
         //

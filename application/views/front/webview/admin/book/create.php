@@ -40,7 +40,6 @@
                             <div class="g-pos-rel">
                                 <textarea id="txt_excerpt" name="txt_excerpt" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-5 g-py-5 g-width-600" rows="9"></textarea>
                             </div>
-                            <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5 g-ml-10">Length: <span id="lbl_excerpt_len">0</span> / 1000</small>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Thumbnail url (*)</label>

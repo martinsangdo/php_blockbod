@@ -6,7 +6,7 @@
 
 <script>
     $(document).on('ready', function () {
-        common.init_editor($('#txt_content'));      //
+        common.init_editor($('#txt_excerpt'));      //
         var $form_input = $('#frm_input');
         //reset all input events
         $('input[type="text"]', $form_input).unbind();

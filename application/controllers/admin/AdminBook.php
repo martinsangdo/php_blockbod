@@ -97,7 +97,7 @@ Class AdminBook extends REST_Controller
         $new_id = $this->db->insert_id();
         if ($result){
             //increase indexes of others
-            $result = $this->book_model->custom_query('UPDATE my_content SET sort_idx=sort_idx+1 WHERE _id <>'.$new_id);
+            $result = $this->book_model->custom_query('UPDATE book SET sort_idx=sort_idx+1 WHERE _id <>'.$new_id);
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
