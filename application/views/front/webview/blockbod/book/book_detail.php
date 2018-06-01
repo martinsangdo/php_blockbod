@@ -57,7 +57,7 @@
 
                                         <div class="featured-small-items">
                                             <h2><?php echo $detail->title; ?></h2>
-                                            <div class="ellipsis8lines"><?php echo $detail->excerpt; ?></div>
+                                            <div class=""><?php echo $detail->excerpt; ?></div>
                                             <p><?php if (!empty($detail->description)) echo $detail->description; ?></p>
                                             <p><strong>Author:</strong> <?php echo $detail->author_name; ?></p>
                                             <p><strong>Price:</strong> <?php echo $detail->discount_price; ?> USD</p>

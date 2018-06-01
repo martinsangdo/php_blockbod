@@ -94,9 +94,13 @@ p {font-size:14px;}
     width: 210px;
     height: 130px;
 }
-.book-thumb-center-cropped {
+.paper-thumb-center-cropped {
     width: 100px;
     height: 100px;
+}
+.book-thumb-center-cropped {
+    width: 80px;
+    height: 130px;
 }
 .ico-center-cropped {
     width: 60px;

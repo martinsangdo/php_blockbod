@@ -517,7 +517,7 @@
                                     <div class="news-item layout-two margin-b-30">
                                         <div class="news-thumb">
                                             <a href="/book/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>">
-                                                <div class="book-thumb-center-cropped center-cropped-fill"
+                                                <div class="paper-thumb-center-cropped center-cropped-fill"
                                                      style="background-image: url('<?php
                                                      if (isset($top_papers[$i]->thumb_url)){
                                                          echo PAPER_COVER_PATH.$top_papers[$i]->thumb_url;
@@ -545,16 +545,23 @@
                             </div>
                             <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail">
                                 <?php
-                                for ($i=1; $i<=9; $i++){
+                                if ($top_books){
+                                for ($i=0; $i<count($top_books); $i++){
                                 ?>
                                 <div class="gallery-item gallery-icon landscape">
-                                    <a href="/book/detail/sample-book/3">
+                                    <a href="/book/detail/<?php echo $top_books[$i]->slug.'/'.$top_books[$i]->_id; ?>">
                                         <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php echo COVER_BOOK_FOLDER; ?>b<?php echo $i; ?>.jpg');">
+                                             style="background-image: url('<?php
+                                             if (isset($top_books[$i]->thumb_url)){
+                                                 echo $top_books[$i]->thumb_url;
+                                             } else {
+                                                 echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';
+                                             }
+                                             ?>');">
                                         </div>
                                     </a>
                                 </div>
-                                <?php } ?>
+                                <?php }} ?>
                             </div>
                         </aside>
 

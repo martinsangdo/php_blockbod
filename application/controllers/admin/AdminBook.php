@@ -122,35 +122,35 @@ Class AdminBook extends REST_Controller
 
         $publisher = trim($this->input->post('txt_publisher'));
         if (!empty($publisher)){
-            $new_record['publisher'] = $publisher;
+            $update_record['publisher'] = $publisher;
         }
         $isbn = trim($this->input->post('txt_isbn'));
         if (!empty($isbn)){
-            $new_record['isbn'] = $isbn;
+            $update_record['isbn'] = $isbn;
         }
         $publish_date = trim($this->input->post('txt_publish_date'));
         if (!empty($publish_date)){
-            $new_record['publish_date'] = $publish_date;
+            $update_record['publish_date'] = $publish_date;
         }
         $price = trim($this->input->post('txt_price'));
         if (!empty($price) && is_numeric($price)){
-            $new_record['price'] = $price;
+            $update_record['price'] = $price;
         }
         $discount_price = trim($this->input->post('txt_discount_price'));
         if (!empty($discount_price)){
-            $new_record['discount_price'] = $discount_price;
+            $update_record['discount_price'] = $discount_price;
         }
         $page_total = trim($this->input->post('txt_page_total'));
         if (!empty($page_total) && is_numeric($page_total)){
-            $new_record['page_num'] = $page_total;
+            $update_record['page_num'] = $page_total;
         }
         $file_size = trim($this->input->post('txt_file_size'));
         if (!empty($file_size) && is_numeric($file_size)){
-            $new_record['file_size_kb'] = $file_size;
+            $update_record['file_size_kb'] = $file_size;
         }
         $file_type = trim($this->input->post('txt_file_type'));
         if (!empty($file_type)){
-            $new_record['file_type'] = $file_type;
+            $update_record['file_type'] = $file_type;
         }
         $status = $this->input->post('chk_public');
         $update_record['status'] = (!empty($status) && intval($status)>0)?1:0;
