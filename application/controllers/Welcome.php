@@ -67,4 +67,16 @@ class Welcome extends MY_Controller
         $this->load->view(VIEW_FOLDER.'advertising', $this->data);
     }
 
+    public function submit_contribution(){
+        $this->load->view(VIEW_FOLDER.'submit_contribution', $this->data);
+    }
+
+    public function contact(){
+        $this->load->view(VIEW_FOLDER.'contact', $this->data);
+    }
+
+    public function newsletter(){
+        $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
+    }
+
 }

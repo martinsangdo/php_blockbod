@@ -11,7 +11,7 @@
 .site-branding {margin-top:20px;margin-left: 10px;}
 .site-branding a {font-size:16px;}
 .main_logo {float:left;margin-top:20px;}
-
+.w-300 {width:300px;}
 .ellipsis8lines p {
     overflow: hidden;
     text-overflow: ellipsis;
