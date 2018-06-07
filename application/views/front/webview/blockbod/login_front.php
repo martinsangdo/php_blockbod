@@ -21,7 +21,7 @@
             };
             submitting = true;
 
-            common.ajaxPost('/welcome/front_login', params, function(err_code){
+            common.ajaxPost('/publicapi/front_login', params, function(err_code){
                 if (err_code == 200){
                     common.redirect('.');       //reload page
                 } else {
