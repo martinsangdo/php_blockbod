@@ -15,6 +15,7 @@
 <meta name="robots" content="noindex,follow"/>
 <meta name="author" content="Martin SangDo"/>
 <meta http-equiv="Cache-control" content="public"/>
+<link rel="shortcut icon" href="<?php echo PUBLIC_FOLDER; ?>img/favicon.ico" />
 
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/pt.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/meanmenu.css" type="text/css" media="all"/>
@@ -68,4 +69,12 @@ $(document).on('ready', function () {
            }
         });
 });
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    //martin.sangdo
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5713335630954493",
+        enable_page_level_ads: true
+    });
 </script>

@@ -7,6 +7,7 @@ var STR_MESS_FRONT = {
 };
 //link of APIs
 var API_URI = {
+    FRONT_LOGIN: '/welcome/front_login',        //prevent access before publishing
     GET_TOP_CAT: '/category/get_top_most',
     GET_EXTRA_POSTS: '/news/get_extra_posts',       //in detail
     ADD_NEW_COMMENT: '/comment/add_new',

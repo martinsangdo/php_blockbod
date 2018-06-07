@@ -17,6 +17,14 @@ class Welcome extends MY_Controller
      * blockbod
      */
     public function index(){
+        //check if user logined (when site is not published yet)
+        $login_id = $this->get_login_user_id();
+        if (empty($login_id)){
+            //user didn't login by either normal account or Admin
+            $this->load->view(VIEW_FOLDER.'login_front', $this->data);
+            return;
+        }
+
         //get data of blocks
         $this->data[BLOCK_KEY_1] = $this->block_content_model->get_latest_posts(array('site_id' => 1), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_2] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
@@ -77,6 +85,17 @@ class Welcome extends MY_Controller
 
     public function newsletter(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
+    }
+    //POST FUNCTIONS
+    //used to prevent login before site publishes
+    public function front_login(){
+        $pass = trim($this->input->post('password'));
+        if ($pass == 'block123'){
+            $this->set_login_user_id('hi');
+            echo json_encode(array('data'=>SUCCESS_CODE));
+        } else {
+            echo json_encode(array('data'=>UNAUTHORIZED_CODE));
+        }
     }
 
 }

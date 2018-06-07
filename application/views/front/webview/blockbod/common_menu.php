@@ -3,7 +3,7 @@
     <div class="bottom-header">
         <div class="container">
             <div class="main_logo">
-                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.jpeg" class="logo"/>
+                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.png" class="logo"/>
             </div>
 
             <div class="site-branding">
