@@ -5,7 +5,7 @@ define('ADMIN_ARTICLE_CONTROLLER_NAME', 'admin-article');
 define('ADMIN_BOOK_CONTROLLER_NAME', 'admin-book');
 define('ADMIN_PAPER_CONTROLLER_NAME', 'admin-paper');
 define('API_CONTROLLER_NAME', 'api');		    //controller name in URL of API which need login to process
-define('PUBLIC_CONTROLLER_NAME', 'public');	//controller name in URL of API which don't need login to process
+define('PUBLIC_CONTROLLER_NAME', 'publicapi');	//controller name in URL of API which don't need login to process
 //========== Session keys
 define('SESS_KEY_USER_ID', 'sess_user_id');     //used in Admin or front-end user
 define('SESS_KEY_USER_NAME', 'sess_user_name');
@@ -58,6 +58,7 @@ define('RELATED_POST_NUM', 9);      //number of related posts
 define('CAT_POST_NUM', 30);      //number of posts to show in 1 category
 define('VIDEO_PAGE_NUM', 20);      //number of videos to show in 1 page
 define('DETAIL_EXCERPT_LIMIT', 300);      //number of videos to show in 1 page
+define('MAX_REQUEST_TODAY_LIMIT', 50);      //allow no. of requests by 1 IP in one day
 //paper
 define('PAPER_COVER_PATH', '/public/upload/paper_cover/');        //where to save paper covers
 define('PAPER_COVER_FOLDER', './public/upload/paper_cover');      //used in upload function

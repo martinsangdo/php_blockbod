@@ -1,4 +1,7 @@
-
+/*
+author: Martin SangDo
+//used in all pages
+ */
 var submitting = false;
 var SERVER_URI = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '';
 
@@ -159,4 +162,12 @@ Common.prototype.validate_empty_input_paper = function($input){
     //show error in each input, if any
     this.toggle_error_textbox($input, common.isEmpty(value));
     return !common.isEmpty(value);
+};
+//show label info message (used in some forms)
+Common.prototype.show_info_lbl = function(mess){
+    $(CONST.LBL_MESS).text(mess).removeClass(CONST.LBL_MESS_ERROR_CLASSNAME).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
+};
+//show label error message (used in some forms)
+Common.prototype.show_error_lbl = function(mess){
+    $(CONST.LBL_MESS).text(mess).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).addClass(CONST.LBL_MESS_ERROR_CLASSNAME);
 };

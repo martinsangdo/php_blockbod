@@ -122,6 +122,7 @@ define('SERVER_ERROR_MSG', 'SERVER_ERROR');
 define('LANGUAGE_NOT_FOUND_MSG', 'LANGUAGE_NOT_FOUND');
 define('TRANSLATION_IS_EXISTED_MSG', 'TRANSLATION_IS_EXISTED');
 define('DUPLICATE_RECORD', 'DUPLICATE_RECORD');
+define('MAX_REQUEST_TODAY_LIMIT_CODE', 'MAX_REQUEST_TODAY_LIMIT_CODE');
 
 define('SERVER_KEY', 'e296b7ae-4209-4ec6-9c72-686f0617893e');
 define('STR_LOWERCASE', 'lowercase');
@@ -134,7 +135,6 @@ define('NOT_ACTIVATED', 'not_activated');
 define('BANNED', 'banned');
 define('ARR_EMPTY', "''");
 define('OBJ_EMPTY', '');
-define('RECORD_ALIAS', 'sản phẩm');
 define('RECORD_ALIAS_EN', 'record');
 define('VIDEO_FILE_TYPE', 'video');
 define('AUDIO_FILE_TYPE', 'audio');
@@ -144,30 +144,6 @@ define('ORDER_STATUS_CANCEL', 'cancel');
 define('TMP_FOLDER_AVATAR', 'public/upload/tmp/user/avatar');
 define('FOLDER_IMG_UPLOAD', 'public/upload/img');
 define('LOG_FOLDER', 'public/log');
-define('FROM_EMAIL', 'standard@engma.com.vn');
-define('TO_EMAIL', 'nhviet3393@gmail.com');
+define('FROM_EMAIL', 'xxx@gs.vn');
+define('TO_EMAIL', 'xxx@gmail.com');
 
-
-/* Admin */
-define('APP_TITLE', 'easy market');
-define('APP_TITLE_SHORT', 'ES');
-define('RECORD_UPLOAD_PATH', './public/upload/file/record');
-define('CATEGORY_UPLOAD_PATH', './public/upload/file/category');
-define('RECORD_PATH', 'public/upload/img/record');
-define('UPLOAD_ERROR', 'Upload thất bại, Vui lòng thử lại');
-define('UPLOAD_WARNING', 'Đã gặp lỗi trong quá trình upload');
-define('UPLOAD_SUCCESS', 'Đã upload dữ liệu thành công');
-define('MAX_FILE_UPLOAD', 10);
-define('MAX_IMAGE_SIZE', 2000);
-define('MAX_VIDEO_SIZE', 10000);
-
-define('LANGUAGE_ENGLISH', 'en');
-define('LANGUAGE_VIETNAMESE', 'vi');
-define('TRANSLATIONS_ALIAS', 'translations');
-define('TRANSLATION_ALIAS_EN', 'translation');
-define('UPLOAD_PATH', FCPATH);
-define('SAMPLE_TRANSLATION_FILE', '/file/sample/translation.xlsx');
-
-define('HEADER_PARAM_AUTHORIZATION', 'Authorization');
-define('HEADER_PARAM_LANGUAGE', 'Language');
-define('SESSION_ACCOUNT_ID', 'ACCOUNT_ID');

@@ -32,19 +32,27 @@
                                                 <table border="0" class="tbl_no_border">
                                                     <tr>
                                                         <td width="20%">Your name (*)</td>
-                                                        <td><input type="text" class="w-300"/></td>
+                                                        <td><input type="text" class="w-300" id="txt_name"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Your email (*)</td>
-                                                        <td><input type="text" class="w-300"/></td>
+                                                        <td><input type="text" class="w-300" id="txt_email"/> <small>We never send spams to your inbox</small></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Content</td>
-                                                        <td><textarea rows="10"></textarea></td>
+                                                        <td>Content (*)</td>
+                                                        <td><textarea rows="10" id="txt_content"></textarea></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Your country</td>
+                                                        <td><input type="text" class="w-300" id="txt_country"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Your phone</td>
+                                                        <td><input type="text" class="w-300" id="txt_phone"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td></td>
-                                                        <td><button type="button" class="">Submit</button></td>
+                                                        <td><button type="button" class="" onclick="common_front.save_contact();">Submit</button> <small id="lbl_mess" class=""></small></td>
                                                     </tr>
                                                 </table>
                                             </form>

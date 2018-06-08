@@ -185,4 +185,15 @@ class MY_Model extends CI_Model {
         }
     }
 
+    /**
+     * get no. of times request based on IP on today
+     */
+    function get_total_request_by_ip($ip) {
+        $where = 'ip = "'.$ip.'" AND date(update_time)=curdate()';
+        $this->db->where($where);
+        $query = $this->db->get($this->table_name);
+
+        return $query->num_rows();
+    }
+
 }

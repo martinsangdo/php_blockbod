@@ -47,7 +47,7 @@
                     </div>
                     <div id="search_box" class="hidden search_box float_r">
                         <input id="txt_search_keyword" type="text" placeholder="Type your keyword"/>
-                        <a href="#!" onclick="toggle_search_box();"><i class="fa fa-close"></i></a>
+                        <a href="#!" onclick="common_front.toggle_search_box();"><i class="fa fa-close"></i></a>
                     </div>
                 </nav><!-- #site-navigation -->
             </div> <!-- #main-nav -->
