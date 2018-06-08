@@ -102,12 +102,21 @@ AdminCommon.prototype.move_row_step = function(ico, step_unit, api_uri) {
         submitting = false;
     });
 };
+//get no. of unread messages/contact & show it in top bar
+AdminCommon.prototype.get_unread_message = function() {
+    common.ajaxPost(ADMIN_API_URI.GET_UNREAD_MESS_NUM, {}, function(resp){
+        if (resp.num > 0){
+            $(ADMIN_CONST.BADGE_MESS_NUM).removeClass('hidden').text(resp.num);
+        }
+    }, function(err){
+    });
+};
 //==========
 $(document).on('ready', function () {
     //todo: get new Ad requests
 
-    //todo: get new messages
-
+    //get new messages/contact
+    adminCommon.get_unread_message();
     //todo: get new analysis & commentation
 
 

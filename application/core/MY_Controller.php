@@ -19,6 +19,7 @@ Class MY_Controller extends CI_Controller
             case ADMIN_PAPER_CONTROLLER_NAME:
             case ADMIN_BOOK_CONTROLLER_NAME:
             case ADMIN_ARTICLE_CONTROLLER_NAME:
+            case ADMIN_CONTACT_CONTROLLER_NAME:
             case ADMIN_CONTROLLER_NAME:
             {
                 //someone using Admin pages

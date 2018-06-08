@@ -22,5 +22,8 @@ var FILE_LIMIT = {
     PAPER_ATTACH: 20*1024*1024,     //20 MB
 
 };
-
 //
+var ADMIN_CONST = {
+    BADGE_MESS_NUM: '#badge_mess_num',
+
+};

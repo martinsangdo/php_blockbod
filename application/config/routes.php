@@ -76,3 +76,5 @@ $route['admin-my-content/(:any)'] = 'admin/AdminMyContent/$1';
 $route['admin-my-content/(:any)/(:any)'] = 'admin/AdminMyContent/$1/$2';
 
 $route['admin-category/(:any)'] = 'admin/AdminCategory/$1';
+
+$route['admin-contact/(:any)'] = 'admin/AdminContact/$1';
