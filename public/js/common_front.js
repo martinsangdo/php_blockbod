@@ -35,7 +35,11 @@ Common_Front.prototype.save_contact = function(){
     common.ajaxPost(API_URI.SAVE_CONTACT, params, function(resp){
         common.show_info_lbl(STR_MESS_FRONT.CONTACT_SAVED);
         //clear input
+        $('#txt_name').val('');
         $('#txt_email').val('');
+        $('#txt_content').val('');
+        $('#txt_country').val('');
+        $('#txt_phone').val('');
         submitting = false;
     }, function(err){
         common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);

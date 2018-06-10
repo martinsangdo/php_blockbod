@@ -68,16 +68,16 @@ class PublicAPI extends REST_Controller
         $country = trim($this->input->post('country'));
         $phone = trim($this->input->post('phone'));
         $data = array(
-            'name' => $name,
+            'name' => htmlspecialchars($name),
             'email' => $email,
-            'content' => $content,
+            'content' => htmlspecialchars($content),
             'ip' => $ip
         );
         if (isset($country)){
-            $data['country'] = $country;
+            $data['country'] = htmlspecialchars($country);
         }
         if (isset($phone)){
-            $data['phone'] = $phone;
+            $data['phone'] = htmlspecialchars($phone);
         }
         $result = $this->contact_model->create($data);
         if ($result){
