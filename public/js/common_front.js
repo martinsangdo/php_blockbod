@@ -21,6 +21,9 @@ Common_Front.prototype.save_contact = function(){
     if (common.isEmpty(name) || common.isEmpty(email) || common.isEmpty(content)){
         common.show_error_lbl(STR_MESS_FRONT.MISSING_INPUT);
         return;
+    } else if (!common.isValidEmail(email)){
+        common.show_error_lbl(STR_MESS_FRONT.INVALID_EMAIL);
+        return;
     }
     //save to DB
     var params = {

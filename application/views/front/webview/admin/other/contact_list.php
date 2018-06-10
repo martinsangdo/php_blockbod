@@ -16,7 +16,7 @@
 
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
-                <h2>Contact list</h2>
+                <h2>Message list</h2>
                 <div class="table-responsive g-mb-40">
                     <?php
                     if ($list){
@@ -38,7 +38,7 @@
                             for ($i=0;$i<count($list);$i++){ ?>
                                 <tr class="<?php if ($list[$i]->is_viewed == 0) echo 'bg-not-viewed'; ?>">
                                     <td><?php echo $list[$i]->name; ?></td>
-                                    <td><?php echo $list[$i]->email; ?></td>
+                                    <td><a href="mailto:<?php echo $list[$i]->email; ?>"><?php echo $list[$i]->email; ?></a></td>
                                     <td><?php echo $list[$i]->content; ?></td>
                                     <td><?php echo $list[$i]->country; ?></td>
                                     <td><?php echo $list[$i]->phone; ?></td>

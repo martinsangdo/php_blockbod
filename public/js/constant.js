@@ -9,6 +9,7 @@ var STR_MESS_FRONT = {
     SERVER_ERROR: 'Something wrong, please try it another time',
     CONTACT_SAVED: 'Thank you for messaging us, we will contact you back',
     PROCESSING: 'Processing, please wait...',
+    INVALID_EMAIL: 'Email is invalid',
 
 };
 //link of APIs
