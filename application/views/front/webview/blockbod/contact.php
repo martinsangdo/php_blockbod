@@ -52,7 +52,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td></td>
-                                                        <td><button type="button" class="" onclick="common_front.save_contact();">Submit</button> <small id="lbl_mess" class=""></small></td>
+                                                        <td><button type="button" class="" onclick="common_front.save_contact();">Submit</button> <small id="lbl_mess"></small></td>
                                                     </tr>
                                                 </table>
                                             </form>

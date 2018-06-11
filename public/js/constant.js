@@ -8,6 +8,7 @@ var STR_MESS_FRONT = {
     MISSING_INPUT: 'Missing required fields',
     SERVER_ERROR: 'Something wrong, please try it another time',
     CONTACT_SAVED: 'Thank you for messaging us, we will contact you back',
+    NEWSLETTER_SAVED: 'Your email is recorded, you will receive our news soon at proper time',
     PROCESSING: 'Processing, please wait...',
     INVALID_EMAIL: 'Email is invalid',
 
@@ -21,8 +22,9 @@ var API_URI = {
     GET_COMMENT_PAGING: '/comment/get_list_paging',
     SAVE_EMAIL_SUBSCRIBE: '/subscribe/save_email',
     GET_ARTICLE_DETAIL: '/news/get_original_detail',
-    //
+    //in footer section
     SAVE_CONTACT: '/publicapi/save_contact',
+    SAVE_NEWSLETTER: '/publicapi/save_newsletter',
 };
 
 var CONST = {

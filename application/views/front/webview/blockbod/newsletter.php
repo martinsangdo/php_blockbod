@@ -27,14 +27,14 @@
                                             <h1>Register newsletter</h1><br/><br/>
                                             <h3>Keep up with blockchain and cryptocurrency technology trends with our insider reports.</h3>
                                             <p>Simply enter your email address in the box below and select which newsletters you'd like to receive.</p>
-                                            <p><input type="text" class="w-300" id="" placeholder="name@email.com"/></p>
+                                            <p><input type="text" class="w-300" id="txt_email" placeholder="name@email.com"/> <small>We never send spams to your inbox</small></p>
                                             <ul>
-                                                <li><input id="mce-group[9685]-9685-0" checked="checked" name="group[9685][1]" type="checkbox" value="1"> <strong>Blockbod Weekly</strong> - Every Friday you'll get a curated run down of the 5 hottest topics.</li>
-                                                <li><input id="mce-group[9685]-9685-1" checked="checked" name="group[9685][2]" type="checkbox" value="2"> <strong>Daily News</strong> - Daily feed of all published Blockbod stories - Sent once per day.</li>
-                                                <li><input id="mce-group[9685]-9685-2" checked="checked" name="group[9685][16]" type="checkbox" value="16"> <strong>Blockbod Research</strong> - Be the first to know about our digital currency research.</li>
-                                                <li><input id="mce-group[9685]-9685-3" checked="checked" name="group[9685][32]" type="checkbox" value="32"> <strong>Blockbod Paper</strong> - Get exclusive offers to buy our papers.</li>
+                                                <li><input id="chk_opt_1" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Weekly</strong> - Every Friday you'll get a curated run down of the 5 hottest topics.</li>
+                                                <li><input id="chk_opt_2" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Daily News</strong> - Daily feed of all published Blockbod stories - Sent once per day.</li>
+                                                <li><input id="chk_opt_3" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Research</strong> - Be the first to know about our digital currency research.</li>
+                                                <li><input id="chk_opt_4" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Paper</strong> - Get exclusive offers to buy our papers.</li>
                                             </ul>
-                                            <button type="button" class="">Subscribe</button>
+                                            <button type="button" class="" onclick="common_front.save_newsletter();">Subscribe</button> <small id="lbl_mess"></small>
                                         </div>
                                     </div>
                                 </div>
