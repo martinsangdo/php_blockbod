@@ -18,15 +18,6 @@
 
                 <!-- Top Messages -->
                 <div class="g-pos-rel g-hidden-sm-down g-mr-5">
-                    <a title="New ad requests" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!">
-                        <span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">3</span>
-                        <i class="hs-admin-notepad g-absolute-centered"></i>
-                    </a>
-                </div>
-                <!-- End Top Messages -->
-
-                <!-- Top Messages -->
-                <div class="g-pos-rel g-hidden-sm-down g-mr-5">
                     <a title="New commentation & analysis" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#!">
                         <span class="u-badge-v1 g-top-7 g-right-7 g-width-18 g-height-18 g-bg-primary g-font-size-10 g-color-white rounded-circle p-0">7</span>
                         <i class="hs-admin-agenda g-absolute-centered"></i>

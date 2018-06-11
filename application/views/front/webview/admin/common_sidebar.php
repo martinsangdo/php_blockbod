@@ -268,7 +268,7 @@
         </li>
         <!-- Newsletter -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!">
+            <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/admin-newsletter/show_list">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-envelope"></i>
                         </span>
