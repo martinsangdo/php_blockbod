@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,follow"/>
 <meta name="author" content="Martin SangDo"/>
 <meta http-equiv="Cache-control" content="public"/>
-
+<meta name="google-site-verification" content="rGFuEjzAZ4GehP57kMZiMYifW84SyJ_pmpg56xtyDMM" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="format-detection" content="telephone=no"/>
@@ -47,7 +47,6 @@
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-    //martin.sangdo@
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-5713335630954493",
         enable_page_level_ads: true
