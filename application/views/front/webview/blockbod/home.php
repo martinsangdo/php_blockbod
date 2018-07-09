@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US" style="transform: none;">
     <head>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-5713335630954493",
+                enable_page_level_ads: true
+            });
+        </script>
         <title>Blockchain latest news and ICO detail tutorials</title>
 
         <?php require_once 'common_head.php'; ?>
