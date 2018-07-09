@@ -25,6 +25,8 @@ var API_URI = {
     //in footer section
     SAVE_CONTACT: '/publicapi/save_contact',
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
+    //
+    GET_COIN_PRICE: '/publicapi/front_get_coin_price'
 };
 
 var CONST = {
@@ -40,6 +42,11 @@ var CONST = {
     LBL_MESS: '#lbl_mess',
     LBL_MESS_ERROR_CLASSNAME: 'g-color-red',
     LBL_MESS_INFO_CLASSNAME: 'g-color-green',
+    //coins list
+    API_COIN_LIST: 'https://api.coinmarketcap.com/v2/listings/',
+    API_COIN_INFO: 'https://api.coinmarketcap.com/v2/ticker/',
+    LOCAL_KEY_COIN_LIST: 'LOCAL_KEY_COIN_LIST',
+
 
 };
 

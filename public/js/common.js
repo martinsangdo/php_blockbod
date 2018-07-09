@@ -3,7 +3,7 @@ author: Martin SangDo
 //used in all pages
  */
 var submitting = false;
-var SERVER_URI = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '';
+const SERVER_URI = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '';
 
 //========== CLASS
 function Common() { }

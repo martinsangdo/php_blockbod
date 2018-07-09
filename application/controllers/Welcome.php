@@ -18,12 +18,12 @@ class Welcome extends MY_Controller
      */
     public function index(){
         //check if user logined (when site is not published yet)
-        $login_id = $this->get_login_user_id();
-        if (empty($login_id)){
-            //user didn't login by either normal account or Admin
-            $this->load->view(VIEW_FOLDER.'login_front', $this->data);
-            return;
-        }
+//        $login_id = $this->get_login_user_id();
+//        if (empty($login_id)){
+//            //user didn't login by either normal account or Admin
+//            $this->load->view(VIEW_FOLDER.'login_front', $this->data);
+//            return;
+//        }
 
         //get data of blocks
         $this->data[BLOCK_KEY_1] = $this->block_content_model->get_latest_posts(array('site_id' => 1), 0, DEFAULT_PAGE_LEN);

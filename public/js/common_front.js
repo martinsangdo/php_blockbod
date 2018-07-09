@@ -94,7 +94,53 @@ Common_Front.prototype.save_newsletter = function(){
         submitting = false;
     });
 };
-//
+//load list of coins on the world
+Common_Front.prototype.load_coin_price_list = function() {
+    //check if data is saved in localStorage
+    var myStorage = window.localStorage;
+    var saved_coin_list = localStorage.getItem(CONST.LOCAL_KEY_COIN_LIST);
+    if (saved_coin_list){
+        //the list was saved in local storage, get 1 random coin from this
+        common_front.get_coin_info();
+    } else {
+        //get list of coins from CoinMarketCap
+        common.ajaxRawGet(CONST.API_COIN_LIST, function(msg){
+            if (common.isset(msg.data)){
+                //save to local storage
+                var list = msg.data;
+                var saved_coin = [];
+                for (var i=0; i<list.length; i++){
+                    saved_coin.push({
+                        id: list[i]['id'],
+                        symbol: list[i]['symbol']       //BTC, ETH, ...
+                    });
+                }
+                localStorage.setItem(CONST.LOCAL_KEY_COIN_LIST, JSON.stringify(saved_coin));
+                common_front.get_coin_info();
+            }
+        });
+    }
+};
+//get price detail of a coin
+Common_Front.prototype.get_coin_info = function() {
+    var saved_coin_list = localStorage.getItem(CONST.LOCAL_KEY_COIN_LIST);
+    saved_coin_list = $.parseJSON(saved_coin_list);
+    var rand = Math.floor(Math.random()*saved_coin_list.length);
+    var coin_info = saved_coin_list[rand];
+
+    var params = {
+        url: CONST.API_COIN_INFO + coin_info['id']
+    };
+    common.ajaxPost(API_URI.GET_COIN_PRICE, params, function(msg){
+        if (common.isset(msg) && common.isset(msg.data)){
+            var data = $.parseJSON(msg.data);
+            console.log(data);
+            //update data to UI
+
+        }
+    });
+
+};
 $(document).on('ready', function () {
     //assign event in search box
     $('#txt_search_keyword', $('#search_box')).unbind();
@@ -105,4 +151,6 @@ $(document).on('ready', function () {
 
         }
     });
+    //load list of available coins
+    common_front.load_coin_price_list();
 });

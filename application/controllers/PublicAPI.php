@@ -127,4 +127,10 @@ class PublicAPI extends REST_Controller
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
     }
+    //get coin price in real time
+    public function front_get_coin_price_post(){
+        $url = trim($this->input->post('url'));
+        $info = $this->sendGet($url);
+        $this->response(RestSuccess($info), SUCCESS_CODE);
+    }
 }
