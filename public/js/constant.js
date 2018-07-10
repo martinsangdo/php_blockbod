@@ -26,7 +26,7 @@ var API_URI = {
     SAVE_CONTACT: '/publicapi/save_contact',
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
     //
-    GET_COIN_PRICE: '/publicapi/front_get_coin_price'
+    GET_RAW_URL: '/publicapi/front_get_raw_url'
 };
 
 var CONST = {
@@ -43,13 +43,17 @@ var CONST = {
     LBL_MESS_ERROR_CLASSNAME: 'g-color-red',
     LBL_MESS_INFO_CLASSNAME: 'g-color-green',
     //coins list
-    API_COIN_LIST: 'https://api.coinmarketcap.com/v2/listings/',
-    API_COIN_INFO: 'https://api.coinmarketcap.com/v2/ticker/',
-    LOCAL_KEY_COIN_LIST: 'LOCAL_KEY_COIN_LIST',
-
+    API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/metadata',
+    API_COIN_INFO: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/',
+    LOAD_RANDOM_PRICE_DURATION: 5000
 
 };
-
+//response message
 var RESP_MESS = {
     DUPLICATE_RECORD: 'DUPLICATE_RECORD'
+};
+//local key storage
+var LOCAL_KEY = {
+    COIN_LIST: 'COIN_LIST',     //save list of coins
+    LAST_UPDATE_COIN_LIST_TIME: 'LAST_UPDATE_COIN_LIST_TIME'
 };

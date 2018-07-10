@@ -128,7 +128,7 @@ class PublicAPI extends REST_Controller
         }
     }
     //get coin price in real time
-    public function front_get_coin_price_post(){
+    public function front_get_raw_url_post(){
         $url = trim($this->input->post('url'));
         $info = $this->sendGet($url);
         $this->response(RestSuccess($info), SUCCESS_CODE);

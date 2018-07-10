@@ -25,7 +25,7 @@
             <div id="main-nav" class="full-width-nav clear-fix">
                 <nav id="site-navigation" class="main-navigation" role="navigation">
 
-                    <div class="home-icon active-true">
+                    <div class="home-icon active-true hidden">
                         <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a>
                     </div>
 
@@ -37,7 +37,7 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global Regulatory Colloquy</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price">BB Index</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price"></a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>
                         </div>
