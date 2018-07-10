@@ -29,8 +29,12 @@
                                 <th>Opt 2</th>
                                 <th>Opt 3</th>
                                 <th>Opt 4</th>
+                                <th>Opt 5</th>
+                                <th>Opt 6</th>
+                                <th>Request</th>
+                                <th>Paid status</th>
                                 <th>Unsubscribe</th>
-                                <th class="min-w-150">Datetime</th>
+                                <th class="min-w-150">Register time</th>
                             </tr>
                             </thead>
 
@@ -43,6 +47,10 @@
                                     <td><?php echo $list[$i]->opt_2; ?></td>
                                     <td><?php echo $list[$i]->opt_3; ?></td>
                                     <td><?php echo $list[$i]->opt_4; ?></td>
+                                    <td><?php echo $list[$i]->opt_5; ?></td>
+                                    <td><?php echo $list[$i]->opt_6; ?></td>
+                                    <td><?php echo $list[$i]->custom_request; ?></td>
+                                    <td><?php echo $list[$i]->paid_status; ?></td>
                                     <td><?php echo $list[$i]->is_unsubcribed; ?></td>
                                     <td><?php echo format_post_time($list[$i]->create_time); ?></td>
                                 </tr>
