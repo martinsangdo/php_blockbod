@@ -29,16 +29,26 @@
                                             <p>Simply enter your email address in the box below and select which newsletters you'd like to receive.</p>
                                             <p><input type="text" class="w-300" id="txt_email" placeholder="name@email.com"/> <small>We never send spams to your inbox</small></p>
                                             <ul>
-                                                <li><input id="chk_opt_1" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Weekly</strong> - Every Friday you'll get a curated run down of the 5 hottest topics.</li>
-                                                <li><input id="chk_opt_2" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Daily News</strong> - Daily feed of all published Blockbod stories - Sent once per day.</li>
-                                                <li><input id="chk_opt_3" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Research</strong> - Be the first to know about our digital currency research.</li>
-                                                <li><input id="chk_opt_4" checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Paper</strong> - Get exclusive offers to buy our papers.</li>
+                                                <li><input checked="checked" name="chk_opt" type="checkbox" value="1"> <strong>Blockbod Weekly</strong> - Every Friday you'll get a curated run down of the 5 hottest topics.</li>
+                                                <li><input checked="checked" name="chk_opt" type="checkbox" value="2"> <strong>Daily News</strong> - Daily feed of all published Blockbod stories - Sent once per day.</li>
+                                                <li><input checked="checked" name="chk_opt" type="checkbox" value="3"> <strong>Blockbod Research</strong> - Be the first to know about our digital currency research.</li>
+                                                <li><input checked="checked" name="chk_opt" type="checkbox" value="4"> <strong>Blockbod Paper</strong> - Get exclusive offers to buy our papers.</li>
                                             </ul>
                                             <button type="button" class="" onclick="common_front.save_newsletter();">Subscribe</button> <small id="lbl_mess"></small>
+                                            <!-- custom Newsletter -->
+                                            <br/></br><br/></br>
+                                            <h3>Tell us your demand to receive customized Newsletter, we will select most relevant ones based on your requests</h3>
+                                            <p><input type="text" class="w-300" id="txt_email_custom" placeholder="name@email.com"/> <small>We never send spams to your inbox</small></p>
+                                            <p><textarea cols="40" rows="5" id="txt_custom_request" placeholder="Type your requests: receive news about Ethererum, new ICO, etc."></textarea> <small>Type more detail, more relevant of news</small></p>
+                                            <ul>
+                                                <li><input checked="checked" name="rdo_opt" type="radio" value="1"> <strong>Weekly</strong> - Every Monday of the week.</li>
+                                                <li><input name="rdo_opt" type="radio" value="2"> <strong>Daily</strong> - Sent once per day.</li>
+                                            </ul>
+                                            <p><strong>Anual fee: 100 USD</strong></p>
+                                            <button type="button" class="" onclick="common_front.process_custom_newsletter();">Register now</button> <small id="lbl_mess"></small>
                                         </div>
                                     </div>
                                 </div>
-
                             </article><!-- #post-## -->
                         </main>
                     </div>
