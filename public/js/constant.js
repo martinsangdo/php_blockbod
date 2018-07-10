@@ -11,6 +11,7 @@ var STR_MESS_FRONT = {
     NEWSLETTER_SAVED: 'Your email is recorded, you will receive our news soon at proper time',
     PROCESSING: 'Processing, please wait...',
     INVALID_EMAIL: 'Email is invalid',
+    EMPTY_CUSTOM_REQUEST_NEWSLETTER: 'Please type your custom request',
 
 };
 //link of APIs

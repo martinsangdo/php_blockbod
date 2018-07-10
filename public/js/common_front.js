@@ -101,30 +101,36 @@ Common_Front.prototype.process_custom_newsletter = function(){
     }
     $(CONST.LBL_MESS_CUSTOM).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).removeClass(CONST.LBL_MESS_ERROR_CLASSNAME).text('');
     var email = $.trim($('#txt_email_custom').val());
+    var custom_request = $.trim($('#txt_custom_request').val());
+
     if (common.isEmpty(email) || !common.isValidEmail(email)){
         common.show_error_lbl_custom(STR_MESS_FRONT.INVALID_EMAIL);
+        return;
+    } else if (common.isEmpty(custom_request)){
+        common.show_error_lbl_custom(STR_MESS_FRONT.EMPTY_CUSTOM_REQUEST_NEWSLETTER);
         return;
     }
     //save to DB
     var params = {
         email: email,
         opt_5: $('#rdo_opt_1').is(':checked')?1:0,
-        opt_6: $('#rdo_opt_2').is(':checked')?1:0
+        opt_6: $('#rdo_opt_2').is(':checked')?1:0,
+        custom_request: custom_request
     };
     $(CONST.LBL_MESS_CUSTOM).text(STR_MESS_FRONT.PROCESSING).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
     //save info to DB
     submitting = true;
-    common.ajaxPost(API_URI.SAVE_NEWSLETTER, params, function(resp){
+    common.ajaxPost(API_URI.SAVE_NEWSLETTER_CUSTOM, params, function(resp){
         common.show_info_lbl(STR_MESS_FRONT.NEWSLETTER_SAVED);
         //clear input
         $('#txt_email').val('');
         submitting = false;
+        //todo: move to payment page
+
     }, function(err){
         common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
         submitting = false;
     });
-    //todo: move to payment page
-
 };
 //load list of coins on the world & get 1 random price
 Common_Front.prototype.load_coin_price_randomly = function() {

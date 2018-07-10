@@ -127,6 +127,44 @@ class PublicAPI extends REST_Controller
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
     }
+    //save newsletter by custom request
+    public function save_newsletter_custom_post(){
+        $this->load->model(array('newsletter_model'));
+        //check if IP sent many request
+        $ip = get_client_ip();
+        $request_today_num = $this->newsletter_model->get_total_request_by_ip($ip);
+        if ($request_today_num == MAX_REQUEST_TODAY_LIMIT){
+            $this->response(RestBadRequest(MAX_REQUEST_TODAY_LIMIT_CODE), BAD_REQUEST_CODE);
+            return;
+        }
+
+        $email = trim($this->input->post('email'));
+        $opt_5 = $this->input->post('opt_5');
+        $opt_6 = $this->input->post('opt_6');
+
+        $data = array(
+            'email' => $email,
+            'ip' => $ip,
+            'opt_5' => intval($opt_5),
+            'opt_6' => intval($opt_6),
+            'custom_request' => $this->input->post('custom_request')
+        );
+        //check if the email is registered
+        $existed = $this->newsletter_model->get_total(array('email'=>$email));
+        if ($existed && $existed > 0){
+            //update
+            $result = $this->newsletter_model->update_by_condition(array('email'=>$email), $data);
+        } else {
+            //create new one
+            $result = $this->newsletter_model->create($data);
+        }
+
+        if ($result){
+            $this->response(RestSuccess(array()), SUCCESS_CODE);
+        } else {
+            $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+        }
+    }
     //get coin price in real time
     public function front_get_raw_url_post(){
         $url = trim($this->input->post('url'));
