@@ -171,3 +171,7 @@ Common.prototype.show_info_lbl = function(mess){
 Common.prototype.show_error_lbl = function(mess){
     $(CONST.LBL_MESS).text(mess).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).addClass(CONST.LBL_MESS_ERROR_CLASSNAME);
 };
+//show label error message (used in extra forms)
+Common.prototype.show_error_lbl_custom = function(mess){
+    $(CONST.LBL_MESS_CUSTOM).text(mess).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).addClass(CONST.LBL_MESS_ERROR_CLASSNAME);
+};

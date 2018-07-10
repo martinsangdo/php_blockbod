@@ -63,7 +63,7 @@ Common_Front.prototype.save_contact = function(){
         submitting = false;
     });
 };
-//save email in Newsletter
+//save email in Newsletter (normal type)
 Common_Front.prototype.save_newsletter = function(){
     if (submitting){
         return;
@@ -94,6 +94,38 @@ Common_Front.prototype.save_newsletter = function(){
         submitting = false;
     });
 };
+//save email in Newsletter (special type)
+Common_Front.prototype.process_custom_newsletter = function(){
+    if (submitting){
+        return;
+    }
+    $(CONST.LBL_MESS_CUSTOM).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).removeClass(CONST.LBL_MESS_ERROR_CLASSNAME).text('');
+    var email = $.trim($('#txt_email_custom').val());
+    if (common.isEmpty(email) || !common.isValidEmail(email)){
+        common.show_error_lbl_custom(STR_MESS_FRONT.INVALID_EMAIL);
+        return;
+    }
+    //save to DB
+    var params = {
+        email: email,
+        opt_5: $('#rdo_opt_1').is(':checked')?1:0,
+        opt_6: $('#rdo_opt_2').is(':checked')?1:0
+    };
+    $(CONST.LBL_MESS_CUSTOM).text(STR_MESS_FRONT.PROCESSING).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
+    //save info to DB
+    submitting = true;
+    common.ajaxPost(API_URI.SAVE_NEWSLETTER, params, function(resp){
+        common.show_info_lbl(STR_MESS_FRONT.NEWSLETTER_SAVED);
+        //clear input
+        $('#txt_email').val('');
+        submitting = false;
+    }, function(err){
+        common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
+        submitting = false;
+    });
+    //todo: move to payment page
+
+};
 //load list of coins on the world & get 1 random price
 Common_Front.prototype.load_coin_price_randomly = function() {
     //check if data is saved in localStorage
@@ -102,14 +134,13 @@ Common_Front.prototype.load_coin_price_randomly = function() {
         //the list was saved in local storage, then check the last time of getting prices
         var lasted_update_time = parseInt(localStorage.getItem(LOCAL_KEY.LAST_UPDATE_COIN_LIST_TIME));
         var now = new Date();
-        if (now - lasted_update_time > 60*60){
-            console.log('get latest price because it is expired');
+        if (now - lasted_update_time > 60*60*1000){
             //updated more than 1 hour, get the price again
             this.get_coin_from_outside();
         } else {
             //get the price from local storage
-            // var timer = setInterval(common_front.get_coin_info, CONST.LOAD_RANDOM_PRICE);
             common_front.get_coin_info();
+            var timer = setInterval(common_front.get_coin_info, CONST.LOAD_RANDOM_PRICE_DURATION);
         }
     } else {
         //get list of coins from CoinMarketCap
@@ -121,6 +152,7 @@ Common_Front.prototype.get_coin_from_outside = function() {
     var params = {
         url: CONST.API_COIN_LIST
     };
+    console.log('get latest price because it is expired');
     common.ajaxPost(API_URI.GET_RAW_URL, params, function(msg){
         if (common.isset(msg) && common.isset(msg.data)){
             data = $.parseJSON(msg.data);
@@ -128,29 +160,29 @@ Common_Front.prototype.get_coin_from_outside = function() {
             var saved_coin = [];
             $.each(data, function(symbol, info){
                 saved_coin.push({
-                    symbol: '',
-                    latest_price: ,
-                    change:
+                    symbol: symbol.substring(0,2),
+                    latest_price: $.number(info['last'], 5 )
                 });
             });
-            localStorage.setItem(CONST.LOCAL_KEY_COIN_LIST, JSON.stringify(saved_coin));
-            // var timer = setInterval(common_front.get_coin_info, CONST.LOAD_RANDOM_PRICE);
+            localStorage.setItem(LOCAL_KEY.COIN_LIST, JSON.stringify(saved_coin));
+            localStorage.setItem(LOCAL_KEY.LAST_UPDATE_COIN_LIST_TIME, $.now());
             common_front.get_coin_info();
+            var timer = setInterval(common_front.get_coin_info, CONST.LOAD_RANDOM_PRICE_DURATION);
         }
     });
 };
 //get price detail of a coin
 Common_Front.prototype.get_coin_info = function() {
-    var saved_coin_list = localStorage.getItem(CONST.LOCAL_KEY_COIN_LIST);
+    var saved_coin_list = localStorage.getItem(LOCAL_KEY.COIN_LIST);
     saved_coin_list = $.parseJSON(saved_coin_list);
     var rand = Math.floor(Math.random()*saved_coin_list.length);    //random position of coins
 
     $('#bb_random_price', $('#primary-menu')).text(saved_coin_list[rand]['symbol'] + ': ' + saved_coin_list[rand]['latest_price']);
-    if (saved_coin_list[rand]['change'] > 0){
-        $('#bb_random_price', $('#primary-menu')).removeClass('g-color-red').addClass('g-color-green');
-    } else {
-        $('#bb_random_price', $('#primary-menu')).removeClass('g-color-green').addClass('g-color-red');
-    }
+    // if (saved_coin_list[rand]['change'] > 0){
+    //     $('#bb_random_price', $('#primary-menu')).removeClass('g-color-red').addClass('g-color-green');
+    // } else {
+    //     $('#bb_random_price', $('#primary-menu')).removeClass('g-color-green').addClass('g-color-red');
+    // }
 };
 $(document).on('ready', function () {
     //assign event in search box

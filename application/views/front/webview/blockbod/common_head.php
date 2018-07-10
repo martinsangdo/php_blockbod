@@ -40,7 +40,8 @@
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/theia-sticky-sidebar.min.js"></script>
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/custom.js"></script>
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/wp-embed.min.js"></script>
-
 <script type="text/javascript" src="/public/js/constant.js"></script>
+
+<script type="text/javascript" src="/public/js/jquery.number.min.js"></script>
 <script type="text/javascript" src="/public/js/common.js"></script>
 <script type="text/javascript" src="/public/js/common_front.js"></script>

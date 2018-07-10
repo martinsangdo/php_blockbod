@@ -25,6 +25,8 @@ var API_URI = {
     //in footer section
     SAVE_CONTACT: '/publicapi/save_contact',
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
+    SAVE_NEWSLETTER_CUSTOM: '/publicapi/save_newsletter_custom',
+
     //
     GET_RAW_URL: '/publicapi/front_get_raw_url'
 };
@@ -40,12 +42,12 @@ var CONST = {
     PROCESS_DONE_NAV_TIMEOUT: 3000,        //the duration (seconds) after a form was finished, moving to new page in (x) seconds
     //message/error labels, used in input forms
     LBL_MESS: '#lbl_mess',
+    LBL_MESS_CUSTOM: '#lbl_mess_custom',
     LBL_MESS_ERROR_CLASSNAME: 'g-color-red',
     LBL_MESS_INFO_CLASSNAME: 'g-color-green',
     //coins list
-    API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/metadata',
-    API_COIN_INFO: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/',
-    LOAD_RANDOM_PRICE_DURATION: 5000
+    API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
+    LOAD_RANDOM_PRICE_DURATION: 3000
 
 };
 //response message
