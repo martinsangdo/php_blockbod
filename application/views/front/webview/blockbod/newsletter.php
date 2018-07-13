@@ -42,7 +42,6 @@
                                             <p><textarea cols="40" rows="5" id="txt_custom_request" placeholder="Type your requests: receive news about Ethererum, new ICO, etc."></textarea> <small>Type more detail, more relevant of news</small></p>
                                             <ul>
                                                 <li><input id="rdo_opt_1" checked="checked" name="rdo_opt" type="radio" value="1"> <strong>Weekly</strong> - Every Monday of the week.</li>
-                                                <li><input id="rdo_opt_2" name="rdo_opt" type="radio" value="1"> <strong>Daily</strong> - Sent once per day.</li>
                                             </ul>
                                             <p><strong>Anual fee: 100 USD</strong></p>
                                             <button type="button" class="" onclick="common_front.process_custom_newsletter();">Register now</button> <small id="lbl_mess_custom"></small>

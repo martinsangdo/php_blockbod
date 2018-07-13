@@ -75,18 +75,24 @@
 
                             </div>
 
-                            <div id="comments" class="comments-area">
-
-                                <div id="respond" class="comment-respond">
-                                    <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://promenadethemes.com/demo/pt-magazine/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
-                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
-                                        <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
-                                        <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
-                                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2057" id="comment_post_ID">
-                                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                        </p>			</form>
-                                </div><!-- #respond -->
-
+                            <div>
+                                <input type="hidden" id="hid_slug" value="<?php echo $article_detail->slug; ?>"/>
+                                <div id="disqus_thread"></div>
+                                <script>
+                                    /**
+                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                    var disqus_config = function () {
+                                        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+                                        this.page.identifier = $('#hid_slug').val(); // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    };
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                        var d = document, s = d.createElement('script');
+                                        s.src = 'https://blockbod.disqus.com/embed.js';
+                                        s.setAttribute('data-timestamp', +new Date());
+                                        (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
                             </div><!-- #comments -->
 
                         </main></div></div><!-- #primary -->
@@ -104,12 +110,10 @@
 
 <a href="#!" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a>
 
-<script type="text/javascript" src="./detail_files/navigation.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/skip-link-focus-fix.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/jquery.meanmenu.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/theia-sticky-sidebar.min.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/custom.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/comment-reply.min.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/wp-embed.min.js"></script>
 
 

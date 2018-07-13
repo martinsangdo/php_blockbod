@@ -3,7 +3,7 @@
     <div class="bottom-header">
         <div class="container">
             <div class="main_logo">
-                <img src="<?php echo PUBLIC_FOLDER; ?>img/logo.png" class="logo"/>
+                <a href="<?php echo base_url(); ?>"><img src="<?php echo PUBLIC_FOLDER; ?>img/logo.png" class="logo"/></a>
             </div>
 
             <div class="site-branding">
@@ -37,7 +37,7 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global Regulatory Colloquy</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price g-color-green"></a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price g-color-yellow"></a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>
                         </div>

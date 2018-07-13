@@ -48,7 +48,7 @@ var CONST = {
     LBL_MESS_INFO_CLASSNAME: 'g-color-green',
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
-    LOAD_RANDOM_PRICE_DURATION: 3000
+    LOAD_RANDOM_PRICE_DURATION: 2000
 
 };
 //response message

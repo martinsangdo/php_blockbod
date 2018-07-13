@@ -23,9 +23,8 @@
         <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
                 <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                     <!-- #main -->
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><main id="main" class="site-main" role="main">
-
-
+                    <div style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                        <main id="main" class="site-main" role="main">
                             <article id="post-2057" class="post-2057 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-fashion tag-girl tag-lifestyle">
                                 <div class="article-wrap-inner">
                                     <div class="content-wrap">
@@ -67,7 +66,8 @@
 
                                     <div class="news-item three-column-item hidden">
                                         <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/"><img width="400" height="245" src="./detail_files/clothing-store-984396_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
+                                            <a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/">
+                                            </a>
                                         </div><!-- .news-thumb -->
 
                                         <div class="news-text-wrap">
@@ -82,6 +82,23 @@
                             </div>
 
                             <div id="comments" class="comments-area">
+                                <input type="hidden" id="hid_slug" value="<?php echo $article_detail->slug; ?>"/>
+                                <div id="disqus_thread"></div>
+                                <script>
+                                    /**
+                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                    var disqus_config = function () {
+                                        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+                                        this.page.identifier = $('#hid_slug').val(); // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    };
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                        var d = document, s = d.createElement('script');
+                                        s.src = 'https://blockbod.disqus.com/embed.js';
+                                        s.setAttribute('data-timestamp', +new Date());
+                                        (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
 
                                 <div id="respond" class="comment-respond">
                                     <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://promenadethemes.com/demo/pt-magazine/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
@@ -110,7 +127,6 @@
 
 <a href="#!" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a>
 
-<script type="text/javascript" src="./detail_files/navigation.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/skip-link-focus-fix.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/jquery.meanmenu.js"></script>
 <script type="text/javascript" src="/public/blockbod/js/theia-sticky-sidebar.min.js"></script>
