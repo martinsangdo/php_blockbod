@@ -285,28 +285,27 @@
                                         <h2 class="widget-title">Industry</h2>
                                         <a href="/news/group_list/10/industry">View All</a>
                                     </div>
-                                    <?php $data_block = $block_key_7; ?>
                                     <div class="inner-wrapper">
                                         <div class="featured-large-item">
                                             <div class="news-item">
                                                 <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
+                                                    <a href="<?php echo detail_uri($data_block[9]->slug); ?>">
                                                         <div class="home3-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
+                                                             style="background-image: url('<?php echo $data_block[9]->thumb_url;?>');">
                                                         </div>
                                                     </a>
                                                 </div><!-- .news-thumb -->
                                                 <div class="news-text-wrap">
-                                                    <h2><a href="<?php echo detail_uri($data_block[0]->slug); ?>"><?php echo $data_block[0]->title; ?></a></h2>
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[0]->time); ?></span>
-                                                    <div class="ellipsis8lines"><?php echo $data_block[0]->excerpt; ?></div>
+                                                    <h2><a href="<?php echo detail_uri($data_block[9]->slug); ?>"><?php echo $data_block[9]->title; ?></a></h2>
+                                                    <span class="posted-date"><?php echo format_post_time($data_block[9]->time); ?></span>
+                                                    <div class="ellipsis8lines"><?php echo $data_block[9]->excerpt; ?></div>
                                                 </div><!-- .news-text-wrap -->
                                             </div><!-- .news-item -->
                                         </div>
 
                                         <div class="featured-small-items">
                                             <?php
-                                            for ($i=1; $i<6; $i++){
+                                            for ($i=10; $i<15; $i++){
                                                 ?>
                                                 <div class="news-item layout-two">
                                                     <div class="news-thumb">

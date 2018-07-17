@@ -2,7 +2,7 @@
 //
 $(document).on('ready', function () {
     var $image = $('.home3-center-cropped');
-    common.dlog($image.length);
+    // common.dlog($image.length);
 
     $('#test_img').on("error", function(jqXHR, error, errorThrown) {
         common.dlog(jqXHR);
