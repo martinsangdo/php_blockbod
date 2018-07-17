@@ -71,7 +71,8 @@ class PublicAPI extends REST_Controller
             'name' => htmlspecialchars($name),
             'email' => $email,
             'content' => htmlspecialchars($content),
-            'ip' => $ip
+            'ip' => $ip,
+            'create_time' => CURRENT_TIME
         );
         if (isset($country)){
             $data['country'] = htmlspecialchars($country);
