@@ -149,9 +149,24 @@
                             </section>
 
                             <section id="media_image-4" class="widget widget_media_image">
-                                <a href="#">
-                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;" atl="blockbod" title="blockbod"/>
-                                </a>
+                                <div class="alignleft">
+                                    <script type="text/javascript">
+                                        amzn_assoc_ad_type = "banner";
+                                        amzn_assoc_marketplace = "amazon";
+                                        amzn_assoc_region = "US";
+                                        amzn_assoc_placement = "assoc_banner_placement_default";
+                                        amzn_assoc_campaigns = "books";
+                                        amzn_assoc_banner_type = "category";
+                                        amzn_assoc_p = "48";
+                                        amzn_assoc_isresponsive = "false";
+                                        amzn_assoc_banner_id = "1E12T8MN3QGRR49EP802";
+                                        amzn_assoc_width = "728";
+                                        amzn_assoc_height = "90";
+                                        amzn_assoc_tracking_id = "blockbodcom-20";
+                                        amzn_assoc_linkid = "321638da5326005d00e953ee87b7a6d4";
+                                    </script>
+                                    <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+                                </div>
                             </section>
 
                             <?php $data_block = $block_key_4; ?>
@@ -274,9 +289,24 @@
                             </section>
 
                             <section id="media_image-4" class="widget widget_media_image">
-                                <a href="#">
-                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv.jpg" class="image wp-image-2194  attachment-full size-full" style="max-width: 100%; height: auto;" atl="blockbod" title="blockbod"/>
-                                </a>
+                                <div class="alignleft">
+                                    <script type="text/javascript">
+                                        amzn_assoc_ad_type = "banner";
+                                        amzn_assoc_marketplace = "amazon";
+                                        amzn_assoc_region = "US";
+                                        amzn_assoc_placement = "assoc_banner_placement_default";
+                                        amzn_assoc_campaigns = "booksteach";
+                                        amzn_assoc_banner_type = "category";
+                                        amzn_assoc_p = "48";
+                                        amzn_assoc_isresponsive = "false";
+                                        amzn_assoc_banner_id = "15NZ7M2AY053NEPSW202";
+                                        amzn_assoc_width = "728";
+                                        amzn_assoc_height = "90";
+                                        amzn_assoc_tracking_id = "blockbodcom-20";
+                                        amzn_assoc_linkid = "4f964ead6d7d06f82e27b40ae3abec0b";
+                                    </script>
+                                    <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+                                </div>
                             </section>
 
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
@@ -597,9 +627,24 @@
 
                         </aside>
                         <aside id="media_image-3" class="widget widget_media_image">
-                                <a href="#">
-                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/336x280-pt-mag-adv.jpg" class="image wp-image-2195 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
-                                </a>
+                            <div class="aligncenter">
+                                <script type="text/javascript">
+                                    amzn_assoc_ad_type = "banner";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_placement = "assoc_banner_placement_default";
+                                    amzn_assoc_campaigns = "textbooks";
+                                    amzn_assoc_banner_type = "category";
+                                    amzn_assoc_p = "12";
+                                    amzn_assoc_isresponsive = "false";
+                                    amzn_assoc_banner_id = "1VZEBSQCP6H67RFRER02";
+                                    amzn_assoc_width = "300";
+                                    amzn_assoc_height = "250";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_linkid = "400eefde45340ca5a4a6dba923f399bf";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+                            </div>
                         </aside>
                         <?php $data_block = $block_key_11; ?>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
