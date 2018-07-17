@@ -110,7 +110,8 @@ class PublicAPI extends REST_Controller
             'opt_1' => intval($opt_1),
             'opt_2' => intval($opt_2),
             'opt_3' => intval($opt_3),
-            'opt_4' => intval($opt_4)
+            'opt_4' => intval($opt_4),
+            'create_time' => CURRENT_TIME
         );
         //check if the email is registered
         $existed = $this->newsletter_model->get_total(array('email'=>$email));
@@ -148,7 +149,8 @@ class PublicAPI extends REST_Controller
             'ip' => $ip,
             'opt_5' => intval($opt_5),
             'opt_6' => intval($opt_6),
-            'custom_request' => $this->input->post('custom_request')
+            'custom_request' => $this->input->post('custom_request'),
+            'create_time' => CURRENT_TIME
         );
         //check if the email is registered
         $existed = $this->newsletter_model->get_total(array('email'=>$email));
