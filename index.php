@@ -1,5 +1,6 @@
 <?php
-
+//header("Location: http://blockbod.com");
+//die();
 /**
  * CodeIgniter
  *
