@@ -403,7 +403,7 @@
                                 </div><!-- .two-column-news-left -->
 
                                 <div class="two-column-news two-column-news-right">
-                                    <?php $data_block = $block_key_9; ?>
+                                    <?php $data_block = $top_coin_news; ?>
                                     <div class="section-title">
                                         <h2 class="widget-title">Regulation</h2>
                                         <a href="/news/group_list/2/regulation">View All</a>
@@ -413,22 +413,22 @@
 
                                         <div class="news-item">
                                             <div class="news-thumb">
-                                                <a href="<?php echo detail_uri($data_block[0]->slug); ?>">
+                                                <a href="<?php echo detail_uri($data_block[12]->slug); ?>">
                                                     <div class="home3-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php echo $data_block[0]->thumb_url;?>');">
+                                                         style="background-image: url('<?php echo $data_block[12]->thumb_url;?>');">
                                                     </div>
                                                 </a>
                                             </div><!-- .news-thumb -->
 
                                             <div class="news-text-wrap">
-                                                <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[0]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[0]->title; ?></a></h2>
-                                                <span class="posted-date"><?php echo format_post_time($data_block[0]->time); ?></span>
-                                                <div class="ellipsis3lines"><?php echo $data_block[0]->excerpt; ?></div>
+                                                <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[12]->slug); ?>" title="<?php echo $data_block[12]->title; ?>"><?php echo $data_block[12]->title; ?></a></h2>
+                                                <span class="posted-date"><?php echo format_post_time($data_block[12]->time); ?></span>
+                                                <div class="ellipsis3lines"><?php echo $data_block[12]->excerpt; ?></div>
                                             </div><!-- .news-text-wrap -->
                                         </div><!-- .news-item -->
 
                                         <?php
-                                        for ($i=1; $i<5; $i++){
+                                        for ($i=13; $i<17; $i++){
                                             ?>
                                             <div class="news-item layout-two">
                                                 <div class="news-thumb">
