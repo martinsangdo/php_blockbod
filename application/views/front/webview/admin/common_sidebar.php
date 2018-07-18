@@ -78,7 +78,7 @@
             <!-- End Forms: Submenu-1 -->
         </li>
         <!-- End My contents -->
-        <!-- Books -->
+        <!-- Books
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -89,7 +89,6 @@
                             <i class="hs-admin-angle-right"></i>
                         </span>
             </a>
-            <!-- Forms: Submenu-1 -->
             <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
                     <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/admin-book/create">
@@ -108,9 +107,8 @@
                     </a>
                 </li>
             </ul>
-            <!-- End Forms: Submenu-1 -->
         </li>
-        <!-- End Books -->
+        End Books -->
         <!-- Articles -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
             <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu1">

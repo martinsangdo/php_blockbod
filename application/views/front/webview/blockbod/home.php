@@ -149,24 +149,20 @@
                             </section>
 
                             <section id="media_image-4" class="widget widget_media_image">
-                                <div class="alignleft">
-                                    <script type="text/javascript">
-                                        amzn_assoc_ad_type = "banner";
-                                        amzn_assoc_marketplace = "amazon";
-                                        amzn_assoc_region = "US";
-                                        amzn_assoc_placement = "assoc_banner_placement_default";
-                                        amzn_assoc_campaigns = "books";
-                                        amzn_assoc_banner_type = "category";
-                                        amzn_assoc_p = "48";
-                                        amzn_assoc_isresponsive = "false";
-                                        amzn_assoc_banner_id = "1E12T8MN3QGRR49EP802";
-                                        amzn_assoc_width = "728";
-                                        amzn_assoc_height = "90";
-                                        amzn_assoc_tracking_id = "blockbodcom-20";
-                                        amzn_assoc_linkid = "321638da5326005d00e953ee87b7a6d4";
-                                    </script>
-                                    <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
-                                </div>
+                                <script type="text/javascript">
+                                    amzn_assoc_placement = "adunit0";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_ad_mode = "search";
+                                    amzn_assoc_ad_type = "smart";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_default_search_phrase = '<?php echo $ad_keywords[0]; ?>';
+                                    amzn_assoc_default_category = "Books";
+                                    amzn_assoc_linkid = "48f618ad78fd3bc4fb4e584b49467384";
+                                    amzn_assoc_design = "in_content";
+                                    amzn_assoc_default_browse_node = "283155";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                             </section>
 
                             <?php $data_block = $block_key_4; ?>
@@ -289,24 +285,20 @@
                             </section>
 
                             <section id="media_image-4" class="widget widget_media_image">
-                                <div class="alignleft">
-                                    <script type="text/javascript">
-                                        amzn_assoc_ad_type = "banner";
-                                        amzn_assoc_marketplace = "amazon";
-                                        amzn_assoc_region = "US";
-                                        amzn_assoc_placement = "assoc_banner_placement_default";
-                                        amzn_assoc_campaigns = "booksteach";
-                                        amzn_assoc_banner_type = "category";
-                                        amzn_assoc_p = "48";
-                                        amzn_assoc_isresponsive = "false";
-                                        amzn_assoc_banner_id = "15NZ7M2AY053NEPSW202";
-                                        amzn_assoc_width = "728";
-                                        amzn_assoc_height = "90";
-                                        amzn_assoc_tracking_id = "blockbodcom-20";
-                                        amzn_assoc_linkid = "4f964ead6d7d06f82e27b40ae3abec0b";
-                                    </script>
-                                    <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
-                                </div>
+                                <script type="text/javascript">
+                                    amzn_assoc_placement = "adunit0";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_ad_mode = "search";
+                                    amzn_assoc_ad_type = "smart";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_default_search_phrase = '<?php echo $ad_keywords[1]; ?>';
+                                    amzn_assoc_default_category = "Books";
+                                    amzn_assoc_linkid = "48f618ad78fd3bc4fb4e584b49467384";
+                                    amzn_assoc_design = "in_content";
+                                    amzn_assoc_default_browse_node = "283155";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                             </section>
 
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
@@ -574,30 +566,23 @@
                                 </div>
                         </aside>
 
-                        <aside id="media_gallery-2" class="widget widget_media_gallery">
-                            <div class="section-title">
-                                <h2 class="widget-title">Best sellers</h2>
-                                <a href="#!">View All</a>
-                            </div>
-                            <div id="gallery-1" class="gallery galleryid-1984 gallery-columns-3 gallery-size-thumbnail">
-                                <?php
-                                if ($top_books){
-                                for ($i=0; $i<count($top_books); $i++){
-                                ?>
-                                <div class="gallery-item gallery-icon landscape">
-                                    <a href="/book/detail/<?php echo $top_books[$i]->slug.'/'.$top_books[$i]->_id; ?>">
-                                        <div class="book-thumb-center-cropped center-cropped-fill"
-                                             style="background-image: url('<?php
-                                             if (isset($top_books[$i]->thumb_url)){
-                                                 echo $top_books[$i]->thumb_url;
-                                             } else {
-                                                 echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';
-                                             }
-                                             ?>');">
-                                        </div>
-                                    </a>
-                                </div>
-                                <?php }} ?>
+                        <aside id="media_image-3" class="widget widget_media_image">
+                            <div class="aligncenter">
+                                <script type="text/javascript">
+                                    amzn_assoc_placement = "adunit0";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_ad_mode = "search";
+                                    amzn_assoc_ad_type = "smart";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_default_search_phrase = 'cryptocurrency ico';
+                                    amzn_assoc_default_category = "Books";
+                                    amzn_assoc_linkid = "48f618ad78fd3bc4fb4e584b49467384";
+                                    amzn_assoc_default_browse_node = "283155";
+                                    amzn_assoc_title = "Best sellers";
+                                    amzn_assoc_search_bar = "false";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                             </div>
                         </aside>
 
@@ -625,26 +610,6 @@
                                     <?php }//end for ?>
                                 </div>
 
-                        </aside>
-                        <aside id="media_image-3" class="widget widget_media_image">
-                            <div class="aligncenter">
-                                <script type="text/javascript">
-                                    amzn_assoc_ad_type = "banner";
-                                    amzn_assoc_marketplace = "amazon";
-                                    amzn_assoc_region = "US";
-                                    amzn_assoc_placement = "assoc_banner_placement_default";
-                                    amzn_assoc_campaigns = "textbooks";
-                                    amzn_assoc_banner_type = "category";
-                                    amzn_assoc_p = "12";
-                                    amzn_assoc_isresponsive = "false";
-                                    amzn_assoc_banner_id = "1VZEBSQCP6H67RFRER02";
-                                    amzn_assoc_width = "300";
-                                    amzn_assoc_height = "250";
-                                    amzn_assoc_tracking_id = "blockbodcom-20";
-                                    amzn_assoc_linkid = "400eefde45340ca5a4a6dba923f399bf";
-                                </script>
-                                <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
-                            </div>
                         </aside>
                         <?php $data_block = $block_key_11; ?>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">

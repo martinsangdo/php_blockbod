@@ -54,10 +54,28 @@ class Welcome extends MY_Controller
 
         //
         $this->data['top_coin_news'] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
-
+        //
+        $this->data['ad_keywords'] = $this->get_random_keywords();
 
         $this->load->view(VIEW_FOLDER.'home', $this->data);
     }
-
+    //return keywords for Adsense randomly
+    private function get_random_keywords(){
+        $primary_keys = array(
+          'ico','cryptocurrency', 'bitcoin', 'blockchain', 'ethereum',
+            'decentralized system', 'coin', 'smart contract', 'cryptocurrency wallet',
+            'startup', 'trade', 'solidity'
+        );
+        $secondary_keys = array(
+            'digital', 'manual', 'guide', 'definition', 'how to', 'mining',
+            'programming', 'revolution', 'invest', 'introduction'
+        );
+        $primary_keys_max_index = count($primary_keys) - 1;
+        $secondary_keys_max_index = count($secondary_keys) - 1;
+        //
+        $ad_key_1 = $primary_keys[floor(rand(0,$primary_keys_max_index))].' '.$secondary_keys[floor(rand(0,$secondary_keys_max_index))];
+        $ad_key_2 = $primary_keys[floor(rand(0,$primary_keys_max_index))].' '.$secondary_keys[floor(rand(0,$secondary_keys_max_index))];
+        return array($ad_key_1, $ad_key_2);
+    }
 
 }
