@@ -12,8 +12,8 @@
             </div>
 
             <div class="header-advertisement">
-                <a href="#">
-                    <img src="<?php echo PUBLIC_FOLDER; ?>img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
+                <a href="https://ubex.com" target="_blank">
+                    <img src="<?php echo PUBLIC_FOLDER; ?>img/home_top_ad.jpg" class="image wp-image-2227 attachment-full size-full" alt="blockbod ad" style="max-width: 100%; height: auto;" title="blockbod ad"/>
                 </a>
             </div><!-- .header-advertisement -->
         </div>
