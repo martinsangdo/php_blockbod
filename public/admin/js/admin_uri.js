@@ -7,6 +7,7 @@ var ADMIN_PAPER_CONTROLLER_NAME = '/admin-paper/';
 var ADMIN_CATEGORY_CONTROLLER_NAME = '/admin-category/';
 var ADMIN_MY_CONTENT_CONTROLLER_NAME = '/admin-my-content/';
 var ADMIN_CONTACT_CONTROLLER_NAME = '/admin-contact/';
+var ADMIN_ADVERTISEMENT_CONTROLLER_NAME = '/admin-ad/';
 
 
  var ADMIN_API_URI = {
@@ -34,6 +35,7 @@ var ADMIN_CONTACT_CONTROLLER_NAME = '/admin-contact/';
      UPDATE_BOOK: ADMIN_BOOK_CONTROLLER_NAME+'update',
      SWAP_BOOK_INDEX: ADMIN_BOOK_CONTROLLER_NAME+'swap_sort_index',
      //contact
-     GET_UNREAD_MESS_NUM: ADMIN_CONTACT_CONTROLLER_NAME+'get_unread_mess_num'
-
+     GET_UNREAD_MESS_NUM: ADMIN_CONTACT_CONTROLLER_NAME+'get_unread_mess_num',
+     //advertisement
+     UPDATE_HOME_BANNER: ADMIN_ADVERTISEMENT_CONTROLLER_NAME+'update_home_banner',
  };

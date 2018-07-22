@@ -71,5 +71,9 @@ define('CONTENT_COVER_PATH', '/public/upload/content_cover/');
 define('CONTENT_COVER_FOLDER', './public/upload/content_cover');
 define('CONTENT_ATTACH_PATH', '/public/upload/content_attach/');
 define('CONTENT_ATTACH_FOLDER', './public/upload/content_attach');
+//home banner
+define('HOME_BANNER_NAME_PREFIX', 'home_banner_');
+define('HOME_BANNER_FOLDER', './public/upload/home_banner');
+define('HOME_BANNER_PATH', '/public/upload/home_banner/');
 //file type
 define('PDF_FILE_EXT', 'pdf');

@@ -13,7 +13,9 @@ var STR_MESS = {
     INVALID_PAGE_TOTAL: 'Page length is invalid',
     INVALID_INDEX: 'Index is invalid',
     UPDATE_COMPLETED: 'Updated successfully',
-    DUPLICATE_RECORD: 'Duplicated data'
+    DUPLICATE_RECORD: 'Duplicated data',
+    INVALID_URL: 'Url is not correct format!',
+    EMPTY_HOME_BANNER_DETAIL: 'You must type url or choose new image',
 
 
 };

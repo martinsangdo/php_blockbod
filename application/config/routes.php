@@ -82,3 +82,5 @@ $route['admin-newsletter/(:any)'] = 'admin/AdminNewsletter/$1';
 
 $route['publicapi/(:any)'] = 'PublicAPI/$1';
 $route['publicapi/(:any)/(:any)'] = 'PublicAPI/$1/$2';
+
+$route['admin-ad/(:any)'] = 'admin/AdminAdvertisement/$1';
