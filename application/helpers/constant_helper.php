@@ -5,6 +5,10 @@ define('ADMIN_ARTICLE_CONTROLLER_NAME', 'admin-article');
 define('ADMIN_BOOK_CONTROLLER_NAME', 'admin-book');
 define('ADMIN_PAPER_CONTROLLER_NAME', 'admin-paper');
 define('ADMIN_CONTACT_CONTROLLER_NAME', 'admin-contact');
+define('ADMIN_MY_CONTENT_CONTROLLER_NAME', 'admin-my-content');
+define('ADMIN_CATEGORY_CONTROLLER_NAME', 'admin-category');
+define('ADMIN_NEWSLETTER_CONTROLLER_NAME', 'admin-newsletter');
+define('ADMIN_AD_CONTROLLER_NAME', 'admin-ad');
 
 define('API_CONTROLLER_NAME', 'api');		    //controller name in URL of API which need login to process
 define('PUBLIC_CONTROLLER_NAME', 'publicapi');	//controller name in URL of API which don't need login to process

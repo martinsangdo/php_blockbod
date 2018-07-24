@@ -21,6 +21,10 @@ Class MY_Controller extends CI_Controller
             case ADMIN_ARTICLE_CONTROLLER_NAME:
             case ADMIN_CONTACT_CONTROLLER_NAME:
             case ADMIN_CONTROLLER_NAME:
+            case ADMIN_MY_CONTENT_CONTROLLER_NAME:
+            case ADMIN_CATEGORY_CONTROLLER_NAME:
+            case ADMIN_NEWSLETTER_CONTROLLER_NAME:
+            case ADMIN_AD_CONTROLLER_NAME:
             {
                 //someone using Admin pages
                 $this->load->model('admin_model');
@@ -52,7 +56,12 @@ Class MY_Controller extends CI_Controller
             }
             default:
             {
-
+                //get common things
+                //get detail of current displaying banner
+                $this->load->model(array('advertisement_model'));
+                $query = 'SELECT * FROM home_banner WHERE is_active=1';
+                $home_banner_detail = $this->advertisement_model->custom_query($query);
+                $this->data['home_banner_detail'] = $home_banner_detail[0];
             }
         }
         //models

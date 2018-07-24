@@ -56,11 +56,6 @@ class Welcome extends MY_Controller
         //to show Advertisements
         $this->data['ad_keywords'] = $this->get_random_keywords();
         //
-        //get detail of current displaying banner
-        $query = 'SELECT * FROM home_banner WHERE is_active=1';
-        $home_banner_detail = $this->advertisement_model->custom_query($query);
-        $this->data['home_banner_detail'] = $home_banner_detail[0];
-        //
         $this->load->view(VIEW_FOLDER.'home', $this->data);
     }
     //return keywords for Adsense randomly
