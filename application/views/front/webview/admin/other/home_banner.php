@@ -30,7 +30,7 @@
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
                 <h2>Current banner: <a id="current_url" href="<?php echo $home_banner_detail->url; ?>" target="_blank" ><?php echo $home_banner_detail->url; ?></a></h2>
-                <a href="https://ubex.com" target="_blank">
+                <a href="<?php echo $home_banner_detail->url; ?>" target="_blank">
                     <img src="<?php echo HOME_BANNER_PATH.$home_banner_detail->filename; ?>" class="image wp-image-2227 attachment-full size-full" id="img_home_banner" style="width:728px;height:90px;" title="blockbod ad"/>
                 </a>
                 <br/><br/>

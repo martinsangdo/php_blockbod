@@ -24,7 +24,7 @@ class Welcome extends MY_Controller
 //            $this->load->view(VIEW_FOLDER.'login_front', $this->data);
 //            return;
 //        }
-
+        $this->load->model(array('event_model', 'paper_model', 'book_model', 'advertisement_model'));
         //get data of blocks
         $this->data[BLOCK_KEY_1] = $this->block_content_model->get_latest_posts(array('site_id' => 1), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_2] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
@@ -38,7 +38,6 @@ class Welcome extends MY_Controller
         $this->data[BLOCK_KEY_10] = $this->block_content_model->get_latest_posts(array('site_id' => 14), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_11] = $this->block_content_model->get_latest_posts(array('site_id' => 15), 0, DEFAULT_PAGE_LEN);
         //get ICO (Events)
-        $this->load->model(array('event_model', 'paper_model', 'book_model'));
         $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
         $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(2, 0, 3);
         $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(3, 0, 3);
@@ -54,9 +53,14 @@ class Welcome extends MY_Controller
 
         //
         $this->data['top_coin_news'] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
-        //
+        //to show Advertisements
         $this->data['ad_keywords'] = $this->get_random_keywords();
-
+        //
+        //get detail of current displaying banner
+        $query = 'SELECT * FROM home_banner WHERE is_active=1';
+        $home_banner_detail = $this->advertisement_model->custom_query($query);
+        $this->data['home_banner_detail'] = $home_banner_detail[0];
+        //
         $this->load->view(VIEW_FOLDER.'home', $this->data);
     }
     //return keywords for Adsense randomly
