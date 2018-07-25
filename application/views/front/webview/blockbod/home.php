@@ -451,7 +451,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Upcoming ICO</h2>
-                                    <a href="#!">View All</a>
+                                    <a href="/ico/list/getOnlyUpcomingICOs/upcoming">View All</a>
                                 </div>
                                 <div class="news-item layout-two g-mb-0 hidden" id="ico_tmpl">
                                     <div class="news-thumb g-width-65">
@@ -469,15 +469,17 @@
                                 </div>
                                 <div class="recent-posts-side" id="upcoming_ico_container">
                                     <!-- data here -->
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/loading.gif" id="upcoming_loading_icon" width="60"/>
                                 </div>
                         </aside>
                         <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts">
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Live ICO</h2>
-                                    <a href="#!">View All</a>
+                                    <a href="/ico/list/getOnlyLiveICOs/live">View All</a>
                                 </div>
                                 <div class="recent-posts-side" id="live_ico_container">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/loading.gif" id="live_loading_icon" width="60"/>
                                     <!-- data here -->
                                 </div>
                         </aside>
@@ -485,9 +487,10 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Finished ICO</h2>
-                                    <a href="#!">View All</a>
+                                    <a href="/ico/list/getOnlyFinishedICOs/finished">View All</a>
                                 </div>
                                 <div class="recent-posts-side" id="finished_ico_container">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/loading.gif" id="finished_loading_icon" width="60"/>
                                     <!-- data here -->
                                 </div>
                         </aside>

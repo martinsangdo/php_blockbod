@@ -56,6 +56,7 @@ function get_ico_lists(){
     }).on('success', function (payload) {
         if (common.isset(payload.ico) && common.isset(payload.ico.upcoming)){
             show_short_ico_list($('#upcoming_ico_container'), payload.ico.upcoming);
+            $('#upcoming_loading_icon').remove();
         }
     }).on('error', function (payload) {
     });
@@ -64,6 +65,7 @@ function get_ico_lists(){
     }).on('success', function (payload) {
         if (common.isset(payload.ico) && common.isset(payload.ico.live)){
             show_short_ico_list($('#live_ico_container'), payload.ico.live);
+            $('#live_loading_icon').remove();
         }
     }).on('error', function (payload) {
     });
@@ -72,6 +74,7 @@ function get_ico_lists(){
     }).on('success', function (payload) {
         if (common.isset(payload.ico) && common.isset(payload.ico.finished)){
             show_short_ico_list($('#finished_ico_container'), payload.ico.finished);
+            $('#finished_loading_icon').remove();
         }
     }).on('error', function (payload) {
     });

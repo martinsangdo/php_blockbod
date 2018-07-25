@@ -8,7 +8,7 @@ Class Ico extends REST_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('event_model'));
+
     }
     //show detail of 1 ICO
     public function detail_get(){
@@ -20,6 +20,18 @@ Class Ico extends REST_Controller
 
         //
         $this->load->view(VIEW_FOLDER.'ico_detail', $this->data);
+    }
+    //show list of ICOs
+    public function list_get(){
+        $this->load->model(array('paper_model'));
+        //get my papers
+        $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
+            array('status'=>1), 0, 3, 'sort_idx', 'asc');
+        //
+        $this->data['ico_uri'] = $this->uri->segment(3);
+        $this->data['ico_type'] = $this->uri->segment(4);
+        //
+        $this->load->view(VIEW_FOLDER.'ico_list', $this->data);
     }
 }
 
