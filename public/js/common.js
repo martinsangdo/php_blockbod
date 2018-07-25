@@ -80,6 +80,10 @@ Common.prototype.format_date = function(d){
     return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate() +
         ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 };
+//format short date
+Common.prototype.format_short_date = function(d){
+    return d.getFullYear() + '/' + (d.getMonth()+1) + '/' + d.getDate();
+};
 //save email subscribe
 Common.prototype.save_email_subscribe = function(email) {
     if (submitting){

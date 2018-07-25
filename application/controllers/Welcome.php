@@ -38,9 +38,9 @@ class Welcome extends MY_Controller
         $this->data[BLOCK_KEY_10] = $this->block_content_model->get_latest_posts(array('site_id' => 14), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_11] = $this->block_content_model->get_latest_posts(array('site_id' => 15), 0, DEFAULT_PAGE_LEN);
         //get ICO (Events)
-        $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
-        $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(2, 0, 3);
-        $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(3, 0, 3);
+//        $this->data['pre_icos'] = $this->event_model->get_ico_by_group_id(1, 0, 3);
+//        $this->data['ongoing_icos'] = $this->event_model->get_ico_by_group_id(2, 0, 3);
+//        $this->data['upcoming_icos'] = $this->event_model->get_ico_by_group_id(3, 0, 3);
         //get my papers
         $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
             array('status'=>1), 0, 3, 'sort_idx', 'asc');
@@ -51,7 +51,7 @@ class Welcome extends MY_Controller
 
         //get Commentary
 
-        //
+        //todo: how to collect real top coins
         $this->data['top_coin_news'] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
         //to show Advertisements
         $this->data['ad_keywords'] = $this->get_random_keywords();
