@@ -86,7 +86,7 @@ Class AdminAdvertisement extends REST_Controller
             }
         } else {
             //create new record with new url & banner
-            $update_data = array('url'=>$url, 'create_time'=>date('Y-M-d H:i'), 'is_active'=>1);
+            $update_data = array('url'=>$url, 'create_time'=>date('Y-m-d H:i:s'), 'is_active'=>1);
             if (!empty($_FILES['file_attach'])){
                 //change new cover image
                 $config['upload_path'] = HOME_BANNER_FOLDER;
