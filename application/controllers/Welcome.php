@@ -45,8 +45,8 @@ class Welcome extends MY_Controller
         $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
             array('status'=>1), 0, 3, 'sort_idx', 'asc');
         //get books
-        $this->data['top_books'] = $this->book_model->get_pagination_advance('*',
-            array('status'=>1), 0, 9, 'sort_idx', 'asc');
+//        $this->data['top_books'] = $this->book_model->get_pagination_advance('*',
+//            array('status'=>1), 0, 9, 'sort_idx', 'asc');
         //get ICO analysis
 
         //get Commentary

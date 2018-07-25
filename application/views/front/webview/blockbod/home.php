@@ -559,7 +559,7 @@
                                         <div class="news-text-wrap">
                                             <h2><a class="ellipsis3lines_title" href="/paper/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>"><?php echo $top_papers[$i]->title; ?></a></h2>
                                             <div class="book_price_1"><?php echo $top_papers[$i]->discount_price; ?> USD</div>
-                                            <a class="buy_link pointer">BUY NOW</a>
+                                            <a class="buy_link pointer" href="/paper/detail/<?php echo $top_papers[$i]->slug; ?>/<?php echo $top_papers[$i]->_id; ?>">BUY NOW</a>
                                         </div><!-- .news-text-wrap -->
                                     </div>
                                     <?php } } ?>

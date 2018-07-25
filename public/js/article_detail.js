@@ -23,10 +23,11 @@ function show_extra_posts(list, $container){
     var $item;
     for (var i=0; i<len; i++){
         $item = $item_tmpl.clone(false);
-        $('.thumb_url', $item).attr('src', list[i]['thumb_url']).
-            css('cursor', 'pointer').attr('onclick', 'common.redirect("/news/'+list[i]['slug']+'");');
+        $('.thumb_url', $item).attr('style', 'background-image: url('+list[i]['thumb_url']+');').
+            css('cursor', 'pointer').attr('onclick', 'common.redirect("/blockchain-news/'+list[i]['slug']+'");');
         $('.title', $item).html(list[i]['title']);
-        $('a', $item).attr('href', '/news/'+list[i]['slug']);
+        $('a', $item).attr('href', '/blockchain-news/'+list[i]['slug']);
+        $('.posted-date', $item).text();
         $container.append($item.removeClass('hidden').removeAttr('id'));
     }
     //detect error img

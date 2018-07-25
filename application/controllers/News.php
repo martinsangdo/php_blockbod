@@ -16,7 +16,7 @@ Class News extends REST_Controller
     public function index_get(){
         //find post detail
         $slug = $this->uri->segment(2);
-        $this->load->model(array('site_model'));
+        $this->load->model(array('site_model', 'paper_model'));
         $article_detail = $this->block_content_model->read_row(array('slug'=>$slug));
         $site_detail = $this->site_model->read_row(array('_id'=>$article_detail->site_id));
         $tag_list = $this->block_content_model->get_tags($article_detail->_id);
@@ -36,6 +36,9 @@ Class News extends REST_Controller
         }
         $this->data['related_posts'] = $related_posts;
         $this->data['extra_ids'] = implode('-',$extra_ids);
+        //get my papers
+        $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
+            array('status'=>1), 0, 3, 'sort_idx', 'asc');
         //
         $this->load->view(VIEW_FOLDER.'news', $this->data);
     }
@@ -126,7 +129,7 @@ Class News extends REST_Controller
     //get newest posts, except this one
     private function get_recent_posts($extra_ids){
         $recent_sql = 'SELECT _id,slug,title,excerpt,thumb_url,author_name FROM block_content WHERE status=1 AND _id NOT IN ('.
-            implode(',',$extra_ids).') ORDER BY time DESC LIMIT '.DEFAULT_PAGE_LEN;
+            implode(',',$extra_ids).') ORDER BY time DESC LIMIT 6';
         $recent_posts = $this->block_content_model->custom_query($recent_sql);
         return $recent_posts;
     }
@@ -134,10 +137,10 @@ Class News extends REST_Controller
     //get newer & older around current post id by time or _id
     private function get_random_posts($extra_ids, $post_id){
         $newer_sql = 'SELECT _id,slug,title,excerpt,thumb_url,author_name FROM block_content WHERE status=1 AND _id NOT IN ('.
-            implode(',',$extra_ids).') AND _id > '.$post_id.' ORDER BY time DESC LIMIT 10';
+            implode(',',$extra_ids).') AND _id > '.$post_id.' ORDER BY time DESC LIMIT 3';
         $newer_posts = $this->block_content_model->custom_query($newer_sql);
         $older_sql = 'SELECT _id,slug,title,excerpt,thumb_url,author_name FROM block_content WHERE status=1 AND _id NOT IN ('.
-            implode(',',$extra_ids).') AND _id < '.$post_id.' ORDER BY time DESC LIMIT 10';
+            implode(',',$extra_ids).') AND _id < '.$post_id.' ORDER BY time DESC LIMIT 3';
         $older_posts = $this->block_content_model->custom_query($older_sql);
         return array_merge($newer_posts, $older_posts);
     }
