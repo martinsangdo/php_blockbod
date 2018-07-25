@@ -10,6 +10,8 @@
     <meta property="og:image:url" content="<?php echo $article_detail->thumb_url; ?>" />
 
     <?php require_once 'common_head.php'; ?>
+    <script type="text/javascript" src="/public/js/article_detail.js"></script>
+
 </head>
 
 <body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
@@ -56,23 +58,23 @@
 
                                 <h3 class="related-posts-title">Related Posts</h3>
 
-
-                                <div class="inner-wrapper">
-
-                                    <div class="news-item three-column-item hidden">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/"><img width="400" height="245" src="./detail_files/clothing-store-984396_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
-
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/">Luxury designs from famous companies</a></h2>
-                                            <span class="posted-date">February 21, 2017</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
-
-
+                                <div id="related_post_container">
+                                    <?php
+                                    for ($i=0; $i<count($related_posts); $i++){
+                                        ?>
+                                        <div class="news-item three-column-item">
+                                            <div class="news-thumb">
+                                                <a href="<?php echo detail_uri($related_posts[$i]->slug); ?>">
+                                                    <img src="<?php echo $related_posts[$i]->thumb_url; ?>" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image">
+                                                </a>
+                                            </div>
+                                            <div class="news-text-wrap">
+                                                <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($related_posts[$i]->slug); ?>"><?php echo $related_posts[$i]->title; ?></a></h2>
+                                                <span class="posted-date"><?php echo format_post_time($article_detail->time); ?></span>
+                                            </div><!-- .news-text-wrap -->
+                                        </div>
+                                    <?php } ?>
                                 </div>
-
                             </div>
 
                             <div>
@@ -107,6 +109,12 @@
 
     <?php require_once 'common_footer.php'; ?>
 </div><!-- #page -->
+<div class="u-outer-spaces-helper">
+    <div id="meta_data_container">
+        <input type="hidden" id="post_id" value="<?php echo $article_detail->_id; ?>"/>
+        <input type="hidden" id="extra_ids" value="<?php echo $extra_ids; ?>"/>
+    </div>
+</div>
 
 <a href="#!" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a>
 

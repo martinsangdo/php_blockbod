@@ -60,12 +60,6 @@ Class News extends REST_Controller
         $this->load->view(VIEW_FOLDER.'coin_price', $this->data);
     }
     //========== POST FUNCTIONS
-    //get newest videos, should hash the list?
-    public function get_random_videos_post(){
-        $this->load->model('video_model');
-        $recent_videos = $this->video_model->custom_query('SELECT * FROM video_link WHERE status=1 ORDER BY time DESC LIMIT 11');
-        $this->response(RestSuccess($recent_videos), SUCCESS_CODE);
-    }
     //get related, recent, random posts
     public function get_extra_posts_post(){
         $post_id = $this->input->post('post_id');
