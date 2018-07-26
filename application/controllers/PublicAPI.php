@@ -40,6 +40,38 @@ class PublicAPI extends REST_Controller
     public function newsletter_get(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
+    //search article by keywords
+    public function search_article_get(){
+        $this->load->model(array('block_content_model', 'paper_model'));
+        $keyword = urldecode($this->uri->segment(3));
+        $offset = is_numeric($this->uri->segment(4)) && intval($this->uri->segment(4)) > 0?$this->uri->segment(4):0;
+        if (!isset($keyword) || strlen($keyword) < 3){
+            //there is no valid keyword
+            $this->data['data_block'] = false;
+            $this->data['pagination'] = '';
+        } else {
+            $posts = $this->block_content_model->custom_query('SELECT * FROM block_content'.
+                ' WHERE status=1 AND (title LIKE "%'.$keyword.'%" OR excerpt LIKE "%'.$keyword.'%") ORDER BY update_time DESC LIMIT '.
+                DEFAULT_PAGE_LEN.' OFFSET '.$offset);
+            $this->data['data_block'] = $posts;
+            if ($posts){
+                //found some posts
+                //get total posts in category
+                $total_post = $this->block_content_model->get_total(array('status'=>1));
+                //create paging
+                $base_url = '/publicapi/search_article/'.$keyword.'/';
+                $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 4);
+            } else {
+                $this->data['pagination'] = '';
+            }
+        }
+        //get my papers
+        $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
+            array('status'=>1), 0, 3, 'sort_idx', 'asc');
+        //
+        $this->data['keyword'] = $keyword;
+        $this->load->view(VIEW_FOLDER.'news_list', $this->data);
+    }
     //========== POST FUNCTIONS
     //used to prevent login before site publishes
     public function front_login_post(){

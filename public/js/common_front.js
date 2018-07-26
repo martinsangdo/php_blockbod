@@ -194,10 +194,9 @@ $(document).on('ready', function () {
     //assign event in search box
     $('#txt_search_keyword', $('#search_box')).unbind();
     $('#txt_search_keyword', $('#search_box')).keypress(function(e){
-        if (e.which == 13){
+        if (e.which == 13 && $.trim($('#txt_search_keyword', $('#search_box')).val()).length > 2){
             //press Enter
-            //todo: implement search
-
+            common.redirect('/publicapi/search_article/'+$.trim($('#txt_search_keyword', $('#search_box')).val()));
         }
     });
     //load list of available coins
