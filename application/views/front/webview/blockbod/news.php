@@ -35,7 +35,7 @@
                                                 <h2 class="entry-title"><?php echo $article_detail->title; ?></h2>
                                                 <div class="entry-meta">
                                                     <span class="posted-on">
-                                                        <a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/" rel="bookmark">
+                                                        <a href="#" rel="bookmark">
                                                             <time class="entry-date published"><?php echo format_post_time($article_detail->time); ?></time>
                                                         </a>
                                                     </span>

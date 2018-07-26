@@ -252,7 +252,7 @@
                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
                             <i class="hs-admin-email"></i>
                         </span>
-                <span class="media-body align-self-center">Messages</span>
+                <span class="media-body align-self-center">Messages (Contact)</span>
             </a>
         </li>
         <!-- Resource -->
