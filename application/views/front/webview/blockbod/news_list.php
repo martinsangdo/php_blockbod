@@ -4,8 +4,6 @@
     <title>Blockchain latest news and ICO detail tutorials</title>
 
     <?php require_once 'common_head.php'; ?>
-    <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/home.js"></script>
-
 </head>
 <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-1984 global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
@@ -52,8 +50,36 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Top papers</h2>
+                                    <a href="#!">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php require_once 'top_papers.inc.php'; ?>
+                                </div>
+                        </aside>
 
-
+                        <aside id="media_image-3" class="widget widget_media_image">
+                            <div class="aligncenter">
+                                <script type="text/javascript">
+                                    amzn_assoc_placement = "adunit0";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_ad_mode = "search";
+                                    amzn_assoc_ad_type = "smart";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_default_search_phrase = 'ico technology';
+                                    amzn_assoc_default_category = "Books";
+                                    amzn_assoc_linkid = "48f618ad78fd3bc4fb4e584b49467384";
+                                    amzn_assoc_default_browse_node = "283155";
+                                    amzn_assoc_title = "Most buy";
+                                    amzn_assoc_search_bar = "false";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+                            </div>
+                        </aside>
                     </div></div><!-- #secondary -->
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 

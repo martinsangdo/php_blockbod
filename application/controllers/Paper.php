@@ -19,5 +19,13 @@ Class Paper extends REST_Controller
         //
         $this->load->view(VIEW_FOLDER.'book/book_detail', $this->data);
     }
+    //get & show list
+    public function list_get(){
+        //get all my papers
+        $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
+            array('status'=>1), 0, 0, 'sort_idx', 'asc');
+        //
+        $this->load->view(VIEW_FOLDER.'paper_list', $this->data);
+    }
 }
 

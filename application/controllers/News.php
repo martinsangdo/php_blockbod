@@ -46,7 +46,7 @@ Class News extends REST_Controller
     public function group_list_get(){
         //find posts belong to 1 group
         $site_id = $this->uri->segment(3);      //same site
-        $this->load->model(array('site_model'));
+        $this->load->model(array('site_model', 'paper_model'));
 
         $offset = is_numeric($this->uri->segment(5)) && intval($this->uri->segment(5)) > 0?$this->uri->segment(5):0;
         $this->data['data_block'] = $this->block_content_model->get_latest_posts(array('site_id' => $site_id), $offset, DEFAULT_PAGE_LEN);
@@ -55,6 +55,9 @@ Class News extends REST_Controller
         //create paging
         $base_url = '/news/group_list/'.$site_id.'/'.$this->uri->segment(4);
         $this->data['pagination'] = $this->create_pagination($base_url, $total_post, DEFAULT_PAGE_LEN, 5);
+        //get my papers
+        $this->data['top_papers'] = $this->paper_model->get_pagination_advance('*',
+            array('status'=>1), 0, 3, 'sort_idx', 'asc');
         //
         $this->load->view(VIEW_FOLDER.'news_list', $this->data);
     }
