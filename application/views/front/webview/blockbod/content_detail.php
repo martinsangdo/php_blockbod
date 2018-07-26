@@ -80,7 +80,7 @@
                             <div class="recent-news-section">
                                 <div class="section-title">
                                     <h2 class="widget-title">Top papers</h2>
-                                    <a href="#!">View All</a>
+                                    <a href="/paper/list">View All</a>
                                 </div>
                                 <div class="recent-posts-side">
                                     <?php require_once 'top_papers.inc.php'; ?>
