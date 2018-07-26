@@ -162,7 +162,7 @@ Class AdminBook extends REST_Controller
             $orig_index = intval(trim($this->input->post('previous_index')));
             $new_index = intval(trim($this->input->post('txt_index')));
             //find if there is any record has same new index
-            $existed_idx = $this->book_model->read_row(array('sort_idx' => $new_index, '_id <> '.$orig_id));
+            $existed_idx = $this->book_model->read_row(array('sort_idx' => $new_index, '_id <> '=>$orig_id));
             if ($existed_idx){
                 //swap this index
                 $swap_id = $existed_idx->_id;

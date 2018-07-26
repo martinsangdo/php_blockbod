@@ -161,10 +161,6 @@
                     </div>
                 </div>
 
-                <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 2050px;">
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: absolute; transform: translateY(639px); width: 330px; top: 0px;">
-                    </div>
-                </div><!-- #secondary -->
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 
 

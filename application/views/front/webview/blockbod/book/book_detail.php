@@ -26,17 +26,16 @@
                                         <div class="featured-large-item">
                                             <div class="news-item">
                                                 <div class="news-thumb">
-                                                    <div class="book-detail-center-cropped center-cropped-fill"
-                                                         style="background-image: url('<?php
+                                                    <img class="book-detail-center-cropped center-cropped-fill"
+                                                         src="<?php
                                                          if ($detail->is_external > 0 && !empty($detail->thumb_url)){
                                                              echo $detail->thumb_url;
                                                          } else if ($detail->is_external == 0 && !empty($detail->thumb_url)){
                                                              echo PAPER_COVER_PATH.$detail->thumb_url;
                                                          } else {
-                                                             echo PUBLIC_FOLDER.'img/sample_book/pdf.jpg';  //default image
+                                                             echo PUBLIC_FOLDER.'img/sample_book/pdf.png';  //default image
                                                          }?>
-                                                         ');">
-                                                    </div>
+                                                        "/>
                                                 </div><!-- .news-thumb -->
                                                 <div class="news-text-wrap text-center">
                                                     <?php
@@ -71,31 +70,74 @@
 
                             <div class="news-col-3 related-posts">
                                 <h3 class="related-posts-title">Related papers</h3>
-
                                 <div class="inner-wrapper">
-
 
                                 </div>
                             </div>
+
+                            <div>
+                                <input type="hidden" id="hid_slug" value="<?php echo 'my-paper-'.$detail->slug; ?>"/>
+                                <div id="disqus_thread"></div>
+                                <script>
+                                    /**
+                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                    var disqus_config = function () {
+                                        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+                                        this.page.identifier = $('#hid_slug').val(); // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    };
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                        var d = document, s = d.createElement('script');
+                                        s.src = 'https://blockbod.disqus.com/embed.js';
+                                        s.setAttribute('data-timestamp', +new Date());
+                                        (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
+                            </div><!-- #comments -->
+
                         </main>
                     </div>
                 </div><!-- #primary -->
+                <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
+                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
+                            <div class="recent-news-section">
+                                <div class="section-title">
+                                    <h2 class="widget-title">Top papers</h2>
+                                    <a href="/paper/list">View All</a>
+                                </div>
+                                <div class="recent-posts-side">
+                                    <?php require_once ABS_VIEW_FOLDER.'top_papers.inc.php'; ?>
+                                </div>
+                        </aside>
 
+                        <aside id="media_image-3" class="widget widget_media_image">
+                            <div class="aligncenter">
+                                <script type="text/javascript">
+                                    amzn_assoc_placement = "adunit0";
+                                    amzn_assoc_tracking_id = "blockbodcom-20";
+                                    amzn_assoc_ad_mode = "search";
+                                    amzn_assoc_ad_type = "smart";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "US";
+                                    amzn_assoc_default_search_phrase = 'ico invest';
+                                    amzn_assoc_default_category = "Books";
+                                    amzn_assoc_linkid = "48f618ad78fd3bc4fb4e584b49467384";
+                                    amzn_assoc_default_browse_node = "283155";
+                                    amzn_assoc_title = "Most buy";
+                                    amzn_assoc_search_bar = "false";
+                                </script>
+                                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+                            </div>
+                        </aside>
 
-                <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 2050px;">
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: absolute; transform: translateY(639px); width: 330px; top: 0px;">
                     </div>
-                </div><!-- #secondary -->
+                </div>
+
             </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
 
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="site-info-holder">
-                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
-            </div>
-        </div><!-- .container -->
-    </footer><!-- #colophon -->
+    <?php require_once ABS_VIEW_FOLDER.'common_footer.php'; ?>
 </div><!-- #page -->
 
 
