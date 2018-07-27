@@ -25,20 +25,22 @@
                                             <div class="entry-content">
                                                 <h1>About us</h1>
                                                 <div>
-                                                    <p>Blockbod is the growing digital media, events and information services company for the crypto asset and blockchain technology community. Its mandate is to inform, educate and connect the global community as the authoritative daily news provider dedicated to chronicling the space.</p>
-                                                    <p>Blockbod publishes The State of Blockchain, the ultimate, must-read analysis on the growth of blockchain technology.</p>
-                                                    <h3><a href="/welcome/submit_contribution">Submit a Story</a></h3>
-                                                    <p>You can email any news tips, press releases, stories and corrections to us at info@blockbod.com or submit it <a href="/welcome/submit_contribution">here</a>.</p>
-                                                    <h3><a href="/welcome/advertising">Advertising</a></h3>
-                                                    <p>Visit our advertising page at <a href="http://blockbod.com/advertising">http://blockbod.com/advertising</a> to learn more about the different opportunities to expose your brand and product to Blockbod users.</p>
-                                                    <h3><a href="mailto:info@blockbod.com">Webmaster</a></h3>
-                                                    <p>If you are experiencing problems with our website or have any suggestions as to how we can improve it, please email us at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
-                                                    <h3><a href="mailto:info@blockbod.com">Business Development</a></h3>
-                                                    <p>If you would like to partner with Blockbod on a licensing agreement or other business development opportunities, please reach out at <a href="mailto:info@blockbod.com">info@blockbod.com</a>.</p>
-                                                    <h3><a href="/welcome/contact">Fraud</a></h3>
-                                                    <p>If you notice any websites, services and/or other online accounts you believe to be using the Blockbod brand in a suspicious, fradulent or illegal way such as promoting nefarious projects / phishing schemes, please email us at <a href="mailto:info@blockbod.com">info@blockbod.com</a>.</p>
-                                                    <h3><a href="/welcome/contact">General Contact</a></h3>
-                                                    <p>For all other questions or inquiries, please visit <a href="/welcome/contact">here</a>.</p>
+                                                    <p>Blockbod is an AI digital media and information service site for the crypto asset and blockchain technology community. Its purpose is to pinpoint the relevant information and provide to the relevant parties including ICO preparer, Investor, Regulatory Agencies and the global community as a whole, the authoritative news, must-read analysis or the dedicated information to certain readers.</p>
+                                                    <p>Blockbod publishes the BB ranking which show the status of Blockchain technology and its prospective in the market on the growth of blockchain world within next 5 years period.</p>
+                                                    <h3>Submit an ICO</h3>
+                                                    <p>You can email your ICO information, White Paper, news tips, press releases, stories and corrections to us at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
+                                                    <h3>Subscription of Curated News</h3>
+                                                    <p>You can subscribe a special news by clicking our subscription page at <a href="/publicapi/newsletter">this link</a> to get a curated news about your topic, issue or certain crypto-currency or blockchain in order to follow up your concern and expectation such as when to buy or sell</p>
+                                                    <h3>Advertising</h3>
+                                                    <p>You can advertise your Company or ICO by visiting our advertising page at <a href="/publicapi/advertising">this link</a> to learn more about the different opportunities to expose your brand and product to Blockbod users.</p>
+                                                    <h3>Problem and Suggestion</h3>
+                                                    <p>If you are experiencing problems with our website or have any suggestions as to how we can improve it, please email us at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
+                                                    <h3>Business Development</h3>
+                                                    <p>If you would like to partner with Blockbod on a licensing agreement or other business development opportunities, please reach out at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
+                                                    <h3>Fraud</h3>
+                                                    <p>If you notice any websites, services and/or other online accounts you believe to be using the Blockbod brand in a suspicious, fraudulent or illegal way such as promoting nefarious projects / phishing schemes, please email us at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
+                                                    <h3>General Contact</h3>
+                                                    <p>For all other questions or inquiries, please send the first class mail to 3550 Wilshire Blvd, Suite 1020, Los Angeles, CA 90010 or email us at <a href="mailto:info@blockbod.com">info@blockbod.com</a></p>
                                                 </div>
                                             </div><!-- .entry-content -->
                                         </div>
