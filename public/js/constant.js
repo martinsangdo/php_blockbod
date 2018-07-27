@@ -27,9 +27,10 @@ var API_URI = {
     SAVE_CONTACT: '/publicapi/save_contact',
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
     SAVE_NEWSLETTER_CUSTOM: '/publicapi/save_newsletter_custom',
-
+    UPDATE_NEWSLETTER_CUSTOM: '/publicapi/update_newsletter_custom',
     //
-    GET_RAW_URL: '/publicapi/front_get_raw_url'
+    GET_RAW_URL: '/publicapi/front_get_raw_url',
+
 };
 
 var CONST = {
@@ -48,8 +49,7 @@ var CONST = {
     LBL_MESS_INFO_CLASSNAME: 'g-color-green',
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
-    LOAD_RANDOM_PRICE_DURATION: 2000
-
+    LOAD_RANDOM_PRICE_DURATION: 2000,
 };
 //response message
 var RESP_MESS = {

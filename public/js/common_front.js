@@ -94,7 +94,23 @@ Common_Front.prototype.save_newsletter = function(){
         submitting = false;
     });
 };
-//save email in Newsletter (special type)
+//save payer information to local storage for verification after payment
+Common_Front.prototype.save_payer_info_2_local = function(email, custom_request) {
+    //create random string for access payment info
+    var random_str = common.rand_str();
+    var payer_info = {
+        email: email,
+        custom_request: custom_request
+    };
+    localStorage.setItem(random_str, JSON.stringify(payer_info));
+    //
+    var $frm_pay = $('#frm_pay');
+    //setup return url
+    $('#return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_success?code='+random_str);  //after successful payment
+    $('#cancel_return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_cancel?code='+random_str);  //after cancel payment
+    $frm_pay.submit();
+};
+//save email in Newsletter (special type - custom request)
 Common_Front.prototype.process_custom_newsletter = function(){
     if (submitting){
         return;
@@ -121,12 +137,11 @@ Common_Front.prototype.process_custom_newsletter = function(){
     //save info to DB
     submitting = true;
     common.ajaxPost(API_URI.SAVE_NEWSLETTER_CUSTOM, params, function(resp){
-        common.show_info_lbl(STR_MESS_FRONT.NEWSLETTER_SAVED);
         //clear input
         $('#txt_email').val('');
         submitting = false;
-        //todo: move to payment page
-
+        //process payment
+        common_front.save_payer_info_2_local(email, custom_request);
     }, function(err){
         common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
         submitting = false;
@@ -158,7 +173,7 @@ Common_Front.prototype.get_coin_from_outside = function() {
     var params = {
         url: CONST.API_COIN_LIST
     };
-    console.log('get latest price because it is expired');
+    // console.log('get latest price because it is expired');
     common.ajaxPost(API_URI.GET_RAW_URL, params, function(msg){
         if (common.isset(msg) && common.isset(msg.data)){
             data = $.parseJSON(msg.data);
@@ -190,6 +205,41 @@ Common_Front.prototype.get_coin_info = function() {
     //     $('#bb_random_price', $('#primary-menu')).removeClass('g-color-green').addClass('g-color-red');
     // }
 };
+//verify if current page belongs to newsletter payment
+Common_Front.prototype.check_newsletter_payment = function() {
+    var current_page_url = window.location.href;
+    if (current_page_url.indexOf('/publicapi/newsletter_pay_success?code=') > 0){
+        //user paid successfully
+        //load what user input
+        var code = common.get_url_param('code');
+        var saved_payer_info = localStorage.getItem(code);
+        saved_payer_info = $.parseJSON(saved_payer_info);
+        var params = {
+            email: saved_payer_info['email'],
+            price: $('#newsletter_custom_price').text()
+        };
+        //save into our db
+        common.ajaxPost(API_URI.UPDATE_NEWSLETTER_CUSTOM, params, function(msg){
+            if (common.isset(msg)){
+                common.show_info_lbl_custom(STR_MESS_FRONT.NEWSLETTER_SAVED);
+            } else {
+                common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
+            }
+        }, function(err){
+            common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
+        });
+    } else if (current_page_url.indexOf('/publicapi/newsletter_pay_cancel?code=') > 0){
+        //user cancelled payment (unpaid)
+        //load what user input
+        var code = common.get_url_param('code');
+        var saved_payer_info = localStorage.getItem(code);
+        saved_payer_info = $.parseJSON(saved_payer_info);
+        //load saved info into form
+        $('#txt_email_custom').val(saved_payer_info['email']);
+        $('#txt_custom_request').val(saved_payer_info['custom_request']);
+    }
+};
+//
 $(document).on('ready', function () {
     //assign event in search box
     $('#txt_search_keyword', $('#search_box')).unbind();
@@ -201,4 +251,6 @@ $(document).on('ready', function () {
     });
     //load list of available coins
     common_front.load_coin_price_randomly();
+    //
+    common_front.check_newsletter_payment();
 });

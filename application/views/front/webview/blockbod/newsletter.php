@@ -43,8 +43,10 @@
                                             <ul>
                                                 <li><input id="rdo_opt_1" checked="checked" name="rdo_opt" type="radio" value="1"> <strong>Weekly</strong> - Every Monday of the week.</li>
                                             </ul>
-                                            <p><strong>Anual fee: 100 USD</strong></p>
-                                            <button type="button" class="" onclick="common_front.process_custom_newsletter();">Register now</button> <small id="lbl_mess_custom"></small>
+                                            <p>Anual fee: <strong><span id="newsletter_custom_price"><?php echo CUSTOM_NEWSLETTER_PRICE; ?></span> USD</strong></p>
+                                            <?php require_once 'pay_subscription.inc.php'; ?>
+                                            <img src="<?php echo PUBLIC_FOLDER; ?>img/subscribe_button.png" onclick="common_front.process_custom_newsletter();" class="pointer"/>
+                                            <small id="lbl_mess_custom"></small>
                                         </div>
                                     </div>
                                 </div>

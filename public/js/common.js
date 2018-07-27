@@ -179,7 +179,26 @@ Common.prototype.show_info_lbl = function(mess){
 Common.prototype.show_error_lbl = function(mess){
     $(CONST.LBL_MESS).text(mess).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).addClass(CONST.LBL_MESS_ERROR_CLASSNAME);
 };
+//show label info message (used in extra forms)
+Common.prototype.show_info_lbl_custom = function(mess){
+    $(CONST.LBL_MESS_CUSTOM).text(mess).removeClass(CONST.LBL_MESS_ERROR_CLASSNAME).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
+};
 //show label error message (used in extra forms)
 Common.prototype.show_error_lbl_custom = function(mess){
     $(CONST.LBL_MESS_CUSTOM).text(mess).removeClass(CONST.LBL_MESS_INFO_CLASSNAME).addClass(CONST.LBL_MESS_ERROR_CLASSNAME);
+};
+//get value from url parameters
+Common.prototype.get_url_param = function(param_name){
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === param_name) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
 };

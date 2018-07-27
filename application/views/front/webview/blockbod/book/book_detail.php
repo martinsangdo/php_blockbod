@@ -68,13 +68,6 @@
                                 </div><!-- .mix-column-news -->
                             </section>
 
-                            <div class="news-col-3 related-posts">
-                                <h3 class="related-posts-title">Related papers</h3>
-                                <div class="inner-wrapper">
-
-                                </div>
-                            </div>
-
                             <div>
                                 <input type="hidden" id="hid_slug" value="<?php echo 'my-paper-'.$detail->slug; ?>"/>
                                 <div id="disqus_thread"></div>

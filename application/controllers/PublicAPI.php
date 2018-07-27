@@ -40,6 +40,12 @@ class PublicAPI extends REST_Controller
     public function newsletter_get(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
+    public function newsletter_pay_success_get(){
+        $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
+    }
+    public function newsletter_pay_cancel_get(){
+        $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
+    }
     //search article by keywords
     public function search_article_get(){
         $this->load->model(array('block_content_model', 'paper_model'));
@@ -198,6 +204,33 @@ class PublicAPI extends REST_Controller
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+        }
+    }
+    //update newsletter by custom request
+    public function update_newsletter_custom_post(){
+        $this->load->model(array('newsletter_model'));
+
+        $email = trim($this->input->post('email'));
+        //payment status
+        $data = array(
+            'paid_status' => 1,     //already paid
+            'paid_time' => CURRENT_TIME,
+            'price' => $this->input->post('price')
+        );
+        //
+        //check if the email is registered
+        $existed = $this->newsletter_model->get_total(array('email'=>$email));
+        if ($existed && $existed > 0){
+            //update
+            $result = $this->newsletter_model->update_by_condition(array('email'=>$email), $data);
+            if ($result){
+                $this->response(RestSuccess(array()), SUCCESS_CODE);
+            } else {
+                $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+            }
+        } else {
+            //email not existed
+            $this->response(RestBadRequest(USER_IS_NOT_EXISTED_MSG), BAD_REQUEST_CODE);
         }
     }
     //get coin price in real time
