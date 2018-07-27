@@ -32,7 +32,6 @@
                                         <div class="content-wrap-inner">
                                             <header class="entry-header">
                                                 <h2 class="entry-title"><?php echo $article_detail->title; ?></h2>
-                                                <div><p><?php echo htmlspecialchars(preg_replace( "/\r|\n/", "", strip_tags($article_detail->excerpt))); ?></p></div>
                                                 <div class="entry-meta">
                                                     <span class="posted-on">
                                                         <a href="#" rel="bookmark">

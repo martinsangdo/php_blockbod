@@ -32,11 +32,11 @@
                     <div id="main_menu" class="wrap-menu-content">
                         <div class="menu-main-menu-container">
                             <ul id="primary-menu" class="menu">
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">How to Manage ICO</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">What is ICO White Paper</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">White Paper Presentation</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#!">Global Regulatory Colloquy</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/what-is-ico-/2">What is ICO</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/how-to-manage-ico/3">How to Manage ICO</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/what-is-white-paper/4">What is ICO White Paper</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/white-paper-presentation/5">White Paper Presentation</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/global-regulatory-colloquy/6">Global Regulatory Colloquy</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price g-color-yellow"></a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>
