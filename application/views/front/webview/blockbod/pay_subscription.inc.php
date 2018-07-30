@@ -1,7 +1,7 @@
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" class="hidden" id="frm_pay">
 
     <!-- Identify your business so that you can collect the payments. -->
-    <input type="hidden" name="business" value="info@blockbod.com"/>
+    <input type="hidden" name="business" value="payment@blockbod.com"/>
 
     <!-- Specify a Buy Now button. -->
     <input type="hidden" name="cmd" value="_xclick"/>
@@ -12,6 +12,8 @@
     <input type="hidden" name="currency_code" value="USD"/>
     <input type="hidden" id="payer_email" name="payer_email"/>
 
+    <input type="hidden" id="return" name="return"/>
+    <input type="hidden" id="cancel_return" name="cancel_return"/>
     <!-- Display the payment button. -->
     <input type="image" name="submit" border="0"
            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
