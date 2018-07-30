@@ -7,12 +7,10 @@
     <input type="hidden" name="cmd" value="_xclick"/>
 
     <!-- Specify details about the item that buyers will purchase. -->
-    <input type="hidden" name="item_name" value="Custom Newsletter"/>
+    <input type="hidden" id="item_name" name="item_name"/>
     <input type="hidden" name="amount" value="<?php echo CUSTOM_NEWSLETTER_PRICE; ?>"/>
     <input type="hidden" name="currency_code" value="USD"/>
-
-    <input type="hidden" id="return" name="return"/>
-    <input type="hidden" id="cancel_return" name="cancel_return"/>
+    <input type="hidden" id="payer_email" name="payer_email"/>
 
     <!-- Display the payment button. -->
     <input type="image" name="submit" border="0"

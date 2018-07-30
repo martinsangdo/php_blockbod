@@ -9,6 +9,7 @@ var STR_MESS_FRONT = {
     SERVER_ERROR: 'Something wrong, please try it another time',
     CONTACT_SAVED: 'Thank you for messaging us, we will contact you back',
     NEWSLETTER_SAVED: 'Your email is recorded, you will receive our news soon at proper time',
+    CUSTOM_NEWSLETTER_SAVED: 'Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com to view details of this transaction.',
     PROCESSING: 'Processing, please wait...',
     INVALID_EMAIL: 'Email is invalid',
     EMPTY_CUSTOM_REQUEST_NEWSLETTER: 'Please type your custom request',

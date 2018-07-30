@@ -81,4 +81,4 @@ define('HOME_BANNER_FOLDER', './public/upload/home_banner');
 define('HOME_BANNER_PATH', '/public/upload/home_banner/');
 //file type
 define('PDF_FILE_EXT', 'pdf');
-define('CUSTOM_NEWSLETTER_PRICE', 100);     //100USD
+define('CUSTOM_NEWSLETTER_PRICE', 10);     //100USD

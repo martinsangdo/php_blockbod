@@ -106,8 +106,10 @@ Common_Front.prototype.save_payer_info_2_local = function(email, custom_request)
     //
     var $frm_pay = $('#frm_pay');
     //setup return url
-    $('#return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_success?code='+random_str);  //after successful payment
-    $('#cancel_return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_cancel?code='+random_str);  //after cancel payment
+    $('#payer_email', $frm_pay).val(email);  //after successful payment
+    $('#item_name', $frm_pay).val('Custom newsletter, email: '+email);  //after successful payment
+    // $('#return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_success?code='+random_str);  //after successful payment
+    // $('#cancel_return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_cancel?code='+random_str);  //after cancel payment
     $frm_pay.submit();
 };
 //save email in Newsletter (special type - custom request)
@@ -211,23 +213,27 @@ Common_Front.prototype.check_newsletter_payment = function() {
     if (current_page_url.indexOf('/publicapi/newsletter_pay_success?code=') > 0){
         //user paid successfully
         //load what user input
-        var code = common.get_url_param('code');
-        var saved_payer_info = localStorage.getItem(code);
-        saved_payer_info = $.parseJSON(saved_payer_info);
-        var params = {
-            email: saved_payer_info['email'],
-            price: $('#newsletter_custom_price').text()
-        };
-        //save into our db
-        common.ajaxPost(API_URI.UPDATE_NEWSLETTER_CUSTOM, params, function(msg){
-            if (common.isset(msg)){
-                common.show_info_lbl_custom(STR_MESS_FRONT.NEWSLETTER_SAVED);
-            } else {
-                common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
-            }
-        }, function(err){
-            common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
-        });
+
+
+
+
+        // var code = common.get_url_param('code');
+        // var saved_payer_info = localStorage.getItem(code);
+        // saved_payer_info = $.parseJSON(saved_payer_info);
+        // var params = {
+        //     email: saved_payer_info['email'],
+        //     price: $('#newsletter_custom_price').text()
+        // };
+        // //save into our db
+        // common.ajaxPost(API_URI.UPDATE_NEWSLETTER_CUSTOM, params, function(msg){
+        //     if (common.isset(msg)){
+        //         common.show_info_lbl_custom(STR_MESS_FRONT.CUSTOM_NEWSLETTER_SAVED);
+        //     } else {
+        //         common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
+        //     }
+        // }, function(err){
+        //     common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
+        // });
     } else if (current_page_url.indexOf('/publicapi/newsletter_pay_cancel?code=') > 0){
         //user cancelled payment (unpaid)
         //load what user input

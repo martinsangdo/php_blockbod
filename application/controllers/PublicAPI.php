@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //author: Martin SangDo
 
 require (APPPATH.'/libraries/REST_Controller.php');
+include APPPATH . 'third_party/paypal/PaypalIPN.php';
+
 class PublicAPI extends REST_Controller
 {
 
@@ -40,9 +42,11 @@ class PublicAPI extends REST_Controller
     public function newsletter_get(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
+    //display after user paid custom newsletter
     public function newsletter_pay_success_get(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
+    //display after user cancel payment of custom Newsletter
     public function newsletter_pay_cancel_get(){
         $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
@@ -238,5 +242,26 @@ class PublicAPI extends REST_Controller
         $url = trim($this->input->post('url'));
         $info = $this->sendGet($url);
         $this->response(RestSuccess($info), SUCCESS_CODE);
+    }
+    //receive information after user paid custom Newsletter
+    public function newsletter_pay_ipn_post(){
+        //get Paypal token
+        $ipn = new PaypalIPN();
+        // Use the sandbox endpoint during testing.
+        $ipn->useSandbox();
+        $verified = $ipn->verifyIPN();
+        if ($verified) {
+            var_dump($verified);
+            /*
+             * Process IPN
+             * A list of variables is available here:
+             * https://developer.paypal.com/webapps/developer/docs/classic/ipn/integration-guide/IPNandPDTVariables/
+             */
+        } else {
+            var_dump('not verified');
+        }
+
+        //
+//        $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
     }
 }
