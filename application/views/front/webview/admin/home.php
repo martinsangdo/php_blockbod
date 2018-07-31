@@ -123,7 +123,7 @@
                                             <span class="g-font-size-24 g-line-height-1 g-color-black">xxx</span>
                                         </div>
 
-                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Contribution</h6>
+                                        <h6 class="g-font-size-16 g-font-weight-300 g-color-gray-dark-v6 mb-0">Paid Newsletter</h6>
                                     </div>
                                 </div>
                             </div>

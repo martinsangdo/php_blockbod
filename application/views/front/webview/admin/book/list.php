@@ -48,16 +48,16 @@
                                     <td><a target="_blank" href="<?php echo $list[$i]->original_url; ?>">Open</a></td>
                                     <td class="min-w-90"><?php echo $list[$i]->publish_date; ?></td>
                                     <td class="min-w-100">
-                                        <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" onclick="adminCommon.toggle_publish(this, <?php echo $list[$i]->_id; ?>, ADMIN_API_URI.TOGGLE_PUBLISH_BOOK);" title="Publish/Unpublish">
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" href="#!" onclick="adminCommon.toggle_publish(this, <?php echo $list[$i]->_id; ?>, ADMIN_API_URI.TOGGLE_PUBLISH_BOOK);" title="Publish/Unpublish">
                                             <i class="ico_publish hs-admin-eye <?php if ($list[$i]->status > 0) echo 'icon_active'; ?>"></i>
                                         </a>
-                                        <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="/admin-book/update/<?php echo $list[$i]->_id; ?>" title="Update" onclick="common.redirect('/admin-paper/update/<?php echo $list[$i]->_id; ?>');">
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" href="/admin-book/update/<?php echo $list[$i]->_id; ?>" title="Update" onclick="common.redirect('/admin-paper/update/<?php echo $list[$i]->_id; ?>');">
                                             <i class="hs-admin-pencil"></i>
                                         </a>
-                                        <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_up <?php if (!(count($list) > 1 && $i>0)) echo 'hidden' ?>" href="#!" title="Move up" onclick="adminCommon.move_row_step(this, -1, ADMIN_API_URI.SWAP_BOOK_INDEX);">
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover ico_up <?php if (!(count($list) > 1 && $i>0)) echo 'hidden' ?>" href="#!" title="Move up" onclick="adminCommon.move_row_step(this, -1, ADMIN_API_URI.SWAP_BOOK_INDEX);">
                                             <i class="hs-admin-angle-up"></i>
                                         </a>
-                                        <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover ico_down <?php if (!(count($list) > 1 && $i<count($list)-1)) echo 'hidden' ?>" href="#!" title="Move down" onclick="adminCommon.move_row_step(this, 1, ADMIN_API_URI.SWAP_BOOK_INDEX);">
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover ico_down <?php if (!(count($list) > 1 && $i<count($list)-1)) echo 'hidden' ?>" href="#!" title="Move down" onclick="adminCommon.move_row_step(this, 1, ADMIN_API_URI.SWAP_BOOK_INDEX);">
                                             <i class="hs-admin-angle-down"></i>
                                         </a>
                                     </td>

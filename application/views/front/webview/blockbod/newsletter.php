@@ -45,7 +45,7 @@
                         <div class="card g-brd-gray-light-v7 g-rounded-3 g-mb-30">
                             <header class="card-header g-bg-lightblue-v4 g-brd-bottom-none g-px-15 g-px-30--sm g-pt-15 g-pt-20--sm g-pb-10 g-pb-15--sm">
                                 <div class="media">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-white g-mr-10 mb-0 g-mb-0">Custom newsletter</h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-white g-mr-10 mb-0 g-mb-0">Customized newsletter</h3>
                                 </div>
                             </header>
 

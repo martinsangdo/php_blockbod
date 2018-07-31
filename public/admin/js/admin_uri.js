@@ -8,6 +8,7 @@ var ADMIN_CATEGORY_CONTROLLER_NAME = '/admin-category/';
 var ADMIN_MY_CONTENT_CONTROLLER_NAME = '/admin-my-content/';
 var ADMIN_CONTACT_CONTROLLER_NAME = '/admin-contact/';
 var ADMIN_ADVERTISEMENT_CONTROLLER_NAME = '/admin-ad/';
+var ADMIN_NEWSLETTER_CONTROLLER_NAME = '/admin-newsletter/';
 
 
  var ADMIN_API_URI = {
@@ -38,4 +39,7 @@ var ADMIN_ADVERTISEMENT_CONTROLLER_NAME = '/admin-ad/';
      GET_UNREAD_MESS_NUM: ADMIN_CONTACT_CONTROLLER_NAME+'get_unread_mess_num',
      //advertisement
      UPDATE_HOME_BANNER: ADMIN_ADVERTISEMENT_CONTROLLER_NAME+'update_home_banner',
+     //newsletter
+     UPDATE_CUSTOM_NEWSLETTER: ADMIN_NEWSLETTER_CONTROLLER_NAME+'update_custom',
+
  };

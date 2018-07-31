@@ -10,7 +10,7 @@ var STR_MESS_FRONT = {
     CONTACT_SAVED: 'Thank you for messaging us, we will contact you back',
     NEWSLETTER_SAVED: 'Your email is recorded, you will receive our news soon at proper time',
     CUSTOM_NEWSLETTER_SAVED: 'Thank you for your payment. Your transaction has been completed.',
-    PROCESSING: 'Processing, please wait...',
+    PROCESSING: 'Processing, please wait a moment...',
     INVALID_EMAIL: 'Email is invalid',
     EMPTY_CUSTOM_REQUEST_NEWSLETTER: 'Please type your custom request',
 

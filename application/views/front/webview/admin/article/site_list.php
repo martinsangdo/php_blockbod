@@ -42,7 +42,7 @@
                                 <td><?php echo $list[$i]->post_num; ?></td>
                                 <td><?php echo $list[$i]->status; ?></td>
                                 <td>
-                                    <a class="js-edit u-link-v5 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" title="Edit">
+                                    <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" href="#!" title="Edit">
                                         <i class="hs-admin-pencil"></i>
                                     </a>
                                 </td>

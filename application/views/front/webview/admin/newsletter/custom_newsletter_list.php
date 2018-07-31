@@ -29,6 +29,7 @@
                                 <th>Payment status</th>
                                 <th>Unsubscribe</th>
                                 <th class="min-w-150">Register time</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
 
@@ -41,6 +42,16 @@
                                     <td><?php echo $list[$i]->payment_status; ?></td>
                                     <td><?php echo $list[$i]->is_unsubcribed; ?></td>
                                     <td><?php echo format_post_time($list[$i]->create_time); ?></td>
+                                    <td class="min-w-100">
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" title="Update detail" href="/admin-newsletter/custom_detail/<?php echo $list[$i]->_id; ?>">
+                                            <i class="hs-admin-pencil"></i>
+                                        </a>
+                                        <?php if (isset($list[$i]->payment_status)){ ?>
+                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" title="View transaction list" href="/admin-newsletter/transaction_list/<?php echo $list[$i]->_id; ?>">
+                                            <i class="hs-admin-list"></i>
+                                        </a>
+                                        <?php } ?>
+                                    </td>
                                 </tr>
                             <?php } //end for ?>
                             </tbody>

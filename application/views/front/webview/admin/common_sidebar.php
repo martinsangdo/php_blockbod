@@ -290,7 +290,7 @@
                                 <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
                                     <i class="hs-admin-list"></i>
                                 </span>
-                        <span class="media-body align-self-center">Custom Newsletter</span>
+                        <span class="media-body align-self-center">Customized newsletter</span>
                     </a>
                 </li>
             </ul>
