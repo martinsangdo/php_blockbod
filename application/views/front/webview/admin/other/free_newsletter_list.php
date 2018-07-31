@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Newsletter list</title>
+    <title>Free Newsletter list</title>
 
     <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_head.php'); ?>
 
@@ -16,7 +16,7 @@
 
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
-                <h2>Newsletter list</h2>
+                <h2>Free Newsletter list</h2>
                 <div class="table-responsive g-mb-40">
                     <?php
                     if ($list){
@@ -25,14 +25,10 @@
                             <thead>
                             <tr>
                                 <th>Email</th>
-                                <th>Opt 1</th>
-                                <th>Opt 2</th>
-                                <th>Opt 3</th>
-                                <th>Opt 4</th>
-                                <th>Opt 5</th>
-                                <th>Opt 6</th>
-                                <th>Request</th>
-                                <th>Paid status</th>
+                                <th>Weekly</th>
+                                <th>Daily</th>
+                                <th>New research</th>
+                                <th>Paper offer</th>
                                 <th>Unsubscribe</th>
                                 <th class="min-w-150">Register time</th>
                             </tr>
@@ -47,10 +43,6 @@
                                     <td><?php echo $list[$i]->opt_2; ?></td>
                                     <td><?php echo $list[$i]->opt_3; ?></td>
                                     <td><?php echo $list[$i]->opt_4; ?></td>
-                                    <td><?php echo $list[$i]->opt_5; ?></td>
-                                    <td><?php echo $list[$i]->opt_6; ?></td>
-                                    <td><?php echo $list[$i]->custom_request; ?></td>
-                                    <td><?php echo $list[$i]->paid_status; ?></td>
                                     <td><?php echo $list[$i]->is_unsubcribed; ?></td>
                                     <td><?php echo format_post_time($list[$i]->create_time); ?></td>
                                 </tr>
@@ -61,6 +53,10 @@
                 </div>
 
                 Total: <?php echo $total; ?><br/><br/>
+
+                <div>
+                    <?php echo $pagination; ?>
+                </div>
 
             </div>
             <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_footer.php'); ?>

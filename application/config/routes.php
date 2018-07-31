@@ -79,6 +79,7 @@ $route['admin-category/(:any)'] = 'admin/AdminCategory/$1';
 
 $route['admin-contact/(:any)'] = 'admin/AdminContact/$1';
 $route['admin-newsletter/(:any)'] = 'admin/AdminNewsletter/$1';
+$route['admin-newsletter/(:any)/(:any)'] = 'admin/AdminNewsletter/$1/$2';
 
 $route['publicapi/(:any)'] = 'PublicAPI/$1';
 $route['publicapi/(:any)/(:any)'] = 'PublicAPI/$1/$2';
