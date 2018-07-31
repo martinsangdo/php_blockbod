@@ -1,4 +1,4 @@
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" class="hidden" id="frm_pay">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="hidden" id="frm_pay">
 
     <!-- Identify your business so that you can collect the payments. -->
     <input type="hidden" name="business" value="payment@blockbod.com"/>

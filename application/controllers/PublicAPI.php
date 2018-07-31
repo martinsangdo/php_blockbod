@@ -249,7 +249,7 @@ class PublicAPI extends REST_Controller
         //get Paypal token
         $ipn = new PaypalIPN();
         // Use the sandbox endpoint during testing.
-        $ipn->useSandbox();
+//        $ipn->useSandbox();
         $verified = $ipn->verifyIPN();
         $is_test_ipn = $this->input->post('test_ipn');      //only test by Simulator has this value
         $transaction_id = $this->input->post('txn_id');     //unique for each payment
