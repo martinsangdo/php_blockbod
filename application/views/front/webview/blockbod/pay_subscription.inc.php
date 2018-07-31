@@ -8,12 +8,14 @@
 
     <!-- Specify details about the item that buyers will purchase. -->
     <input type="hidden" id="item_name" name="item_name"/>
+    <input type="hidden" id="item_number" name="item_number"/>
     <input type="hidden" name="amount" value="<?php echo CUSTOM_NEWSLETTER_PRICE; ?>"/>
     <input type="hidden" name="currency_code" value="USD"/>
-    <input type="hidden" id="payer_email" name="payer_email"/>
 
     <input type="hidden" id="return" name="return"/>
     <input type="hidden" id="cancel_return" name="cancel_return"/>
+    <input type="hidden" name="notify_url" value="http://blockbod.com/publicapi/newsletter_pay_ipn"/>
+
     <!-- Display the payment button. -->
     <input type="image" name="submit" border="0"
            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"

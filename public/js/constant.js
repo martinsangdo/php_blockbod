@@ -51,6 +51,7 @@ var CONST = {
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
     LOAD_RANDOM_PRICE_DURATION: 2000,
+    NEWSLETTER_ITEM_PREFIX: 'newsletter_', //id of newsletter
 };
 //response message
 var RESP_MESS = {

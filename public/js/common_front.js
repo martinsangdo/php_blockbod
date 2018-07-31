@@ -106,7 +106,7 @@ Common_Front.prototype.save_payer_info_2_local = function(email, custom_request)
     //
     var $frm_pay = $('#frm_pay');
     //setup return url
-    $('#payer_email', $frm_pay).val(email);  //after successful payment
+    $('#item_number', $frm_pay).val(CONST.NEWSLETTER_ITEM_PREFIX + email);  //after successful payment
     $('#item_name', $frm_pay).val('Custom newsletter, email: '+email);  //after successful payment
     $('#return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_success?code='+random_str);  //after successful payment
     $('#cancel_return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_cancel?code='+random_str);  //after cancel payment
@@ -133,7 +133,8 @@ Common_Front.prototype.process_custom_newsletter = function(){
         email: email,
         opt_5: $('#rdo_opt_1').is(':checked')?1:0,
         opt_6: $('#rdo_opt_2').is(':checked')?1:0,
-        custom_request: custom_request
+        custom_request: custom_request,
+        item_number: CONST.NEWSLETTER_ITEM_PREFIX + email
     };
     $(CONST.LBL_MESS_CUSTOM).text(STR_MESS_FRONT.PROCESSING).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
     //save info to DB

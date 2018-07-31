@@ -26,6 +26,20 @@ class MY_Model extends CI_Model {
 		}
 	}
 
+    /**
+     * Add new record to a table
+     */
+    function create_custom($table_name, $doc) {
+        if (!$doc || count($doc) == 0) {
+            return FALSE;
+        }
+        if($this->db->insert($table_name, $doc)) {
+            return $this->db->insert_id();
+        } else {
+            return FALSE;
+        }
+    }
+
     function get_pagination($where, $offset, $limit, $last_id = ''){
         $this->db->from($this->table_name);
         $this->db->where($where);

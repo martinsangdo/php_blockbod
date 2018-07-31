@@ -70,6 +70,9 @@ p {font-size:15px;}
         width: 360px;
         height: 240px;
     }
+    .mean-container a.meanmenu-reveal.meanclose {
+        left: initial !important;
+    }
 }
 .home0-center-cropped {
     width: 687px;

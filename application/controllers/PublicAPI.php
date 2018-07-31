@@ -192,7 +192,8 @@ class PublicAPI extends REST_Controller
             'opt_5' => intval($opt_5),
             'opt_6' => intval($opt_6),
             'custom_request' => $this->input->post('custom_request'),
-            'create_time' => CURRENT_TIME
+            'create_time' => CURRENT_TIME,
+            'item_number' => $this->input->post('item_number')
         );
         //check if the email is registered
         $existed = $this->newsletter_model->get_total(array('email'=>$email));
@@ -250,18 +251,75 @@ class PublicAPI extends REST_Controller
         // Use the sandbox endpoint during testing.
         $ipn->useSandbox();
         $verified = $ipn->verifyIPN();
-        if ($verified) {
-            var_dump($verified);
+        $is_test_ipn = $this->input->post('test_ipn');      //only test by Simulator has this value
+        $transaction_id = $this->input->post('txn_id');     //unique for each payment
+        $this->load->model(array('newsletter_model'));
+        //NOTE: $verified not working in Sandbox or Simulator
+        if (isset($transaction_id) && empty($is_test_ipn)) {
             /*
              * Process IPN
              * A list of variables is available here:
              * https://developer.paypal.com/webapps/developer/docs/classic/ipn/integration-guide/IPNandPDTVariables/
              */
-        } else {
-            var_dump('not verified');
-        }
+            $payment_status = $this->input->post('payment_status');
+            $item_number = $this->input->post('item_number');
+            //save detail of transaction
+            $data = array(
+                create_time => CURRENT_TIME,
+                payment_type => $this->input->post('payment_type'),
+                payment_date => $this->input->post('payment_date'),
+                payment_status => $payment_status,
+                first_name => $this->input->post('first_name'),
+                last_name => $this->input->post('last_name'),
+                payer_email => $this->input->post('payer_email'),
+                payer_id => $this->input->post('payer_id'),
+                address_name => $this->input->post('address_name'),
+                address_country_code => $this->input->post('address_country_code'),
+                receiver_email => $this->input->post('receiver_email'),
+                item_name => $this->input->post('item_name'),
+                item_number => $item_number,
+                mc_currency => $this->input->post('mc_currency'),
+                mc_fee => $this->input->post('mc_fee'),
+                mc_gross => $this->input->post('mc_gross'),
+                txn_type => $this->input->post('txn_type'),
+                txn_id => $transaction_id,
+                payment_custom => $this->input->post('payment_custom')
+            );
+            //check if this transaction is saved in DB
+            $sql = 'SELECT _id FROM paypal_transaction WHERE txn_id="'.$transaction_id.'"';
+            $record = $this->newsletter_model->custom_query($sql);
+            if ($record && count($record)>0){
+                //update transaction detail
 
-        //
-//        $this->load->view(VIEW_FOLDER.'newsletter', $this->data);
+            } else {
+                //new transaction, create new one
+                //transaction was saved, update it
+                $new_id = $this->newsletter_model->create_custom('paypal_transaction', $data);
+                if ($new_id){
+                    //create new record ok
+                    //find saved newsletter
+                    $news_detail = $this->newsletter_model->read_row(array('item_number'=>$item_number));
+                    if (isset($news_detail->_id)){
+                        //found it, create relationship record with newsletter
+                        $rel_data = array(
+                            'newsletter_id' => $news_detail->_id,
+                            'transaction_id' => $new_id
+                        );
+                        $exec = $this->newsletter_model->create_custom('newsletter_transaction', $rel_data);
+                        //update status to table "newsletter"
+                        $this->newsletter_model->update_by_condition(array('_id'=>$news_detail->_id), array('payment_status'=>$payment_status));
+                    } else {
+                        //cannot found saved newsletter
+
+                    }
+                } else {
+                    //failed to save new transaction to DB
+
+                }
+            }
+            //
+        } else {
+            //not verified (Paypal will send back later)
+        }
     }
 }
