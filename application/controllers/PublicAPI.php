@@ -61,7 +61,7 @@ class PublicAPI extends REST_Controller
             $this->data['pagination'] = '';
         } else {
             $posts = $this->block_content_model->custom_query('SELECT * FROM block_content'.
-                ' WHERE status=1 AND (title LIKE "%'.$keyword.'%" OR excerpt LIKE "%'.$keyword.'%") ORDER BY update_time DESC LIMIT '.
+                ' WHERE status=1 AND (title LIKE "%'.$keyword.'%" OR excerpt LIKE "%'.$keyword.'%" OR content LIKE "%'.$keyword.'%" ) ORDER BY update_time DESC LIMIT '.
                 DEFAULT_PAGE_LEN.' OFFSET '.$offset);
             $this->data['data_block'] = $posts;
             if ($posts){
