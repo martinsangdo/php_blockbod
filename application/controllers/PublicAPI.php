@@ -227,7 +227,7 @@ class PublicAPI extends REST_Controller
         $info = $this->sendGet($url);
         $this->response(RestSuccess($info), SUCCESS_CODE);
     }
-    //receive information after user paid custom Newsletter
+    //receive information after user paid custom Newsletter (from Paypal)
     public function newsletter_pay_ipn_post(){
         $this->load->model(array('newsletter_custom_model'));
         //get Paypal token
