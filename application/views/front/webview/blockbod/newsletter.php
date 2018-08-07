@@ -5,6 +5,20 @@
 
     <?php require_once 'common_head.php'; ?>
     <link rel="stylesheet" href="/public/unity_assets/css/unify-admin.css"/>
+
+    <link  rel="stylesheet" href="/public/unity_assets/vendor/animate.css">
+    <link  rel="stylesheet" href="/public/unity_assets/vendor/custombox/custombox.min.css">
+
+    <script src="/public/unity_assets/js/hs.core.js"></script>
+    <script src="/public/unity_assets/vendor/custombox/custombox.min.js"></script>
+    <script src="/public/unity_assets/js/components/hs.modal-window.js"></script>
+    <!-- JS Plugins Init. -->
+    <script >
+        $(document).on('ready', function () {
+            // initialization of popups
+            $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+        });
+    </script>
 </head>
 
 <body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
@@ -78,6 +92,19 @@
         </div><!-- .container -->
     </div><!-- #content -->
 
+    <a class="btn u-btn-primary hide" id="btn_show_modal" href="#confirm_payment" data-modal-target="#confirm_payment" data-modal-effect="fadein">Launch Modal</a>
+
+    <div id="confirm_payment" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+        <button type="button" class="close" onclick="Custombox.modal.close();">
+            <i class="hs-icon hs-icon-close"></i>
+        </button>
+        <h4 class="g-mb-20">Confirmation</h4>
+        <p>Your email was existed in system, you must pay only <?php echo CUSTOM_NEWSLETTER_PRICE_MODIFY; ?> USD per one change</p>
+        <p>
+            <a href="#!" onclick="Custombox.modal.close();" class="btn btn-md u-btn-outline-bluegray g-mr-10 g-mb-15" style="color:#000;">Cancel</a>
+            <a href="#!" onclick="common_front.agreed_modify_custom_newsletter();" class="btn btn-md u-btn-blue g-mr-10 g-mb-15" style="color:#fff;">Pay now</a>
+        </p>
+    </div>
 
     <?php require_once 'common_footer.php'; ?>
 

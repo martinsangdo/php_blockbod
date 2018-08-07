@@ -81,5 +81,5 @@ define('HOME_BANNER_FOLDER', './public/upload/home_banner');
 define('HOME_BANNER_PATH', '/public/upload/home_banner/');
 //file type
 define('PDF_FILE_EXT', 'pdf');
-define('CUSTOM_NEWSLETTER_PRICE_NEW', 100);     //100USD
-define('CUSTOM_NEWSLETTER_PRICE_MODIFY', 25);     //25USD to change custom request
+define('CUSTOM_NEWSLETTER_PRICE_NEW', 100);     //100USD : MUST CHANGE IN public/js/constant.js too
+define('CUSTOM_NEWSLETTER_PRICE_MODIFY', 25);     //25USD to change custom request: MUST CHANGE IN public/js/constant.js too

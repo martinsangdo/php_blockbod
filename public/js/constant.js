@@ -13,7 +13,7 @@ var STR_MESS_FRONT = {
     PROCESSING: 'Processing, please wait a moment...',
     INVALID_EMAIL: 'Email is invalid',
     EMPTY_CUSTOM_REQUEST_NEWSLETTER: 'Please type your custom request',
-
+    CUSTOM_NAME_NEWSLETTER_PREFIX: 'Custom newsletter for email: ',
 };
 //link of APIs
 var API_URI = {
@@ -28,7 +28,7 @@ var API_URI = {
     SAVE_CONTACT: '/publicapi/save_contact',
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
     SAVE_NEWSLETTER_CUSTOM: '/publicapi/save_newsletter_custom',
-    UPDATE_NEWSLETTER_CUSTOM: '/publicapi/update_newsletter_custom',
+    CHECK_EXISTED_NEWSLETTER_CUSTOM: '/publicapi/check_existed_newsletter_custom',
     //
     GET_RAW_URL: '/publicapi/front_get_raw_url',
 
@@ -51,11 +51,17 @@ var CONST = {
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
     LOAD_RANDOM_PRICE_DURATION: 2000,
-    NEWSLETTER_ITEM_PREFIX: 'newsletter_', //id of newsletter
+    NEWSLETTER_ITEM_PREFIX: 'newsletter_custom_', //id of newsletter
+    CUSTOM_NEWSLETTER_PRICE_NEW: 100,   //100USD
+    CUSTOM_NEWSLETTER_PRICE_MODIFY: 25, //25USD
+
 };
 //response message
 var RESP_MESS = {
-    DUPLICATE_RECORD: 'DUPLICATE_RECORD'
+    DUPLICATE_RECORD: 'DUPLICATE_RECORD',
+    PAYMENT_EMPTY: 'PAYMENT_EMPTY',
+    PAYMENT_NOT_EMPTY: 'PAYMENT_NOT_EMPTY',
+    USER_IS_NOT_EXISTED: 'USER_IS_NOT_EXISTED',
 };
 //local key storage
 var LOCAL_KEY = {

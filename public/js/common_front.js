@@ -95,8 +95,8 @@ Common_Front.prototype.save_newsletter = function(){
     });
 };
 //save payer information to local storage for verification after payment
-Common_Front.prototype.save_payer_info_2_local = function(email, custom_request) {
-    //create random string for access payment info
+Common_Front.prototype.begin_payment_process = function(email, custom_request, item_number, price) {
+    //create random string for access payment info from local storage
     var random_str = common.rand_str();
     var payer_info = {
         email: email,
@@ -106,8 +106,9 @@ Common_Front.prototype.save_payer_info_2_local = function(email, custom_request)
     //
     var $frm_pay = $('#frm_pay');
     //setup return url
-    $('#item_number', $frm_pay).val(CONST.NEWSLETTER_ITEM_PREFIX + email);  //after successful payment
-    $('#item_name', $frm_pay).val('Custom newsletter, email: '+email);  //after successful payment
+    $('#amount', $frm_pay).val(price);      //in USD
+    $('#item_number', $frm_pay).val(item_number);  //unique
+    $('#item_name', $frm_pay).val(email);  //name of payment
     $('#return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_success?code='+random_str);  //after successful payment
     $('#cancel_return', $frm_pay).val(SERVER_URI + '/publicapi/newsletter_pay_cancel?code='+random_str);  //after cancel payment
     $frm_pay.submit();
@@ -128,27 +129,53 @@ Common_Front.prototype.process_custom_newsletter = function(){
         common.show_error_lbl_custom(STR_MESS_FRONT.EMPTY_CUSTOM_REQUEST_NEWSLETTER);
         return;
     }
-    //save to DB
-    var params = {
-        email: email,
-        opt_5: $('#rdo_opt_1').is(':checked')?1:0,
-        opt_6: $('#rdo_opt_2').is(':checked')?1:0,
-        custom_request: custom_request,
-        item_number: CONST.NEWSLETTER_ITEM_PREFIX + email
-    };
     $(CONST.LBL_MESS_CUSTOM).text(STR_MESS_FRONT.PROCESSING).addClass(CONST.LBL_MESS_INFO_CLASSNAME);
-    //save info to DB
     submitting = true;
-    common.ajaxPost(API_URI.SAVE_NEWSLETTER_CUSTOM, params, function(resp){
-        //clear input
-        $('#txt_email').val('');
-        submitting = false;
-        //process payment
-        common_front.save_payer_info_2_local(email, custom_request);
+    //check if this email existed in system
+    common.ajaxPost(API_URI.CHECK_EXISTED_NEWSLETTER_CUSTOM, {email: email}, function(resp){
+        if (resp['code'] == RESP_MESS.PAYMENT_EMPTY || resp['code'] == RESP_MESS.USER_IS_NOT_EXISTED){
+            //overwrite custom or register new user
+            var item_number = common.rand_str();       //to distinct requests
+            var params = {
+                email: email,
+                custom_request: custom_request,
+                item_number: item_number
+            };
+            //save info to DB
+            common.ajaxPost(API_URI.SAVE_NEWSLETTER_CUSTOM, params, function(resp){
+                //clear input
+                $('#txt_email').val('');
+                submitting = false;
+                //process payment
+                common_front.begin_payment_process(email, custom_request, item_number, CONST.CUSTOM_NEWSLETTER_PRICE_NEW);
+            }, function(err){
+                common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
+                submitting = false;
+            });
+        } else {
+            //user was existed, user must pay to modify request
+            if ($("input[name='rdo_subscribe_type']:checked"). val() == "modify"){
+                //user knew he must pay to change request
+                common_front.agreed_modify_custom_newsletter();
+            } else {
+                //show dialog to confirm
+                $('#btn_show_modal').trigger('click');
+            }
+            $(CONST.LBL_MESS_CUSTOM).text('');      //clear message
+            submitting = false;
+        }
     }, function(err){
         common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
         submitting = false;
     });
+};
+//process payment after user agreed to modify request of Newsletter
+Common_Front.prototype.agreed_modify_custom_newsletter = function() {
+    var email = $.trim($('#txt_email_custom').val());
+    var custom_request = $.trim($('#txt_custom_request').val());
+    var item_number = common.rand_str();       //to distinct requests
+
+    common_front.begin_payment_process(email, custom_request, item_number, CONST.CUSTOM_NEWSLETTER_PRICE_MODIFY);
 };
 //load list of coins on the world & get 1 random price
 Common_Front.prototype.load_coin_price_randomly = function() {
@@ -215,25 +242,9 @@ Common_Front.prototype.check_newsletter_payment = function() {
         //user paid successfully
         //load what user input
         var code = common.get_url_param('code');
-        // var saved_payer_info = localStorage.getItem(code);
-        // saved_payer_info = $.parseJSON(saved_payer_info);
-        // var params = {
-        //     email: saved_payer_info['email'],
-        //     price: $('#newsletter_custom_price').text()
-        // };
-        // //save into our db
-        // common.ajaxPost(API_URI.UPDATE_NEWSLETTER_CUSTOM, params, function(msg){
-        //     if (common.isset(msg)){
-                common.show_info_lbl_custom(STR_MESS_FRONT.CUSTOM_NEWSLETTER_SAVED);
-                //clear local
-                localStorage.removeItem(code);
-
-        //     } else {
-        //         common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
-        //     }
-        // }, function(err){
-        //     common.show_error_lbl_custom(STR_MESS_FRONT.SERVER_ERROR);
-        // });
+        common.show_info_lbl_custom(STR_MESS_FRONT.CUSTOM_NEWSLETTER_SAVED);
+        //clear local storage
+        localStorage.removeItem(code);
     } else if (current_page_url.indexOf('/publicapi/newsletter_pay_cancel?code=') > 0){
         //user cancelled payment (unpaid)
         //load what user input
@@ -243,6 +254,7 @@ Common_Front.prototype.check_newsletter_payment = function() {
         //load saved info into form
         $('#txt_email_custom').val(saved_payer_info['email']);
         $('#txt_custom_request').val(saved_payer_info['custom_request']);
+        localStorage.removeItem(code);
     }
 };
 //

@@ -22,7 +22,11 @@
 
       $(document).ready(function (e) {
         // Botostrap Tootltips
-        $('[data-toggle="tooltip"]').tooltip();
+          if ($('[data-toggle="tooltip"]')){
+            try{
+                $('[data-toggle="tooltip"]').tooltip();
+            }catch(e){}
+          }
 
         // Set Background Image Dynamically
         if ($('[data-bg-img-src]').length) $.HSCore.helpers.bgImage($('[data-bg-img-src]'));

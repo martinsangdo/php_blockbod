@@ -173,72 +173,52 @@ class PublicAPI extends REST_Controller
     }
     //save newsletter by custom request
     public function save_newsletter_custom_post(){
-        $this->load->model(array('newsletter_model'));
+        $this->load->model(array('newsletter_custom_model'));
         //check if IP sent many request
         $ip = get_client_ip();
-        $request_today_num = $this->newsletter_model->get_total_request_by_ip($ip);
+        $request_today_num = $this->newsletter_custom_model->get_total_request_by_ip($ip);
         if ($request_today_num == MAX_REQUEST_TODAY_LIMIT){
             $this->response(RestBadRequest(MAX_REQUEST_TODAY_LIMIT_CODE), BAD_REQUEST_CODE);
             return;
         }
-
         $email = trim($this->input->post('email'));
-        $opt_5 = $this->input->post('opt_5');
-        $opt_6 = $this->input->post('opt_6');
-
-        //1. check if this email registered a custom request
-
-
         $data = array(
             'email' => $email,
             'ip' => $ip,
-            'opt_5' => intval($opt_5),
-            'opt_6' => intval($opt_6),
             'custom_request' => $this->input->post('custom_request'),
-            'create_time' => CURRENT_TIME,
-            'item_number' => $this->input->post('item_number')
+            'create_time' => CURRENT_TIME
         );
         //check if the email is registered
-        $existed = $this->newsletter_model->get_total(array('email'=>$email));
+        $existed = $this->newsletter_custom_model->get_total(array('email'=>$email));
         if ($existed && $existed > 0){
             //update
-            $result = $this->newsletter_model->update_by_condition(array('email'=>$email), $data);
+            $result = $this->newsletter_custom_model->update_by_condition(array('email'=>$email), $data);
         } else {
             //create new one
-            $result = $this->newsletter_model->create($data);
+            $result = $this->newsletter_custom_model->create($data);
         }
-
         if ($result){
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
     }
-    //update newsletter by custom request
-    public function update_newsletter_custom_post(){
-        $this->load->model(array('newsletter_model'));
-
+    //check whether email was registered in system
+    public function check_existed_newsletter_custom_post(){
+        $this->load->model(array('newsletter_custom_model'));
         $email = trim($this->input->post('email'));
-        //payment status
-        $data = array(
-            'paid_status' => 1,     //already paid
-            'paid_time' => CURRENT_TIME,
-            'price' => $this->input->post('price')
-        );
-        //
-        //check if the email is registered
-        $existed = $this->newsletter_model->get_total(array('email'=>$email));
+        $existed = $this->newsletter_custom_model->get_total(array('email'=>$email));
         if ($existed && $existed > 0){
-            //update
-            $result = $this->newsletter_model->update_by_condition(array('email'=>$email), $data);
-            if ($result){
-                $this->response(RestSuccess(array()), SUCCESS_CODE);
+            //check payment status
+            $info = $this->newsletter_custom_model->read_row(array('email'=>$email));
+            if (empty($info->payment_status)){
+                $this->response(RestSuccess(array('code'=>PAYMENT_EMPTY)), SUCCESS_CODE);
             } else {
-                $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+                $this->response(RestSuccess(array('code'=>PAYMENT_NOT_EMPTY)), SUCCESS_CODE);
             }
         } else {
-            //email not existed
-            $this->response(RestBadRequest(USER_IS_NOT_EXISTED_MSG), BAD_REQUEST_CODE);
+            //email not existed (never registered before)
+            $this->response(RestSuccess(array('code'=>USER_IS_NOT_EXISTED_MSG)), SUCCESS_CODE);
         }
     }
     //get coin price in real time
@@ -249,6 +229,7 @@ class PublicAPI extends REST_Controller
     }
     //receive information after user paid custom Newsletter
     public function newsletter_pay_ipn_post(){
+        $this->load->model(array('newsletter_custom_model'));
         //get Paypal token
         $ipn = new PaypalIPN();
         // Use the sandbox endpoint during testing.
@@ -258,7 +239,7 @@ class PublicAPI extends REST_Controller
         $transaction_id = $this->input->post('txn_id');     //unique for each payment
         $this->load->model(array('newsletter_model'));
         //NOTE: $verified not working in Sandbox or Simulator
-        if (isset($transaction_id) && empty($is_test_ipn)) {
+        if ($verified && isset($transaction_id) && empty($is_test_ipn)) {
             /*
              * Process IPN
              * A list of variables is available here:
@@ -266,6 +247,7 @@ class PublicAPI extends REST_Controller
              */
             $payment_status = $this->input->post('payment_status');
             $item_number = $this->input->post('item_number');
+            $item_name = $this->input->post('item_name');
             //save detail of transaction
             $data = array(
                 create_time => CURRENT_TIME,
@@ -279,7 +261,7 @@ class PublicAPI extends REST_Controller
                 address_name => $this->input->post('address_name'),
                 address_country_code => $this->input->post('address_country_code'),
                 receiver_email => $this->input->post('receiver_email'),
-                item_name => $this->input->post('item_name'),
+                item_name => $item_name,
                 item_number => $item_number,
                 mc_currency => $this->input->post('mc_currency'),
                 mc_fee => $this->input->post('mc_fee'),
@@ -290,33 +272,32 @@ class PublicAPI extends REST_Controller
             );
             //check if this transaction is saved in DB
             $sql = 'SELECT _id FROM paypal_transaction WHERE txn_id="'.$transaction_id.'"';
-            $record = $this->newsletter_model->custom_query($sql);
+            $record = $this->newsletter_custom_model->custom_query($sql);
             if ($record && count($record)>0){
-                //update transaction detail
+                //update transaction detail??? Does Paypal send multiple requests?
 
             } else {
                 //new transaction, create new one
-                //transaction was saved, update it
-                $new_id = $this->newsletter_model->create_custom('paypal_transaction', $data);
+                $new_id = $this->newsletter_custom_model->create_custom('paypal_transaction', $data);
                 if ($new_id){
                     //create new record ok
                     //find saved newsletter
-                    $news_detail = $this->newsletter_model->read_row(array('item_number'=>$item_number));
+                    $news_detail = $this->newsletter_custom_model->read_row(array('email'=>$item_name));        //saved from front end
                     if (isset($news_detail->_id)){
                         //found it, create relationship record with newsletter
                         $rel_data = array(
                             'newsletter_id' => $news_detail->_id,
                             'transaction_id' => $new_id
                         );
-                        $exec = $this->newsletter_model->create_custom('newsletter_transaction', $rel_data);
-                        //update status to table "newsletter"
-                        $this->newsletter_model->update_by_condition(array('_id'=>$news_detail->_id), array('payment_status'=>$payment_status));
+                        $exec = $this->newsletter_custom_model->create_custom('newsletter_transaction', $rel_data);
+                        //update status to table "newsletter_custom"
+                        $this->newsletter_custom_model->update_by_condition(array('_id'=>$news_detail->_id), array('payment_status'=>$payment_status));
                     } else {
-                        //cannot found saved newsletter
+                        //cannot find saved newsletter
 
                     }
                 } else {
-                    //failed to save new transaction to DB
+                    //failed to create new transaction to DB
 
                 }
             }
