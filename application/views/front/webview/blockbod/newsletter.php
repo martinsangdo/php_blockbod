@@ -51,13 +51,13 @@
 
                             <div class="card-block">
                                 <p>We offer a choice of newsletter and email alerts on important topics and bring you the most relevant information for your research. You will not be overloaded with irrelevant emails nor will your details be passed on. </p>
-                                <p>Anual fee: <strong><span id="newsletter_custom_price"><?php echo CUSTOM_NEWSLETTER_PRICE; ?></span> USD</strong></p>
+                                <p>Anual fee: <strong><span id="newsletter_custom_price"><?php echo CUSTOM_NEWSLETTER_PRICE_NEW; ?></span> USD</strong></p>
 
                                 <p><input type="text" class="w-300" id="txt_email_custom" placeholder="name@email.com"/></p>
                                 <p><textarea cols="40" rows="5" id="txt_custom_request" placeholder="Type your detail requests: receive news about Ethererum, new ICO, etc."></textarea></p>
                                 <ul>
-                                    <li><input checked="checked" name="rdo_subscribe_type" type="radio"/> Register at first time.</li>
-                                    <li><input name="rdo_subscribe_type" type="radio"/> Modify old request (25 USD per one change).</li>
+                                    <li><input checked="checked" name="rdo_subscribe_type" type="radio" value="new"/> Register at first time.</li>
+                                    <li><input name="rdo_subscribe_type" type="radio" value="modify"/> Modify old request (<?php echo CUSTOM_NEWSLETTER_PRICE_MODIFY; ?> USD per one change).</li>
                                 </ul>
                                 <p><input id="rdo_opt_1" checked="checked" name="rdo_opt" type="radio" value="1" class="hidden"/> You will receive the news on every Monday of the week.</p>
 

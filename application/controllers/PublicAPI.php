@@ -186,6 +186,9 @@ class PublicAPI extends REST_Controller
         $opt_5 = $this->input->post('opt_5');
         $opt_6 = $this->input->post('opt_6');
 
+        //1. check if this email registered a custom request
+
+
         $data = array(
             'email' => $email,
             'ip' => $ip,

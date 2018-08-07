@@ -16,7 +16,7 @@
 
         <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
             <div class="g-pa-20">
-                <h2>Free Newsletter list</h2>
+                <h2>Free Newsletters</h2>
                 <div class="table-responsive g-mb-40">
                     <?php
                     if ($list){
@@ -29,7 +29,7 @@
                                 <th>Daily</th>
                                 <th>New research</th>
                                 <th>Paper offer</th>
-                                <th>Unsubscribe</th>
+                                <th>Unsubscribed</th>
                                 <th class="min-w-150">Register time</th>
                             </tr>
                             </thead>
@@ -37,13 +37,13 @@
                             <tbody>
                             <?php
                             for ($i=0;$i<count($list);$i++){ ?>
-                                <tr class="<?php if ($list[$i]->is_unsubcribed == 1) echo 'bg-not-viewed'; ?>">
+                                <tr class="<?php if ($list[$i]->is_unsubscribed == 1) echo 'bg-not-viewed'; ?>">
                                     <td><a href="mailto:<?php echo $list[$i]->email; ?>"><?php echo $list[$i]->email; ?></a></td>
                                     <td><?php echo $list[$i]->opt_1; ?></td>
                                     <td><?php echo $list[$i]->opt_2; ?></td>
                                     <td><?php echo $list[$i]->opt_3; ?></td>
                                     <td><?php echo $list[$i]->opt_4; ?></td>
-                                    <td><?php echo $list[$i]->is_unsubcribed; ?></td>
+                                    <td><?php echo $list[$i]->is_unsubscribed; ?></td>
                                     <td><?php echo format_post_time($list[$i]->create_time); ?></td>
                                 </tr>
                             <?php } //end for ?>
