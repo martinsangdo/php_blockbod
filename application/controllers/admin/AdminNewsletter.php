@@ -42,8 +42,9 @@ Class AdminNewsletter extends REST_Controller
     }
     //update detail of 1 custom newsletter
     public function custom_detail_get(){
+        $this->load->model(array('newsletter_custom_model'));
         $id = $this->uri->segment(3);
-        $detail = $this->newsletter_model->read_row(array('_id'=>$id));
+        $detail = $this->newsletter_custom_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
         //
         $this->load->view('front/webview/admin/newsletter/custom_detail', $this->data);
@@ -51,6 +52,7 @@ Class AdminNewsletter extends REST_Controller
     //========== API functions
     //when Admin updates custom Newsletter
     public function update_custom_post(){
+        $this->load->model(array('newsletter_custom_model'));
         //update record in DB
         $update_record = array(
             'email' => trim($this->input->post('email')),
@@ -61,7 +63,7 @@ Class AdminNewsletter extends REST_Controller
         );
         $id = $this->input->post('id');
         //
-        $result = $this->newsletter_model->update_by_condition(array('_id'=>$id), $update_record);
+        $result = $this->newsletter_custom_model->update_by_condition(array('_id'=>$id), $update_record);
         if ($result){
             $this->response(RestSuccess(array()), SUCCESS_CODE);
         } else {

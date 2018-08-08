@@ -36,11 +36,11 @@
                             <tbody>
                             <?php
                             for ($i=0;$i<count($list);$i++){ ?>
-                                <tr class="<?php if ($list[$i]->is_unsubcribed == 1) echo 'bg-not-viewed'; ?>">
+                                <tr class="<?php if ($list[$i]->is_unsubscribed == 1) echo 'bg-not-viewed'; ?>">
                                     <td><a href="mailto:<?php echo $list[$i]->email; ?>"><?php echo $list[$i]->email; ?></a></td>
                                     <td><?php echo $list[$i]->custom_request; ?></td>
                                     <td><?php echo $list[$i]->payment_status; ?></td>
-                                    <td><?php echo $list[$i]->is_unsubcribed; ?></td>
+                                    <td><?php echo $list[$i]->is_unsubscribed; ?></td>
                                     <td><?php echo format_post_time($list[$i]->create_time); ?></td>
                                     <td class="min-w-100">
                                         <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" title="Update detail" href="/admin-newsletter/custom_detail/<?php echo $list[$i]->_id; ?>">
