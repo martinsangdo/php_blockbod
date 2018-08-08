@@ -46,6 +46,21 @@ Class AdminNewsletter extends REST_Controller
         $id = $this->uri->segment(3);
         $detail = $this->newsletter_custom_model->read_row(array('_id'=>$id));
         $this->data['detail'] = $detail;
+        //get list of transactions (if any)
+        $sql = 'SELECT * FROM newsletter_transaction WHERE newsletter_id='.$id;
+        $rel = $this->newsletter_custom_model->custom_query($sql);
+        if ($rel){
+            $trans_ids = array();
+            for ($i=0; $i<count($rel); $i++){
+                $trans_ids[$i] = $rel[$i]->transaction_id;
+            }
+            if (count($trans_ids)>0){
+                $id_list = implode(',', $trans_ids);
+                //search detail of each transaction
+                $sql = 'SELECT * FROM paypal_transaction WHERE _id IN ('.$id_list.') ORDER BY create_time DESC';
+                $this->data['list'] = $this->newsletter_custom_model->custom_query($sql);
+            }
+        }
         //
         $this->load->view('front/webview/admin/newsletter/custom_detail', $this->data);
     }

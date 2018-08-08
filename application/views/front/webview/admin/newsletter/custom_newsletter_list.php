@@ -19,7 +19,7 @@
                 <h2>Customized Newsletters</h2>
                 <div class="table-responsive g-mb-40">
                     <?php
-                    if ($list){
+                    if (isset($list)){
                         ?>
                         <table class="table u-table--v3 g-color-black tbl_general_list" id="tbl_container">
                             <thead>
@@ -46,11 +46,6 @@
                                         <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" title="Update detail" href="/admin-newsletter/custom_detail/<?php echo $list[$i]->_id; ?>">
                                             <i class="hs-admin-pencil"></i>
                                         </a>
-                                        <?php if (isset($list[$i]->payment_status)){ ?>
-                                        <a class="js-edit u-link-v5 g-color-darkblue-v4 g-color-lightblue-v3--hover" title="View transaction list" href="/admin-newsletter/transaction_list/<?php echo $list[$i]->_id; ?>">
-                                            <i class="hs-admin-list"></i>
-                                        </a>
-                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php } //end for ?>

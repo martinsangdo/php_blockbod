@@ -6,8 +6,8 @@
     <?php require_once 'common_head.php'; ?>
     <link rel="stylesheet" href="/public/unity_assets/css/unify-admin.css"/>
 
-    <link  rel="stylesheet" href="/public/unity_assets/vendor/animate.css">
-    <link  rel="stylesheet" href="/public/unity_assets/vendor/custombox/custombox.min.css">
+    <link rel="stylesheet" href="/public/unity_assets/vendor/animate.css">
+    <link rel="stylesheet" href="/public/unity_assets/vendor/custombox/custombox.min.css">
 
     <script src="/public/unity_assets/js/hs.core.js"></script>
     <script src="/public/unity_assets/vendor/custombox/custombox.min.js"></script>

@@ -19,7 +19,7 @@
                 <h2>Free Newsletters</h2>
                 <div class="table-responsive g-mb-40">
                     <?php
-                    if ($list){
+                    if (isset($list)){
                         ?>
                         <table class="table u-table--v3 g-color-black tbl_general_list" id="tbl_container">
                             <thead>

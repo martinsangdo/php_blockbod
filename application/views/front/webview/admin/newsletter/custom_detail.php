@@ -5,6 +5,18 @@
 
     <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_head.php'); ?>
     <script src="/public/admin/js/admin_newsletter.js"></script>
+    <link rel="stylesheet" href="/public/unity_assets/vendor/animate.css">
+    <link rel="stylesheet" href="/public/unity_assets/vendor/custombox/custombox.min.css">
+
+    <script src="/public/unity_assets/vendor/custombox/custombox.min.js"></script>
+    <script src="/public/unity_assets/js/components/hs.modal-window.js"></script>
+    <!-- JS Plugins Init. -->
+    <script >
+        $(document).on('ready', function () {
+            // initialization of popups
+            $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+        });
+    </script>
 </head>
 
 <body>
@@ -76,10 +88,67 @@
                     <!-- end form -->
                 </div>
             </div>
+
+            <div class="g-pa-20">
+                <h2>Transaction history</h2>
+                <div class="table-responsive g-mb-40">
+                    <?php
+                    if (isset($list)){
+                        ?>
+                        <table class="table u-table--v3 g-color-black tbl_general_list" id="tbl_container">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Payer name</th>
+                                <th>Payer email</th>
+                                <th>Payment status</th>
+                                <th>Amount</th>
+                                <th>Time</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <?php
+                            for ($i=0;$i<count($list);$i++){ ?>
+                                <tr>
+                                    <td><?php echo $list[$i]->txn_id; ?></td>
+                                    <td><?php echo $list[$i]->address_name; ?></td>
+                                    <td><a href="mailto:<?php echo $list[$i]->payer_email; ?>"><?php echo $list[$i]->payer_email; ?></a></td>
+                                    <td><?php echo $list[$i]->payment_status; ?></td>
+                                    <td><?php echo $list[$i]->mc_gross - $list[$i]->mc_fee; ?></td>
+                                    <td><?php echo format_post_time($list[$i]->create_time); ?></td>
+                                </tr>
+                            <?php } //end for ?>
+                            </tbody>
+                        </table>
+                    <?php } //end if ?>
+                </div>
+            </div>
             <?php require_once(ABS_ADMIN_VIEW_FOLDER.'common_footer.php'); ?>
         </div>
     </div>
 </main>
+
+<a class="btn u-btn-primary hide" id="btn_show_modal" href="#payment_detail" data-modal-target="#payment_detail" data-modal-effect="fadein">Launch Modal</a>
+
+<div id="payment_detail" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+    <button type="button" class="close" onclick="Custombox.modal.close();">
+        <i class="hs-icon hs-icon-close"></i>
+    </button>
+    <h4 class="g-mb-20">Detail</h4>
+    <table class="table u-table--v3 g-color-black tbl_general_list">
+        <tbody>
+            <tr>
+                <td>Transaction ID</td>
+                <td>aaa</td>
+            </tr>
+            <tr>
+                <td>Payment type</td>
+                <td>bb</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 
