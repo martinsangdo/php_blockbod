@@ -29,6 +29,7 @@ var API_URI = {
     SAVE_NEWSLETTER: '/publicapi/save_newsletter',
     SAVE_NEWSLETTER_CUSTOM: '/publicapi/save_newsletter_custom',
     CHECK_EXISTED_NEWSLETTER_CUSTOM: '/publicapi/check_existed_newsletter_custom',
+    MODIFY_NEWSLETTER_REQUEST: '/publicapi/modify_newsletter_request',
     //
     GET_RAW_URL: '/publicapi/front_get_raw_url',
 
@@ -51,7 +52,8 @@ var CONST = {
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
     LOAD_RANDOM_PRICE_DURATION: 2000,
-    NEWSLETTER_ITEM_PREFIX: 'newsletter_custom_', //id of newsletter
+    NEWSLETTER_NEW_PREFIX: 'newsletter_new_', //id of newsletter when register new
+    NEWSLETTER_MODIFY_PREFIX: 'newsletter_modify_', //id of newsletter when modify
     CUSTOM_NEWSLETTER_PRICE_NEW: 100,   //100USD
     CUSTOM_NEWSLETTER_PRICE_MODIFY: 25, //25USD
 

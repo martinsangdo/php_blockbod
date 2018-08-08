@@ -203,6 +203,28 @@ class PublicAPI extends REST_Controller
             $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
         }
     }
+    //update Custom newsletter
+    public function modify_newsletter_request_post(){
+        $this->load->model(array('newsletter_custom_model'));
+        $email = trim($this->input->post('email'));
+        $data = array(
+            'modify_request' => $this->input->post('modify_request')        //temporarily save to wait payment
+        );
+        //check if the email is registered
+        $existed = $this->newsletter_custom_model->get_total(array('email'=>$email));
+        if ($existed && $existed > 0){
+            //update
+            $result = $this->newsletter_custom_model->update_by_condition(array('email'=>$email), $data);
+            if ($result){
+                $this->response(RestSuccess(array()), SUCCESS_CODE);
+            } else {
+                $this->response(RestBadRequest(SERVER_ERROR_MSG), BAD_REQUEST_CODE);
+            }
+        } else {
+            //not found
+            $this->response(RestBadRequest(NOT_FOUND_MSG), BAD_REQUEST_CODE);
+        }
+    }
     //check whether email was registered in system
     public function check_existed_newsletter_custom_post(){
         $this->load->model(array('newsletter_custom_model'));
@@ -274,7 +296,7 @@ class PublicAPI extends REST_Controller
             $sql = 'SELECT _id FROM paypal_transaction WHERE txn_id="'.$transaction_id.'"';
             $record = $this->newsletter_custom_model->custom_query($sql);
             if ($record && count($record)>0){
-                //update transaction detail??? Does Paypal send multiple requests?
+                //todo: update transaction detail??? Does Paypal send multiple requests?
 
             } else {
                 //new transaction, create new one
@@ -290,8 +312,20 @@ class PublicAPI extends REST_Controller
                             'transaction_id' => $new_id
                         );
                         $exec = $this->newsletter_custom_model->create_custom('newsletter_transaction', $rel_data);
-                        //update status to table "newsletter_custom"
-                        $this->newsletter_custom_model->update_by_condition(array('_id'=>$news_detail->_id), array('payment_status'=>$payment_status));
+                        //update status to table "newsletter_custom" based on create new or modify existed one
+                        $update_data = array('payment_status'=>$payment_status);
+                        if (strpos(item_number, NEWSLETTER_MODIFY_PREFIX) === 0) {
+                            //this is request to modify Newsletter, must reset some fields
+                            $update_data['is_unsubscribed'] = 0;
+                            $update_data['custom_request'] = $news_detail->modify_request;
+                            $update_data['modify_request'] = '';
+                            $update_data['is_viewed'] = 0;
+                            $update_data['title_keywords'] = '';
+                            $update_data['excerpt_keywords'] = '';
+                            $update_data['content_keywords'] = '';
+                            $update_data['empty_data_send_num'] = 0;
+                        }
+                        $this->newsletter_custom_model->update_by_condition(array('_id'=>$news_detail->_id), $update_data);
                     } else {
                         //cannot find saved newsletter
 

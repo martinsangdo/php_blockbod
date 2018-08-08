@@ -135,7 +135,7 @@ Common_Front.prototype.process_custom_newsletter = function(){
     common.ajaxPost(API_URI.CHECK_EXISTED_NEWSLETTER_CUSTOM, {email: email}, function(resp){
         if (resp['code'] == RESP_MESS.PAYMENT_EMPTY || resp['code'] == RESP_MESS.USER_IS_NOT_EXISTED){
             //overwrite custom or register new user
-            var item_number = common.rand_str();       //to distinct requests
+            var item_number = CONST.NEWSLETTER_NEW_PREFIX + common.rand_str();       //to distinct requests
             var params = {
                 email: email,
                 custom_request: custom_request,
@@ -173,9 +173,23 @@ Common_Front.prototype.process_custom_newsletter = function(){
 Common_Front.prototype.agreed_modify_custom_newsletter = function() {
     var email = $.trim($('#txt_email_custom').val());
     var custom_request = $.trim($('#txt_custom_request').val());
-    var item_number = common.rand_str();       //to distinct requests
-
-    common_front.begin_payment_process(email, custom_request, item_number, CONST.CUSTOM_NEWSLETTER_PRICE_MODIFY);
+    var item_number = CONST.NEWSLETTER_MODIFY_PREFIX + common.rand_str();       //to distinct requests
+    var params = {
+        email: email,
+        modify_request: custom_request      //temporarily save it
+    };
+    submitting = true;
+    //save info to DB
+    common.ajaxPost(API_URI.MODIFY_NEWSLETTER_REQUEST, params, function(resp){
+        //clear input
+        $('#txt_email').val('');
+        submitting = false;
+        //process payment
+        common_front.begin_payment_process(email, custom_request, item_number, CONST.CUSTOM_NEWSLETTER_PRICE_MODIFY);
+    }, function(err){
+        common.show_error_lbl(STR_MESS_FRONT.SERVER_ERROR);
+        submitting = false;
+    });
 };
 //load list of coins on the world & get 1 random price
 Common_Front.prototype.load_coin_price_randomly = function() {
