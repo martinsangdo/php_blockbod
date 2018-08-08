@@ -313,7 +313,7 @@ class PublicAPI extends REST_Controller
                         );
                         $exec = $this->newsletter_custom_model->create_custom('newsletter_transaction', $rel_data);
                         //update status to table "newsletter_custom" based on create new or modify existed one
-                        $update_data = array('payment_status'=>$payment_status);
+                        $update_data = array('payment_status'=>$payment_status, 'last_payment_time'=>CURRENT_TIME);
                         if (strpos($item_number, NEWSLETTER_MODIFY_PREFIX) === 0) {
                             //this is request to modify Newsletter, must reset some fields
                             $update_data['is_unsubscribed'] = 0;
