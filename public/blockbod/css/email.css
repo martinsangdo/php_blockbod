@@ -170,6 +170,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 	max-width:600px!important;
 	margin:0 auto!important; /* makes it centered */
 	clear:both!important;
+	background-color:'#fff';
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
@@ -222,3 +223,8 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 	}
 
 }
+
+img.logo {width:50px;height:auto;}
+.content .small_td {vertical-align: top; padding-right:5px;}
+.content .small_td img {width:75px;height:75px;}
+.mail_excerpt a {display:none !important;}
