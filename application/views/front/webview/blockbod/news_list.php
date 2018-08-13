@@ -50,16 +50,7 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
-                            <div class="recent-news-section">
-                                <div class="section-title">
-                                    <h2 class="widget-title">Top papers</h2>
-                                    <a href="/paper/list">View All</a>
-                                </div>
-                                <div class="recent-posts-side">
-                                    <?php require_once 'top_papers.inc.php'; ?>
-                                </div>
-                        </aside>
+                        <?php require_once 'top_papers.inc.php'; ?>
 
                         <aside id="media_image-3" class="widget widget_media_image">
                             <div class="aligncenter">

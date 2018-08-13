@@ -35,7 +35,7 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/what-is-ico-/2">What is ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/how-to-manage-ico/3">How to Manage ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/what-is-white-paper/4">What is ICO White Paper</a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/white-paper-presentation/5">White Paper Presentation</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/white-paper-presentation/5">Reverse ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/global-regulatory-colloquy/6">Global Regulatory Colloquy</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price g-color-yellow"></a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>

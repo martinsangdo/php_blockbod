@@ -45,7 +45,7 @@
                         <div class="form-group g-mb-5">
                             <label class="g-mb-5 g-width-150">Content</label>
                             <div class="g-pos-rel">
-                                <div id="txt_content" name="txt_content"><?php if (isset($detail->description)) echo $detail->description; ?></div>
+                                <div id="txt_content" name="txt_content"><?php if (isset($detail->content)) echo $detail->content; ?></div>
                             </div>
                         </div>
                         <div class="d-flex align-items-center form-group g-mb-5">

@@ -35,7 +35,7 @@
                                                 <div class="entry-meta">
                                                     <span class="posted-on">
                                                         <a href="#" rel="bookmark">
-                                                            <time class="entry-date published">Updated on <?php echo format_post_time($article_detail->update_time); ?></time>
+                                                            <time class="entry-date published"><?php echo format_post_time($article_detail->update_time); ?></time>
                                                         </a>
                                                     </span>
                                                 </div><!-- .entry-meta -->
@@ -50,41 +50,11 @@
 
                             </article><!-- #post-## -->
 
-                            <div>
-                                <input type="hidden" id="hid_slug" value="<?php echo $article_detail->slug; ?>"/>
-                                <div id="disqus_thread"></div>
-                                <script>
-                                    /**
-                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                                    var disqus_config = function () {
-                                        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-                                        this.page.identifier = $('#hid_slug').val(); // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                                    };
-                                    (function() { // DON'T EDIT BELOW THIS LINE
-                                        var d = document, s = d.createElement('script');
-                                        s.src = 'https://blockbod.disqus.com/embed.js';
-                                        s.setAttribute('data-timestamp', +new Date());
-                                        (d.head || d.body).appendChild(s);
-                                    })();
-                                </script>
-                            </div><!-- #comments -->
-
                         </main>
                     </div>
                 </div><!-- #primary -->
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
-                        <aside id="pt-magazine-extended-recent-posts-2" class="widget extended-recent-posts widget_extended_recent_posts margin-b-20">
-                            <div class="recent-news-section">
-                                <div class="section-title">
-                                    <h2 class="widget-title">Top papers</h2>
-                                    <a href="/paper/list">View All</a>
-                                </div>
-                                <div class="recent-posts-side">
-                                    <?php require_once 'top_papers.inc.php'; ?>
-                                </div>
-                        </aside>
 
                         <aside id="media_image-3" class="widget widget_media_image">
                             <div class="aligncenter">
