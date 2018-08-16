@@ -1,6 +1,15 @@
 /**
    * author: Martin SangDo
  */
+
+body {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+    font-family: 'Domine',serif;
+    font-weight: 400;
+}
 .pointer {cursor:pointer;}
 .main-news-section article .post-content h2 {text-overflow: initial; white-space: initial;}
 
@@ -9,6 +18,8 @@
 
 @media screen and (max-width: 991px) {
     #primary, #sidebar-primary {width:100%;}
+    .container {padding:5px;}
+    .header-advertisement {display:none;}
 }
 
 .site-title {font-size:22px;display:inline-block;letter-spacing:0;}
@@ -268,7 +279,7 @@ p {font-size:15px;}
 .g-color-yellow {color: yellow !important;}
 
 .menu .bb_random_price {
-    max-width: 144px;
+    max-width: 205px;
     white-space: nowrap;
     overflow: hidden;
     padding: 18px 7px;
@@ -286,3 +297,12 @@ p {font-size:15px;}
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
 }
+.top-ad-string {
+    float: left;
+    width: 100%;text-align:center;
+}
+.top-ad-string header {
+    background-color:#e7d90f;
+    padding: 0.71429rem 1.07143rem;
+}
+.top-ad-string a {color:#fff;font-weight:bold;}

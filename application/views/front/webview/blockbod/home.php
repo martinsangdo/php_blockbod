@@ -423,7 +423,12 @@
 
                 <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1850.2px;">
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-704px); top: 0px; width: 330px; left: 956px;">
-
+                        <aside class="widget extended-recent-posts widget_extended_recent_posts">
+                            <div class="recent-news-section">
+                                <div class="recent-posts-side">
+                                    <img src="<?php echo PUBLIC_FOLDER; ?>img/ad_zellaw.png"/>
+                                </div>
+                        </aside>
                         <aside id="media_image-3" class="widget widget_media_image">
                             <div class="aligncenter">
                                 <script type="text/javascript">

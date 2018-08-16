@@ -242,7 +242,7 @@ Common_Front.prototype.get_coin_info = function() {
     saved_coin_list = $.parseJSON(saved_coin_list);
     var rand = Math.floor(Math.random()*saved_coin_list.length);    //random position of coins
 
-    $('#bb_random_price', $('#primary-menu')).text(saved_coin_list[rand]['symbol'] + ': ' + saved_coin_list[rand]['latest_price']);
+    $('#bb_random_price', $('#primary-menu')).text('Coin price: ' + saved_coin_list[rand]['symbol'] + ': ' + saved_coin_list[rand]['latest_price']);
     // if (saved_coin_list[rand]['change'] > 0){
     //     $('#bb_random_price', $('#primary-menu')).removeClass('g-color-red').addClass('g-color-green');
     // } else {

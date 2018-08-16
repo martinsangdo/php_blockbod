@@ -19,7 +19,13 @@
         </div>
     </div>
 
-
+    <div class="top-ad-string">
+        <header class="card-header g-bg-lightyellow g-brd-bottom-none">
+            <div class="media">
+                <a class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-white g-mr-10 mb-0 g-mb-0 pointer" href="<?php echo base_url(); ?>publicapi/newsletter">Subscribe our customized News now. It will help you decide what to do</a>
+            </div>
+        </header>
+    </div>
     <div class="main-navigation-holder home-icon-enabled">
         <div class="container">
             <div id="main-nav" class="full-width-nav clear-fix">
@@ -38,7 +44,6 @@
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/white-paper-presentation/5">Reverse ICO</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/content/detail/global-regulatory-colloquy/6">Global Regulatory Colloquy</a></li>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="/news/coin_price" id="bb_random_price" class="bb_random_price g-color-yellow"></a></li>
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"></li>
                             </ul>
                         </div>
                     </div><!-- .menu-content -->
