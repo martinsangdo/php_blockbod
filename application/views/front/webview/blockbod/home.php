@@ -26,6 +26,8 @@
                     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
                         <main id="main" class="site-main" role="main">
 
+                            <?php require_once 'influencers.inc.php'; ?>
+
                             <section id="pt-magazine-mix-column-news-3" class="widget mix-news-section">
                                 <div class="entertainment-news-section">
                                     <?php $data_block = $block_key_3; ?>

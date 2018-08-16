@@ -306,3 +306,4 @@ p {font-size:15px;}
     padding: 0.71429rem 1.07143rem;
 }
 .top-ad-string a {color:#fff;font-weight:bold;}
+.top_influencers .influencer_name {font-size:10px;text-align:left;overflow:hidden;margin:5px 0;}

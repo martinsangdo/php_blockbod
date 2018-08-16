@@ -79,6 +79,8 @@ define('CONTENT_ATTACH_FOLDER', './public/upload/content_attach');
 define('HOME_BANNER_NAME_PREFIX', 'home_banner_');
 define('HOME_BANNER_FOLDER', './public/upload/home_banner');
 define('HOME_BANNER_PATH', '/public/upload/home_banner/');
+define('INFLUENCER_AVATAR_PATH', '/public/blockbod/img/influencers/');
+
 //file type
 define('PDF_FILE_EXT', 'pdf');
 

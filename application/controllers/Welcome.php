@@ -24,7 +24,7 @@ class Welcome extends MY_Controller
 //            $this->load->view(VIEW_FOLDER.'login_front', $this->data);
 //            return;
 //        }
-        $this->load->model(array('event_model', 'paper_model', 'book_model', 'advertisement_model'));
+        $this->load->model(array('event_model', 'paper_model', 'book_model', 'advertisement_model', 'people_model'));
         //get data of blocks
         $this->data[BLOCK_KEY_1] = $this->block_content_model->get_latest_posts(array('site_id' => 1), 0, DEFAULT_PAGE_LEN);
         $this->data[BLOCK_KEY_2] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
@@ -50,6 +50,10 @@ class Welcome extends MY_Controller
         //get ICO analysis
 
         //get Commentary
+
+        //get list of influencers
+        $this->data['influencers'] = $this->people_model->get_pagination_advance('*',
+            array('is_showing'=>1), 0, 12, 'rank', 'asc');
 
         //todo: how to collect real top coins
         $this->data['top_coin_news'] = $this->block_content_model->get_latest_posts(array('site_id' => 2), 0, DEFAULT_PAGE_LEN);
