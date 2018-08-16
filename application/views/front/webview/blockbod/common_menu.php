@@ -47,7 +47,7 @@
                             </ul>
                         </div>
                     </div><!-- .menu-content -->
-                    <div id="ico_search" class="home-icon active-true float_r" onclick="common_front.toggle_search_box();">
+                    <div id="ico_search" class="home-icon active-true float_r ico_search" onclick="common_front.toggle_search_box();">
                         <a href="#!"><i class="fa fa-search"></i></a>
                     </div>
                     <div id="search_box" class="hidden search_box float_r">

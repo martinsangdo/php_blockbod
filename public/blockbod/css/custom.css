@@ -270,14 +270,14 @@ p {font-size:15px;}
 }
 .float_r {float: right !important;}
 .search_box {display:inline-block;}
-.search_box input {padding:15px 25px;width:300px;}
+.search_box input {padding:15px 25px;width:290px;}
 .search_box a {position:relative;left:-22px;}
 .main-navigation ul li a {padding: 18px 9px;}
 .tbl_no_border tr td {border:0;}
 .g-color-red {color: red !important;}
 .g-color-green {color: green !important;}
 .g-color-yellow {color: yellow !important;}
-
+.g-margin-10 {margin:10px;}
 .menu .bb_random_price {
     max-width: 205px;
     white-space: nowrap;

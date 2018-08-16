@@ -18,29 +18,42 @@
                         <main id="main" class="site-main" role="main">
 
                             <section id="pt-magazine-featured-column-news-2" class="widget featured-news-section">
+                                <?php
+                                $data_block_count = count($data_block);
+                                if ($data_block_count > 0) {
+                                ?>
                                 <div class="featured-news-wrap">
                                     <div class="inner-wrapper">
                                         <?php
-                                        for ($i=0; $i<count($data_block); $i++){
-                                            ?>
-                                            <div class="news-item half-width">
-                                                <div class="news-thumb">
-                                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                                        <div class="home3-center-cropped center-cropped-fill"
-                                                             style="background-image: url('<?php echo $data_block[$i]->thumb_url;?>');">
-                                                        </div>
-                                                    </a>
-                                                </div><!-- .news-thumb -->
+                                            for ($i = 0; $i < $data_block_count; $i++) {
+                                                ?>
+                                                <div class="news-item half-width">
+                                                    <div class="news-thumb">
+                                                        <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
+                                                            <div class="home3-center-cropped center-cropped-fill"
+                                                                 style="background-image: url('<?php echo $data_block[$i]->thumb_url; ?>');">
+                                                            </div>
+                                                        </a>
+                                                    </div><!-- .news-thumb -->
 
-                                                <div class="news-text-wrap">
-                                                    <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
-                                                    <h2><a class="ellipsis3lines_title" href="<?php echo detail_uri($data_block[$i]->slug); ?>" title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a></h2>
-                                                    <div class="ellipsis3lines"><?php echo $data_block[$i]->excerpt; ?></div>
-                                                </div><!-- .news-text-wrap -->
-                                            </div><!-- .news-item -->
-                                        <?php }//end for ?>
+                                                    <div class="news-text-wrap">
+                                                        <span class="posted-date"><?php echo format_post_time($data_block[$i]->time); ?></span>
+                                                        <h2><a class="ellipsis3lines_title"
+                                                               href="<?php echo detail_uri($data_block[$i]->slug); ?>"
+                                                               title="<?php echo $data_block[$i]->title; ?>"><?php echo $data_block[$i]->title; ?></a>
+                                                        </h2>
+                                                        <div class="ellipsis3lines"><?php echo $data_block[$i]->excerpt; ?></div>
+                                                    </div><!-- .news-text-wrap -->
+                                                </div><!-- .news-item -->
+                                            <?php }//end for ?>
                                     </div><!-- .inner-wrapper -->
                                 </div><!-- .mix-column-news -->
+                                <?php
+                                } else {
+                                    //there is nothing to show
+                                    echo '<div class="g-margin-10">There is no any data.</div>';
+                                }
+                                ?>
                             </section>
                             <?php echo $pagination; ?>
                         </main>

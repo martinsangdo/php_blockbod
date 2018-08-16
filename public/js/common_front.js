@@ -11,14 +11,16 @@ var common_front = new Common_Front();		//global object
 Common_Front.prototype.toggle_search_box = function(){
     if ($('#ico_search').is(':visible')){
         //button is showing, hide it & display textbox
-        $('#ico_search').addClass('hidden');
+        $('.ico_search').addClass('hidden');
         $('#main_menu').addClass('hidden');
+        $('.meanmenu-reveal', $('#masthead')).addClass('hidden');
         $('#search_box').removeClass('hidden');
     } else {
         //button is not showing, show it & hide textbox
         $('#search_box').addClass('hidden');
-        $('#ico_search').removeClass('hidden');
+        $('.ico_search').removeClass('hidden');
         $('#main_menu').removeClass('hidden');
+        $('.meanmenu-reveal', $('#masthead')).removeClass('hidden');
     }
 };
 //save content in Contact page
