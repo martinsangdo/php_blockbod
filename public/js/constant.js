@@ -32,7 +32,7 @@ var API_URI = {
     MODIFY_NEWSLETTER_REQUEST: '/publicapi/modify_newsletter_request',
     //
     GET_RAW_URL: '/publicapi/front_get_raw_url',
-
+    SEARCH_ARTICLE: '/publicapi/search_article',
 };
 
 var CONST = {

@@ -42,12 +42,10 @@
                                 </div>
                             </section>
                             <section class="widget featured-news-section">
-                                <!--  -->
-
-                            </section>
-                            <section class="widget featured-news-section">
                                 <!-- inner articles -->
+                                <div id="our_articles" class="inner-wrapper">
 
+                                </div>
                             </section>
                             <section class="widget featured-news-section">
                                 <!-- twitter -->
@@ -67,6 +65,19 @@
                             <h2 class="g-mb-0 g-font-15">
                                 <a class="title detail_link" href="#!"></a>
                             </h2>
+                        </div><!-- .news-text-wrap -->
+                    </div>
+
+                    <div class="news-item half-width hidden" id="site_article_tmpl">
+                        <div class="news-thumb">
+                            <a>
+                                <div class="home3-center-cropped center-cropped-fill thumb"></div>
+                            </a>
+                        </div><!-- .news-thumb -->
+
+                        <div class="news-text-wrap">
+                            <h2><a class="ellipsis3lines_title title"></a></h2>
+                            <div class="ellipsis3lines excerpt"></div>
                         </div><!-- .news-text-wrap -->
                     </div>
 
@@ -107,6 +118,8 @@
 </a>
 <input type="hidden" value="<?php echo isset($detail->_id)?$detail->_id:''; ?>" id="people_id"/>
 <input type="hidden" value="<?php echo isset($detail->medium_id)?$detail->medium_id:''; ?>" id="medium_id"/>
+<input type="hidden" value="<?php echo isset($detail->name)?$detail->name:''; ?>" id="influencer_name"/>
+
 <!-- dialog to show content -->
 <a class="btn u-btn-primary hide" id="btn_show_modal" href="#post_content_dialog" data-modal-target="#post_content_dialog" data-modal-effect="fadein">Launch Modal</a>
 <div id="post_content_dialog" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">

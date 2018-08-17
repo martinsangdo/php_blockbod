@@ -83,6 +83,20 @@ class PublicAPI extends REST_Controller
         $this->load->view(VIEW_FOLDER.'news_list', $this->data);
     }
     //========== POST FUNCTIONS
+    //search article by keywords
+    public function search_article_post(){
+        $this->load->model(array('block_content_model'));
+        $keyword = trim($this->input->post('keyword'));
+        if (!isset($keyword) || strlen($keyword) < 3){
+            //there is no valid keyword
+            $this->response(RestSuccess(array()), SUCCESS_CODE);
+        } else {
+            $posts = $this->block_content_model->custom_query('SELECT * FROM block_content'.
+                ' WHERE status=1 AND (title LIKE "%'.$keyword.'%" OR excerpt LIKE "%'.$keyword.'%" OR content LIKE "%'.$keyword.'%" ) ORDER BY update_time DESC LIMIT '.
+                DEFAULT_PAGE_LEN);
+            $this->response(RestSuccess($posts), SUCCESS_CODE);
+        }
+    }
     //used to prevent login before site publishes
     public function front_login_post(){
         $pass = trim($this->input->post('password'));
