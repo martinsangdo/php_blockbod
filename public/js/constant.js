@@ -52,10 +52,13 @@ var CONST = {
     //coins list
     API_COIN_LIST: 'https://apiv2.bitcoinaverage.com/indices/global/ticker/short?fiat=USD',
     LOAD_RANDOM_PRICE_DURATION: 2000,
+    //newsletter
     NEWSLETTER_NEW_PREFIX: 'newsletter_new_', //id of newsletter when register new
     NEWSLETTER_MODIFY_PREFIX: 'newsletter_modify_', //id of newsletter when modify
     CUSTOM_NEWSLETTER_PRICE_NEW: 100,   //100USD
     CUSTOM_NEWSLETTER_PRICE_MODIFY: 25, //25USD
+    //influencer post
+    MEDIUM_LOGO_PATH: '/public/blockbod/img/medium_logo.png',
 
 };
 //response message

@@ -202,3 +202,7 @@ Common.prototype.get_url_param = function(param_name){
         }
     }
 };
+//check the string end with a string
+Common.prototype.is_endWidth = function(str, postfix){
+    return str.toLowerCase().indexOf(postfix.toLowerCase(), str.length - postfix.length) !== -1;
+};

@@ -5,6 +5,23 @@
 
     <?php require_once 'common_head.php'; ?>
     <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/people.js"></script>
+
+    <link rel="stylesheet" href="/public/unity_assets/vendor/animate.css">
+    <link rel="stylesheet" href="/public/unity_assets/vendor/custombox/custombox.min.css">
+
+    <script src="/public/unity_assets/js/hs.core.js"></script>
+    <script src="/public/unity_assets/vendor/custombox/custombox.min.js"></script>
+    <script src="/public/unity_assets/js/components/hs.modal-window.js"></script>
+    <!-- JS Plugins Init. -->
+    <script >
+        $(document).on('ready', function () {
+            // initialization of popups
+            $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+        });
+    </script>
+    <style>
+        .news-item.layout-two .news-text-wrap {min-height:65px;}
+    </style>
 </head>
 <body class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-1984 global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
 
@@ -39,19 +56,20 @@
                             </section>
                         </main>
                     </div>
-                    <div id="post_tmpl" class="news-item half-width hidden">
-                        <div class="news-thumb">
-                            <a>
-                                <div class="home3-center-cropped center-cropped-fill">
-                                </div>
+
+                    <div class="news-item layout-two g-mb-0 hidden" id="post_tmpl">
+                        <div class="news-thumb g-width-65">
+                            <a class="detail_link">
+                                <img class="thumb"/>
                             </a>
                         </div><!-- .news-thumb -->
-                        <div class="news-text-wrap">
-                            <span class="posted-date"></span>
-                            <h2><a class="ellipsis3lines_title title"></a></h2>
-                            <div class="ellipsis3lines"></div>
-                        </div>
+                        <div class="news-text-wrap g-pl-70">
+                            <h2 class="g-mb-0 g-font-15">
+                                <a class="title detail_link" href="#!"></a>
+                            </h2>
+                        </div><!-- .news-text-wrap -->
                     </div>
+
                 </div><!-- #primary -->
 
 
@@ -89,5 +107,12 @@
 </a>
 <input type="hidden" value="<?php echo isset($detail->_id)?$detail->_id:''; ?>" id="people_id"/>
 <input type="hidden" value="<?php echo isset($detail->medium_id)?$detail->medium_id:''; ?>" id="medium_id"/>
-
+<!-- dialog to show content -->
+<a class="btn u-btn-primary hide" id="btn_show_modal" href="#post_content_dialog" data-modal-target="#post_content_dialog" data-modal-effect="fadein">Launch Modal</a>
+<div id="post_content_dialog" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+    <button type="button" class="close opacity_1" onclick="Custombox.modal.close();">
+        <i class="fa fa-close g-color-black"></i>
+    </button>
+    <div id="post_content"></div>
+</div>
 </body></html>

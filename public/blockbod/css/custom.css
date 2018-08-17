@@ -28,6 +28,8 @@ body {
 .site-branding a {font-size:16px;}
 .main_logo {float:left;margin-top:20px;}
 .w-300 {width:300px;}
+.opacity_1 {opacity: 1 !important;}
+
 .ellipsis8lines p {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -275,6 +277,7 @@ p {font-size:15px;}
 .main-navigation ul li a {padding: 18px 9px;}
 .tbl_no_border tr td {border:0;}
 .g-color-red {color: red !important;}
+.g-color-black {color: black !important;}
 .g-color-green {color: green !important;}
 .g-color-yellow {color: yellow !important;}
 .g-margin-10 {margin:10px;}
@@ -307,3 +310,8 @@ p {font-size:15px;}
 }
 .top-ad-string a {color:#fff;font-weight:bold;}
 .top_influencers .influencer_name {font-size:10px;text-align:left;overflow:hidden;margin:5px 0;}
+
+.g-max-width-600 {max-width:800px !important;}
+.g-bg-white {background-color:white;}
+.g-overflow-y-auto {overflow-y:auto;}
+.g-pa-20 {padding: 20px;}
