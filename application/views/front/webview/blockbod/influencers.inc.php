@@ -10,7 +10,7 @@ if ($influcencer_num > 0){
             }
         }
     </style>
-<section class="widget three-col-section news-col-3 top_influencers">
+<section class="three-col-section news-col-3 top_influencers">
     <div class="three-news-section">
         <div class="section-title">
             <h2 class="widget-title">Influencers</h2>

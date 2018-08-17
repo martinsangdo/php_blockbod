@@ -9,6 +9,8 @@ body {
     margin: 0;
     font-family: 'Domine',serif;
     font-weight: 400;
+    overflow-x: hidden;
+    margin:0;
 }
 .pointer {cursor:pointer;}
 .main-news-section article .post-content h2 {text-overflow: initial; white-space: initial;}
@@ -76,11 +78,11 @@ p {font-size:15px;}
 }
 @media (max-width: 400px) {
     .home0-center-cropped {
-        width: 360px;
+        width: 350px;
         height: 240px;
     }
     .home5-center-cropped {
-        width: 360px;
+        width: 350px;
         height: 240px;
     }
     .mean-container a.meanmenu-reveal.meanclose {
