@@ -11,6 +11,7 @@
 
     <?php require_once 'common_head.php'; ?>
     <script type="text/javascript" src="/public/js/article_detail.js"></script>
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5b76fa72d4ede100110aea51&product=inline-share-buttons"></script>
 
 </head>
 
@@ -46,11 +47,15 @@
                                                 <?php echo $article_detail->content; ?>
                                             </div><!-- .entry-content -->
                                             <i>Source: <?php echo $site_detail->name; ?></i>
+                                            <hr/>
+                                            <div>Share this article:</div>
+                                            <div class="sharethis-inline-share-buttons"></div>
                                         </div>
                                     </div>
                                 </div>
 
                             </article><!-- #post-## -->
+
                             <!--
                             <div class="news-col-3 related-posts">
 
