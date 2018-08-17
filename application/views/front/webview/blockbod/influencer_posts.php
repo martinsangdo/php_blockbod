@@ -122,7 +122,7 @@
 
 <!-- dialog to show content -->
 <a class="btn u-btn-primary hide" id="btn_show_modal" href="#post_content_dialog" data-modal-target="#post_content_dialog" data-modal-effect="fadein">Launch Modal</a>
-<div id="post_content_dialog" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+<div id="post_content_dialog" class="text-left g-bg-white g-overflow-y-auto g-pa-20 post_content_dialog" style="display: none;">
     <button type="button" class="close opacity_1" onclick="Custombox.modal.close();">
         <i class="fa fa-close g-color-black"></i>
     </button>

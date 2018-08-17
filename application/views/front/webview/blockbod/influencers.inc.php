@@ -2,6 +2,14 @@
 $influcencer_num = count($influencers);
 if ($influcencer_num > 0){
 ?>
+    <style>
+        @media (max-width: 400px) {
+            .col-md-2 {
+                width: 32%;
+                float:left;
+            }
+        }
+    </style>
 <section class="widget three-col-section news-col-3 top_influencers">
     <div class="three-news-section">
         <div class="section-title">
