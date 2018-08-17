@@ -74,7 +74,7 @@
                                     <li><input name="rdo_subscribe_type" type="radio" value="modify"/> Modify old request (<?php echo CUSTOM_NEWSLETTER_PRICE_MODIFY; ?> USD per one change).</li>
                                 </ul>
                                 <p><input id="rdo_opt_1" checked="checked" name="rdo_opt" type="radio" value="1" class="hidden"/> You will receive the news on every Monday of the week.</p>
-
+                                <p>In case there is no news involving your request within 3 weeks continuously, you are able to change original request without any charge.</p>
                                 <?php require_once 'pay_subscription.inc.php'; ?>
                                 <img src="<?php echo PUBLIC_FOLDER; ?>img/subscribe_button.png" onclick="common_front.process_custom_newsletter();" class="pointer" style="width:100px; height:auto;"/>
                                 <small id="lbl_mess_custom"></small>
